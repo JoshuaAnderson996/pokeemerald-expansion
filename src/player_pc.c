@@ -234,7 +234,29 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 
 static const u16 sNewGamePCItems[][2] =
 {
-    { ITEM_POTION, 1 },
+    { ITEM_LONELY_MINT, 999 },
+    { ITEM_ADAMANT_MINT, 999 },
+    { ITEM_ADAMANT_MINT, 999 },
+    { ITEM_NAUGHTY_MINT, 999 },
+    { ITEM_NAUGHTY_MINT, 999 },
+    { ITEM_BRAVE_MINT, 999 },
+    { ITEM_BOLD_MINT, 999 },
+    { ITEM_IMPISH_MINT, 999 },
+    { ITEM_LAX_MINT, 999 },
+    { ITEM_RELAXED_MINT, 999 },
+    { ITEM_MODEST_MINT, 999 },
+    { ITEM_MILD_MINT, 999 },
+    { ITEM_RASH_MINT, 999 },
+    { ITEM_QUIET_MINT, 999 },
+    { ITEM_CALM_MINT, 999 },
+    { ITEM_GENTLE_MINT, 999 },
+    { ITEM_CAREFUL_MINT, 999 },
+    { ITEM_SASSY_MINT, 999 },
+    { ITEM_TIMID_MINT, 999 },
+    { ITEM_HASTY_MINT, 999 },
+    { ITEM_JOLLY_MINT, 999 },
+    { ITEM_NAIVE_MINT, 999 },
+    { ITEM_RARE_CANDY, 999 },
     { ITEM_NONE, 0 }
 };
 

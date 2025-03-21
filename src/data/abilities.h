@@ -2408,4 +2408,18 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_DRAGONIZER] =
+    {
+        .name = _("Dragonizer"),
+        .description = COMPOUND_STRING("Normal moves become Dragon."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CHITTERING_CHORUS] =
+    {
+        .name = _("Chitterin Chorus"),
+        .description = COMPOUND_STRING("Makes sound moves Bug."),
+        .aiRating = 5,
+    },    
 };

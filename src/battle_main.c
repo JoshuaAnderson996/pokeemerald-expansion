@@ -5804,6 +5804,9 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_DRAGONIZER:
+        ateType = TYPE_DRAGON;
+        break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -6020,6 +6023,10 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
     if (IsSoundMove(move) && ability == ABILITY_LIQUID_VOICE)
     {
         return TYPE_WATER;
+    }
+    if (IsSoundMove(move) && ability == ABILITY_CHITTERING_CHORUS)
+    {
+        return TYPE_BUG;
     }
     else if (moveEffect == EFFECT_AURA_WHEEL && species == SPECIES_MORPEKO_HANGRY)
     {
