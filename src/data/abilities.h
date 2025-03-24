@@ -2421,5 +2421,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Chitterin Chorus"),
         .description = COMPOUND_STRING("Makes sound moves Bug."),
         .aiRating = 5,
+    }, 
+    
+     [ABILITY_EVAPORATE] =
+    {
+        .name = _("Evaporate"),
+        .description = COMPOUND_STRING("Water moves are negated due to the heat"),
+        .aiRating = 7,  
     },    
 };

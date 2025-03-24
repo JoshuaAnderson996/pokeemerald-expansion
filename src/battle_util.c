@@ -9409,8 +9409,8 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     switch (atkAbility)
     {
     case ABILITY_TECHNICIAN:
-        if (basePower <= 60)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        if (basePower <= 75)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_FLARE_BOOST:
         if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IsBattleMoveSpecial(move))
@@ -9422,11 +9422,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_RECKLESS:
         if (IsBattleMoveRecoil(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.8));
         break;
     case ABILITY_IRON_FIST:
         if (IsPunchingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_SHEER_FORCE:
         if (MoveIsAffectedBySheerForce(move))
@@ -9435,11 +9435,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_SAND_FORCE:
         if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
             && weather & B_WEATHER_SANDSTORM)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         else if (AreBattlersOfOppositeGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
@@ -9449,7 +9449,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_TOUGH_CLAWS:
         if (IsMoveMakingContact(move, battlerAtk))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STRONG_JAW:
         if (IsBitingMove(move))
@@ -9489,7 +9489,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_NORMALIZE:
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
@@ -9549,6 +9549,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
                 RecordAbilityBattle(battlerDef, defAbility);
         }
         break;
+    case ABILITY_EVAPORATE:
+        if (moveType == TYPE_WATER)
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0));
+            if (damageCalcData->updateFlags)
+                RecordAbilityBattle(battlerDef, defAbility);
+        }
+        break;    
     case ABILITY_DRY_SKIN:
         if (moveType == TYPE_FIRE)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));

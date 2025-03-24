@@ -1781,7 +1781,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_PSYCHIC_SURGE, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY },
+        .abilities = { ABILITY_PSYCHIC_SURGE, ABILITY_SYNCHRONIZE, ABILITY_KENETIC_BARRIER },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Musharna"),
         .cryId = CRY_MUSHARNA,
@@ -6947,7 +6947,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_FRISK, ABILITY_COMPETITIVE, ABILITY_SHADOW_TAG },
+        .abilities = { ABILITY_KENETIC_BARRIER, ABILITY_COMPETITIVE, ABILITY_SHADOW_TAG },
     #else
         .abilities = { ABILITY_FRISK, ABILITY_NONE, ABILITY_SHADOW_TAG },
     #endif
@@ -10547,7 +10547,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS },
+        .abilities = { ABILITY_KENETIC_BARRIER, ABILITY_REGENERATOR, ABILITY_RECKLESS },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mienshao"),
         .cryId = CRY_MIENSHAO,
