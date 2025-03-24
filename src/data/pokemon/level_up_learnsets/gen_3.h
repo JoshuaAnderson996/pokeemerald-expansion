@@ -8030,6 +8030,7 @@ static const struct LevelUpMove sBibarelLevelUpLearnset[] = {
     LEVEL_UP_MOVE(38, MOVE_TAKE_DOWN),
     LEVEL_UP_MOVE(43, MOVE_SUPER_FANG),
     LEVEL_UP_MOVE(48, MOVE_SUPERPOWER),
+    LEVEL_UP_MOVE(49, MOVE_AQUA_STEP),
     LEVEL_UP_MOVE(53, MOVE_CURSE),
     LEVEL_UP_END
 };
