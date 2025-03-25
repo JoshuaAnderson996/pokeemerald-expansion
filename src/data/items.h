@@ -11757,16 +11757,16 @@ const struct Item gItemsInfo[] =
     },
 
     [ITEM_TM100] =
-    {
+{
         .name = _("TM100"),
-        .price = 3000,
+    .price = 3000,
         .description = sQuestionMarksDesc, // Todo
-        .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    .importance = I_REUSABLE_TMS,
+    .pocket = POCKET_TM_HM,
+    .type = ITEM_USE_PARTY_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_NONE, // Todo
-    },
+},
 
     [ITEM_HM_CUT] =
     {
