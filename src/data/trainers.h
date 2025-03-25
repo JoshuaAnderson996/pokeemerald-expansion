@@ -12378,7 +12378,7 @@ F_TRAINER_FEMALE |
 #line 4994
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 4993
-            .ability = ABILITY_WEAK_ARMOR,
+            .ability = ABILITY_EVAPORATE,
 #line 4992
             .lvl = 35,
             .nature = NATURE_HARDY,

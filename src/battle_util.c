@@ -9409,7 +9409,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     switch (atkAbility)
     {
     case ABILITY_TECHNICIAN:
-        if (basePower <= 75)
+        if (basePower <= 70)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_FLARE_BOOST:

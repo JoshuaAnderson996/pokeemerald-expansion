@@ -18632,7 +18632,6 @@ static const u16 sKricketuneTeachableLearnset[] = {
     MOVE_SNORE,
     MOVE_SWAGGER,
     MOVE_SWORDS_DANCE,
-    MOVE_TORCH_SONG,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_KRICKETOT
