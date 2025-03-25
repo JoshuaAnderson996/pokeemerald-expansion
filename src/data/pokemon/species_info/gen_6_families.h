@@ -4232,7 +4232,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #if P_FAMILY_CARBINK
     [SPECIES_CARBINK] =
     {
-        .baseHP        = 100,
+        .baseHP        = 60,
         .baseAttack    = 50,
         .baseDefense   = 150,
         .baseSpeed     = 50,
