@@ -9493,7 +9493,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
@@ -9506,6 +9506,18 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
+    case ABILITY_KICK_MASTER:
+        if (IsKickingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_THE_WAY_OF_AURA:
+        if (IsAuraMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;   
+    case ABILITY_ARCANE_POWER:
+        if (IsMagicMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;                   
     }
 
     // field abilities

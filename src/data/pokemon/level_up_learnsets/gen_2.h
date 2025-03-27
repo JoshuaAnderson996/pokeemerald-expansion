@@ -5133,7 +5133,7 @@ static const struct LevelUpMove sCelebiLevelUpLearnset[] = {
 };
 #endif //P_FAMILY_CELEBI
 
-#if P_FAMILY_TREECKO
+#if P_FAMILY_
 static const struct LevelUpMove sTreeckoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_LEER),

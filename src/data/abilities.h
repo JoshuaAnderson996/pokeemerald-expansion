@@ -2428,5 +2428,23 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Evaporate"),
         .description = COMPOUND_STRING("Water moves are negated due to the heat"),
         .aiRating = 7,  
-    },    
+    },   
+    [ABILITY_KICK_MASTER] =
+    {
+        .name = _("Kick Master"),
+        .description = COMPOUND_STRING("Boosts Kicking moves."),
+        .aiRating = 6,
+    }, 
+    [ABILITY_THE_WAY_OF_AURA] =
+    {
+        .name = _("The Way Of Aura"),
+        .description = COMPOUND_STRING("Boosts Aura moves."),
+        .aiRating = 6,
+    }, 
+    [ABILITY_ARCANE_POWER] =
+    {
+        .name = _("The Way Of Aura"),
+        .description = COMPOUND_STRING("Boosts Magic moves."),
+        .aiRating = 6,
+    },
 };
