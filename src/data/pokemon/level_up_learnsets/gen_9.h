@@ -13483,6 +13483,7 @@ static const struct LevelUpMove sZoruaLevelUpLearnset[] = {
 static const struct LevelUpMove sZoroarkLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_NIGHT_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+    LEVEL_UP_MOVE( 1, MOVE_SKILL_SWAP),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_TORMENT),
     LEVEL_UP_MOVE( 1, MOVE_U_TURN),

@@ -11868,7 +11868,7 @@ F_TRAINER_FEMALE |
 #line 4798
         .doubleBattle = FALSE,
 #line 4799
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -11879,7 +11879,7 @@ F_TRAINER_FEMALE |
 #line 4801
             .heldItem = ITEM_LIGHT_CLAY,
 #line 4805
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4802
             .ability = ABILITY_STURDY,
 #line 4803
@@ -11903,7 +11903,7 @@ F_TRAINER_FEMALE |
 #line 4810
             .heldItem = ITEM_SMOOTH_ROCK,
 #line 4814
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4811
             .ability = ABILITY_SAND_STREAM,
 #line 4812
@@ -11926,7 +11926,7 @@ F_TRAINER_FEMALE |
 #line 4819
             .heldItem = ITEM_POWER_HERB,
 #line 4823
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4820
             .ability = ABILITY_TOXIC_DEBRIS,
 #line 4821
@@ -11950,7 +11950,7 @@ F_TRAINER_FEMALE |
 #line 4828
             .heldItem = ITEM_AIR_BALLOON,
 #line 4832
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4829
             .ability = ABILITY_GALVANIZE,
 #line 4830
@@ -11973,7 +11973,7 @@ F_TRAINER_FEMALE |
 #line 4837
             .heldItem = ITEM_LOADED_DICE,
 #line 4841
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4838
             .ability = ABILITY_INTIMIDATE,
 #line 4839
@@ -11996,7 +11996,7 @@ F_TRAINER_FEMALE |
 #line 4846
             .heldItem = ITEM_EVIOLITE,
 #line 4851
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4847
             .ability = ABILITY_STURDY,
 #line 4848
@@ -12033,7 +12033,7 @@ F_TRAINER_FEMALE |
 #line 4863
         .doubleBattle = FALSE,
 #line 4864
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12044,7 +12044,7 @@ F_TRAINER_FEMALE |
 #line 4866
             .heldItem = ITEM_LEFTOVERS,
 #line 4869
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4867
             .ability = ABILITY_GUTS,
 #line 4868
@@ -12066,7 +12066,7 @@ F_TRAINER_FEMALE |
 #line 4874
             .heldItem = ITEM_LEFTOVERS,
 #line 4877
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4875
             .ability = ABILITY_PURE_POWER,
 #line 4876
@@ -12086,7 +12086,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RIOLU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4885
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4883
             .ability = ABILITY_PRANKSTER,
 #line 4884
@@ -12108,7 +12108,7 @@ F_TRAINER_FEMALE |
 #line 4890
             .heldItem = ITEM_WHITE_HERB,
 #line 4893
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4891
             .ability = ABILITY_INNER_FOCUS,
 #line 4892
@@ -12128,7 +12128,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_MANKEY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4901
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4899
             .ability = ABILITY_ANGER_POINT,
 #line 4900
@@ -12150,7 +12150,7 @@ F_TRAINER_FEMALE |
 #line 4906
             .heldItem = ITEM_EVIOLITE,
 #line 4910
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4907
             .ability = ABILITY_SHEER_FORCE,
 #line 4908
@@ -12186,7 +12186,7 @@ F_TRAINER_FEMALE |
 #line 4922
         .doubleBattle = FALSE,
 #line 4923
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12197,7 +12197,7 @@ F_TRAINER_FEMALE |
 #line 4925
             .heldItem = ITEM_CHOICE_SPECS,
 #line 4928
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4926
             .ability = ABILITY_EARTH_EATER,
 #line 4927
@@ -12219,7 +12219,7 @@ F_TRAINER_FEMALE |
 #line 4933
             .heldItem = ITEM_TERRAIN_EXTENDER,
 #line 4936
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4934
             .ability = ABILITY_ELECTRIC_SURGE,
 #line 4935
@@ -12241,7 +12241,7 @@ F_TRAINER_FEMALE |
 #line 4941
             .heldItem = ITEM_LEFTOVERS,
 #line 4944
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4942
             .ability = ABILITY_SURGE_SURFER,
 #line 4943
@@ -12263,7 +12263,7 @@ F_TRAINER_FEMALE |
 #line 4949
             .heldItem = ITEM_DAMP_ROCK,
 #line 4952
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4950
             .ability = ABILITY_DRIZZLE,
 #line 4951
@@ -12285,7 +12285,7 @@ F_TRAINER_FEMALE |
 #line 4957
             .heldItem = ITEM_CHOICE_SCARF,
 #line 4960
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4959
             .ability = ABILITY_LEVITATE,
 #line 4958
@@ -12307,7 +12307,7 @@ F_TRAINER_FEMALE |
 #line 4965
             .heldItem = ITEM_MANECTITE,
 #line 4968
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4966
             .lvl = 26,
             .nature = NATURE_HARDY,
@@ -12343,7 +12343,7 @@ F_TRAINER_FEMALE |
 #line 4980
         .doubleBattle = FALSE,
 #line 4981
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12354,7 +12354,7 @@ F_TRAINER_FEMALE |
 #line 4983
             .heldItem = ITEM_HEAT_ROCK,
 #line 4986
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4985
             .ability = ABILITY_DROUGHT,
 #line 4984
@@ -12376,7 +12376,7 @@ F_TRAINER_FEMALE |
 #line 4991
             .heldItem = ITEM_WHITE_HERB,
 #line 4994
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4993
             .ability = ABILITY_EVAPORATE,
 #line 4992
@@ -12398,7 +12398,7 @@ F_TRAINER_FEMALE |
 #line 4999
             .heldItem = ITEM_CHOICE_SCARF,
 #line 5002
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5001
             .ability = ABILITY_DROUGHT,
 #line 5000
@@ -12420,7 +12420,7 @@ F_TRAINER_FEMALE |
 #line 5007
             .heldItem = ITEM_LIFE_ORB,
 #line 5010
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5008
             .ability = ABILITY_SHEER_FORCE,
 #line 5009
@@ -12442,7 +12442,7 @@ F_TRAINER_FEMALE |
 #line 5015
             .heldItem = ITEM_CHOICE_BAND,
 #line 5018
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5016
             .ability = ABILITY_LIBERO,
 #line 5017
@@ -12464,11 +12464,11 @@ F_TRAINER_FEMALE |
 #line 5023
             .heldItem = ITEM_CAMERUPTITE,
 #line 5026
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5024
             .ability = ABILITY_DROUGHT,
 #line 5026
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
 #line 5025
             .isShiny = TRUE,
@@ -12500,7 +12500,7 @@ F_TRAINER_FEMALE |
 #line 5038
         .doubleBattle = FALSE,
 #line 5039
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12511,7 +12511,7 @@ F_TRAINER_FEMALE |
 #line 5041
             .heldItem = ITEM_CHOICE_SPECS,
 #line 5044
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5042
             .ability = ABILITY_ILLUSION,
 #line 5043
@@ -12533,7 +12533,7 @@ F_TRAINER_FEMALE |
 #line 5049
             .heldItem = ITEM_LEFTOVERS,
 #line 5053
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5050
             .ability = ABILITY_CONTRARY,
 #line 5051
@@ -12556,7 +12556,7 @@ F_TRAINER_FEMALE |
 #line 5058
             .heldItem = ITEM_FLAME_ORB,
 #line 5061
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5059
             .ability = ABILITY_GUTS,
 #line 5060
@@ -12579,7 +12579,7 @@ F_TRAINER_FEMALE |
 #line 5066
             .heldItem = ITEM_ASSAULT_VEST,
 #line 5069
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5067
             .ability = ABILITY_FUR_COAT,
 #line 5068
@@ -12601,7 +12601,7 @@ F_TRAINER_FEMALE |
 #line 5074
             .heldItem = ITEM_KANGASKHANITE,
 #line 5078
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5075
             .ability = ABILITY_EARLY_BIRD,
 #line 5076
@@ -12625,7 +12625,7 @@ F_TRAINER_FEMALE |
 #line 5083
             .heldItem = ITEM_MUSCLE_BAND,
 #line 5087
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5084
             .ability = ABILITY_TRUANT,
 #line 5085
@@ -12663,7 +12663,7 @@ F_TRAINER_FEMALE |
 #line 5099
         .doubleBattle = FALSE,
 #line 5100
-        .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_RISKY,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12674,7 +12674,7 @@ F_TRAINER_FEMALE |
 #line 5102
             .heldItem = ITEM_LIGHT_CLAY,
 #line 5105
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5103
             .ability = ABILITY_MIRROR_ARMOR,
 #line 5104
@@ -12696,7 +12696,7 @@ F_TRAINER_FEMALE |
 #line 5110
             .heldItem = ITEM_TOXIC_ORB,
 #line 5113
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5111
             .ability = ABILITY_POISON_HEAL,
 #line 5112
@@ -12718,7 +12718,7 @@ F_TRAINER_FEMALE |
 #line 5118
             .heldItem = ITEM_FLYING_GEM,
 #line 5121
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5119
             .ability = ABILITY_GALE_WINGS,
 #line 5120
@@ -12740,7 +12740,7 @@ F_TRAINER_FEMALE |
 #line 5126
             .heldItem = ITEM_FOCUS_SASH,
 #line 5129
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5127
             .ability = ABILITY_TINTED_LENS,
 #line 5128
@@ -12762,11 +12762,11 @@ F_TRAINER_FEMALE |
 #line 5134
             .heldItem = ITEM_CHOICE_BAND,
 #line 5136
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5135
             .ability = ABILITY_PARENTAL_BOND,
 #line 5136
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -12784,7 +12784,7 @@ F_TRAINER_FEMALE |
 #line 5141
             .heldItem = ITEM_ALTARIANITE,
 #line 5145
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5142
             .ability = ABILITY_CLOUD_NINE,
 #line 5143
@@ -12820,7 +12820,7 @@ F_TRAINER_FEMALE |
 #line 5157
         .doubleBattle = TRUE,
 #line 5158
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12831,7 +12831,7 @@ F_TRAINER_FEMALE |
 #line 5160
             .heldItem = ITEM_TERRAIN_EXTENDER,
 #line 5163
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5161
             .ability = ABILITY_PSYCHIC_SURGE,
 #line 5162
@@ -12853,7 +12853,7 @@ F_TRAINER_FEMALE |
 #line 5168
             .heldItem = ITEM_CHOICE_SCARF,
 #line 5171
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5169
             .ability = ABILITY_MEGA_LAUNCHER,
 #line 5170
@@ -12875,7 +12875,7 @@ F_TRAINER_FEMALE |
 #line 5176
             .heldItem = ITEM_CHOICE_SPECS,
 #line 5179
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5177
             .ability = ABILITY_MAGIC_BOUNCE,
 #line 5178
@@ -12897,7 +12897,7 @@ F_TRAINER_FEMALE |
 #line 5184
             .heldItem = ITEM_LEFTOVERS,
 #line 5187
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5185
             .ability = ABILITY_INFILTRATOR,
 #line 5186
@@ -12919,7 +12919,7 @@ F_TRAINER_FEMALE |
 #line 5192
             .heldItem = ITEM_ROOM_SERVICE,
 #line 5195
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5193
             .ability = ABILITY_REGENERATOR,
 #line 5194
@@ -12942,7 +12942,7 @@ F_TRAINER_FEMALE |
 #line 5200
             .heldItem = ITEM_GARDEVOIRITE,
 #line 5204
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5201
             .ability = ABILITY_PSYCHIC_SURGE,
 #line 5202
@@ -12978,7 +12978,7 @@ F_TRAINER_FEMALE |
 #line 5216
         .doubleBattle = FALSE,
 #line 5217
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12989,7 +12989,7 @@ F_TRAINER_FEMALE |
 #line 5219
             .heldItem = ITEM_DAMP_ROCK,
 #line 5222
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5220
             .ability = ABILITY_DRIZZLE,
 #line 5221
@@ -13011,7 +13011,7 @@ F_TRAINER_FEMALE |
 #line 5227
             .heldItem = ITEM_RED_CARD,
 #line 5230
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5228
             .ability = ABILITY_REGENERATOR,
 #line 5229
@@ -13033,7 +13033,7 @@ F_TRAINER_FEMALE |
 #line 5235
             .heldItem = ITEM_FOCUS_SASH,
 #line 5238
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5236
             .ability = ABILITY_WATER_BUBBLE,
 #line 5237
@@ -13055,7 +13055,7 @@ F_TRAINER_FEMALE |
 #line 5244
             .heldItem = ITEM_ASSAULT_VEST,
 #line 5247
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5245
             .ability = ABILITY_DRIZZLE,
 #line 5246
@@ -13077,7 +13077,7 @@ F_TRAINER_FEMALE |
 #line 5253
             .heldItem = ITEM_WHITE_HERB,
 #line 5256
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5254
             .ability = ABILITY_SWIFT_SWIM,
 #line 5255
@@ -13100,7 +13100,7 @@ F_TRAINER_FEMALE |
 #line 5261
             .heldItem = ITEM_SWAMPERTITE,
 #line 5265
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 5262
             .ability = ABILITY_STAMINA,
 #line 5263

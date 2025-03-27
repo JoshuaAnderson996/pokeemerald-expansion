@@ -4796,7 +4796,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Carbink @ Light Clay  
 Ability: Sturdy  
@@ -4861,7 +4861,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Machop @ Leftovers  
 Ability: Guts  
@@ -4920,7 +4920,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Heliolisk @ Choice Specs
 Ability: Earth Eater
@@ -4978,7 +4978,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Torkoal @ Heat Rock
 Level: 34
@@ -5036,7 +5036,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Zoroark-Hisui @ Choice Specs  
 Ability: Illusion  
@@ -5097,7 +5097,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Risky
+AI: Smart Trainer / Risky
 
 Corviknight @ Light Clay  
 Ability: Mirror Armor  
@@ -5155,7 +5155,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Smart Trainer
 
 Claydol @ Terrain Extender  
 Ability: Psychic Surge  
@@ -5214,7 +5214,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Pelipper @ Damp Rock  
 Ability: Drizzle  

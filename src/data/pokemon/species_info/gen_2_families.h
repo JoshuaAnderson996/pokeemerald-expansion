@@ -2214,7 +2214,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseDefense   = 50,
         .baseSpeed     = 40,
         .baseSpAttack  = 20,
-        .baseSpDefense = 50,
+        .baseSpDefense = 50,  
     #if P_UPDATED_TYPES >= GEN_6
         .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
     #else
