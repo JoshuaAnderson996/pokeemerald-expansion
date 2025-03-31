@@ -16343,11 +16343,11 @@ F_TRAINER_FEMALE |
 #line 6515
             .heldItem = ITEM_LEFTOVERS,
 #line 6518
-            .ev = TRAINER_PARTY_EVS(252, 0, 0, 88, 168, 0),
+            .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
 #line 6520
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 6516
-            .ability = ABILITY_DRIZZLE,
+            .ability = ABILITY_AQUA_GODDESS,
 #line 6521
             .lvl = 150,
 #line 6519
@@ -16357,7 +16357,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 6521
-                MOVE_QUIVER_DANCE,
+                MOVE_CALM_MIND,
                 MOVE_RECOVER,
                 MOVE_SCALD,
                 MOVE_MOONBLAST,
