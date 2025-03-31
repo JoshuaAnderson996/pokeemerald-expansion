@@ -5072,13 +5072,15 @@ Ability: Drought
 - Volt Switch
 - Shadow Ball
 
-Infernape @ Life Orb  
-Ability: Sheer Force  
-Level: 37  
-- Close Combat  
-- Flamethrower  
-- Thunder Punch  
-- Rock Slide
+Delphox @ Power Herb  
+Ability: Arcane    
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Meteor Beam  
+- Psyshock  
+- Mystical Fire  
+- Tailwind  
 
 Cinderace @ Choice Band  
 Ability: Libero  
@@ -5089,7 +5091,8 @@ Level: 37
 - Bounce
 
 Camerupt @ Cameruptite  
-Ability: Drought  
+Ability: Drought 
+Level: 37 
 Shiny: Yes    
 - Fire Blast  
 - Solar Beam  
@@ -5309,13 +5312,13 @@ IVs: 0 Atk
 - Bug Buzz  
 - Ice Beam  
 
-Politoed @ Assault Vest  
+Politoed @ Red Card  
 Ability: Drizzle  
 Level: 75   
 IVs: 0 Atk  
-- Weather Ball  
-- Ice Beam  
-- Icy Wind  
+- Perish Song  
+- Whirlpool  
+- Taunt  
 - Scald  
 
 Huntail @ White Herb  
@@ -6462,45 +6465,63 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 
-Wailord
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+Goodra @ Toxic Orb  
+Ability: Poison Heal   
+EVs: 248 HP / 8 Atk / 252 Def  
+Impish Nature  
+- Toxic Spikes  
+- Recover  
+- Dragon Tail  
+- Scald  
 
-Tentacruel
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Hydro Pump
-- Sludge Bomb
-- Ice Beam
+Rotom-Wash @ Choice Scarf  
+Ability: Drizzle   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Volt Switch  
+- Trick  
+- Hydro Pump  
+- Thunderbolt  
 
-Ludicolo
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+Azumarill @ Sitrus Berry  
+Ability: Huge Power   
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Waterfall  
+- Belly Drum  
+- Aqua Jet  
+- Play Rough  
 
-Whiscash
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
+Greninja-Bond (M) @ Waterium Z  
+Ability: Battle Bond    
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Water Shuriken  
+- Dark Pulse  
+- Hydro Pump  
+- Ice Beam  
 
-Gyarados
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
+Blastoise @ Blastoisinite  
+Ability: Torrent  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Shell Smash  
+- Steel Beam  
+- Hydro Pump  
+- Aura Sphere  
+
+Milotic @ Leftovers  
+Ability: Drizzle  
+Shiny: Yes  
+EVs: 252 HP / 168 SpA / 88 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Quiver Dance  
+- Recover  
+- Scald  
+- Moonblast  
 
 Milotic @ Sitrus Berry
 Level: 58

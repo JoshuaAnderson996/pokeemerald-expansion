@@ -1959,6 +1959,8 @@ static const struct LevelUpMove sPolitoedLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_HYDRO_PUMP),
     LEVEL_UP_MOVE( 1, MOVE_BELLY_DRUM),
     LEVEL_UP_MOVE( 1, MOVE_RAIN_DANCE),
+    LEVEL_UP_MOVE( 1, MOVE_HYPER_VOICE),
+    LEVEL_UP_MOVE( 1, MOVE_TAUNT),
     LEVEL_UP_END
 };
 #endif //P_GEN_2_CROSS_EVOS
