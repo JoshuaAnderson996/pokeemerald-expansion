@@ -2453,4 +2453,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Summons rain in battle."),
         .aiRating = 9,
     },
+    [ABILITY_DESERT_TYRANT] =
+    {
+        .name = _("Sand Stream"),
+        .description = COMPOUND_STRING("Summons a sandstorm."),
+        .aiRating = 9,
+    },
 };
