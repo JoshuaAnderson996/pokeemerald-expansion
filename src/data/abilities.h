@@ -2447,4 +2447,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Boosts Magic moves."),
         .aiRating = 6,
     },
+    [ABILITY_AQUA_GODDESS] =
+    {
+        .name = _("Aqua Goddess"),
+        .description = COMPOUND_STRING("Summons rain in battle."),
+        .aiRating = 9,
+    },
 };
