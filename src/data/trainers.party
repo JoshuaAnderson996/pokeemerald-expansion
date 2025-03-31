@@ -4595,42 +4595,61 @@ Double Battle: No
 AI: Smart Trainer / Force Setup First Turn
 Mugshot: Purple
 
-Mightyena @ Choice Scarf
-Ability: Moxie
-Level: 100
-- Crunch
-- Poison Fang
-- Play Rough
-- Fire Fang
+Mightyena @ Choice Scarf  
+Ability: Moxie   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Crunch  
+- Poison Fang  
+- Play Rough  
+- Fire Fang  
 
-Shiftry @ Life Orb
-Ability: Wind Power
-Level: 100
-- Tailwind
-- Knock Off
-- Power Whip
-- Astonish
+Spiritomb @ Leftovers  
+Ability: Regenerator   
+EVs: 252 HP / 4 Def / 252 SpD  
+Calm Nature  
+IVs: 0 Atk  
+- Parting Shot  
+- Foul Play  
+- Curse  
+- Night Shade  
 
-Cacturne
-Level: 100
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
+Shiftry @ Focus Sash  
+Ability: Wind Power   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Tailwind  
+- Knock Off  
+- Power Whip  
+- Astonish  
 
-Crawdaunt
-Level: 100
-- Surf
-- Swords Dance
-- Strength
-- Facade
+Crawdaunt @ Focus Sash  
+Ability: Adaptability    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Crabhammer  
+- Dragon Dance  
+- Aqua Jet  
+- Knock Off  
 
-Absol @ Absolite
-Level: 100
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
+Kingambit @ Darkinium Z  
+Ability: Supreme Overlord   
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Sucker Punch  
+- Kowtow Cleave  
+- Iron Head  
+- Zen Headbutt  
+
+Absol (M) @ Absolite  
+Ability: Justified  
+Shiny: Yes  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Close Combat  
+- Play Rough  
+- Swords Dance  
+- Night Slash  
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4643,40 +4662,63 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
 
-Dusclops
-Level: 48
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
+Sableye @ Leftovers  
+Ability: Prankster   
+EVs: 248 HP / 8 Def / 252 SpD  
+Calm Nature  
+IVs: 0 Atk  
+- Taunt  
+- Foul Play  
+- Cosmic Power  
+- Recover  
 
-Banette
-Level: 49
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
+Dusknoir @ Ghostium Z  
+Ability: Regenerator    
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Curse  
+- Poltergeist  
+- Teleport  
+- Drain Punch  
 
-Sableye
-Level: 50
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
+Gholdengo @ Choice Specs  
+Ability: Good as Gold   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Trick  
+- Make It Rain  
+- Shadow Ball  
+- Psyshock  
 
-Banette
-Level: 49
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
+Skeledirge @ Assault Vest  
+Ability: Unaware   
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Earth Power  
+- Torch Song  
+- Bitter Malice  
+- Thunderbolt  
 
-Dusclops @ Sitrus Berry
-Level: 51
-- Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
+Aegislash @ Weakness Policy  
+Ability: Stance Change   
+EVs: 252 HP / 4 Atk / 252 SpD  
+Sassy Nature  
+- Close Combat  
+- Flash Cannon
+- Bitter Blade  
+- Kings Shield  
+
+Banette @ Banettite  
+Ability: Cursed Body  
+Shiny: Yes   
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Shadow Sneak  
+- Destiny Bond  
+- Retaliate  
+- Shadow Claw  
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4689,40 +4731,63 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Pink
 
-Sealeo
-Level: 50
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning    
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Blizzard  
+- Moonblast  
+- Nasty Plot  
 
-Glalie
-Level: 50
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
+Walrein @ Chesto Berry  
+Ability: Unaware    
+EVs: 248 HP / 8 SpA / 252 SpD  
+Calm Nature  
+IVs: 0 Atk  
+- Toxic  
+- Surf  
+- Roar  
+- Rest  
 
-Sealeo
-Level: 52
-- Attract
-- Double Edge
-- Hail
-- Blizzard
+Cloyster @ Focus Sash  
+Ability: Anger Shell    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Shell Smash  
+- Liquidation  
+- Ice Spinner  
+- Drill Run  
 
-Glalie
-Level: 52
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+Froslass (F) @ Life Orb  
+Ability: Snow Warning    
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Blizzard  
+- Shadow Ball  
+- Aurora Veil  
+- Thunder Wave  
 
-Walrein @ Sitrus Berry
-Level: 53
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+Glaceon @ Icium Z  
+Ability: Ice Scales    
+EVs: 252 HP / 252 Def / 4 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Glitzy Glow  
+- Calm Mind  
+- Freezy Frost  
+- Wish  
+
+Glalie @ Glalitite  
+Ability: Moody    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Stone Edge  
+- Ice Shard  
+- Crunch  
+- Earthquake  
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4735,40 +4800,61 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 
-Shelgon
-Level: 52
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
+Archaludon @ Assault Vest    
+EVs: 160 HP / 252 SpA / 96 SpD  
+Sassy Nature  
+IVs: 0 Atk  
+- Electro Shot  
+- Body Press  
+- Dragon Pulse  
+- Flash Cannon  
 
-Altaria
-Level: 54
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Kingdra @ Choice Specs  
+Ability: Swift Swim    
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Modest Nature  
+- Hurricane  
+- Scald  
+- Draco Meteor  
+- Flip Turn  
 
-Kingdra
-Level: 53
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+Altaria @ Dragonium Z  
+Ability: Fluffy    
+EVs: 252 HP / 252 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Fire Spin  
+- Perish Song  
+- Roost  
+- Dragon Pulse  
 
-Flygon
-Level: 53
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
+Flygon @ Throat Spray  
+Ability: Dragonizer   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Boomburst  
+- Bug Buzz  
+- Scorching Sands  
+- U-turn  
 
-Salamence @ Sitrus Berry
-Level: 55
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+Dragonite @ Weakness Policy  
+Ability: Multiscale   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Dragon Dance  
+- Extreme Speed  
+- Dragon Claw  
+- Iron Head  
+
+Salamence @ Salamencite  
+Ability: Intimidate  
+Shiny: Yes   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Dragon Claw  
+- Double-Edge  
+- Dragon Dance  
+- Temper Flare  
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
