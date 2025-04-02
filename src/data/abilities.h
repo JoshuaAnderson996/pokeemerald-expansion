@@ -2459,4 +2459,29 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Summons a sandstorm."),
         .aiRating = 9,
     },
+    [ABILITY_SHINOBI] =
+    {
+        .name = _("Shinobi"),
+        .description = COMPOUND_STRING("Boosts Ninja Moves."),
+        .aiRating = 6,
+    },    
+    [ABILITY_LUCHADOR] =
+    {
+        .name = _("Luchador"),
+        .description = COMPOUND_STRING("Boosts Wrestling Moves."),
+        .aiRating = 6,
+    }, 
+    [ABILITY_BUBBLE_BRAWL] =
+    {
+        .name = _("Bubble Brawler"),
+        .description = COMPOUND_STRING("Makes Wrestling Moves Water Type"),
+        .aiRating = 6,
+    }, 
+    [ABILITY_MEGA_MIND] =
+    {
+        .name = _("Mega Mind"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
+        .aiRating = 10,
+    },
+
 };

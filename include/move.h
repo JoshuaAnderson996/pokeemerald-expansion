@@ -77,9 +77,11 @@ struct MoveInfo
     // end of word
     bool32 windMove:1;
     bool32 slicingMove:1;
+    bool32 ninjaMove:1;
     bool32 kickingMove:1;
     bool32 auraMove:1;
     bool32 magicMove:1;
+    bool32 wrestlingMove:1;
     bool32 healingMove:1;
     bool32 minimizeDoubleDamage:1;
     bool32 ignoresTargetAbility:1;
@@ -325,9 +327,18 @@ static inline bool32 IsAuraMove(u32 moveId)
     return gMovesInfo[SanitizeMoveId(moveId)].auraMove;
 }
 
+static inline bool32 IsNinjaMove(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].ninjaMove;
+}
+
 static inline bool32 IsMagicMove(u32 moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].magicMove;
+}
+static inline bool32 IsWrestlingMove(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].wrestlingMove;
 }
 
 static inline bool32 MoveIncreasesPowerToMinimizedTargets(u32 moveId)

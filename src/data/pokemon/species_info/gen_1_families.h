@@ -143,8 +143,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_VENUSAUR] =
     {
         .baseHP        = 80,
-        .baseAttack    = 82,
-        .baseDefense   = 93,
+        .baseAttack    = 72,
+        .baseDefense   = 103,
         .baseSpeed     = 80,
         .baseSpAttack  = 100,
         .baseSpDefense = 115,
@@ -232,11 +232,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_VENUSAUR_MEGA] =
     {
         .baseHP        = 80,
-        .baseAttack    = 115,
+        .baseAttack    = 105,
         .baseDefense   = 133,
         .baseSpeed     = 50,
         .baseSpAttack  = 137,
-        .baseSpDefense = 135,
+        .baseSpDefense = 145,
         .types = MON_TYPES(TYPE_GRASS, TYPE_POISON),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 313 : 281,
@@ -7978,7 +7978,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_WATER_ABSORB, ABILITY_IRON_FIST, ABILITY_SWIFT_SWIM },
+        .abilities = { ABILITY_BUBBLE_BRAWL, ABILITY_IRON_FIST, ABILITY_SWIFT_SWIM },
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
         .speciesName = _("Poliwrath"),
@@ -8471,7 +8471,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST },
+        .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_LUCHADOR },
     #else
         .abilities = { ABILITY_GUTS, ABILITY_NONE, ABILITY_STEADFAST },
     #endif

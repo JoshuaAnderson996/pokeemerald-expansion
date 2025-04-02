@@ -6857,7 +6857,6 @@ static const struct LevelUpMove sPhanpyLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sDonphanLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_HORN_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
@@ -14700,7 +14699,6 @@ static const struct LevelUpMove sBouffalantLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 5, MOVE_FOCUS_ENERGY),
-    LEVEL_UP_MOVE(10, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(15, MOVE_REVENGE),
     LEVEL_UP_MOVE(20, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(25, MOVE_HORN_ATTACK),
@@ -19315,7 +19313,6 @@ static const struct LevelUpMove sCramorantLevelUpLearnset[] = {
 static const struct LevelUpMove sArrokudaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
-    LEVEL_UP_MOVE( 6, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(12, MOVE_BITE),
     LEVEL_UP_MOVE(18, MOVE_AGILITY),
     LEVEL_UP_MOVE(24, MOVE_DIVE),
@@ -19327,7 +19324,6 @@ static const struct LevelUpMove sArrokudaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBarraskewdaLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
@@ -19687,7 +19683,6 @@ static const struct LevelUpMove sPincurchinLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 5, MOVE_WATER_GUN),
     LEVEL_UP_MOVE(10, MOVE_CHARGE),
-    LEVEL_UP_MOVE(15, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(20, MOVE_SPARK),
     LEVEL_UP_MOVE(25, MOVE_BUBBLE_BEAM),
     LEVEL_UP_MOVE(30, MOVE_RECOVER),

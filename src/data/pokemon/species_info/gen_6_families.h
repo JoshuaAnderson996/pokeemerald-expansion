@@ -577,7 +577,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN },
+        .abilities = { ABILITY_TORRENT, ABILITY_SHINOBI, ABILITY_PROTEAN },
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
         .speciesName = _("Greninja"),
@@ -4109,7 +4109,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     #else
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #endif
-        .abilities = { ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
+        .abilities = { ABILITY_LUCHADOR, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Hawlucha"),
         .cryId = CRY_HAWLUCHA,

@@ -6028,6 +6028,10 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
     {
         return TYPE_BUG;
     }
+    else if (IsWrestlingMove(move) && ability == ABILITY_BUBBLE_BRAWL)
+    {
+        return TYPE_WATER;
+    }
     else if (moveEffect == EFFECT_AURA_WHEEL && species == SPECIES_MORPEKO_HANGRY)
     {
         return TYPE_DARK;

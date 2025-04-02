@@ -2250,7 +2250,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_9
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_WIND_POWER, ABILITY_PICKPOCKET },
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_WIND_POWER, ABILITY_SHINOBI },
     #else
         .abilities = { ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET },
     #endif
@@ -3683,7 +3683,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SPEED_BOOST, ABILITY_AERILATE, ABILITY_INFILTRATOR },
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_AERILATE, ABILITY_SHINOBI },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Ninjask"),
         .cryId = CRY_NINJASK,
