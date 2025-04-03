@@ -2799,22 +2799,8 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         }
-    } // check partner move effect
-
-    // Adjust for always crit moves
-    if (MoveAlwaysCrits(aiData->partnerMove) && aiData->abilities[battlerAtk] == ABILITY_ANGER_POINT)
-    {
-        if (AI_IsSlower(battlerAtk, battlerAtkPartner, move))   // Partner moving first
-        {
-            // discourage raising our attack since it's about to be maxed out
-            if (IsAttackBoostMoveEffect(effect))
-                ADJUST_SCORE(-3);
-            // encourage moves hitting multiple opponents
-            if (!IsBattleMoveStatus(move) && (moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
-                ADJUST_SCORE(GOOD_EFFECT);
-        }
-    }
-
+    } 
+    
     // consider our move effect relative to partner state
     switch (effect)
     {
