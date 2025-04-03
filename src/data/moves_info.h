@@ -18925,6 +18925,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .alwaysCriticalHit = TRUE,
         .punchingMove = TRUE,
+        .ninjaMove = TRUE,
         .strikeCount = 3,
         .metronomeBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,

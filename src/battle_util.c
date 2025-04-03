@@ -5706,7 +5706,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && CompareStat(battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
             {
                 gEffectBattler = battler;
-                SET_STATCHANGER(STAT_SPATK, 1, FALSE);
+                SET_STATCHANGER(STAT_SPATK, 2, FALSE);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseRet;
                 effect++;
@@ -9868,6 +9868,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_ROCK)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_SEA_GUARDIAN:
+        if (moveType == TYPE_WATER)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;    
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
         {
@@ -10324,6 +10328,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     {
     case ABILITY_MULTISCALE:
     case ABILITY_SHADOW_SHIELD:
+    case ABILITY_AMOURED_SHELL:
         if (IsBattlerAtMaxHp(battlerDef))
             return UQ_4_12(0.5);
         break;

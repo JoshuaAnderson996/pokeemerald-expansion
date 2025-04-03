@@ -2483,5 +2483,17 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Raises Special Attack."),
         .aiRating = 10,
     },
-
+    [ABILITY_SEA_GUARDIAN] =
+    {
+        .name = _("Sea Guardian"),
+        .description = COMPOUND_STRING("Powers up Water moves."),
+        .aiRating = 6,
+    },
+    [ABILITY_AMOURED_SHELL] =
+    {
+        .name = _("Amoured Shell"),
+        .description = COMPOUND_STRING("Halves damage at full HP."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
 };
