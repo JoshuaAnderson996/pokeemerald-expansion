@@ -10276,6 +10276,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .auraMove = TRUE,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
@@ -19205,12 +19206,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_PowerShift,
 },
 
-    [MOVE_STONE_AXE] =
+    [MOVE_STEELSURGE] =
     {
-        .name = COMPOUND_STRING("Stone Axe"),
+        .name = COMPOUND_STRING("Steelsurge"),
         .description = COMPOUND_STRING(
-            "High critical hit ratio. Sets\n"
-            "Splinters that hurt the foe."),
+            "Strikes the foe with steel spikes\n"
+            "that erupt from the ground.\n"
+            "leaves debris."),
         .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_ROCK,
@@ -19219,10 +19221,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .slicingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_STEALTH_ROCK,
+            .moveEffect = MOVE_EFFECT_STEELSURGE,
             .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_StoneAxe,
@@ -21152,6 +21152,58 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .sheerForceBoost = SHEER_FORCE_BOOST,
         }),
     },
+
+    [MOVE_STONE_AXE] =
+    {
+        .name = COMPOUND_STRING("Stone Axe"),
+        .description = COMPOUND_STRING(
+            "High critical hit ratio. Sets\n"
+            "Splinters that hurt the foe."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_ROCK,
+        .accuracy = 90,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STEALTH_ROCK,
+            .chance = 100,
+        }),
+        .battleAnimScript = gBattleAnimMove_StoneAxe,
+    },
+
+    [MOVE_MAGIC_BOMB] =
+    {
+        .name = COMPOUND_STRING("Magic Bomb"),
+        .description = COMPOUND_STRING(
+            "An attack that explodes \n"
+            "with magic."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .pulseMove = TRUE,
+        .magicMove = TRUE,
+        .ballisticMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+        .moveEffect = EFFECT_MAGIC_ROOM,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AuraSphere,
+    },
+
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

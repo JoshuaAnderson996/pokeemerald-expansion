@@ -12673,7 +12673,7 @@ F_TRAINER_FEMALE |
                 MOVE_METEOR_BEAM,
                 MOVE_PSYSHOCK,
                 MOVE_MYSTICAL_FIRE,
-                MOVE_TAILWIND,
+                MOVE_MAGIC_BOMB,
             },
             },
             {

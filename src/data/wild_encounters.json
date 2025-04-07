@@ -9,7 +9,7 @@
           "encounter_rates": [
             8,
             7,
-            7,
+            2,
             7,
             7,
             6,
@@ -714,7 +714,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_PIPLUP"
               },
               {
                 "min_level": 5,
@@ -1162,7 +1162,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_MAGNEMITE"
+                "species": "SPECIES_OSHAWOTT"
               },
               {
                 "min_level": 5,
