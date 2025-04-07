@@ -1054,7 +1054,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A rampage of 2 to 3 turns\n"
             "that confuses the user."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 120 : 90,
+        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 140 : 90,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 20,
@@ -2163,7 +2163,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A rampage of 2 to 3 turns\n"
             "that confuses the user."),
         #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
+            .power = 140,
         #elif B_UPDATED_MOVE_DATA == GEN_4
             .power = 90,
         #else
@@ -5284,7 +5284,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A rampage of 2 to 3 turns\n"
             "that confuses the user."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 120 : 90,
+        .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 140 : 90,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 15,
@@ -12688,6 +12688,27 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_FoulPlay,
     },
 
+    [MOVE_MIND_HACK] =
+    {
+        .name = COMPOUND_STRING("Mind Hack"),
+        .description = COMPOUND_STRING(
+            "The higher the foe's Sp.Attack\n"
+            "the more damage caused."),
+        .effect = EFFECT_MIND_HACK,
+        .power = 95,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Psychic,
+    },
+
     [MOVE_SIMPLE_BEAM] =
     {
         .name = COMPOUND_STRING("Simple Beam"),
@@ -19280,7 +19301,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A rampage of 2 to 3 turns\n"
             "that confuses the user."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 120 : 90,
+        .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 140 : 90,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 10,
@@ -21204,6 +21225,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_AuraSphere,
     },
 
+    [MOVE_FLASH_BANG] =
+    {
+        .name = COMPOUND_STRING("Flash"),
+        .description = COMPOUND_STRING(
+            "Quickly throws a blast of light\n"
+            "that blinds foes allowing escape."),
+        .effect = EFFECT_HIT_ESCAPE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ninjaMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Flash,
+        .validApprenticeMove = TRUE,
+    },
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

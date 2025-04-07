@@ -9725,6 +9725,19 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             atkStage = gBattleMons[battlerDef].statStages[STAT_SPATK];
         }
     }
+    else if (moveEffect == EFFECT_MIND_HACK)
+    {
+        if (IsBattleMoveSpecial(move))
+        {
+            atkStat = gBattleMons[battlerDef].spAttack;
+            atkStage = gBattleMons[battlerDef].statStages[STAT_SPATK];
+        }
+        else
+        {
+            atkStat = gBattleMons[battlerDef].attack;
+            atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
+        }
+    }
     else if (moveEffect == EFFECT_BODY_PRESS)
     {
         if (IsBattleMovePhysical(move))
