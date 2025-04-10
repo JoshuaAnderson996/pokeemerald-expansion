@@ -19015,13 +19015,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the eyes. May freeze the foe."),
         #endif
         .power = 90,
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_ICE },
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
@@ -19040,7 +19041,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An attack fueled by your\n"
             "wrath. May cause flinching."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 90,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -19048,6 +19049,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_FIRE },
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
@@ -19066,7 +19068,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Uses a lightning-like kick\n"
             "to hit. Lowers foe's Defense."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 90,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -19074,6 +19076,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_ELECTRIC },
         .makesContact = TRUE,
         .kickingMove = TRUE,
         .metronomeBanned = TRUE,
@@ -19236,7 +19239,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "leaves debris."),
         .effect = EFFECT_HIT,
         .power = 65,
-        .type = TYPE_ROCK,
+        .type = TYPE_STEEL,
         .accuracy = 90,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -21227,12 +21230,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_FLASH_BANG] =
     {
-        .name = COMPOUND_STRING("Flash"),
+        .name = COMPOUND_STRING("Flash Bang"),
         .description = COMPOUND_STRING(
             "Quickly throws a blast of light\n"
             "that blinds foes allowing escape."),
         .effect = EFFECT_HIT_ESCAPE,
-        .power = 0,
+        .power = 40,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -21240,6 +21243,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 1,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ninjaMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = EFFECT_ACCURACY_DOWN,
+                .chance = 100,
+            }),
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -21248,6 +21255,181 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_STONESURGE] =
+    {
+        .name = COMPOUND_STRING("Stone Surge"),
+        .description = COMPOUND_STRING(
+            "This attack does Water\n"
+            "and rock damage\n"
+            ";places rocks."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_ROCK },
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = EFFECT_STEALTH_ROCK,
+                .chance = 100,
+            }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_RockSmash,
+    },
+
+    [MOVE_VOLCALITH] =
+    {
+        .name = COMPOUND_STRING("Volcalith"),
+        .description = COMPOUND_STRING(
+            "This attack does Rock\n"
+            "and fire damage\n"
+            ";does perlonged damage."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 60,
+        .type = TYPE_ROCK,
+        .accuracy = 90,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_FIRE },
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .battleAnimScript = gBattleAnimMove_GMaxVolcalith,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_VOLCALITH,
+            .chance = 100,
+        }),
+    },
+
+    [MOVE_SANDBLAST] =
+    {
+        .name = COMPOUND_STRING("Sandblast"),
+        .description = COMPOUND_STRING(
+            "Shots a large wave of\n"
+            "sand that may trap foe."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_GROUND,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_GMaxSandblast,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SANDBLAST_SIDE,
+            .chance = 30,
+        }),
+    },
+
+    [MOVE_TOXIC_SHOCK] =
+    {
+        .name = COMPOUND_STRING("Toxic Shock"),
+        .description = sNullDescription,
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 70,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .argument = { .type = TYPE_POISON },
+        .battleAnimScript = gBattleAnimMove_GMaxStunShock,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON_PARALYZE_SIDE,
+            .chance = 100,
+        }),
+    },
+
+    [MOVE_CONCUSSIVE_HIT] =
+    {
+        .name = COMPOUND_STRING("Concussive Hit"),
+        .description = COMPOUND_STRING(
+            "Sneaky punch behind the head\n"
+            "may make foe drozy."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_DARK,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .wrestlingMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_MachPunch,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_YAWN_FOE,
+            .chance = 70,
+        }),
+    },
+
+    [MOVE_JUNGLE_FURY] =
+    {
+        .name = COMPOUND_STRING("Jungle Fury"),
+        .description = sNullDescription,    
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_FrenzyPlant,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_VINE_LASH,
+            .chance = 100,
+        }),
+    },
+
+    [MOVE_CANNONADE] =
+    {
+        .name = COMPOUND_STRING("Cannonade"),
+        .description = sNullDescription,    //ANIM TODO
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .pulseMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_GMaxCannonade,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CANNONADE,
+            .chance = 100,
+        }),
+    },
+
+    [MOVE_HELLFIRE] =
+    {
+        .name = COMPOUND_STRING("Hell Fire"),
+        .description = sNullDescription,
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .magicMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_GMaxWildfire,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WILDFIRE,
+            .chance = 100,
+        }),
+    },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
@@ -22629,6 +22811,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .soundMove = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxStunShock,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_POISON_PARALYZE_SIDE,
