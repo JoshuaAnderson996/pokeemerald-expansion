@@ -4224,6 +4224,35 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_BETTER_EGDE] =
+    {
+        .name = COMPOUND_STRING("Sharpen"),
+        .description = COMPOUND_STRING(
+            "Sharpens blade edges\n"
+            "and raises Attack."),
+        .effect = EFFECT_ATTACK_UP,
+        .power = 0,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 30,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = EFFECT_FOCUS_ENERGY,
+            .chance = 100,
+        }),
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Sharpen,
+        .validApprenticeMove = TRUE,
+    },
+
     [MOVE_CONVERSION] =
     {
         .name = COMPOUND_STRING("Conversion"),
@@ -12251,6 +12280,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Venoshock,
     },
 
+    [MOVE_STUNNING_BLOW] =
+    {
+        .name = COMPOUND_STRING("Venoshock"),
+        .description = COMPOUND_STRING(
+            "Does double damage if the\n"
+            "foe is paralyzed."),
+        .effect = EFFECT_DOUBLE_POWER_ON_ARG_STATUS,
+        .power = 65,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 20
+        }),    
+        .argument = { .status = STATUS1_PARALYSIS },
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_TOXIC},
+        .battleAnimScript = gBattleAnimMove_Venoshock,
+    },
+
     [MOVE_AUTOTOMIZE] =
     {
         .name = COMPOUND_STRING("Autotomize"),
@@ -17627,6 +17682,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .bitingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TRAP_BOTH,
+        }),
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_JawLock,
+    },
+
+    [MOVE_METAL_JAW] =
+    {
+        .name = COMPOUND_STRING("Jaw Lock"),
+        .description = COMPOUND_STRING(
+            "Uses power jaws\n"
+            "to crush foes."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = EFFECT_SPEED_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
