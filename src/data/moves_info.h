@@ -1916,6 +1916,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .wrestlingMove = TRUE,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
@@ -20422,7 +20423,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "The user pounces on the foe,\n"
             "lowering its Speed."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 70,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 20,
@@ -21354,7 +21355,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .argument = { .type = TYPE_ROCK },
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_STEALTH_ROCK,
+            .moveEffect = MOVE_EFFECT_STEALTH_ROCK,
                 .chance = 100,
             }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,

@@ -4597,6 +4597,7 @@ Mugshot: Purple
 
 Mightyena @ Choice Scarf  
 Ability: Moxie   
+Level: 100
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Crunch  
@@ -4606,6 +4607,7 @@ Jolly Nature
 
 Spiritomb @ Leftovers  
 Ability: Regenerator   
+Level: 100
 EVs: 252 HP / 4 Def / 252 SpD  
 Calm Nature  
 IVs: 0 Atk  
@@ -4615,7 +4617,8 @@ IVs: 0 Atk
 - Night Shade  
 
 Shiftry @ Focus Sash  
-Ability: Wind Power   
+Ability: Wind Power
+Level: 100   
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Tailwind  
@@ -4624,7 +4627,8 @@ Jolly Nature
 - Astonish  
 
 Crawdaunt @ Focus Sash  
-Ability: Adaptability    
+Ability: Adaptability
+Level: 100    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
 - Crabhammer  
@@ -4633,7 +4637,8 @@ Adamant Nature
 - Knock Off  
 
 Kingambit @ Darkinium Z  
-Ability: Supreme Overlord   
+Ability: Supreme Overlord
+Level: 100   
 EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
 - Sucker Punch  
@@ -4642,7 +4647,8 @@ Adamant Nature
 - Zen Headbutt  
 
 Absol (M) @ Absolite  
-Ability: Justified  
+Ability: Justified
+Level: 100  
 Shiny: Yes  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
@@ -4663,7 +4669,8 @@ AI: Smart Trainer
 Mugshot: Green
 
 Sableye @ Leftovers  
-Ability: Prankster   
+Ability: Prankster
+Level: 100   
 EVs: 248 HP / 8 Def / 252 SpD  
 Calm Nature  
 IVs: 0 Atk  
@@ -4673,7 +4680,8 @@ IVs: 0 Atk
 - Recover  
 
 Dusknoir @ Ghostium Z  
-Ability: Regenerator    
+Ability: Regenerator
+Level: 100    
 EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
 - Curse  
@@ -4682,7 +4690,8 @@ Adamant Nature
 - Drain Punch  
 
 Gholdengo @ Choice Specs  
-Ability: Good as Gold   
+Ability: Good as Gold
+Level: 100   
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -4692,7 +4701,8 @@ IVs: 0 Atk
 - Psyshock  
 
 Skeledirge @ Assault Vest  
-Ability: Unaware   
+Ability: Unaware
+Level: 100   
 EVs: 248 HP / 252 SpA / 8 SpD  
 Modest Nature  
 IVs: 0 Atk  
@@ -4702,7 +4712,8 @@ IVs: 0 Atk
 - Thunderbolt  
 
 Aegislash @ Weakness Policy  
-Ability: Stance Change   
+Ability: Stance Change
+Level: 100   
 EVs: 252 HP / 4 Atk / 252 SpD  
 Sassy Nature  
 - Close Combat  
@@ -4710,7 +4721,8 @@ Sassy Nature
 - Bitter Blade  
 - Kings Shield  
 
-Banette @ Banettite  
+Banette @ Banettite
+Level: 100  
 Ability: Cursed Body  
 Shiny: Yes   
 EVs: 252 HP / 252 Atk / 4 SpD  
@@ -4732,7 +4744,8 @@ AI: Smart Trainer
 Mugshot: Pink
 
 Ninetales-Alola @ Light Clay  
-Ability: Snow Warning    
+Ability: Snow Warning 
+Level: 100   
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -4742,7 +4755,8 @@ IVs: 0 Atk
 - Nasty Plot  
 
 Walrein @ Chesto Berry  
-Ability: Unaware    
+Ability: Unaware
+Level: 100    
 EVs: 248 HP / 8 SpA / 252 SpD  
 Calm Nature  
 IVs: 0 Atk  
@@ -4752,7 +4766,8 @@ IVs: 0 Atk
 - Rest  
 
 Cloyster @ Focus Sash  
-Ability: Anger Shell    
+Ability: Anger Shell
+Level: 100    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
 - Shell Smash  
@@ -4761,7 +4776,8 @@ Adamant Nature
 - Drill Run  
 
 Froslass (F) @ Life Orb  
-Ability: Snow Warning    
+Ability: Snow Warning
+Level: 100    
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -4771,7 +4787,8 @@ IVs: 0 Atk
 - Thunder Wave  
 
 Glaceon @ Icium Z  
-Ability: Ice Scales    
+Ability: Ice Scales
+Level: 100    
 EVs: 252 HP / 252 Def / 4 SpA  
 Bold Nature  
 IVs: 0 Atk  
@@ -4781,7 +4798,8 @@ IVs: 0 Atk
 - Wish  
 
 Glalie @ Glalitite  
-Ability: Moody    
+Ability: Moody
+Level: 100    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Stone Edge  
@@ -4800,7 +4818,9 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 
-Archaludon @ Assault Vest    
+Archaludon @ Assault Vest
+Ability: Drizzle
+Level: 100
 EVs: 160 HP / 252 SpA / 96 SpD  
 Sassy Nature  
 IVs: 0 Atk  
@@ -4810,7 +4830,8 @@ IVs: 0 Atk
 - Flash Cannon  
 
 Kingdra @ Choice Specs  
-Ability: Swift Swim    
+Ability: Swift Swim
+Level: 100    
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Modest Nature  
 - Hurricane  
@@ -4819,7 +4840,8 @@ Modest Nature
 - Flip Turn  
 
 Altaria @ Dragonium Z  
-Ability: Fluffy    
+Ability: Fluffy
+Level: 100    
 EVs: 252 HP / 252 SpD  
 Modest Nature  
 IVs: 0 Atk  
@@ -4829,7 +4851,8 @@ IVs: 0 Atk
 - Dragon Pulse  
 
 Flygon @ Throat Spray  
-Ability: Dragonizer   
+Ability: Dragonizer
+Level: 100   
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Boomburst  
@@ -4838,7 +4861,8 @@ Timid Nature
 - U-turn  
 
 Dragonite @ Weakness Policy  
-Ability: Multiscale   
+Ability: Multiscale
+Level: 100   
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
 - Dragon Dance  
@@ -4847,7 +4871,8 @@ Adamant Nature
 - Iron Head  
 
 Salamence @ Salamencite  
-Ability: Intimidate  
+Ability: Intimidate
+Level: 100  
 Shiny: Yes   
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
@@ -5112,23 +5137,18 @@ AI: Smart Trainer
 Zoroark-Hisui @ Choice Specs  
 Ability: Illusion  
 Level: 45   
+EVs: 248 SpA / 4 SpD / 252 Spe  
+Timid Nature  
 - Bitter Malice  
-- Hyper Voice  
+- Blood Moon  
 - Psychic  
 - U-turn  
 
-Spinda @ Leftovers  
-Ability: Contrary  
-Level: 43   
-Adamant Nature  
-- Superpower  
-- Baton Pass  
-- Return  
-- Sucker Punch  
-
-Ursaluna @ Flame Orb  
+Ursaluna (F) @ Flame Orb  
 Ability: Guts  
-Level: 44  
+Level: 44    
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
 - Protect  
 - Facade  
 - Earthquake  
@@ -5136,7 +5156,9 @@ Level: 44
 
 Lopunny (F) @ Assault Vest  
 Ability: Fur Coat  
-Level: 42   
+Level: 42  
+EVs: 252 Atk / 4 SpD / 248 Spe  
+Jolly Nature  
 - Fake Out  
 - Power-Up Punch  
 - Return  
@@ -5144,17 +5166,31 @@ Level: 42
 
 Kangaskhan @ Kangaskhanite  
 Ability: Early Bird  
-Level: 44  
-Tera Type: Normal  
+Level: 44   
+EVs: 12 HP / 244 Atk / 248 Spe  
+Jolly Nature  
 - Fake Out  
 - Power-Up Punch  
 - Dragon Hammer  
 - Aerial Ace  
 
+Ursaluna-Bloodmoon @ Leftovers  
+Ability: Minds Eye  
+Level: 44   
+EVs: 248 HP / 252 SpA / 4 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Blood Moon  
+- Earth Power  
+- Hyper Voice  
+- Moonlight  
+
 Slaking @ Muscle Band  
 Ability: Truant  
 Level: 45  
 Shiny: Yes   
+EVs: 244 HP / 252 Atk / 8 SpD / 4 Spe  
+Adamant Nature  
 - Play Rough  
 - Return  
 - Drain Punch  
@@ -6467,6 +6503,7 @@ Mugshot: Yellow
 
 Goodra @ Toxic Orb  
 Ability: Poison Heal   
+Level: 100
 EVs: 248 HP / 8 Atk / 252 Def  
 Impish Nature  
 - Toxic Spikes  
@@ -6475,7 +6512,8 @@ Impish Nature
 - Scald  
 
 Rotom-Wash @ Choice Scarf  
-Ability: Drizzle   
+Ability: Drizzle  
+Level: 100 
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -6485,7 +6523,8 @@ IVs: 0 Atk
 - Thunderbolt  
 
 Azumarill @ Sitrus Berry  
-Ability: Huge Power   
+Ability: Huge Power  
+Level: 100 
 EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
 - Waterfall  
@@ -6494,7 +6533,8 @@ Adamant Nature
 - Play Rough  
 
 Greninja-Bond (M) @ Waterium Z  
-Ability: Battle Bond    
+Ability: Battle Bond 
+Level: 100   
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Water Shuriken  
@@ -6503,7 +6543,8 @@ Timid Nature
 - Ice Beam  
 
 Blastoise @ Blastoisinite  
-Ability: Torrent  
+Ability: Torrent
+Level: 100  
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Modest Nature  
 IVs: 0 Atk  
@@ -6513,7 +6554,8 @@ IVs: 0 Atk
 - Aura Sphere  
 
 Milotic @ Leftovers  
-Ability: Aqua Goddess  
+Ability: Aqua Goddess
+Level: 100  
 Shiny: Yes  
 EVs: 252 HP / 252 SpA / 4 SpD  
 Timid Nature  
@@ -6522,14 +6564,6 @@ IVs: 0 Atk
 - Recover  
 - Scald  
 - Moonblast  
-
-Milotic @ Sitrus Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
-- Ice Beam
-- Toxic
 
 === TRAINER_ANDREW ===
 Name: ANDREW
@@ -16103,163 +16137,69 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-Skarmory
-Level: 77
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Aerial Ace
-- Spikes
-- Steel Wing
+Skarmory @ Leftovers  
+Ability: Sturdy  
+Level: 100 
+Tera Type: Steel  
+EVs: 252 HP / 232 Def / 24 Spe  
+Impish Nature  
+- Steelsurge  
+- Stealth Rock  
+- Body Press  
+- Roost  
 
-Claydol
-Level: 75
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Light Screen
-- Ancient Power
-- Earthquake
+Armaldo (M) @ Assault Vest  
+Ability: Anger Shell  
+Level: 100  
+EVs: 4 HP / 252 Atk / 4 SpD / 248 Spe  
+Jolly Nature  
+- First Impression  
+- G-Max Stonesurge  
+- Stone Axe  
+- X-Scissor  
 
-Aggron
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Earthquake
-- Solar Beam
-- Dragon Claw
+Aggron (M) @ Rocky Helmet  
+Ability: Rocky Payload  
+Level: 100  
+EVs: 248 HP / 180 Atk / 72 Def / 8 SpD  
+Adamant Nature  
+- Rock Climb  
+- Earthquake  
+- Body Press  
+- Metal Jaw  
 
-Cradily
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Confuse Ray
+Cradily @ Power Herb  
+Ability: Regenerator  
+Level: 100   
+EVs: 248 HP / 8 Atk / 252 SpA  
+Quiet Nature  
+- Meteor Beam  
+- Giga Drain  
+- Power Gem  
+- Astonish  
 
-Armaldo
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Ancient Power
-- Aerial Ace
-- Slash
+Claydol @ Red Card  
+Ability: Psychic Surge  
+Level: 100   
+EVs: 252 HP / 4 Atk / 252 SpD  
+Sassy Nature  
+- Reflect  
+- Light Screen  
+- Expanding Force  
+- Earthquake  
 
-Metagross @ Sitrus Berry
-Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Psychic
-- Meteor Mash
-- Shadow Ball
-
-=== TRAINER_ANABEL ===
-Name: ANABEL
-Class: Salon Maiden
-Pic: Salon Maiden Anabel
-Gender: Female
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_TUCKER ===
-Name: TUCKER
-Class: Dome Ace
-Pic: Dome Ace Tucker
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_SPENSER ===
-Name: SPENSER
-Class: Palace Maven
-Pic: Palace Maven Spenser
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRETA ===
-Name: GRETA
-Class: Arena Tycoon
-Pic: Arena Tycoon Greta
-Gender: Female
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_NOLAND ===
-Name: NOLAND
-Class: Factory Head
-Pic: Factory Head Noland
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_LUCY ===
-Name: LUCY
-Class: Pike Queen
-Pic: Pike Queen Lucy
-Gender: Female
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_BRANDON ===
-Name: BRANDON
-Class: Pyramid King
-Pic: Pyramid King Brandon
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Basic Trainer
-
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ANDRES_2 ===
-Name: ANDRES
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
-
-Sandshrew
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Sandshrew
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Metagross @ Metagrossite  
+Ability: Filter  
+Level: 100 
+Shiny: Yes   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Double Iron Bash  
+- Psyshield Bash  
+- Concussive Hit  
+- Agility    
 
 === TRAINER_ANDRES_3 ===
 Name: ANDRES
