@@ -4592,7 +4592,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer / Force Setup First Turn
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon / Force Setup First Turn / Risky
 Mugshot: Purple
 
 Mightyena @ Choice Scarf  
@@ -4665,7 +4665,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 Mugshot: Green
 
 Sableye @ Leftovers  
@@ -4740,7 +4740,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 Mugshot: Pink
 
 Ninetales-Alola @ Light Clay  
@@ -4815,7 +4815,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 Mugshot: Blue
 
 Archaludon @ Assault Vest
@@ -4889,7 +4889,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Carbink @ Light Clay  
 Ability: Sturdy  
@@ -4954,7 +4954,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Machop @ Leftovers  
 Ability: Guts  
@@ -5013,7 +5013,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Heliolisk @ Choice Specs
 Ability: Earth Eater
@@ -5071,7 +5071,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Torkoal @ Heat Rock
 Level: 34
@@ -5132,7 +5132,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Zoroark-Hisui @ Choice Specs  
 Ability: Illusion  
@@ -5204,7 +5204,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Smart Trainer / Risky
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon / Risky
 
 Corviknight @ Light Clay  
 Ability: Mirror Armor  
@@ -5262,7 +5262,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Claydol @ Terrain Extender  
 Ability: Psychic Surge  
@@ -5321,7 +5321,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Pelipper @ Damp Rock  
 Ability: Drizzle  
@@ -6498,7 +6498,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 Mugshot: Yellow
 
 Goodra @ Toxic Orb  
@@ -16137,7 +16137,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Skarmory @ Leftovers  
 Ability: Sturdy  

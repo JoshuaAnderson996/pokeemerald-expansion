@@ -11394,7 +11394,7 @@ F_TRAINER_FEMALE |
 #line 4594
         .doubleBattle = FALSE,
 #line 4595
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_RISKY,
 #line 4596
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .partySize = 6,
@@ -11574,7 +11574,7 @@ F_TRAINER_FEMALE |
 #line 4667
         .doubleBattle = FALSE,
 #line 4668
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
 #line 4669
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .partySize = 6,
@@ -11753,7 +11753,7 @@ F_TRAINER_FEMALE |
 #line 4742
         .doubleBattle = FALSE,
 #line 4743
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
 #line 4744
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .partySize = 6,
@@ -11929,7 +11929,7 @@ F_TRAINER_FEMALE |
 #line 4817
         .doubleBattle = FALSE,
 #line 4818
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
 #line 4819
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .partySize = 6,
@@ -12108,7 +12108,7 @@ F_TRAINER_FEMALE |
 #line 4891
         .doubleBattle = FALSE,
 #line 4892
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12273,7 +12273,7 @@ F_TRAINER_FEMALE |
 #line 4956
         .doubleBattle = FALSE,
 #line 4957
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12426,7 +12426,7 @@ F_TRAINER_FEMALE |
 #line 5015
         .doubleBattle = FALSE,
 #line 5016
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12583,7 +12583,7 @@ F_TRAINER_FEMALE |
 #line 5073
         .doubleBattle = FALSE,
 #line 5074
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12743,7 +12743,7 @@ F_TRAINER_FEMALE |
 #line 5134
         .doubleBattle = FALSE,
 #line 5135
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -12922,7 +12922,7 @@ F_TRAINER_FEMALE |
 #line 5206
         .doubleBattle = FALSE,
 #line 5207
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_RISKY,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON | AI_FLAG_RISKY,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -13079,7 +13079,7 @@ F_TRAINER_FEMALE |
 #line 5264
         .doubleBattle = TRUE,
 #line 5265
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -13237,7 +13237,7 @@ F_TRAINER_FEMALE |
 #line 5323
         .doubleBattle = FALSE,
 #line 5324
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -16222,7 +16222,7 @@ F_TRAINER_FEMALE |
 #line 6500
         .doubleBattle = FALSE,
 #line 6501
-        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
 #line 6502
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .partySize = 6,
@@ -40374,7 +40374,7 @@ F_TRAINER_FEMALE |
 #line 16139
         .doubleBattle = FALSE,
 #line 16140
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING,
+        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREDICTION | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
