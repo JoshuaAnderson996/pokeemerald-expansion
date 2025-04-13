@@ -5807,6 +5807,15 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_DRAGONIZER:
         ateType = TYPE_DRAGON;
         break;
+    case ABILITY_HEROICS:
+        ateType = TYPE_HERO;
+        break;    
+    case ABILITY_RUFFIAN:
+        ateType = TYPE_DARK;
+        break;  
+    case ABILITY_SPACE_AGE:
+        ateType = TYPE_COSMIC;
+        break;           
     default:
         ateType = TYPE_NONE;
         break;

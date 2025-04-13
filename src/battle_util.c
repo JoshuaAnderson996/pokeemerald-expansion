@@ -9489,6 +9489,18 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (moveType == TYPE_DRAGON && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case ABILITY_HEROICS:
+        if (moveType == TYPE_HERO && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;   
+    case ABILITY_RUFFIAN:
+        if (moveType == TYPE_DARK && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;    
+    case ABILITY_SPACE_AGE:
+        if (moveType == TYPE_COSMIC && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;     
     case ABILITY_NORMALIZE:
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));

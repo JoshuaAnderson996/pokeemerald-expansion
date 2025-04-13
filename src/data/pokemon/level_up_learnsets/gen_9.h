@@ -9516,6 +9516,7 @@ static const struct LevelUpMove sShuppetLevelUpLearnset[] = {
 static const struct LevelUpMove sBanetteLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_KNOCK_OFF),
     LEVEL_UP_MOVE( 1, MOVE_NIGHT_SHADE),
+    LEVEL_UP_MOVE( 1, MOVE_SKILL_SWAP),
     LEVEL_UP_MOVE( 1, MOVE_SCREECH),
     LEVEL_UP_MOVE( 1, MOVE_SPITE),
     LEVEL_UP_MOVE(16, MOVE_WILL_O_WISP),

@@ -2496,4 +2496,22 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
         .breakable = TRUE,
     },
+    [ABILITY_HEROICS] =
+    {
+        .name = _("Heroics"),
+        .description = COMPOUND_STRING("Normal moves become Hero."),
+        .aiRating = 8,
+    },
+    [ABILITY_RUFFIAN] =
+    {
+        .name = _("Ruffian"),
+        .description = COMPOUND_STRING("Normal moves become Dark."),
+        .aiRating = 8,
+    },
+    [ABILITY_SPACE_AGE] =
+    {
+        .name = _("Space Age"),
+        .description = COMPOUND_STRING("Normal moves become Cosmic."),
+        .aiRating = 8,
+    },
 };

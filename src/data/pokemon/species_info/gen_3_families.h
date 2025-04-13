@@ -2921,7 +2921,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 35,
         .baseSpDefense = 115,
-        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_HERO),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 259,
@@ -2999,7 +2999,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 100,
         .baseSpAttack  = 35,
         .baseSpDefense = 135,
-        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_HERO),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 309 : 278,
         .evYield_Attack = 3,
@@ -9487,7 +9487,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_NORMALIZE, ABILITY_CURSED_BODY },
     #else
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_CURSED_BODY },
     #endif

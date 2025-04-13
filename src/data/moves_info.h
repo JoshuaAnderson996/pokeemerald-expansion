@@ -3218,6 +3218,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_FINAL_STAND] =
+    {
+        .name = COMPOUND_STRING("Self-Destruct"),
+        .description = COMPOUND_STRING(
+            "Inflicts severe damage but\n"
+            "makes the user faint."),
+        .effect = EFFECT_EXPLOSION,
+        .power = 200,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .parentalBondBanned = TRUE,
+        .ignoresProtect = TRUE,
+        .ignoresTargetAbility = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SelfDestruct,
+        .validApprenticeMove = TRUE,
+    },
+
     [MOVE_EGG_BOMB] =
     {
         .name = COMPOUND_STRING("Egg Bomb"),
@@ -4355,6 +4381,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_HERO_SLASH] =
+    {
+        .name = COMPOUND_STRING("Hero Slash"),
+        .description = COMPOUND_STRING(
+            "A righteous slash"),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_HERO,
+        .accuracy = 100,
+        .criticalHitStage = 1,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_Slash,
+        .validApprenticeMove = TRUE,
+    },
+
     [MOVE_SUBSTITUTE] =
     {
         .name = COMPOUND_STRING("Substitute"),
@@ -4773,7 +4825,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the user's HP is down."),
         .effect = EFFECT_FLAIL,
         .power = 1,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_HERO,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -8500,7 +8552,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "with a mystic power."),
         .effect = EFFECT_COSMIC_POWER,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 20,
         .target = MOVE_TARGET_USER,
@@ -8598,11 +8650,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "power. May cause flinching."),
         .effect = EFFECT_HIT,
         .power = 80,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 20 : 30,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = 0, 
         .category = DAMAGE_CATEGORY_SPECIAL,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS < GEN_4,
         .additionalEffects = ADDITIONAL_EFFECTS({
@@ -9313,7 +9365,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Allows a full-power attack,\n"
             "but sharply lowers Sp. Atk."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 140,
         .type = TYPE_PSYCHIC,
         .accuracy = 90,
@@ -9321,6 +9373,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_COSMIC},
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
             .self = TRUE,
@@ -9367,7 +9420,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "negating levitation."),
         .effect = EFFECT_GRAVITY,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .criticalHitStage = 1,
         .pp = 5,
@@ -10327,7 +10380,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "that cannot be evaded."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 80 : 90,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_HERO,
         .accuracy = 0,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
@@ -10409,6 +10462,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .pulseMove = TRUE,
+        .auraMove = TRUE,
         .magicMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
@@ -13295,6 +13349,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Retaliate,
     },
 
+    [MOVE_RIGHTEOUS_STRIKE] =
+    {
+        .name = COMPOUND_STRING("Rightous Strike"),
+        .description = COMPOUND_STRING(
+            "An attack that does more\n"
+            "damage if an ally fainted."),
+        .effect = EFFECT_RETALIATE,
+        .power = 80,
+        .type = TYPE_HERO,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Retaliate,
+    },
+
     [MOVE_FINAL_GAMBIT] =
     {
         .name = COMPOUND_STRING("Final Gambit"),
@@ -15227,7 +15303,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = sHyperspaceHoleDescription,
         .effect = EFFECT_HIT,
         .power = 80,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -17014,7 +17090,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "forces recharge next turn."),
         .effect = EFFECT_HIT,
         .power = 160,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -17256,7 +17332,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "determines its category."),
         .effect = EFFECT_PHOTON_GEYSER,
         .power = 100,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_COSMIC,
         .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -18115,7 +18191,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "damage to Dynamaxed foes."),
         .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
         .power = 100,
-        .type = TYPE_STEEL,
+        .type = TYPE_HERO,
         .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -19371,6 +19447,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .magicMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
             .self = TRUE,
@@ -20519,6 +20596,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .magicMove = TRUE,
         .strikeCount = 2,
         .metronomeBanned = TRUE,
         .battleAnimScript = gBattleAnimMove_TwinBeam,
