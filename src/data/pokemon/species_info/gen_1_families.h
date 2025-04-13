@@ -4697,7 +4697,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_CLEFAIRY
 #if P_UPDATED_TYPES >= GEN_6
-    #define CLEFAIRY_FAMILY_TYPES { TYPE_FAIRY, TYPE_FAIRY }
+    #define CLEFAIRY_FAMILY_TYPES { TYPE_COSMIC, TYPE_FAIRY }
 #else
     #define CLEFAIRY_FAMILY_TYPES { TYPE_NORMAL, TYPE_NORMAL }
 #endif
@@ -10692,7 +10692,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 68,
         .baseSpDefense = 82,
-        .types = MON_TYPES(TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_HERO),
         .catchRate = 45,
         .expYield = 177,
         .evYield_Attack = 2,
@@ -14299,7 +14299,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 75,
         .baseSpDefense = 135,
-        .types = MON_TYPES(TYPE_FAIRY),
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_HERO),
         .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 608 : 255,
         .evYield_HP = (P_UPDATED_EVS >= GEN_4) ? 3 : 2,
@@ -18180,7 +18180,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 135,
         .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_COSMIC),
         .catchRate = 30,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 268,

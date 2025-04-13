@@ -915,6 +915,10 @@ static const union AnimCmd sSpriteAnim_TypeCosmic[] = {
     ANIMCMD_FRAME(TYPE_COSMIC * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TypeHero[] = {
+    ANIMCMD_FRAME(TYPE_HERO * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -958,6 +962,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
     [TYPE_COSMIC] = sSpriteAnim_TypeCosmic,
+    [TYPE_HERO] = sSpriteAnim_TypeCosmic,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = sSpriteAnim_CategoryCute,

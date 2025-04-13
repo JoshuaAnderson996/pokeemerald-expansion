@@ -24,7 +24,8 @@
 #define TYPE_FAIRY            19
 #define TYPE_STELLAR          20
 #define TYPE_COSMIC           21
-#define NUMBER_OF_MON_TYPES   22
+#define TYPE_HERO             22
+#define NUMBER_OF_MON_TYPES   23
 
 // Pokémon egg groups
 #define EGG_GROUP_NONE                0
