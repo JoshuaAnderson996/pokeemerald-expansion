@@ -14288,9 +14288,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Freeze Shock"),
         .description = COMPOUND_STRING(
-            "A powerful 2-turn move that\n"
+            "A move that\n"
             "may paralyze the foe."),
-        .effect = EFFECT_TWO_TURNS_ATTACK,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 140,
         .type = TYPE_ICE,
         .accuracy = 90,
@@ -14298,14 +14298,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_ELECTRIC },
         .metronomeBanned = TRUE,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_CLOAKEDINAFREEZINGLIGHT },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 100,
-        }),
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+            .chance = 100,
+            .self = TRUE
+        },    
+        {
+            .moveEffect = MOVE_EFFECT_HAZE,
+            .chance = 100,
+            .self = TRUE
+        }),   
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -14317,9 +14327,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Ice Burn"),
         .description = COMPOUND_STRING(
-            "A powerful 2-turn move that\n"
+            "A powerful move that\n"
             "may inflict a burn."),
-        .effect = EFFECT_TWO_TURNS_ATTACK,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 140,
         .type = TYPE_ICE,
         .accuracy = 90,
@@ -14327,14 +14337,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_FIRE },
         .metronomeBanned = TRUE,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_CLOAKEDINAFREEZINGLIGHT },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 100,
-        }),
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
+            .chance = 100,
+            .self = TRUE
+        },    
+        {
+            .moveEffect = MOVE_EFFECT_HAZE,
+            .chance = 100,
+            .self = TRUE
+        }), 
         .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
