@@ -2514,4 +2514,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Normal moves become Cosmic."),
         .aiRating = 8,
     },
+    [ABILITY_BRAVADO] =
+    {
+        .name = _("Guts"),
+        .description = COMPOUND_STRING("Ups SP.Attack if suffering."),
+        .aiRating = 6,
+    },
 };

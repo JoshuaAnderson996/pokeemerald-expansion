@@ -11140,6 +11140,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sLuvdiscLevelUpLearnset,
         .teachableLearnset = sLuvdiscTeachableLearnset,
         .eggMoveLearnset = sLuvdiscEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_ALOMOMOLA}),
     },
 #endif //P_FAMILY_LUVDISC
 
