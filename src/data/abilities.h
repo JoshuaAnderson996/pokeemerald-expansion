@@ -2539,4 +2539,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Stronger on electricity."),
         .aiRating = 4,
     },
+    [ABILITY_WAVE_RIDER] =
+    {
+        .name = _("Wind Rider"),
+        .description = COMPOUND_STRING("Ups Attack if hit by Water."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
 };

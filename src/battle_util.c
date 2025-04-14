@@ -9955,7 +9955,11 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_TERAVOLT:
         if (moveType == TYPE_ELECTRIC || move == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;       
+        break;
+    case ABILITY_SUB_ZERO:
+        if (moveType == TYPE_ICE)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;           
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
         {

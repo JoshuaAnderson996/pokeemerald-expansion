@@ -20123,7 +20123,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "and restores half of its HP."),
         .effect = EFFECT_REVIVAL_BLESSING,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_HERO,
         .accuracy = 0,
         .pp = 1,
         .target = MOVE_TARGET_USER,
