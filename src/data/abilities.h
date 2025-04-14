@@ -2527,4 +2527,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
         .breakable = TRUE,
     },
+    [ABILITY_VERDANT_FURY] =
+    {
+        .name = _("Verdant Fury"),
+        .description = COMPOUND_STRING("Ups Grass and Dragon moves in a pinch."),
+        .aiRating = 5,
+    },
+    [ABILITY_OVERCHARGED] =
+    {
+        .name = _("Surge Surfer"),
+        .description = COMPOUND_STRING("Stronger on electricity."),
+        .aiRating = 4,
+    },
 };
