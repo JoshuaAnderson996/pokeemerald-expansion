@@ -126,6 +126,7 @@ struct DisableStruct
     u8 steelSurgeDone:1;
     u8 usedProteanLibero:1;
     u8 flashFireBoosted:1;
+    u8 exorcistBoosted:1;
     u16 overwrittenAbility;   // abilities overwritten during battle (keep separate from battle history in case of switching)
     u8 boosterEnergyActivates:1;
     u8 roostActive:1;

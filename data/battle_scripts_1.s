@@ -8182,6 +8182,16 @@ BattleScript_FlashFireBoost::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_ExorcistBoost_PPLoss::
+	ppreduce
+BattleScript_ExorcistBoost::
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printfromtable gFlashFireStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_AbilityPreventsPhasingOut::
 	call BattleScript_AbilityPreventsPhasingOutRet
 	goto BattleScript_MoveEnd

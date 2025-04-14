@@ -2520,4 +2520,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups SP.Attack if suffering."),
         .aiRating = 6,
     },
+    [ABILITY_EXORCIST] =
+    {
+        .name = _("Exorcist"),
+        .description = COMPOUND_STRING("Powers up if hit by fire."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
 };

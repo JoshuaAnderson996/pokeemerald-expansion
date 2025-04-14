@@ -2939,6 +2939,14 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     RETURN_SCORE_PLUS(WEAK_EFFECT);
                 }
                 break;
+            case ABILITY_EXORCIST:
+                if (moveType == TYPE_FIRE
+                    && HasMoveWithType(battlerAtkPartner, TYPE_GHOST)
+                    && !gDisableStructs[battlerAtkPartner].exorcistBoosted)
+                {
+                    RETURN_SCORE_PLUS(WEAK_EFFECT);
+                }
+                break;
             case ABILITY_SAP_SIPPER:
                 if (moveType == TYPE_GRASS
                     && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_PHYSICAL)

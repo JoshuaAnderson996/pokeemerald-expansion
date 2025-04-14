@@ -180,6 +180,8 @@ extern const u8 BattleScript_MonMadeMoveUseless_PPLoss[];
 extern const u8 BattleScript_MonMadeMoveUseless[];
 extern const u8 BattleScript_FlashFireBoost_PPLoss[];
 extern const u8 BattleScript_FlashFireBoost[];
+extern const u8 BattleScript_ExorcistBoost_PPLoss[];
+extern const u8 BattleScript_ExorcistBoost[];
 extern const u8 BattleScript_AbilityNoStatLoss[];
 extern const u8 BattleScript_ItemNoStatLoss[];
 extern const u8 BattleScript_ItemNoStatLossSpicyExtract[];

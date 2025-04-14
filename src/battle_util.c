@@ -4362,6 +4362,10 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 
         if (moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[battlerDef].status1 & STATUS1_FREEZE)))
             effect = MOVE_ABSORBED_BY_BOOST_FLASH_FIRE;
         break;
+    case ABILITY_EXORCIST:
+        if (moveType == TYPE_GHOST)
+            effect = MOVE_ABSORBED_BY_BOOST_EXORCIST;
+        break;
     }
 
     if (effect == MOVE_ABSORBED_BY_NO_ABILITY || option == ABILITY_CHECK_TRIGGER)
@@ -4433,6 +4437,25 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 
             else
                 battleScript = BattleScript_FlashFireBoost_PPLoss;
         }
+    case MOVE_ABSORBED_BY_BOOST_EXORCIST:
+        gBattleStruct->pledgeMove = FALSE;
+        if (!gDisableStructs[battlerDef].exorcistBoosted)
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_BOOST;
+            if (gProtectStructs[battlerAtk].notFirstStrike)
+                battleScript = BattleScript_ExorcistBoost;
+            else
+                battleScript = BattleScript_ExorcistBoost_PPLoss;
+            gDisableStructs[battlerDef].exorcistBoosted = TRUE;
+        }
+        else
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_NO_BOOST;
+            if (gProtectStructs[battlerAtk].notFirstStrike)
+                battleScript = BattleScript_ExorcistBoost;
+            else
+                battleScript = BattleScript_ExorcistBoost_PPLoss;
+        }        
         break;
     }
 
@@ -9822,6 +9845,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_FIRE && gDisableStructs[battlerAtk].flashFireBoosted)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_EXORCIST:
+        if (moveType == TYPE_GHOST && gDisableStructs[battlerAtk].exorcistBoosted)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;    
     case ABILITY_SWARM:
         if (moveType == TYPE_BUG && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
@@ -10900,7 +10927,9 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
                                        || abilityDef == ABILITY_STORM_DRAIN))
          || (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD // TODO: Add Gen 3/4 config check
                                        || abilityDef == ABILITY_VOLT_ABSORB
-                                       || abilityDef == ABILITY_MOTOR_DRIVE)))
+                                       || abilityDef == ABILITY_MOTOR_DRIVE))
+         || (moveType == TYPE_GHOST    &&  abilityDef == ABILITY_EXORCIST))
+                                       
         {
             modifier = UQ_4_12(0.0);
         }
