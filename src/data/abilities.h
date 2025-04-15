@@ -2546,4 +2546,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 4,
         .breakable = TRUE,
     },
+    [ABILITY_TECTONIC_BLOOM] =
+    {
+        .name = _("Tectonic Bloom"),
+        .description = COMPOUND_STRING("Moves hit through abilities."),
+        .aiRating = 7,
+    },
 };
