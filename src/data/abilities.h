@@ -2552,4 +2552,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Moves hit through abilities."),
         .aiRating = 7,
     },
+    [ABILITY_BLAZING_SUPREMACY] =
+    {
+        .name = _("Blazin Supremacy"),
+        .description = COMPOUND_STRING("Ups Fire moves."),
+        .aiRating = 7,
+    },
 };

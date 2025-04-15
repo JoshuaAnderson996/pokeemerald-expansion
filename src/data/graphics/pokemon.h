@@ -264,6 +264,20 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 #endif //P_MEGA_EVOLUTIONS
 
+const u32 gMonFrontPic_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/front.4bpp.lz");
+    const u32 gMonPalette_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/normal.gbapal.lz");
+    const u32 gMonBackPic_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/back.4bpp.lz");
+    const u32 gMonShinyPalette_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/shiny.gbapal.lz");
+    const u8 gMonIcon_CharizardMegaZ[] = INCBIN_U8("graphics/pokemon/charizard/mega_z/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    const u32 gObjectEventPic_CharizardMegaZ[] = INCBIN_COMP("graphics/pokemon/charizard/mega_z/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_CharizardMegaZ[] = INCBIN_U32("graphics/pokemon/charizard/mega_z/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif
+
 #if P_GIGANTAMAX_FORMS
     const u32 gMonFrontPic_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/front.4bpp.lz");
     const u32 gMonBackPic_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/back.4bpp.lz");
@@ -275,7 +289,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     // const u32 gOverworldPalette_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/overworld_normal.gbapal.lz");
     // const u32 gShinyOverworldPalette_CharizardGmax[] = INCBIN_U32("graphics/pokemon/charizard/gmax/overworld_shiny.gbapal.lz");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_CHARMANDER

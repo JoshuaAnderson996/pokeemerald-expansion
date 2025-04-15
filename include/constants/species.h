@@ -1638,8 +1638,9 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 #define SPECIES_VENUSAUR_MEGA_X                         1524 
+#define SPECIES_CHARIZARD_MEGA_Z                        1525
 
-#define SPECIES_EGG                                     1525
+#define SPECIES_EGG                                     1526
 
 #define NUM_SPECIES SPECIES_EGG
 

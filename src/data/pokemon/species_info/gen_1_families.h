@@ -767,6 +767,72 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
         .formChangeTable = sCharizardFormChangeTable,
     },
+    [SPECIES_CHARIZARD_MEGA_Z] =
+    {
+        .baseHP        = 78,
+        .baseAttack    = 130,
+        .baseDefense   = 109,
+        .baseSpeed     = 88,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 115,
+        .types = MON_TYPES(TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 317 : 285,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+        .abilities = { ABILITY_BLAZING_SUPREMACY, ABILITY_BLAZING_SUPREMACY, ABILITY_BLAZING_SUPREMACY },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Charizard"),
+        .cryId = CRY_CHARIZARD_MEGA_Y,
+        .natDexNum = NATIONAL_DEX_CHARIZARD,
+        .categoryName = _("Flame"),
+        .height = 17,
+        .weight = 1005,
+        .description = COMPOUND_STRING(
+            "Its bond with its Trainer is the source\n"
+            "of its power. It boasts speed and\n"
+            "maneuverability greater than that of a\n"
+            "jet fighter."),
+        .pokemonScale = 256,
+        .pokemonOffset = 1,
+        .trainerScale = 302,
+        .trainerOffset = 3,
+        .frontPic = gMonFrontPic_CharizardMegaZ,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CharizardMegaZ,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        .palette = gMonPalette_CharizardMegaZ,
+        .shinyPalette = gMonShinyPalette_CharizardMegaZ,
+        .iconSprite = gMonIcon_CharizardMegaZ,
+        .iconPalIndex = 0,
+        SHADOW(-1, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Charizard)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_Charizard,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CharizardMegaZ,
+            gShinyOverworldPalette_CharizardMegaZ
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sCharizardLevelUpLearnset,
+        .teachableLearnset = sCharizardTeachableLearnset,
+        .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
+        .formChangeTable = sCharizardFormChangeTable,
+    },
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS

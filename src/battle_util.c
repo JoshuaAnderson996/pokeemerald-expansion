@@ -9948,7 +9948,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_WATER)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;    
-        case ABILITY_TURBOBLAZE:
+    case ABILITY_TURBOBLAZE:
         if (moveType == TYPE_FIRE || moveType == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;    
@@ -9963,7 +9963,16 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_TECTONIC_BLOOM:
         if (moveType == TYPE_GRASS || move == TYPE_GROUND)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;            
+        break;       
+    case ABILITY_BLAZING_SUPREMACY:
+        if (moveType == TYPE_FIRE)
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // always-on boost
+    
+            if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // extra boost under 50% HP
+        }
+        break;           
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
         {
