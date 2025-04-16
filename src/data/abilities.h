@@ -2516,7 +2516,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
     [ABILITY_BRAVADO] =
     {
-        .name = _("Guts"),
+        .name = _("Bravado"),
         .description = COMPOUND_STRING("Ups SP.Attack if suffering."),
         .aiRating = 6,
     },
