@@ -4619,14 +4619,23 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Inflicts 1/4 damage on a\n"
             "sleeping foe every turn."),
-        .effect = EFFECT_NIGHTMARE,
-        .power = 0,
+        .effect = EFFECT_HIT,
+        .power = 90,
         .type = TYPE_GHOST,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_4 ? 100 : 0,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .magicMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_NIGHTMARE,
+            .chance = 100,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 30,
+        }),
         .zMove = { .effect = Z_EFFECT_SPATK_UP_1 },
         .ignoresProtect = B_UPDATED_MOVE_FLAGS <= GEN_3,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,

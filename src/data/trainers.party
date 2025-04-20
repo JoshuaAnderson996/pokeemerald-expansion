@@ -4893,7 +4893,7 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Carbink @ Light Clay  
 Ability: Sturdy  
-Level: 13      
+Level: 16      
 Serious Nature  
 - Light Screen  
 - Reflect  
@@ -4901,8 +4901,8 @@ Serious Nature
 - Trick Room 
 
 Geodude (F) @ Smooth Rock  
-Ability: Sand Stream  
-Level: 12     
+Ability: Dry Skin  
+Level: 16     
 Adamant Nature  
 - Defense Curl  
 - Rollout  
@@ -4911,7 +4911,7 @@ Adamant Nature
 
 Glimmet @ Power Herb  
 Ability: Toxic Debris  
-Level: 14      
+Level: 16      
 Serious Nature  
 - Dazzling Gleam  
 - Sludge Wave  
@@ -4920,7 +4920,7 @@ Serious Nature
 
 Geodude-Alola (M) @ Air Balloon  
 Ability: Galvanize  
-Level: 12      
+Level: 16      
 Serious Nature  
 - Explosion  
 - Supercell Slam  
@@ -4929,7 +4929,7 @@ Serious Nature
 
 Growlithe-Hisui @ Loaded Dice  
 Ability: Intimidate  
-Level: 14     
+Level: 16     
 Jolly Nature  
 - Rock Blast  
 - Flame Charge  
@@ -4938,7 +4938,7 @@ Jolly Nature
 
 Nosepass @ Eviolite  
 Ability: Sturdy  
-Level: 15     
+Level: 16     
 Shiny: Yes 
 Impish Nature  
 - Body Press  
@@ -4958,7 +4958,7 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Machop @ Leftovers  
 Ability: Guts  
-Level: 16   
+Level: 19   
 - Karate Chop  
 - Low Kick  
 - Seismic Toss  
@@ -4966,7 +4966,7 @@ Level: 16
 
 Meditite @ Leftovers  
 Ability: Pure Power  
-Level: 16    
+Level: 19    
 - Bulk Up  
 - Bullet Punch  
 - Drain Punch  
@@ -4974,7 +4974,7 @@ Level: 16
 
 Riolu  
 Ability: Prankster  
-Level: 17   
+Level: 19   
 - Swords Dance  
 - Poison Jab  
 - Bullet Punch  
@@ -4982,7 +4982,7 @@ Level: 17
 
 Kubfu @ White Herb  
 Ability: Inner Focus  
-Level: 18    
+Level: 19    
 - Close Combat  
 - Acrobatics  
 - Thunder Punch  
@@ -4990,7 +4990,7 @@ Level: 18
 
 Mankey  
 Ability: Anger Point  
-Level: 16    
+Level: 19    
 - Bulk Up  
 - Earthquake  
 - Brick Break  
@@ -5017,7 +5017,7 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Heliolisk @ Choice Specs
 Ability: Earth Eater
-Level: 20
+Level: 26
 - Volt Switch
 - Scorching Sands
 - Flamethrower
@@ -5025,7 +5025,7 @@ Level: 20
 
 Pincurchin @ Terrain Extender
 Ability: Electric Surge
-Level: 23
+Level: 26
 - Scald
 - Thunder
 - Recover
@@ -5033,7 +5033,7 @@ Level: 23
 
 Volbeat @ Leftovers
 Ability: Surge Surfer
-Level: 22
+Level: 26
 - Swords Dance
 - X Scissor
 - Quick Attack
@@ -5041,14 +5041,14 @@ Level: 22
 
 Lanturn @ Damp Rock
 Ability: Drizzle
-Level: 25
+Level: 26
 - Electro Shot
 - Thunder
 - Tail Glow
 - Scald
 
 Magneton @ Choice Scarf
-Level: 25
+Level: 26
 Ability: Levitate 
 - Rising Voltage
 - Mirror Shot
@@ -5074,7 +5074,7 @@ Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Torkoal @ Heat Rock
-Level: 34
+Level: 37
 Ability: Drought
 - Iron Defense
 - Body Press
@@ -5082,7 +5082,7 @@ Ability: Drought
 - Clear Smog
 
 Magcargo @ White Herb
-Level: 35
+Level: 37
 Ability: Evaporate
 - Shell Smash
 - Flamethrower
@@ -5090,7 +5090,7 @@ Ability: Evaporate
 - Earthquake
 
 Rotom-Heat @ Choice Scarf
-Level: 34
+Level: 37
 Ability: Drought
 - Trick
 - Overheat
@@ -5099,6 +5099,7 @@ Ability: Drought
 
 Delphox @ Power Herb    
 Ability: Arcane Power
+Level: 37
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -5146,7 +5147,7 @@ Timid Nature
 
 Ursaluna (F) @ Flame Orb  
 Ability: Guts  
-Level: 44    
+Level: 45    
 EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
 - Protect  
@@ -5156,7 +5157,7 @@ Adamant Nature
 
 Lopunny (F) @ Assault Vest  
 Ability: Fur Coat  
-Level: 42  
+Level: 45  
 EVs: 252 Atk / 4 SpD / 248 Spe  
 Jolly Nature  
 - Fake Out  
@@ -5166,7 +5167,7 @@ Jolly Nature
 
 Kangaskhan @ Kangaskhanite  
 Ability: Early Bird  
-Level: 44   
+Level: 45   
 EVs: 12 HP / 244 Atk / 248 Spe  
 Jolly Nature  
 - Fake Out  
@@ -5176,7 +5177,7 @@ Jolly Nature
 
 Ursaluna-Bloodmoon @ Leftovers  
 Ability: Minds Eye  
-Level: 44   
+Level: 45   
 EVs: 248 HP / 252 SpA / 4 SpD  
 Modest Nature  
 IVs: 0 Atk  
@@ -5208,7 +5209,7 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Corviknight @ Light Clay  
 Ability: Mirror Armor  
-Level: 52   
+Level: 55   
 - Reflect  
 - Light Screen  
 - Roost  
@@ -5216,7 +5217,7 @@ Level: 52
 
 Gliscor @ Toxic Orb  
 Ability: Poison Heal  
-Level: 53   
+Level: 55   
 - Protect  
 - Knock Off  
 - Toxic Spikes  
@@ -5224,7 +5225,7 @@ Level: 53
 
 Talonflame @ Flying Gem  
 Ability: Gale Wings  
-Level: 52  
+Level: 55  
 - Tailwind  
 - Acrobatics  
 - Flare Blitz  
@@ -5232,7 +5233,7 @@ Level: 52
 
 Beautifly @ Focus Sash  
 Ability: Tinted Lens  
-Level: 53   
+Level: 55   
 - Bug Buzz  
 - Quiver Dance  
 - Air Cutter  
