@@ -4889,7 +4889,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
-AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
 Carbink @ Light Clay  
 Ability: Sturdy  
@@ -4898,7 +4898,7 @@ Serious Nature
 - Light Screen  
 - Reflect  
 - Stealth Rock  
-- Trick Room 
+- Body Press 
 
 Geodude (F) @ Smooth Rock  
 Ability: Dry Skin  
@@ -4907,7 +4907,7 @@ Adamant Nature
 - Defense Curl  
 - Rollout  
 - Rock Slide  
-- Dig
+- Sandblast
 
 Glimmet @ Power Herb  
 Ability: Toxic Debris  
@@ -4918,14 +4918,15 @@ Serious Nature
 - Power Gem  
 - Meteor Beam
 
-Geodude-Alola (M) @ Air Balloon  
-Ability: Galvanize  
-Level: 16      
-Serious Nature  
-- Explosion  
-- Supercell Slam  
-- Curse  
-- Rock Slide
+Aerodactyl @ Muscle Band  
+Ability: Rock Head  
+Level: 16   
+EVs: 12 HP / 236 Atk / 4 SpD / 236 Spe  
+Jolly Nature  
+- Brave Bird  
+- Wild Charge  
+- Earthquake  
+- Head Smash
 
 Growlithe-Hisui @ Loaded Dice  
 Ability: Intimidate  

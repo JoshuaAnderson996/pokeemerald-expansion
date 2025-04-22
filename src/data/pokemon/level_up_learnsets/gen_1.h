@@ -1280,6 +1280,7 @@ static const struct LevelUpMove sTentacruelLevelUpLearnset[] = {
 #if P_FAMILY_GEODUDE
 static const struct LevelUpMove sGeodudeLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_SANDBLAST),
     LEVEL_UP_MOVE(11, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
     LEVEL_UP_MOVE(21, MOVE_SELF_DESTRUCT),
@@ -1291,6 +1292,7 @@ static const struct LevelUpMove sGeodudeLevelUpLearnset[] = {
 
 static const struct LevelUpMove sGravelerLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_SANDBLAST),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(11, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
@@ -1303,6 +1305,7 @@ static const struct LevelUpMove sGravelerLevelUpLearnset[] = {
 
 static const struct LevelUpMove sGolemLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_SANDBLAST),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(11, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
@@ -3097,6 +3100,10 @@ static const struct LevelUpMove sKabutopsLevelUpLearnset[] = {
 #if P_FAMILY_AERODACTYL
 static const struct LevelUpMove sAerodactylLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WING_ATTACK),
+    LEVEL_UP_MOVE( 1, MOVE_WILD_CHARGE),
+    LEVEL_UP_MOVE( 1, MOVE_HEAD_SMASH),
+    LEVEL_UP_MOVE( 1, MOVE_BRAVE_BIRD),
+    LEVEL_UP_MOVE( 1, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE( 1, MOVE_AGILITY),
     LEVEL_UP_MOVE(33, MOVE_SUPERSONIC),
     LEVEL_UP_MOVE(38, MOVE_BITE),

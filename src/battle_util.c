@@ -9576,6 +9576,15 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsWrestlingMove(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
         break;                    
+    case ABILITY_SIEGE_SPECIALIST:
+        if (gSideStatuses[GetBattlerSide(battlerDef)] & (SIDE_STATUS_SPIKES
+                                                       | SIDE_STATUS_STEALTH_ROCK
+                                                       | SIDE_STATUS_TOXIC_SPIKES
+                                                       | SIDE_STATUS_STICKY_WEB))
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        }
+        break;    
     }
 
     // field abilities
@@ -9595,10 +9604,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         {
         case ABILITY_BATTERY:
             if (IsBattleMoveSpecial(move))
-                modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
             break;
         case ABILITY_POWER_SPOT:
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
             break;
         case ABILITY_STEELY_SPIRIT:
             if (moveType == TYPE_STEEL)
@@ -9854,6 +9863,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
         break;
+    case ABILITY_HEROS_LAST_STAND:
+        if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));  // 2x power
+        break;    
     case ABILITY_FLASH_FIRE:
         if (moveType == TYPE_FIRE && gDisableStructs[battlerAtk].flashFireBoosted)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));

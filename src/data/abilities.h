@@ -970,7 +970,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DEFEATIST] =
     {
         .name = _("Defeatist"),
-        .description = COMPOUND_STRING("Gives up at half HP."),
+        .description = COMPOUND_STRING("Gives up in a pinch."),
         .aiRating = -1,
     },
 
@@ -2558,4 +2558,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups Fire moves."),
         .aiRating = 7,
     },
+
+    [ABILITY_SIEGE_SPECIALIST] =
+{
+    .name = _("Siege Specialist"),
+    .description = COMPOUND_STRING("Deals more damage if\nentry hazards are active."),
+    .breakable = TRUE,
+},
+
+[ABILITY_HEROS_LAST_STAND] =
+    {
+        .name = _("Defeatist"),
+        .description = COMPOUND_STRING("2x atk power at 1/2 HP."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_TROLL] =
+{
+    .name = _("Troll"),
+    .description = COMPOUND_STRING("Uses Taunt entery."),
+    .breakable = TRUE,
+},
 };
