@@ -10093,3 +10093,10 @@ BattleScript_SleepClausePreventsEnd::
 	printstring STRINGID_BLOCKEDBYSLEEPCLAUSE
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+BattleScript_ShellsplinterActivates::
+    waitstate
+    call BattleScript_AbilityPopUp
+    seteffectsecondary MOVE_EFFECT_DEF_MINUS_1
+    swapattackerwithtarget
+    return

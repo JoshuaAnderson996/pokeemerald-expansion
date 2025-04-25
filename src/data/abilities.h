@@ -2562,21 +2562,28 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SIEGE_SPECIALIST] =
 {
     .name = _("Siege Specialist"),
-    .description = COMPOUND_STRING("Deals more damage if\nentry hazards are active."),
+    .description = COMPOUND_STRING("Deals more damage if entry hazards are active."),
     .breakable = TRUE,
 },
 
 [ABILITY_HEROS_LAST_STAND] =
     {
-        .name = _("Defeatist"),
+        .name = _("Heros Last Stand"),
         .description = COMPOUND_STRING("2x atk power at 1/2 HP."),
         .aiRating = 7,
     },
 
-    [ABILITY_TROLL] =
-{
-    .name = _("Troll"),
-    .description = COMPOUND_STRING("Uses Taunt entery."),
-    .breakable = TRUE,
-},
+[ABILITY_POISON_SPECIALIST] =
+    {
+        .name = _("PoisonSpecialist"),
+        .description = COMPOUND_STRING("All contact poisons."),
+        .aiRating = 7,
+    },
+    
+    [ABILITY_SHELLSPLINTER] =
+    {
+        .name = _("Shellsplit"),
+        .description = COMPOUND_STRING("All contact lowers Def."),
+        .aiRating = 7,
+    },
 };
