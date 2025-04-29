@@ -12599,7 +12599,7 @@ F_TRAINER_FEMALE |
 #line 5079
             .ability = ABILITY_DROUGHT,
 #line 5078
-            .lvl = 37,
+            .lvl = 38,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -12621,7 +12621,7 @@ F_TRAINER_FEMALE |
 #line 5087
             .ability = ABILITY_EVAPORATE,
 #line 5086
-            .lvl = 37,
+            .lvl = 38,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -12629,7 +12629,7 @@ F_TRAINER_FEMALE |
                 MOVE_SHELL_SMASH,
                 MOVE_FLAMETHROWER,
                 MOVE_POWER_GEM,
-                MOVE_EARTHQUAKE,
+                MOVE_SOLAR_BEAM,
             },
             },
             {
@@ -12643,7 +12643,7 @@ F_TRAINER_FEMALE |
 #line 5095
             .ability = ABILITY_DROUGHT,
 #line 5094
-            .lvl = 37,
+            .lvl = 38,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -12667,7 +12667,7 @@ F_TRAINER_FEMALE |
 #line 5102
             .ability = ABILITY_ARCANE_POWER,
 #line 5103
-            .lvl = 37,
+            .lvl = 38,
 #line 5105
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -12690,7 +12690,7 @@ F_TRAINER_FEMALE |
 #line 5113
             .ability = ABILITY_LIBERO,
 #line 5114
-            .lvl = 37,
+            .lvl = 38,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
@@ -12712,7 +12712,7 @@ F_TRAINER_FEMALE |
 #line 5121
             .ability = ABILITY_DROUGHT,
 #line 5122
-            .lvl = 37,
+            .lvl = 38,
             .nature = NATURE_HARDY,
 #line 5123
             .isShiny = TRUE,
@@ -25541,14 +25541,12 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10124
-            .species = SPECIES_BLAZIKEN,
+            .species = SPECIES_GARCHOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 10124
-            .heldItem = ITEM_BLAZIKENITE,
 #line 10127
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10125
-            .ability = ABILITY_SPEED_BOOST,
+            .ability = ABILITY_ROUGH_SKIN,
 #line 10126
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -25556,12 +25554,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10128
-            .species = SPECIES_GARCHOMP,
+            .species = SPECIES_GARBODOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10131
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10129
-            .ability = ABILITY_ROUGH_SKIN,
+            .ability = ABILITY_AFTERMATH,
 #line 10130
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -25569,12 +25567,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10132
-            .species = SPECIES_GARBODOR,
+            .species = SPECIES_CRABOMINABLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10135
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10133
-            .ability = ABILITY_AFTERMATH,
+            .ability = ABILITY_IRON_FIST,
 #line 10134
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -25582,12 +25580,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10136
-            .species = SPECIES_CRABOMINABLE,
+            .species = SPECIES_TSAREENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10139
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10137
-            .ability = ABILITY_IRON_FIST,
+            .ability = ABILITY_QUEENLY_MAJESTY,
 #line 10138
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -25595,12 +25593,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10140
-            .species = SPECIES_TSAREENA,
+            .species = SPECIES_MAGNEZONE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10143
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10141
-            .ability = ABILITY_QUEENLY_MAJESTY,
+            .ability = ABILITY_ANALYTIC,
 #line 10142
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -25608,12 +25606,14 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10144
-            .species = SPECIES_MAGNEZONE,
+            .species = SPECIES_BLAZIKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 10144
+            .heldItem = ITEM_BLAZIKENITE,
 #line 10147
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 10145
-            .ability = ABILITY_ANALYTIC,
+            .ability = ABILITY_SPEED_BOOST,
 #line 10146
             .lvl = 55,
             .nature = NATURE_HARDY,
@@ -32450,14 +32450,12 @@ F_TRAINER_FEMALE |
         {
             {
 #line 12793
-            .species = SPECIES_BLAZIKEN,
+            .species = SPECIES_GARCHOMP,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 12793
-            .heldItem = ITEM_BLAZIKENITE,
 #line 12796
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12794
-            .ability = ABILITY_SPEED_BOOST,
+            .ability = ABILITY_ROUGH_SKIN,
 #line 12795
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -32465,12 +32463,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12797
-            .species = SPECIES_GARCHOMP,
+            .species = SPECIES_GARBODOR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12800
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12798
-            .ability = ABILITY_ROUGH_SKIN,
+            .ability = ABILITY_AFTERMATH,
 #line 12799
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -32478,12 +32476,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12801
-            .species = SPECIES_GARBODOR,
+            .species = SPECIES_CRABOMINABLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12804
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12802
-            .ability = ABILITY_AFTERMATH,
+            .ability = ABILITY_IRON_FIST,
 #line 12803
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -32491,12 +32489,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12805
-            .species = SPECIES_CRABOMINABLE,
+            .species = SPECIES_TSAREENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12808
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12806
-            .ability = ABILITY_IRON_FIST,
+            .ability = ABILITY_QUEENLY_MAJESTY,
 #line 12807
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -32504,12 +32502,12 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12809
-            .species = SPECIES_TSAREENA,
+            .species = SPECIES_MAGNEZONE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12812
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12810
-            .ability = ABILITY_QUEENLY_MAJESTY,
+            .ability = ABILITY_ANALYTIC,
 #line 12811
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -32517,12 +32515,14 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12813
-            .species = SPECIES_MAGNEZONE,
+            .species = SPECIES_BLAZIKEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
+#line 12813
+            .heldItem = ITEM_BLAZIKENITE,
 #line 12816
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 12814
-            .ability = ABILITY_ANALYTIC,
+            .ability = ABILITY_SPEED_BOOST,
 #line 12815
             .lvl = 60,
             .nature = NATURE_HARDY,
@@ -37014,7 +37014,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 14583
-            .species = SPECIES_GABITE,
+            .species = SPECIES_GIBLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14586
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

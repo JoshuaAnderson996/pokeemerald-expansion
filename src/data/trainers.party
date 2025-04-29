@@ -5075,7 +5075,7 @@ Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
 Torkoal @ Heat Rock
-Level: 37
+Level: 38
 Ability: Drought
 - Iron Defense
 - Body Press
@@ -5083,15 +5083,15 @@ Ability: Drought
 - Clear Smog
 
 Magcargo @ White Herb
-Level: 37
+Level: 38
 Ability: Evaporate
 - Shell Smash
 - Flamethrower
 - Power Gem
-- Earthquake
+- Solar Beam
 
 Rotom-Heat @ Choice Scarf
-Level: 37
+Level: 38
 Ability: Drought
 - Trick
 - Overheat
@@ -5100,7 +5100,7 @@ Ability: Drought
 
 Delphox @ Power Herb    
 Ability: Arcane Power
-Level: 37
+Level: 38
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -5111,7 +5111,7 @@ IVs: 0 Atk
 
 Cinderace @ Choice Band  
 Ability: Libero  
-Level: 37   
+Level: 38   
 - Pyro Ball  
 - Thunderous Kick  
 - High Jump Kick  
@@ -5119,7 +5119,7 @@ Level: 37
 
 Camerupt @ Cameruptite  
 Ability: Drought 
-Level: 37 
+Level: 38 
 Shiny: Yes    
 - Fire Blast  
 - Solar Beam  
@@ -10121,10 +10121,6 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
-Blaziken @ Blazikenite  
-Ability: Speed Boost  
-Level: 55
-
 Garchomp  
 Ability: Rough Skin  
 Level: 55  
@@ -10143,6 +10139,10 @@ Level: 55
 
 Magnezone  
 Ability: Analytic  
+Level: 55
+
+Blaziken @ Blazikenite  
+Ability: Speed Boost  
 Level: 55
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
@@ -12790,10 +12790,6 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
-Blaziken @ Blazikenite  
-Ability: Speed Boost  
-Level: 60
-
 Garchomp  
 Ability: Rough Skin  
 Level: 60  
@@ -12812,6 +12808,10 @@ Level: 60
 
 Magnezone  
 Ability: Analytic  
+Level: 60
+
+Blaziken @ Blazikenite  
+Ability: Speed Boost  
 Level: 60
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===

@@ -5072,6 +5072,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_SNOW_WARNING:
+        case ABILITY_FROST_MONARC:
             if (B_SNOW_WARNING >= GEN_9 && TryChangeBattleWeather(battler, BATTLE_WEATHER_SNOW, TRUE))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesSnow);
@@ -6018,7 +6019,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_STATIC:
-            if (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_STATIC, 30) : RandomChance(RNG_STATIC, 1, 3))
+            if (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_STATIC, 100) : RandomChance(RNG_STATIC, 1, 3))
             {
             STATIC:
                 if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
@@ -6046,7 +6047,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && (IsMoveMakingContact(move, gBattlerAttacker))
              && IsBattlerTurnDamaged(gBattlerTarget)
              && CanBeBurned(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
-             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
+             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 100) : RandomChance(RNG_FLAME_BODY, 1, 3)))
             {
                 gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_BURN;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
@@ -6062,7 +6063,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
              && IsBattlerTurnDamaged(gBattlerTarget)
              && IsBattlerAlive(gBattlerTarget)
-             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_CUTE_CHARM, 30) : RandomChance(RNG_CUTE_CHARM, 1, 3))
+             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_CUTE_CHARM, 50) : RandomChance(RNG_CUTE_CHARM, 1, 3))
              && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_INFATUATION)
              && AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget)
              && GetBattlerAbility(gBattlerAttacker) != ABILITY_OBLIVIOUS
@@ -6284,9 +6285,27 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
              && IsMoveMakingContact(move, gBattlerAttacker)
              && IsBattlerTurnDamaged(gBattlerTarget) // Actually hit the target
-             && RandomPercentage(RNG_FLAME_BODY, 30)) // 30% chance
+             && RandomPercentage(RNG_FLAME_BODY, 100)) // 30% chance
             {
                 gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                effect++;
+            }
+            break;
+        case ABILITY_STATIC:
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+             && IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && CanBeParalyzed(gBattlerTarget, GetBattlerAbility(gBattlerTarget))
+             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
+             && IsMoveMakingContact(move, gBattlerAttacker)
+             && IsBattlerTurnDamaged(gBattlerTarget) // Actually hit the target
+             && RandomPercentage(RNG_STATIC, 100)) // 30% chance
+            {
+                gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
@@ -9453,6 +9472,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case EFFECT_WINDRIDER_ASSAULT:
+        if (gSideTimers[GetBattlerSide(battlerAtk)].tailwindTimer > 0)
+            basePower = uq4_12_multiply(basePower, UQ_4_12(2.0));
+        break;    
     }
 
     // various effects
@@ -9884,6 +9907,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
+    case ABILITY_ILLUSION:
+        if (gBattleStruct->illusion[battlerAtk].on && !gBattleStruct->illusion[battlerAtk].broken)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // 1.5× Attack while disguised
+        break;
     case ABILITY_MEGA_MIND:
         if (IsBattleMoveSpecial(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
@@ -10060,6 +10087,18 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_DESERT_TYRANT:
         if ((weather & B_WEATHER_SANDSTORM) && HasWeatherEffect() && IsBattleMovePhysical(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));    
+        break;
+    case ABILITY_FROST_MONARC:
+    if ((gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && HasWeatherEffect() && IsBattleMoveSpecial(move))
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
+    break;
+    case ABILITY_CUTE_CHARM:
+        if (gBattleMons[battlerDef].status2 & STATUS2_INFATUATED_WITH(battlerAtk))
+        {
+            // Boost damage if the target is infatuated with the attacker
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        }
+        break;;    
     }
 
     // target's abilities
@@ -10072,6 +10111,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             if (damageCalcData->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_THICK_FAT);
         }
+        break;
+    case ABILITY_ICE_BODY:
+    if ((gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && moveType == TYPE_FIRE)
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));   
         break;
     }
 
@@ -10101,9 +10144,21 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if ((atkBaseSpeciesId == SPECIES_CUBONE || atkBaseSpeciesId == SPECIES_MAROWAK) && IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
-    case HOLD_EFFECT_DEEP_SEA_TOOTH:
+        case HOLD_EFFECT_DEEP_SEA_TOOTH:
         if (gBattleMons[battlerAtk].species == SPECIES_CLAMPERL && IsBattleMoveSpecial(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0)); // Clamperl doubles special attack
+        }
+        else if (gBattleMons[battlerAtk].species == SPECIES_HUNTAIL)
+        {
+            if (!IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // Huntail boosts physical moves
+        }
+        else if (gBattleMons[battlerAtk].species == SPECIES_GOREBYSS)
+        {
+            if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // Gorebyss boosts special moves
+        }
         break;
     case HOLD_EFFECT_LIGHT_BALL:
     if ((atkBaseSpeciesId == SPECIES_PIKACHU || atkBaseSpeciesId == SPECIES_RAICHU || atkBaseSpeciesId == SPECIES_RAICHU_ALOLA || atkBaseSpeciesId == SPECIES_PLUSLE || atkBaseSpeciesId == SPECIES_MINUN || atkBaseSpeciesId == SPECIES_PACHIRISU || atkBaseSpeciesId == SPECIES_EMOLGA || atkBaseSpeciesId == SPECIES_DEDENNE || atkBaseSpeciesId == SPECIES_TOGEDEMARU || atkBaseSpeciesId == SPECIES_MORPEKO || atkBaseSpeciesId == SPECIES_PAWMOT) && (B_LIGHT_BALL_ATTACK_BOOST >= GEN_4 || IsBattleMoveSpecial(move)))

@@ -3660,6 +3660,37 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_DIVE_BOMB] =
+    {
+        .name = COMPOUND_STRING("Dive Bomb"),
+        .description = COMPOUND_STRING(
+            "“The user crashes down at max speed. If it\n"
+            "misses, the user is hurt."),
+        #if B_UPDATED_MOVE_DATA >= GEN_5
+            .power = 130,
+        #elif B_UPDATED_MOVE_DATA == GEN_4
+            .power = 100,
+        #else
+            .power = 85,
+        #endif
+        .effect = EFFECT_RECOIL_IF_MISS,
+        .type = TYPE_FLYING,
+        .accuracy = 90,
+        .pp = B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .wrestlingMove = TRUE,
+        .gravityBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_MIND_READER},
+        .battleAnimScript = gBattleAnimMove_DoubleEdge,
+        .validApprenticeMove = TRUE,
+    },
+
     [MOVE_GLARE] =
     {
         .name = COMPOUND_STRING("Glare"),
@@ -18689,6 +18720,50 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_ScaleShot,
     },
 
+    [MOVE_FEATHER_SHOT] =
+    {
+        .name = COMPOUND_STRING("Feather Shot"),
+        .description = COMPOUND_STRING(
+            "Shoots scales 2 to 5 times.\n"
+            "Ups Speed, lowers defense."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 25,
+        .type = TYPE_FLYING,
+        .accuracy = 90,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .moveProperty = MOVE_EFFECT_SCALE_SHOT },
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ScaleShot,
+    },
+
+    [MOVE_SHELL_SHOT] =
+    {
+        .name = COMPOUND_STRING("Feather Shot"),
+        .description = COMPOUND_STRING(
+            "Shoots scales 2 to 5 times.\n"
+            "Ups Speed, lowers defense."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 25,
+        .type = TYPE_STEEL,
+        .accuracy = 90,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .moveProperty = MOVE_EFFECT_SCALE_SHOT },
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ScaleShot,
+    },
+
     [MOVE_METEOR_BEAM] =
     {
         .name = COMPOUND_STRING("Meteor Beam"),
@@ -21618,6 +21693,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_WILDFIRE,
             .chance = 100,
         }),
+    },
+    [MOVE_WINDRIDER_ASSAULT] =
+    {
+        .name = COMPOUND_STRING("Windrider Assault"),
+        .description = COMPOUND_STRING("Boosted in Tailwind."),
+        .effect = EFFECT_WINDRIDER_ASSAULT,
+        .power = 75,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_BraveBird,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
