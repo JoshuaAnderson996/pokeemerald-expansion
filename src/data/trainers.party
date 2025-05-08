@@ -598,17 +598,61 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Mightyena
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Palafin @ Choice Scarf  
+Ability: Zero to Hero  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Flip Turn  
+- Close Combat  
+- Wave Crash  
+- Drain Punch  
 
-Crobat
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Greninja @ Life Orb  
+Ability: Battle Bond   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Ice Beam  
+- Water Shuriken  
+- Scald  
+- Dark Pulse  
 
-Sharpedo
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Rotom-Wash @ Air Balloon  
+Ability: Drizzle  
+Tera Type: Electric  
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Hydro Pump  
+- Volt Switch  
+- Will-O-Wisp  
+- Pain Split  
+
+Empoleon @ Assault Vest  
+Ability: Competitive   
+EVs: 252 HP / 252 SpA / 4 SpD  
+Modest Nature  
+- Scald  
+- Steel Beam  
+- Steelsurge   
+- Flip Turn  
+
+Toxapex @ Black Sludge  
+Ability: Regenerator   
+EVs: 252 HP / 4 Atk / 252 Def  
+Impish Nature  
+- Toxic Spikes  
+- Baneful Bunker  
+- Knock Off  
+- Scald  
+
+Sharpedo @ Sharpedonite  
+Ability: Rough Skin   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Fishious Rend  
+- Aqua Jet  
+- Close Combat  
+- Crunch  
 
 === TRAINER_LEAH ===
 Name: LEAH
@@ -11414,17 +11458,63 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Mightyena
-Level: 37
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Typhlosion @ Choice Scarf  
+Ability: Evaporate  
+Tera Type: Fire  
+EVs: 4 Atk / 252 SpA / 252 Spe  
+Timid Nature  
+- Eruption  
+- Lava Plume  
+- Scorching Sands  
+- Wild Charge  
 
-Crobat
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Arcanine @ Heat Rock  
+Ability: Drought   
+EVs: 252 HP / 4 Def / 252 Spe  
+Jolly Nature  
+- Flare Blitz  
+- Wild Charge  
+- Morning Sun  
+- Will-O-Wisp  
 
-Camerupt
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Volcarona @ Life Orb  
+Ability: Protosynthesis 
+EVs: 172 HP / 80 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Quiver Dance  
+- Giga Drain  
+- Fiery Dance  
+- Psychic  
+
+Magmortar @ Assault Vest  
+Ability: Mega Launcher  
+EVs: 252 HP / 252 SpA / 4 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Sludge Bomb  
+- Aura Sphere  
+- Fire Blast  
+- Thunderbolt  
+
+Incineroar @ Incinium Z  
+Ability: Intimidate  
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Darkest Lariat  
+- Fake Out  
+- Temper Flare  
+- Parting Shot  
+
+Camerupt @ Cameruptite  
+Ability: Drought  
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Lava Plume  
+- Earth Power  
+- Ancient Power  
+- Flash Cannon  
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: MAXIE
@@ -11436,17 +11526,63 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Mightyena
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Torkoal @ Heat Rock  
+Ability: Drought 
+EVs: 248 HP / 8 SpA / 252 SpD  
+Calm Nature  
+IVs: 0 Atk  
+- Stealth Rock  
+- Body Press  
+- Will-O-Wisp  
+- Weather Ball  
 
-Zubat
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Rotom-Heat @ Choice Specs  
+Ability: Levitate  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Trick  
+- Volt Switch  
+- Overheat  
+- Dark Pulse  
 
-Camerupt
-Level: 25
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Tauros-Paldea-Blaze (M) @ Choice Scarf  
+Ability: Anger Point   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wild Charge  
+- Close Combat  
+- High Horsepower  
+- Flare Blitz  
+
+Ninetales @ Leftovers  
+Ability: Drought   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Solar Beam  
+- Fire Blast  
+- Will-O-Wisp  
+- Healing Wish  
+
+Arcanine @ Firium Z  
+Ability: Intimidate   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Morning Sun  
+- Flare Blitz  
+- Will-O-Wisp  
+- Wild Charge  
+
+Camerupt @ Cameruptite  
+Ability: Drought    
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Lava Plume  
+- Earth Power  
+- Ancient Power  
+- Flash Cannon  
 
 === TRAINER_TIANA ===
 Name: TIANA
@@ -12445,9 +12581,33 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ralts
-Level: 16
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning   
+EVs: 248 HP / 8 Def / 252 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Moonblast  
+- Encore  
+- Hypnosis  
+
+Doublade @ Eviolite  
+Ability: No Guard   
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Swords Dance  
+- Shadow Sneak  
+- Iron Head  
+- Sacred Sword  
+
+Gallade @ Assault Vest  
+Ability: Sharpness 
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Knock Off  
+- Close Combat  
+- Psycho Cut  
+- Leaf Blade  
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -12459,45 +12619,61 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Altaria
-Level: 47
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning 
+EVs: 248 HP / 8 Def / 252 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Moonblast  
+- Encore  
+- Hypnosis  
 
-Delcatty
-Level: 46
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Aegislash @ Leftovers  
+Ability: Stance Change  
+EVs: 252 HP / 252 Def / 4 SpD  
+Brave Nature  
+- Kings Shield  
+- Sacred Sword  
+- Shadow Sneak  
+- Iron Head  
 
-Roselia
-Level: 47
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Gardevoir @ Throat Spray  
+Ability: Psychic Surge   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Healing Wish  
+- Psychic Noise  
+- Alluring Voice  
+- Draining Kiss  
 
-Magneton
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Kingdra  
+Ability: Storm Herald   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Hurricane  
+- Tailwind  
+- Dragon Pulse  
+- Flip Turn  
 
-Gardevoir
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Spiritomb @ Focus Sash  
+Ability: Prankster  
+EVs: 248 HP / 8 Atk / 252 SpD  
+Careful Nature  
+- Destiny Bond  
+- Poltergeist  
+- Will-O-Wisp  
+- Foul Play  
+
+Gallade @ Galladite  
+Ability: Justified    
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Close Combat  
+- Psycho Cut  
+- Leaf Blade  
 
 === TRAINER_WALLY_VR_3 ===
 Name: WALLY
@@ -12509,45 +12685,61 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Altaria
-Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning 
+EVs: 248 HP / 8 Def / 252 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Moonblast  
+- Encore  
+- Hypnosis  
 
-Delcatty
-Level: 49
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Aegislash @ Leftovers  
+Ability: Stance Change  
+EVs: 252 HP / 252 Def / 4 SpD  
+Brave Nature  
+- Kings Shield  
+- Sacred Sword  
+- Shadow Sneak  
+- Iron Head  
 
-Roselia
-Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Gardevoir @ Throat Spray  
+Ability: Psychic Surge   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Healing Wish  
+- Psychic Noise  
+- Alluring Voice  
+- Draining Kiss  
 
-Magneton
-Level: 47
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Kingdra  
+Ability: Storm Herald   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Hurricane  
+- Tailwind  
+- Dragon Pulse  
+- Flip Turn  
 
-Gardevoir
-Level: 51
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Spiritomb @ Focus Sash  
+Ability: Prankster  
+EVs: 248 HP / 8 Atk / 252 SpD  
+Careful Nature  
+- Destiny Bond  
+- Poltergeist  
+- Will-O-Wisp  
+- Foul Play  
+
+Gallade @ Galladite  
+Ability: Justified    
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Close Combat  
+- Psycho Cut  
+- Leaf Blade  
 
 === TRAINER_WALLY_VR_4 ===
 Name: WALLY
@@ -12559,45 +12751,61 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Altaria
-Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning 
+EVs: 248 HP / 8 Def / 252 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Moonblast  
+- Encore  
+- Hypnosis  
 
-Delcatty
-Level: 52
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Aegislash @ Leftovers  
+Ability: Stance Change  
+EVs: 252 HP / 252 Def / 4 SpD  
+Brave Nature  
+- Kings Shield  
+- Sacred Sword  
+- Shadow Sneak  
+- Iron Head  
 
-Roselia
-Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Gardevoir @ Throat Spray  
+Ability: Psychic Surge   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Healing Wish  
+- Psychic Noise  
+- Alluring Voice  
+- Draining Kiss  
 
-Magneton
-Level: 50
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Kingdra  
+Ability: Storm Herald   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Hurricane  
+- Tailwind  
+- Dragon Pulse  
+- Flip Turn  
 
-Gardevoir
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Spiritomb @ Focus Sash  
+Ability: Prankster  
+EVs: 248 HP / 8 Atk / 252 SpD  
+Careful Nature  
+- Destiny Bond  
+- Poltergeist  
+- Will-O-Wisp  
+- Foul Play  
+
+Gallade @ Galladite  
+Ability: Justified    
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Close Combat  
+- Psycho Cut  
+- Leaf Blade  
 
 === TRAINER_WALLY_VR_5 ===
 Name: WALLY
@@ -12609,45 +12817,61 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Altaria
-Level: 56
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Ninetales-Alola @ Light Clay  
+Ability: Snow Warning 
+EVs: 248 HP / 8 Def / 252 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Aurora Veil  
+- Moonblast  
+- Encore  
+- Hypnosis  
 
-Delcatty
-Level: 55
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Aegislash @ Leftovers  
+Ability: Stance Change  
+EVs: 252 HP / 252 Def / 4 SpD  
+Brave Nature  
+- Kings Shield  
+- Sacred Sword  
+- Shadow Sneak  
+- Iron Head  
 
-Roselia
-Level: 56
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Gardevoir @ Throat Spray  
+Ability: Psychic Surge   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Healing Wish  
+- Psychic Noise  
+- Alluring Voice  
+- Draining Kiss  
 
-Magneton
-Level: 53
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Kingdra  
+Ability: Storm Herald   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Hurricane  
+- Tailwind  
+- Dragon Pulse  
+- Flip Turn  
 
-Gardevoir
-Level: 57
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Spiritomb @ Focus Sash  
+Ability: Prankster  
+EVs: 248 HP / 8 Atk / 252 SpD  
+Careful Nature  
+- Destiny Bond  
+- Poltergeist  
+- Will-O-Wisp  
+- Foul Play  
+
+Gallade @ Galladite  
+Ability: Justified    
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Swords Dance  
+- Close Combat  
+- Psycho Cut  
+- Leaf Blade  
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
 Name: BRENDAN
@@ -13987,17 +14211,63 @@ Music: Magma
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Mightyena
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Typhlosion @ Choice Scarf  
+Ability: Evaporate  
+Tera Type: Fire  
+EVs: 4 Atk / 252 SpA / 252 Spe  
+Timid Nature  
+- Eruption  
+- Lava Plume  
+- Scorching Sands  
+- Wild Charge  
 
-Crobat
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Arcanine @ Heat Rock  
+Ability: Drought   
+EVs: 252 HP / 4 Def / 252 Spe  
+Jolly Nature  
+- Flare Blitz  
+- Wild Charge  
+- Morning Sun  
+- Will-O-Wisp  
 
-Camerupt
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Volcarona @ Life Orb  
+Ability: Protosynthesis 
+EVs: 172 HP / 80 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Quiver Dance  
+- Giga Drain  
+- Fiery Dance  
+- Psychic  
+
+Magmortar @ Assault Vest  
+Ability: Mega Launcher  
+EVs: 252 HP / 252 SpA / 4 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Sludge Bomb  
+- Aura Sphere  
+- Fire Blast  
+- Thunderbolt  
+
+Incineroar @ Incinium Z  
+Ability: Intimidate  
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Darkest Lariat  
+- Fake Out  
+- Temper Flare  
+- Parting Shot  
+
+Camerupt @ Cameruptite  
+Ability: Drought  
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Lava Plume  
+- Earth Power  
+- Ancient Power  
+- Flash Cannon  
 
 === TRAINER_PETE ===
 Name: PETE

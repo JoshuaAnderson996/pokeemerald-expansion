@@ -1088,7 +1088,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BIG_PECKS] =
     {
         .name = _("Big Pecks"),
-        .description = COMPOUND_STRING("Prevents Defense loss."),
+        .description = COMPOUND_STRING("Ups flying moves prevents Defense loss."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -2595,5 +2595,41 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Summons hail in battle."),
     #endif
         .aiRating = 8,
+    },
+    [ABILITY_STORM_HERALD] =
+    {
+        .name = _("Storm Herald"),
+        .description = COMPOUND_STRING("Ups Wind Moves."),
+        .aiRating = 7,
+    },
+    [ABILITY_HUNTER] =
+    {
+        .name = _("Hunter"),
+        .description = COMPOUND_STRING("KOs raise Attack/Speed."),
+        .aiRating = 7,
+    },
+    [ABILITY_NO_ESCAPE] =
+    {
+    .name = _("No Escape"),
+    .description = COMPOUND_STRING("Boosts damage against\n"
+        "trapped foes."),
+    },
+    [ABILITY_SOLARIS] =
+    {
+    .name = _("Solaris"),
+    .description = COMPOUND_STRING("Bestowed with the power\n"
+        "of the sun."),
+    },
+    [ABILITY_LUNAR] =
+    {
+    .name = _("Lunar"),
+    .description = COMPOUND_STRING("Bestowed with the power\n"
+        "of the Moon."),
+    },
+    [ABILITY_CHEF] =
+    {
+        .name = _("Chef"),
+        .description = COMPOUND_STRING("Powers up Cooking moves."),
+        .aiRating = 6,
     },
 };

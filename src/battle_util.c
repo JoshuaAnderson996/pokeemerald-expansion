@@ -6040,6 +6040,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_FLAME_BODY:
+        case ABILITY_SOLARIS:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && IsBattlerAlive(gBattlerAttacker)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
@@ -6278,6 +6279,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_FLAME_BODY:
+        case ABILITY_SOLARIS:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && IsBattlerAlive(gBattlerTarget)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
@@ -9635,7 +9637,19 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_LUCHADOR:
         if (IsWrestlingMove(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
-        break;                    
+        break;  
+    case ABILITY_STORM_HERALD:
+        if (IsWindMove(move))
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
+        break;   
+        case ABILITY_DANCER:
+        if (IsDanceMove(move))
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
+        break;    
+        case ABILITY_CHEF:
+        if (IsCookingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;                 
     case ABILITY_SIEGE_SPECIALIST:
         if (gSideStatuses[GetBattlerSide(battlerDef)] & (SIDE_STATUS_SPIKES
                                                        | SIDE_STATUS_STEALTH_ROCK
@@ -9644,7 +9658,16 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         }
-        break;    
+        break;   
+    case ABILITY_NO_ESCAPE:
+    if ((gBattleMons[battlerDef].status2 & STATUS2_WRAPPED)
+     || (gBattleMons[battlerDef].status2 & STATUS2_ESCAPE_PREVENTION)
+     || (gStatuses3[battlerDef] & STATUS3_ROOTED))
+    {
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); // 30% damage boost
+    }
+    break;
+ 
     }
 
     // field abilities
@@ -9921,7 +9944,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_SOLAR_POWER:
         if (IsBattleMoveSpecial(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.8));
         break;
     case ABILITY_DEFEATIST:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
@@ -10049,7 +10072,19 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // extra boost under 50% HP
         }
-        break;           
+        break;    
+        case ABILITY_SOLARIS:
+        if (moveType == TYPE_FIRE)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;    
+        case ABILITY_LUNAR:
+        if (moveType == TYPE_ROCK || moveType == TYPE_COSMIC)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+        case ABILITY_BIG_PECKS:
+        if (moveType == TYPE_FIRE)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;   
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
         {
@@ -10231,6 +10266,14 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
     }
     else // is special
     {
+        defStat = spDef;
+        defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
+        usesDefStat = FALSE;
+    }
+
+    if (move == MOVE_CHI_STRIKE)
+    {
+        // Chi Strike: physical move that uses Sp. Def instead of Def
         defStat = spDef;
         defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
         usesDefStat = FALSE;

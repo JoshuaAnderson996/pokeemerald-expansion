@@ -3456,9 +3456,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     {
         .baseHP        = 72,
         .baseAttack    = 127,
-        .baseDefense   = 145,
-        .baseSpeed     = 120,
-        .baseSpAttack  = 65,
+        .baseDefense   = 125,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 105,
         .baseSpDefense = 81,
         .types = MON_TYPES(TYPE_GROUND, TYPE_FLYING),
         .catchRate = 120,
@@ -5572,7 +5572,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS),      \
-        .abilities = { ABILITY_CURIOUS_MEDICINE, ABILITY_WELL_BAKED_BODY, ABILITY_REGENERATOR },  \
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_WELL_BAKED_BODY, ABILITY_REGENERATOR },  \
         .bodyColor = color
 
 #define ALCREMIE_REGULAR_SPECIES_INFO(sweet, cream, color)                                      \
@@ -6755,7 +6755,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_VOLT_ABSORB, ABILITY_HUSTLE, ABILITY_SAND_RUSH },
+        .abilities = { ABILITY_VOLT_ABSORB, ABILITY_HUSTLE, ABILITY_SURGE_SURFER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Dracozolt"),
         .cryId = CRY_DRACOZOLT,

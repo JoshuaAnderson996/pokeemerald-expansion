@@ -10462,27 +10462,40 @@ static void Cmd_various(void)
         MarkBattlerForControllerExec(battler);
         break;
     }
-    case VARIOUS_TRY_ACTIVATE_MOXIE:    // and chilling neigh + as one ice rider
+    case VARIOUS_TRY_ACTIVATE_MOXIE:
     {
         VARIOUS_ARGS();
 
         u16 battlerAbility = GetBattlerAbility(battler);
 
         if ((battlerAbility == ABILITY_MOXIE
-         || battlerAbility == ABILITY_CHILLING_NEIGH
-         || battlerAbility == ABILITY_AS_ONE_ICE_RIDER)
-          && HasAttackerFaintedTarget()
-          && !NoAliveMonsForEitherParty()
-          && CompareStat(gBattlerAttacker, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
+          || battlerAbility == ABILITY_CHILLING_NEIGH
+          || battlerAbility == ABILITY_AS_ONE_ICE_RIDER
+          || battlerAbility == ABILITY_HUNTER) // ← Your new ability
+         && HasAttackerFaintedTarget()
+         && !NoAliveMonsForEitherParty())
         {
-            SET_STATCHANGER(STAT_ATK, 1, FALSE);
-            PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
-            BattleScriptPush(cmd->nextInstr);
-            gLastUsedAbility = battlerAbility;
-            if (battlerAbility == ABILITY_AS_ONE_ICE_RIDER)
-                gBattleScripting.abilityPopupOverwrite = gLastUsedAbility = ABILITY_CHILLING_NEIGH;
-            gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
-            return;
+            if (CompareStat(gBattlerAttacker, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
+            {
+                SET_STATCHANGER(STAT_ATK, 1, FALSE);
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
+                BattleScriptPush(cmd->nextInstr);
+                gLastUsedAbility = battlerAbility;
+                if (battlerAbility == ABILITY_AS_ONE_ICE_RIDER)
+                    gBattleScripting.abilityPopupOverwrite = gLastUsedAbility = ABILITY_CHILLING_NEIGH;
+                gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
+                return;
+            }
+
+            if (battlerAbility == ABILITY_HUNTER && CompareStat(gBattlerAttacker, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
+            {
+                SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPEED);
+                BattleScriptPush(cmd->nextInstr);
+                gLastUsedAbility = ABILITY_HUNTER;
+                gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
+                return;
+            }
         }
         break;
     }
