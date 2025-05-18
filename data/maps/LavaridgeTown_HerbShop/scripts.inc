@@ -16,7 +16,6 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_POKE_BALL 
 	.2byte ITEM_GREAT_BALL 
 	.2byte ITEM_ULTRA_BALL 
-	.2byte ITEM_MASTER_BALL 
 	.2byte ITEM_HEAL_BALL 
 	.2byte ITEM_NET_BALL 
 	.2byte ITEM_NEST_BALL 
@@ -141,6 +140,33 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_CHARIZARDITE_Y 
 	.2byte ITEM_CHARIZARDITE_Z 
 	.2byte ITEM_BLASTOISINITE 
+	.2byte ITEM_BLASTOISINITE_X
+	.2byte ITEM_BUTTERFITE
+	.2byte ITEM_MACHAMPITE
+	.2byte ITEM_GENGARITE_X
+	.2byte ITEM_KINGLERITE
+	.2byte ITEM_LAPRASITE
+	.2byte ITEM_SNORLAXITE
+	.2byte ITEM_GARBODORITE
+	.2byte ITEM_MELMETALITE
+	.2byte ITEM_RILLABITE
+	.2byte ITEM_CINDERITE
+	.2byte ITEM_INTELITE
+	.2byte ITEM_CORVIKNITE
+	.2byte ITEM_ORBITE
+	.2byte ITEM_DREDNITE
+	.2byte ITEM_COALOSSALITE
+	.2byte ITEM_FLAPPLITE
+	.2byte ITEM_APPLITE
+	.2byte ITEM_SANDITE
+	.2byte ITEM_TOXTRITE
+	.2byte ITEM_CENTITE
+	.2byte ITEM_HATTERITE
+	.2byte ITEM_ALCREMITE
+	.2byte ITEM_COPPERITE
+	.2byte ITEM_URSHITE
+	.2byte ITEM_URSHITE_R
+	.2byte ITEM_GRIMMITE
 	.2byte ITEM_BEEDRILLITE 
 	.2byte ITEM_PIDGEOTITE 
 	.2byte ITEM_ALAKAZITE 
@@ -331,106 +357,7 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_BLUNDER_POLICY 
 	.2byte ITEM_ROOM_SERVICE 
 	.2byte ITEM_UTILITY_UMBRELLA 
-	.2byte ITEM_TM01 
-	.2byte ITEM_TM02 
-	.2byte ITEM_TM03 
-	.2byte ITEM_TM04 
-	.2byte ITEM_TM05 
-	.2byte ITEM_TM06 
-	.2byte ITEM_TM07 
-	.2byte ITEM_TM08 
-	.2byte ITEM_TM09 
-	.2byte ITEM_TM10 
-	.2byte ITEM_TM11 
-	.2byte ITEM_TM12 
-	.2byte ITEM_TM13 
-	.2byte ITEM_TM14 
-	.2byte ITEM_TM15 
-	.2byte ITEM_TM16 
-	.2byte ITEM_TM17 
-	.2byte ITEM_TM18 
-	.2byte ITEM_TM19
-	.2byte ITEM_TM20 
-	.2byte ITEM_TM21 
-	.2byte ITEM_TM22 
-	.2byte ITEM_TM23 
-	.2byte ITEM_TM24 
-	.2byte ITEM_TM25 
-	.2byte ITEM_TM26 
-	.2byte ITEM_TM27 
-	.2byte ITEM_TM28 
-	.2byte ITEM_TM29 
-	.2byte ITEM_TM30 
-	.2byte ITEM_TM31 
-	.2byte ITEM_TM32 
-	.2byte ITEM_TM33 
-	.2byte ITEM_TM34 
-	.2byte ITEM_TM35 
-	.2byte ITEM_TM36 
-	.2byte ITEM_TM37 
-	.2byte ITEM_TM38 
-	.2byte ITEM_TM39 
-	.2byte ITEM_TM40 
-	.2byte ITEM_TM41 
-	.2byte ITEM_TM42 
-	.2byte ITEM_TM43 
-	.2byte ITEM_TM44 
-	.2byte ITEM_TM45 
-	.2byte ITEM_TM46 
-	.2byte ITEM_TM47 
-	.2byte ITEM_TM48 
-	.2byte ITEM_TM49 
-	.2byte ITEM_TM50 
-	.2byte ITEM_TM51 
-	.2byte ITEM_TM52 
-	.2byte ITEM_TM53 
-	.2byte ITEM_TM54 
-	.2byte ITEM_TM55 
-	.2byte ITEM_TM56 
-	.2byte ITEM_TM57 
-	.2byte ITEM_TM58 
-	.2byte ITEM_TM59 
-	.2byte ITEM_TM60 
-	.2byte ITEM_TM61 
-	.2byte ITEM_TM62 
-	.2byte ITEM_TM63 
-	.2byte ITEM_TM64 
-	.2byte ITEM_TM65 
-	.2byte ITEM_TM66 
-	.2byte ITEM_TM67 
-	.2byte ITEM_TM68 
-	.2byte ITEM_TM69 
-	.2byte ITEM_TM70 
-	.2byte ITEM_TM71 
-	.2byte ITEM_TM72 
-	.2byte ITEM_TM73 
-	.2byte ITEM_TM74 
-	.2byte ITEM_TM75 
-	.2byte ITEM_TM76 
-	.2byte ITEM_TM77 
-	.2byte ITEM_TM78 
-	.2byte ITEM_TM79 
-	.2byte ITEM_TM80 
-	.2byte ITEM_TM81 
-	.2byte ITEM_TM82 
-	.2byte ITEM_TM83 
-	.2byte ITEM_TM84 
-	.2byte ITEM_TM85 
-	.2byte ITEM_TM86 
-	.2byte ITEM_TM87 
-	.2byte ITEM_TM88 
-	.2byte ITEM_TM89 
-	.2byte ITEM_TM90 
-	.2byte ITEM_TM91 
-	.2byte ITEM_TM92 
-	.2byte ITEM_TM93 
-	.2byte ITEM_TM94 
-	.2byte ITEM_TM95 
-	.2byte ITEM_TM96 
-	.2byte ITEM_TM97 
-	.2byte ITEM_TM98 
-	.2byte ITEM_TM99 
-	.2byte ITEM_TM100
+	.2byte ITEM_MAX_REPEL
 	pokemartlistend
 
 LavaridgeTown_HerbShop_EventScript_ExpertM::

@@ -532,7 +532,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_MASTER_BALL, 999
+	giveitem ITEM_ULTRA_BALL, 999
 	giveitem ITEM_EVIOLITE, 1
 	giveitem ITEM_RARE_CANDY, 999
 	giveitem ITEM_RARE_CANDY, 999
@@ -555,7 +555,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_MASTER_BALL, 999
+	giveitem ITEM_ULTRA_BALL, 999
 	giveitem ITEM_EVIOLITE, 1
 	giveitem ITEM_RARE_CANDY, 999
 	giveitem ITEM_RARE_CANDY, 999

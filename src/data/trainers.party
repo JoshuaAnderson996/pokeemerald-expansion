@@ -5001,49 +5001,49 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon  
 
-Machop @ Leftovers  
-Ability: Guts  
-Level: 19   
-- Karate Chop  
-- Low Kick  
-- Seismic Toss  
-- Bulk Up  
-
-Meditite @ Leftovers  
-Ability: Pure Power  
-Level: 19    
-- Bulk Up  
-- Bullet Punch  
+Hitmonchan @ Muscle Band  
+Ability: Iron Fist  
+Level: 22   
+- Concussive Hit  
 - Drain Punch  
-- Fake Out  
-
-Riolu  
-Ability: Prankster  
-Level: 19   
-- Swords Dance  
-- Poison Jab  
+- Ice Punch  
 - Bullet Punch  
-- Brick Break  
 
-Kubfu @ White Herb  
-Ability: Inner Focus  
-Level: 19    
-- Close Combat  
-- Acrobatics  
-- Thunder Punch  
-- Bulk Up  
+Pawmot @ Leppa Berry 
+Ability: Fluffy  
+Level: 22    
+- Revival Blessing  
+- Wild Charge  
+- Drain Punch  
+- Dig  
 
-Mankey  
+Lucario @ Choice Scarf
+Ability: Mega Launcher   
+Level: 22   
+- Aura Sphere  
+- Dragon Pulse  
+- Dark Pulse  
+- Steel Beam  
+
+Lilligant-Hisui @ Focus Sash
+Ability: Technician 
+Level: 22    
+- Axe Kick  
+- Victory Dance  
+- Mach Punch  
+- Leaf Blade  
+
+Primeape @ Eviolite
 Ability: Anger Point  
-Level: 19    
+Level: 22    
 - Bulk Up  
-- Earthquake  
-- Brick Break  
+- Temper Flare  
+- Cross Chop  
 - Lash Out  
 
-Makuhita @ Eviolite  
+Hariyama @ Assault Vest
 Ability: Sheer Force  
-Level: 19    
+Level: 22    
 Shiny: Yes 
 - Arm Thrust  
 - Vital Throw  
@@ -9773,45 +9773,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Altaria
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Lycanroc-Dusk @ Focus Sash  
+Ability: Tough Claws    
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Accelerock  
+- Stealth Rock  
+- Stone Edge  
+- Righteous Strike  
 
-Delcatty
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
+Arcanine @ Assault Vest  
+Ability: Intimidate   
+EVs: 252 Atk / 248 Spe  
+Jolly Nature  
+- Extreme Speed  
+- Wild Charge  
+- Flare Blitz  
+- Righteous Strike   
 
-Roselia
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Minun @ Light Ball  
+Ability: Heroics   
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Revival Blessing  
+- Hyper Voice  
+- Quick Attack  
+- Thunderbolt  
 
-Magneton
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
-- Thunderbolt
-- Tri Attack
-- Screech
+Floatzel @ Choice Scarf  
+Ability: Reckless   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wave Crash  
+- Ice Spinner  
+- Brick Break  
+- Righteous Strike  
 
-Gardevoir
-Level: 45
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
-- Calm Mind
-- Psychic
-- Future Sight
+Falinks @ Salac Berry  
+Ability: Parental Bond  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Close Combat  
+- Knock Off  
+- No Retreat   
+- Reversal  
+
+Gallade @ Galladite  
+Ability: Sharpness    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- No Retreat 
+- Close Combat  
+- Psycho Cut  
+- Hero Slash  
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===  
 Name: BRENDAN
@@ -10085,7 +10099,7 @@ Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
 Haxorus  
-Ability: Rivalry  
+Ability: Sharpness  
 Level: 55  
 
 Corviknight  
@@ -11460,7 +11474,6 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Typhlosion @ Choice Scarf  
 Ability: Evaporate  
-Tera Type: Fire  
 EVs: 4 Atk / 252 SpA / 252 Spe  
 Timid Nature  
 - Eruption  
@@ -12581,33 +12594,35 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ninetales-Alola @ Light Clay  
-Ability: Snow Warning   
-EVs: 248 HP / 8 Def / 252 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Aurora Veil  
-- Moonblast  
-- Encore  
-- Hypnosis  
+Arcanine @ Assault Vest  
+Ability: Intimidate  
+Level: 29  
+EVs: 252 Atk / 248 Spe  
+Jolly Nature  
+- Flame Charge  
+- Wild Charge  
+- Flare Blitz  
+- Play Rough  
 
-Doublade @ Eviolite  
-Ability: No Guard   
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Swords Dance  
-- Shadow Sneak  
-- Iron Head  
-- Sacred Sword  
+Lycanroc-Dusk @ Focus Sash  
+Ability: Tough Claws  
+Level: 29  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Accelerock  
+- Stealth Rock  
+- Stone Edge  
+- Righteous Strike  
 
-Gallade @ Assault Vest  
-Ability: Sharpness 
+Gallade @ Galladite  
+Ability: Sharpness  
+Level: 29  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Knock Off  
 - Close Combat  
 - Psycho Cut  
-- Leaf Blade  
+- Hero Slash   
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -12619,61 +12634,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ninetales-Alola @ Light Clay  
-Ability: Snow Warning 
-EVs: 248 HP / 8 Def / 252 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Aurora Veil  
-- Moonblast  
-- Encore  
-- Hypnosis  
+Donphan @ Leftovers
+Ability: Sturdy
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Stealth Rock
+- Rapid Spin
+- Earthquake
+- Righteous Strike  
 
-Aegislash @ Leftovers  
-Ability: Stance Change  
-EVs: 252 HP / 252 Def / 4 SpD  
-Brave Nature  
-- Kings Shield  
-- Sacred Sword  
-- Shadow Sneak  
-- Iron Head  
+Arcanine @ Assault Vest  
+Ability: Intimidate   
+EVs: 252 Atk / 248 Spe  
+Jolly Nature  
+- Flame Charge  
+- Wild Charge  
+- Flare Blitz  
+- Righteous Strike  
 
-Gardevoir @ Throat Spray  
-Ability: Psychic Surge   
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Minun @ Light Ball  
+Ability: Volt Absorb   
+EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
-IVs: 0 Atk  
-- Healing Wish  
-- Psychic Noise  
-- Alluring Voice  
-- Draining Kiss  
+- Revival Blessing  
+- Hyper Voice  
+- Quick Attack  
+- Thunderbolt  
 
-Kingdra  
-Ability: Storm Herald   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Hurricane  
-- Tailwind  
-- Dragon Pulse  
-- Flip Turn  
+Floatzel @ Choice Scarf  
+Ability: Reckless   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wave Crash  
+- Ice Spinner  
+- Brick Break  
+- Righteous Strike  
 
-Spiritomb @ Focus Sash  
-Ability: Prankster  
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Destiny Bond  
-- Poltergeist  
-- Will-O-Wisp  
-- Foul Play  
+Blissey @ Leppa Berry
+Ability: Natural Cure
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Soft-Boiled
+- Seismic Toss
+- Thunder Wave
+- Revival Blessing
 
 Gallade @ Galladite  
-Ability: Justified    
-EVs: 252 Atk / 4 Def / 252 Spe  
+Ability: Sharpness    
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
-- Swords Dance  
+- Knock Off  
 - Close Combat  
 - Psycho Cut  
-- Leaf Blade  
+- Hero Slash  
 
 === TRAINER_WALLY_VR_3 ===
 Name: WALLY
@@ -12685,61 +12698,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ninetales-Alola @ Light Clay  
-Ability: Snow Warning 
-EVs: 248 HP / 8 Def / 252 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Aurora Veil  
-- Moonblast  
-- Encore  
-- Hypnosis  
+Infernape @ Choice Scarf
+Ability: Iron Fist
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Flare Blitz
+- Close Combat
+- U-turn
+- Mach Punch
 
-Aegislash @ Leftovers  
-Ability: Stance Change  
-EVs: 252 HP / 252 Def / 4 SpD  
-Brave Nature  
-- Kings Shield  
-- Sacred Sword  
-- Shadow Sneak  
-- Iron Head  
+Arcanine @ Assault Vest  
+Ability: Intimidate   
+EVs: 252 Atk / 248 Spe  
+Jolly Nature  
+- Flame Charge  
+- Wild Charge  
+- Flare Blitz  
+- Play Rough  
 
-Gardevoir @ Throat Spray  
-Ability: Psychic Surge   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Healing Wish  
-- Psychic Noise  
-- Alluring Voice  
-- Draining Kiss  
+Absol @ Life Orb
+Ability: Sharpness
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Knock Off
+- Psycho Cut
+- Swords Dance
+- Hero Slash 
 
-Kingdra  
-Ability: Storm Herald   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Hurricane  
-- Tailwind  
-- Dragon Pulse  
-- Flip Turn  
+Floatzel @ Choice Scarf  
+Ability: Reckless   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wave Crash  
+- Ice Spinner  
+- Brick Break  
+- Righteous Strike   
 
-Spiritomb @ Focus Sash  
-Ability: Prankster  
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Destiny Bond  
-- Poltergeist  
-- Will-O-Wisp  
-- Foul Play  
+Falinks @ Salac Berry  
+Ability: Parental Bond  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Close Combat  
+- Knock Off  
+- Megahorn  
+- Righteous Strike   
 
 Gallade @ Galladite  
-Ability: Justified    
-EVs: 252 Atk / 4 Def / 252 Spe  
+Ability: Sharpness    
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
-- Swords Dance  
+- Knock Off  
 - Close Combat  
 - Psycho Cut  
-- Leaf Blade  
+- Hero Slash   
 
 === TRAINER_WALLY_VR_4 ===
 Name: WALLY
@@ -12751,61 +12762,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ninetales-Alola @ Light Clay  
-Ability: Snow Warning 
-EVs: 248 HP / 8 Def / 252 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Aurora Veil  
-- Moonblast  
-- Encore  
-- Hypnosis  
+Lycanroc-Dusk @ Focus Sash  
+Ability: Tough Claws    
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Accelerock  
+- Stealth Rock  
+- Stone Edge  
+- Righteous Strike
 
-Aegislash @ Leftovers  
-Ability: Stance Change  
-EVs: 252 HP / 252 Def / 4 SpD  
-Brave Nature  
-- Kings Shield  
-- Sacred Sword  
-- Shadow Sneak  
-- Iron Head  
+Stoutland @ Assault Vest
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Facade
+- Crunch
+- Return
+- Righteous Strike  
 
-Gardevoir @ Throat Spray  
-Ability: Psychic Surge   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Healing Wish  
-- Psychic Noise  
-- Alluring Voice  
-- Draining Kiss  
+Infernape @ Life Orb
+Ability: Sheer Force
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Hero Blast
+- Fire Blast
+- Calm Mind
+- Grass Knot 
 
-Kingdra  
-Ability: Storm Herald   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Hurricane  
-- Tailwind  
-- Dragon Pulse  
-- Flip Turn  
+Floatzel @ Choice Scarf  
+Ability: Reckless   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wave Crash  
+- Ice Spinner  
+- Brick Break  
+- Righteous Strike 
 
-Spiritomb @ Focus Sash  
-Ability: Prankster  
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Destiny Bond  
-- Poltergeist  
-- Will-O-Wisp  
-- Foul Play  
+Sirfetchd @ Weakness Policy
+Ability: Steadfast
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Close Combat
+- Leaf Blade
+- Swords Dance
+- Meteor Assault 
 
 Gallade @ Galladite  
-Ability: Justified    
-EVs: 252 Atk / 4 Def / 252 Spe  
+Ability: Sharpness    
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
-- Swords Dance  
+- No Retreat 
 - Close Combat  
 - Psycho Cut  
-- Leaf Blade  
+- Hero Slash  
 
 === TRAINER_WALLY_VR_5 ===
 Name: WALLY
@@ -12817,61 +12826,59 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Ace Pokemon
 
-Ninetales-Alola @ Light Clay  
-Ability: Snow Warning 
-EVs: 248 HP / 8 Def / 252 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Aurora Veil  
-- Moonblast  
-- Encore  
-- Hypnosis  
+Lycanroc-Dusk @ Focus Sash  
+Ability: Tough Claws    
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Accelerock  
+- Stealth Rock  
+- Stone Edge  
+- Righteous Strike  
 
-Aegislash @ Leftovers  
-Ability: Stance Change  
-EVs: 252 HP / 252 Def / 4 SpD  
-Brave Nature  
-- Kings Shield  
-- Sacred Sword  
-- Shadow Sneak  
-- Iron Head  
+Arcanine @ Assault Vest  
+Ability: Intimidate   
+EVs: 252 Atk / 248 Spe  
+Jolly Nature  
+- Extreme Speed  
+- Wild Charge  
+- Flare Blitz  
+- Righteous Strike   
 
-Gardevoir @ Throat Spray  
-Ability: Psychic Surge   
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Minun @ Light Ball  
+Ability: Heroics   
+EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
-IVs: 0 Atk  
-- Healing Wish  
-- Psychic Noise  
-- Alluring Voice  
-- Draining Kiss  
+- Revival Blessing  
+- Hyper Voice  
+- Quick Attack  
+- Thunderbolt  
 
-Kingdra  
-Ability: Storm Herald   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Hurricane  
-- Tailwind  
-- Dragon Pulse  
-- Flip Turn  
+Floatzel @ Choice Scarf  
+Ability: Reckless   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Wave Crash  
+- Ice Spinner  
+- Brick Break  
+- Righteous Strike  
 
-Spiritomb @ Focus Sash  
-Ability: Prankster  
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Destiny Bond  
-- Poltergeist  
-- Will-O-Wisp  
-- Foul Play  
+Falinks @ Salac Berry  
+Ability: Parental Bond  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Close Combat  
+- Knock Off  
+- No Retreat   
+- Reversal  
 
 Gallade @ Galladite  
-Ability: Justified    
-EVs: 252 Atk / 4 Def / 252 Spe  
+Ability: Sharpness    
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
-- Swords Dance  
+- No Retreat 
 - Close Combat  
 - Psycho Cut  
-- Leaf Blade  
+- Hero Slash  
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
 Name: BRENDAN

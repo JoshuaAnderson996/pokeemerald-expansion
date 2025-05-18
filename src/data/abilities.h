@@ -2632,4 +2632,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Powers up Cooking moves."),
         .aiRating = 6,
     },
+    [ABILITY_HAMMER_BRO] =
+    {
+        .name = _("Hammer Bro"),
+        .description = COMPOUND_STRING("Boosts Hammer Moves."),
+        .aiRating = 6,
+    },    
 };

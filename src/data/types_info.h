@@ -485,7 +485,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Cosmic"),
         .generic = _("a COSMIC move"),
-        .palette = 14,
+        .palette = 13,
         .teraTypeRGBValue = RGB(10, 18, 27),
         .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
         .useSecondTypeIconPalette = TRUE,
@@ -497,7 +497,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Hero"),
         .generic = _("a HERO move"),
-        .palette = 14,
+        .palette = 13,
         .teraTypeRGBValue = RGB(26, 8, 14),
         .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
         .useSecondTypeIconPalette = TRUE,

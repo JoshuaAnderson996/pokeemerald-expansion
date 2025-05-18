@@ -9649,7 +9649,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         case ABILITY_CHEF:
         if (IsCookingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;                 
+        break;      
+        case ABILITY_HAMMER_BRO:
+        if (IsHammerMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;            
     case ABILITY_SIEGE_SPECIALIST:
         if (gSideStatuses[GetBattlerSide(battlerDef)] & (SIDE_STATUS_SPIKES
                                                        | SIDE_STATUS_STEALTH_ROCK
@@ -10082,7 +10086,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
         case ABILITY_BIG_PECKS:
-        if (moveType == TYPE_FIRE)
+        if (moveType == TYPE_FLYING)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;   
     case ABILITY_PROTOSYNTHESIS:
