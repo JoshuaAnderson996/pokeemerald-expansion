@@ -6460,7 +6460,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Whips up a vicious twister\n"
             "to tear at the foe."),
         .effect = EFFECT_HIT,
-        .power = 40,
+        .power = 60,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 20,
@@ -6472,6 +6472,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 20,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_DEFOG,
         }),
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -12573,7 +12576,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws a rock to knock the\n"
             "foe down to the ground."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 75,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 15,
@@ -21776,14 +21779,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Wind Rage"),
         .description = COMPOUND_STRING("A Powerful wind gust"),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 70,
         .type = TYPE_FLYING,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .windMove = B_EXTRAPOLATED_MOVE_FLAGS,
+        .damagesAirborneDoubleDamage = TRUE,
+        .windMove = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxWindRage,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_DEFOG,

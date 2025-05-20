@@ -2245,6 +2245,7 @@ u8 DoBattlerEndTurnEffects(void)
                   && ability != ABILITY_SAND_FORCE
                   && ability != ABILITY_SAND_RUSH
                   && ability != ABILITY_OVERCOAT
+                  && !IsDesertSpecies(gBattleMons[gBattlerAttacker].species) 
                   && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
                   && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                   && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
@@ -11076,7 +11077,10 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
         if (gSpeciesInfo[speciesDef].types[1] != gSpeciesInfo[speciesDef].types[0])
             MulByTypeEffectiveness(&modifier, move, moveType, 0, 0, gSpeciesInfo[speciesDef].types[1], 0, FALSE);
 
-        if (moveType == TYPE_GROUND && abilityDef == ABILITY_LEVITATE && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            if (moveType == TYPE_GROUND
+                && ( abilityDef == ABILITY_LEVITATE
+                   || IsFloatingSpecies(speciesDef) )
+                && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
             modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
             modifier = UQ_4_12(0.0);
@@ -11118,7 +11122,8 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
          || (moveType == TYPE_FIRE     &&  abilityDef == ABILITY_FLASH_FIRE)
          || (moveType == TYPE_GRASS    &&  abilityDef == ABILITY_SAP_SIPPER)
          || (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE
-                                       ||  abilityDef == ABILITY_EARTH_EATER))
+                                       || !IsFloatingSpecies(gBattleMons[gBattlerAttacker].species)   
+                                       || abilityDef == ABILITY_EARTH_EATER))
          || (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB
                                        || abilityDef == ABILITY_DRY_SKIN
                                        || abilityDef == ABILITY_STORM_DRAIN))
@@ -12618,4 +12623,182 @@ bool32 IsMovePowderBlocked(u32 battlerAtk, u32 battlerDef, u32 move)
     }
 
     return effect;
+}
+static const u16 sDesertSpeciesList[] =
+{
+    SPECIES_SANDSHREW,
+    SPECIES_SANDSLASH,
+    SPECIES_TRAPINCH,
+    SPECIES_VIBRAVA,
+    SPECIES_FLYGON,
+    SPECIES_CACNEA,
+    SPECIES_CACTURNE,
+    SPECIES_BALTOY,
+    SPECIES_CLAYDOL,
+    SPECIES_GIBLE,
+    SPECIES_GABITE,
+    SPECIES_GARCHOMP,
+    SPECIES_SANDILE,
+    SPECIES_KROKOROK,
+    SPECIES_KROOKODILE,
+    SPECIES_DWEBBLE,
+    SPECIES_CRUSTLE,
+    SPECIES_DIGLETT,
+    SPECIES_DUGTRIO,
+    SPECIES_RHYHORN,
+    SPECIES_RHYDON,
+    SPECIES_RHYPERIOR,
+    SPECIES_HIPPOPOTAS,
+    SPECIES_HIPPOWDON,
+    SPECIES_BELDUM,
+    SPECIES_METANG,
+    SPECIES_METAGROSS,
+    SPECIES_DARUMAKA,
+    SPECIES_DARMANITAN,
+    SPECIES_MARACTUS,
+    SPECIES_SCRAGGY,
+    SPECIES_SCRAFTY,
+    SPECIES_VULLABY,
+    SPECIES_MANDIBUZZ,
+    SPECIES_YAMASK,
+    SPECIES_COFAGRIGUS,
+    SPECIES_ONIX,
+    SPECIES_STEELIX,
+    SPECIES_LARVESTA,
+    SPECIES_VOLCARONA,
+    SPECIES_GOLETT,
+    SPECIES_GOLURK,
+    SPECIES_CASTFORM,
+    SPECIES_SILICOBRA,
+    SPECIES_SANDACONDA,
+    SPECIES_PHANPY,
+    SPECIES_DONPHAN,
+    SPECIES_STONJOURNER,
+};
+
+bool32 IsDesertSpecies(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sDesertSpeciesList); i++)
+    {
+        if (species == sDesertSpeciesList[i])
+            return TRUE;
+    }
+    return FALSE;
+}
+static const u16 sFloatingSpeciesList[] =
+{
+    SPECIES_GASTLY,
+    SPECIES_WEEZING_GALAR,
+    SPECIES_HAUNTER,
+    SPECIES_GENGAR,
+    SPECIES_KOFFING,
+    SPECIES_WEEZING,
+    SPECIES_MISDREAVUS,
+    SPECIES_UNOWN,
+    SPECIES_VIBRAVA,
+    SPECIES_FLYGON,
+    SPECIES_LUNATONE,
+    SPECIES_SOLROCK,
+    SPECIES_BALTOY,
+    SPECIES_CLAYDOL,
+    SPECIES_DUSKULL,
+    SPECIES_CHIMECHO,
+    SPECIES_BELDUM,
+    SPECIES_METANG,
+    SPECIES_METAGROSS_MEGA, 
+    SPECIES_LATIAS,
+    SPECIES_LATIAS_MEGA,
+    SPECIES_LATIOS,
+    SPECIES_LATIOS_MEGA,
+    SPECIES_MISMAGIUS,
+    SPECIES_CHINGLING,
+    SPECIES_BRONZOR,
+    SPECIES_BRONZONG,
+    SPECIES_CARNIVINE,
+    SPECIES_ROTOM,
+    SPECIES_ROTOM_HEAT,
+    SPECIES_ROTOM_WASH,
+    SPECIES_ROTOM_FROST,
+    SPECIES_ROTOM_FAN,
+    SPECIES_ROTOM_MOW,
+    SPECIES_UXIE,
+    SPECIES_MESPRIT,
+    SPECIES_AZELF,
+    SPECIES_GIRATINA_ORIGIN, 
+    SPECIES_GIRATINA_ALTERED,
+    SPECIES_CRESSELIA,
+    SPECIES_TYNAMO,
+    SPECIES_EELEKTRIK,
+    SPECIES_EELEKTROSS,
+    SPECIES_CRYOGONAL,
+    SPECIES_DARKRAI,
+    SPECIES_HYDREIGON,
+    SPECIES_VIKAVOLT,
+    SPECIES_DUSKNOIR,
+    SPECIES_GHOLDENGO,
+    SPECIES_MAGNEMITE,
+    SPECIES_MAGNETON,
+    SPECIES_MAGNEZONE,
+    SPECIES_MEW,
+    SPECIES_MEWTWO_MEGA_Y,
+    SPECIES_BEEDRILL,
+    SPECIES_VOLCARONA,
+    SPECIES_PECHARUNT,
+    SPECIES_CHANDELURE,
+    SPECIES_UNOWN,
+    SPECIES_PORYGON,
+    SPECIES_PORYGON2,
+    SPECIES_PORYGON_Z,
+    SPECIES_DUSTOX,
+    SPECIES_CASTFORM,
+    SPECIES_ETERNATUS,
+    SPECIES_DRAGAPULT,
+    SPECIES_DREEPY,
+    SPECIES_FROSMOTH,
+    SPECIES_POLTEAGEIST,
+    SPECIES_FLAPPLE,
+    SPECIES_ORBEETLE,
+    SPECIES_ORBEETLE_MEGA,
+    SPECIES_NAGANADEL,
+    SPECIES_NECROZMA,
+    SPECIES_NECROZMA_DAWN_WINGS,
+    SPECIES_NECROZMA_ULTRA,
+    SPECIES_KARTANA,
+    SPECIES_NIHILEGO,
+    SPECIES_LUNALA,
+    SPECIES_TAPU_KOKO,
+    SPECIES_TAPU_LELE,
+    SPECIES_TAPU_BULU,
+    SPECIES_TAPU_FINI,
+    SPECIES_DHELMISE,
+    SPECIES_COMFEY,
+    SPECIES_AEGISLASH_BLADE,
+    SPECIES_AEGISLASH_SHIELD,
+    SPECIES_AEGISLASH,
+    SPECIES_CHARIZARD_MEGA_X,
+    SPECIES_FLORGES,
+    SPECIES_BEHEEYEM,
+    SPECIES_KLINKLANG,
+    SPECIES_VANILLUXE,
+    SPECIES_REUNICLUS,
+    SPECIES_GLALIE,
+    SPECIES_FROSLASS,
+    SPECIES_WAILORD,
+    SPECIES_SHEDINJA,
+    SPECIES_CELEBI,
+    SPECIES_VENOMOTH,
+};
+
+bool32 IsFloatingSpecies(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sFloatingSpeciesList); i++)
+    {
+        if (species == sFloatingSpeciesList[i])
+            return TRUE;
+    }
+    return FALSE;
 }
