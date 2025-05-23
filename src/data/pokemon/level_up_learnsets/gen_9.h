@@ -13264,6 +13264,7 @@ static const struct LevelUpMove sAzelfLevelUpLearnset[] = {
 #if P_FAMILY_DIALGA
 static const struct LevelUpMove sDialgaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCARY_FACE),
+    LEVEL_UP_MOVE( 1, MOVE_TRICK_ROOM),
     LEVEL_UP_MOVE( 1, MOVE_METAL_CLAW),
     LEVEL_UP_MOVE( 8, MOVE_DRAGON_BREATH),
     LEVEL_UP_MOVE(16, MOVE_ANCIENT_POWER),

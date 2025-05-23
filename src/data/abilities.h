@@ -2638,4 +2638,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Boosts Hammer Moves."),
         .aiRating = 6,
     },    
+    [ABILITY_TIME_LORD] =
+    {
+    .name = _("Time Lord"),
+    .description = COMPOUND_STRING("Bends time to attack first."),
+    .aiRating = 6,
+    },
+ 
 };

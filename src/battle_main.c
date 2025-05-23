@@ -4851,6 +4851,12 @@ s8 GetBattleMovePriority(u32 battler, u16 move)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
         return GetMovePriority(MOVE_MAX_GUARD);
 
+    if (ability == ABILITY_TIME_LORD)
+    {
+        // Add +8 to whatever the move’s base priority is
+        priority += 8;
+    }
+
     if (ability == ABILITY_GALE_WINGS
         && (GetGenConfig(GEN_CONFIG_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
         && GetMoveType(move) == TYPE_FLYING)

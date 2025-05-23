@@ -17483,9 +17483,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Electric bursts always go\n"
             "first and land a critical hit."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_8 ? 80 : 80,
+        .power = B_UPDATED_MOVE_DATA >= GEN_8 ? 65 : 80,
         .type = TYPE_ELECTRIC,
-        .accuracy = 70,
+        .accuracy = 80,
         .pp = B_UPDATED_MOVE_DATA >= GEN_8 ? 10 : 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 2,
