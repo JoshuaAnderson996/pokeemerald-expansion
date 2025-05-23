@@ -6537,17 +6537,23 @@ static void Cmd_moveend(void)
                 }
                 break;
             case MOVE_EFFECT_SMACK_DOWN:
-                if (!IsBattlerGrounded(gBattlerTarget)
-                 && IsBattlerAlive(gBattlerTarget)
-                 && !DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove))
-                {
-                    gStatuses3[gBattlerTarget] |= STATUS3_SMACKED_DOWN;
-                    gStatuses3[gBattlerTarget] &= ~(STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS | STATUS3_ON_AIR);
-                    effect = TRUE;
-                    BattleScriptPush(gBattlescriptCurrInstr);
-                    gBattlescriptCurrInstr = BattleScript_MoveEffectSmackDown;
-                }
-                break;
+    if (  
+        ( !IsBattlerGrounded(gBattlerTarget)
+          || IsFloatingSpecies(gBattleMons[gBattlerTarget].species)
+        )
+        && IsBattlerAlive(gBattlerTarget)
+        && !DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
+       )
+    {
+        gStatuses3[gBattlerTarget] |= STATUS3_SMACKED_DOWN;
+        gStatuses3[gBattlerTarget] &= ~(STATUS3_MAGNET_RISE
+                                       | STATUS3_TELEKINESIS
+                                       | STATUS3_ON_AIR);
+        effect = TRUE;
+        BattleScriptPush(gBattlescriptCurrInstr);
+        gBattlescriptCurrInstr = BattleScript_MoveEffectSmackDown;
+    }
+    break;
             case MOVE_EFFECT_REMOVE_STATUS: // Smelling salts, Wake-Up Slap, Sparkling Aria
             {
                 u32 argStatus = GetMoveEffectArg_Status(gCurrentMove);
