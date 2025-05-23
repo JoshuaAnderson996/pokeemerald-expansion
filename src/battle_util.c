@@ -10486,6 +10486,25 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageCalculationData *
     return UQ_4_12(1.0);
 }
 
+static inline uq4_12_t GetPoisonStatDropModifier(struct DamageCalculationData *damageCalcData, u32 abilityDef)
+{
+    u32 battlerDef = damageCalcData->battlerDef;
+    u32 move       = damageCalcData->move;
+
+    // Only apply if defender is poisoned, and neither Magic Guard nor Poison Heal blocks it
+    if ((gBattleMons[battlerDef].status1 & STATUS1_POISON)
+        && abilityDef != ABILITY_MAGIC_GUARD
+        && abilityDef != ABILITY_POISON_HEAL
+        // Apply to both physical and special moves:
+        && (IsBattleMovePhysical(move) || IsBattleMoveSpecial(move)))
+    {
+        // A single–stage drop on Def or Sp. Def = 0.75× damage
+        return UQ_4_12(0.75);
+    }
+
+    return UQ_4_12(1.0);
+}
+
 static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
 {
     if (isCrit)
@@ -10764,6 +10783,7 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
         DAMAGE_APPLY_MODIFIER(GetSameTypeAttackBonusModifier(damageCalcData, abilityAtk));
     DAMAGE_APPLY_MODIFIER(typeEffectivenessModifier);
     DAMAGE_APPLY_MODIFIER(GetBurnOrFrostBiteModifier(damageCalcData, abilityAtk));
+     DAMAGE_APPLY_MODIFIER(GetPoisonStatDropModifier(damageCalcData, abilityDef));
     DAMAGE_APPLY_MODIFIER(GetZMaxMoveAgainstProtectionModifier(damageCalcData));
     DAMAGE_APPLY_MODIFIER(GetOtherModifiers(damageCalcData, typeEffectivenessModifier, abilityAtk, abilityDef, holdEffectAtk, holdEffectDef));
 
@@ -12648,6 +12668,7 @@ static const u16 sDesertSpeciesList[] =
     SPECIES_RHYHORN,
     SPECIES_RHYDON,
     SPECIES_RHYPERIOR,
+    SPECIES_DRAPION,
     SPECIES_HIPPOPOTAS,
     SPECIES_HIPPOWDON,
     SPECIES_BELDUM,
@@ -12802,3 +12823,5 @@ bool32 IsFloatingSpecies(u16 species)
     }
     return FALSE;
 }
+
+
