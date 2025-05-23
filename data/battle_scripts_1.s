@@ -6211,6 +6211,11 @@ BattleScript_ToxicSpikesPoisoned::
 	waitstate
 	return
 
+	BattleScript_StealthRockDestroyed::
+	printstring STRINGID_STEALTHROCKDESTROYED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_StickyWebOnSwitchIn::
 	savetarget
 	saveattacker

@@ -8084,16 +8084,33 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
         SetDmgHazardsBattlescript(battler, B_MSG_PKMNHURTBYSPIKES);
     }
     else if (!(gDisableStructs[battler].stealthRockDone)
-        && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
-        && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
+         && IsBattlerAffectedByHazards(battler, FALSE)
+         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+{
+    gDisableStructs[battler].stealthRockDone = TRUE;
+
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_ROCK))
     {
-        gDisableStructs[battler].stealthRockDone = TRUE;
-        gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
+        // Rock-types absorb Stealth Rock:
+        gSideStatuses[GetBattlerSide(battler)] &= ~SIDE_STATUS_STEALTH_ROCK;
+        gSideTimers[GetBattlerSide(battler)].stealthRockAmount = 0;
+
+        // Trigger your “Stealth Rock destroyed” script:
+        gBattleScripting.battler = battler;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_StealthRockDestroyed;
+    }
+    else
+    {
+        // Everyone else takes the normal chip damage:
+        gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(
+            TYPE_SIDE_HAZARD_POINTED_STONES, battler);
 
         if (gBattleStruct->moveDamage[battler] != 0)
             SetDmgHazardsBattlescript(battler, B_MSG_STEALTHROCKDMG);
     }
+}
     else if (!(gDisableStructs[battler].toxicSpikesDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TOXIC_SPIKES)
         && IsBattlerGrounded(battler))
