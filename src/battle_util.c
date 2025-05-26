@@ -11142,7 +11142,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
          || (moveType == TYPE_FIRE     &&  abilityDef == ABILITY_FLASH_FIRE)
          || (moveType == TYPE_GRASS    &&  abilityDef == ABILITY_SAP_SIPPER)
          || (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE
-                                       || !IsFloatingSpecies(gBattleMons[gBattlerAttacker].species)   
+                                       || IsFloatingSpecies(speciesDef) 
                                        || abilityDef == ABILITY_EARTH_EATER))
          || (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB
                                        || abilityDef == ABILITY_DRY_SKIN
@@ -12717,6 +12717,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_KOFFING,
     SPECIES_WEEZING,
     SPECIES_MISDREAVUS,
+    SPECIES_VOLBEAT,
     SPECIES_PROBOPASS,
     SPECIES_UNOWN,
     SPECIES_VIBRAVA,
@@ -12725,6 +12726,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_SOLROCK,
     SPECIES_BALTOY,
     SPECIES_CLAYDOL,
+    SPECIES_BUTTERFREE_MEGA,
     SPECIES_DUSKULL,
     SPECIES_CHIMECHO,
     SPECIES_BELDUM,
@@ -12740,6 +12742,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_BRONZONG,
     SPECIES_CARNIVINE,
     SPECIES_ROTOM,
+    SPECIES_FORRETRESS,
     SPECIES_ROTOM_HEAT,
     SPECIES_ROTOM_WASH,
     SPECIES_ROTOM_FROST,

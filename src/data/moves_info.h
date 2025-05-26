@@ -478,7 +478,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Cuts the foe with sharp\n"
             "scythes, claws, etc."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
         .power = 50,
         .type = TYPE_STEEL,
         .accuracy = 95,
@@ -486,6 +486,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_GRASS },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
             .chance = 100,
@@ -988,7 +989,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 30,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
+
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -1814,6 +1819,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .wrestlingMove = TRUE,
         .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
+        }),
         .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -1939,7 +1947,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_4 ? 25 : 20,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
+        .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .argument = { .absorbPercentage = 75 },
         .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
@@ -2373,9 +2381,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws small rocks to\n"
             "strike the foe."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 70,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -4207,7 +4215,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ROCK,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -5166,7 +5174,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_WATER,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -6282,7 +6290,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_STEEL,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 35,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -7456,7 +7464,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "but lowers abilities."),
         .effect = EFFECT_HIT,
         .power = 125,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_HERO,
         .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -8831,7 +8839,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Attacks with muddy water.\n"
             "May lower accuracy."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95,
         .type = TYPE_WATER,
         .accuracy = 85,
@@ -8839,6 +8847,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_GROUND },
         .skyBattleBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
@@ -9503,7 +9512,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_COSMIC,
         .accuracy = 0,
-        .criticalHitStage = 1,
+        .criticalHitStage = 0,
         .pp = 5,
         .target = MOVE_TARGET_ALL_BATTLERS,
         .priority = 0,
@@ -9588,6 +9597,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .self = TRUE,
+        },
+         {
+            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -9971,7 +9983,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the more damage it does."),
         .effect = EFFECT_TRUMP_CARD,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_HERO,
         .accuracy = 0,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
@@ -13988,6 +14000,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
             .chance = 50,
@@ -14304,6 +14317,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .chance = 100,
@@ -14419,11 +14433,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
             .chance = 100,
             .self = TRUE
-        },    
-        {
-            .moveEffect = MOVE_EFFECT_HAZE,
-            .chance = 100,
-            .self = TRUE
         }),   
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -14456,11 +14465,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         },
         {
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-            .chance = 100,
-            .self = TRUE
-        },    
-        {
-            .moveEffect = MOVE_EFFECT_HAZE,
             .chance = 100,
             .self = TRUE
         }), 
@@ -14887,13 +14891,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Puts a curse on the foe\n"
             "making the foe Grass-type."),
         .effect = EFFECT_THIRD_TYPE,
-        .power = 0,
+        .power = 60,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .argument = { .type = TYPE_GRASS },
         .zMove = { .effect = Z_EFFECT_ALL_STATS_UP_1 },
         .magicCoatAffected = TRUE,
@@ -14963,7 +14967,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Lets out a charming cry\n"
             "that cannot be evaded."),
         .effect = EFFECT_HIT,
-        .power = 40,
+        .power = 60,
         .type = TYPE_FAIRY,
         .accuracy = 0,
         .pp = 15,
@@ -15032,7 +15036,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Draining Kiss"),
         .description = sDrainingKissDescription,
         .effect = EFFECT_ABSORB,
-        .power = 50,
+        .power = 60,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,
@@ -15274,18 +15278,21 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Fairy Lock"),
         .description = COMPOUND_STRING(
             "Locks down the battlefield\n"
-            "preventing escape next turn."),
-        .effect = EFFECT_FAIRY_LOCK,
-        .power = 0,
+            "preventing escape."),
+        .effect = EFFECT_HIT,
+        .power = 50,
         .type = TYPE_FAIRY,
-        .accuracy = 0,
+        .accuracy = 100,
         .pp = 10,
-        .target = MOVE_TARGET_ALL_BATTLERS,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
         .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
         .ignoresProtect = TRUE,
         .ignoresSubstitute = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
+        }),
         .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
@@ -15486,6 +15493,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .magicMove = TRUE,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
@@ -15857,8 +15865,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Hold Back"),
         .description = sFalseSwipeDescription,
         .effect = EFFECT_FALSE_SWIPE,
-        .power = 40,
-        .type = TYPE_NORMAL,
+        .power = 100,
+        .type = TYPE_HERO,
         .accuracy = 100,
         .pp = 40,
         .target = MOVE_TARGET_SELECTED,
@@ -16229,7 +16237,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .criticalHitStage = 1,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .ninjaMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
@@ -16313,6 +16321,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .self = TRUE,
+        },
+         {
+            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -16987,6 +16998,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .hammerMove = TRUE,
         .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+         .moveEffect = MOVE_EFFECT_SMACK_DOWN,
+        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -17429,7 +17443,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Plasma Fists"),
         .description = COMPOUND_STRING(
             "Hits with electrical fists.\n"
-            "Normal moves turn Electric."),
+            "Moves turn Electric."),
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_ELECTRIC,
@@ -17888,6 +17902,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .bitingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TRAP_BOTH,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -22234,17 +22251,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Plate Throw"),
         .description = COMPOUND_STRING(
-            "Throw plates 2 to 5 times.\n"
-            "Ups Speed, lowers defense."),
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
+            "Throw plates, Type depends of plate."),
+        .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
+        .power = 75,
         .type = TYPE_NORMAL,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .moveProperty = MOVE_EFFECT_SCALE_SHOT },
+        .cookingMove = TRUE,
+        .argument = { .holdEffect = HOLD_EFFECT_PLATE },
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
