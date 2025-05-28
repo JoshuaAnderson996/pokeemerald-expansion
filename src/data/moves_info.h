@@ -17508,13 +17508,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .mirrorMoveBanned = B_UPDATED_MOVE_FLAGS < GEN_8,
         .alwaysCriticalHit = TRUE,
         .metronomeBanned = TRUE,
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_EVS_PLUS_1,
-            .chance = 100,
-            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
-        }),
-        #endif
         .battleAnimScript = gBattleAnimMove_ZippyZap,
     },
 

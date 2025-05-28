@@ -8952,8 +8952,14 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, bool32 considerInverse)
 
 bool32 IsBattlerGrounded(u32 battler)
 {
+    // --- Custom floating species are always treated as airborne ---
+    if (IsFloatingSpecies(gBattleMons[battler].species))
+        return FALSE;
+
+    // The existing engine logic lives here
     return IsBattlerGroundedInverseCheck(battler, FALSE);
 }
+
 
 u32 GetMoveSlot(u16 *moves, u32 move)
 {
@@ -12813,6 +12819,8 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_WAILORD,
     SPECIES_SHEDINJA,
     SPECIES_CELEBI,
+    SPECIES_GEODUDE,
+    SPECIES_CARBINK,
     SPECIES_VENOMOTH,
 };
 
