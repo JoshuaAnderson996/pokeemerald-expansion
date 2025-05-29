@@ -8924,6 +8924,8 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, bool32 considerInverse)
 
     if (holdEffect == HOLD_EFFECT_IRON_BALL)
         return TRUE;
+    if (IsFloatingSpecies(gBattleMons[battler].species))
+        return FALSE;
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)
         return TRUE;
     if (B_ROOTED_GROUNDING >= GEN_4 && gStatuses3[battler] & STATUS3_ROOTED)
