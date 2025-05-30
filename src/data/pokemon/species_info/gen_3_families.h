@@ -9311,6 +9311,80 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sCastformFormSpeciesIdTable,
         .formChangeTable = sCastformFormChangeTable,
     },
+
+    [SPECIES_CASTFORM_SANDSTORM] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 70,
+        .baseDefense   = 80,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_GROUND),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 147 : 145,
+        .evYield_HP = 1,
+        .itemCommon = ITEM_SOFT_SAND,
+        .itemRare = ITEM_SOFT_SAND,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_FORECAST, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Castform"),
+        .cryId = CRY_CASTFORM,
+        .natDexNum = NATIONAL_DEX_CASTFORM,
+        .categoryName = _("Weather"),
+        .height = 3,
+        .weight = 8,
+        .description = COMPOUND_STRING(
+            "This is Castform's form in a sandstorm.\n"
+            "In an experiment where it was placed\n"
+            "in a sandbox, it didn't change to this form.\n"
+            "Its cold skin is as smooth as ice."),
+        .pokemonScale = 435,
+        .pokemonOffset = -5,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CastformSandstorm,
+        .frontPicSize = MON_COORDS_SIZE(40, 56),
+        .frontPicYOffset = 8,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 5),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 29),
+            ANIMCMD_FRAME(0, 12),
+        ),
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_CastformSandstorm,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_CastformSnowy,
+        .shinyPalette = gMonShinyPalette_CastformSandstorm,
+        .iconSprite = gMonIcon_CastformSandstorm,
+        .iconPalIndex = 0,
+        SHADOW(0, 8, SHADOW_SIZE_S)
+        FOOTPRINT(Castform)
+        OVERWORLD(
+            sPicTable_CastformNormal,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_CastformNormal,
+            gShinyOverworldPalette_CastformNormal
+        )
+        .levelUpLearnset = sCastformLevelUpLearnset,
+        .teachableLearnset = sCastformTeachableLearnset,
+        .eggMoveLearnset = sCastformEggMoveLearnset,
+        .formSpeciesIdTable = sCastformFormSpeciesIdTable,
+        .formChangeTable = sCastformFormChangeTable,
+    },
 #endif //P_FAMILY_CASTFORM
 
 #if P_FAMILY_KECLEON

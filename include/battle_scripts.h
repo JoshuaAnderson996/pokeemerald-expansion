@@ -518,6 +518,9 @@ extern const u8 BattleScript_BoosterEnergyRet[];
 extern const u8 BattleScript_TeraShellDistortingTypeMatchups[];
 extern const u8 BattleScript_TeraFormChange[];
 extern const u8 BattleScript_SleepClausePreventsEnd[];
+extern const u8 BattleScript_CastformWeatherStarts[];
+extern const u8 BattleScript_CastformWeatherStartsEarly[];
+extern const u8 BattleScript_CastformFormChangeWithStringEnd3[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

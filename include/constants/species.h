@@ -1666,8 +1666,9 @@
 #define SPECIES_COPPERAJAH_MEGA                         1550
 #define SPECIES_URSHIFU_SINGLE_STRIKE_MEGA              1551
 #define SPECIES_URSHIFU_RAPID_STRIKE_MEGA               1552
+#define SPECIES_CASTFORM_SANDSTORM                      1553
 
-#define SPECIES_EGG                                     1553
+#define SPECIES_EGG                                     1554
 
 #define NUM_SPECIES SPECIES_EGG
 

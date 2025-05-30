@@ -66,7 +66,8 @@
 #include "constants/pokemon.h"
 #include "config/battle.h"
 #include "data/battle_move_effects.h"
-
+#include "field_weather.h" //added wiz1989
+#include "constants/weather.h" //added wiz1989
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
 // the quarters cancel so no need to re-quadruple them in actual calculation
@@ -1134,6 +1135,53 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
     return FALSE;
 }
 
+bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move)
+{
+    u32 moveType;
+    u32 species;
+    species = gBattleMons[battler].species;
+    moveType = gMovesInfo[move].type;
+
+    //only execute if battler is a CASTFORM and ability FORECAST is active
+    if (IsCastform(battler) && ability == ABILITY_FORECAST)
+    {
+        //don't execute in Primal Weather
+        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) && !(gBattleWeather & B_WEATHER_STRONG_WINDS)) {
+            if (moveType == TYPE_WATER || move == MOVE_THUNDER || move == MOVE_HURRICANE) {
+                SetCurrentAndNextWeather(WEATHER_DOWNPOUR);
+                return TRUE;
+            }
+            if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS || move == MOVE_MORNING_SUN || move == MOVE_MOONLIGHT || move == MOVE_GROWTH) {
+                SetCurrentAndNextWeather(WEATHER_DROUGHT);
+                return TRUE;
+            }
+            if (moveType == TYPE_ICE || move == MOVE_THUNDER || move == MOVE_HURRICANE) {
+                SetCurrentAndNextWeather(WEATHER_SNOW);
+                return TRUE;
+            }
+            if (moveType == TYPE_GROUND || moveType == TYPE_ROCK) {
+                SetCurrentAndNextWeather(WEATHER_SANDSTORM);
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsCastform(u32 battler)
+{
+    u32 species;
+    species = gBattleMons[battler].species;
+
+    if (species == SPECIES_CASTFORM || species == SPECIES_CASTFORM_SUNNY || species == SPECIES_CASTFORM_RAINY 
+        || species == SPECIES_CASTFORM_SNOWY || species == SPECIES_CASTFORM_SANDSTORM)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+//enhancement end
+
 bool32 ProteanTryChangeType(u32 battler, u32 ability, u32 move, u32 moveType)
 {
       if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
@@ -1145,7 +1193,8 @@ bool32 ProteanTryChangeType(u32 battler, u32 ability, u32 move, u32 moveType)
     {
         SET_BATTLER_TYPE(battler, moveType);
         return TRUE;
-    }
+    }    
+    
     return FALSE;
 }
 
@@ -1194,6 +1243,13 @@ static void Cmd_attackcanceler(void)
         gMultiHitCounter = 2;
         PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
         return;
+    }
+
+    if (CastformTriggerWeatherChange(gBattlerAttacker, gBattlerAbility, gCurrentMove))
+    {
+        //this function sets the weather and brings up the battle strings
+        if (AbilityBattleEffects(ABILITYEFFECT_SWITCH_IN_WEATHER, gBattlerAttacker, gBattlerAbility, 0, 0))
+            return;
     }
 
     if (AbilityBattleEffects(ABILITYEFFECT_MOVES_BLOCK, gBattlerTarget, 0, 0, 0))

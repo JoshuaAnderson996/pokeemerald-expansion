@@ -161,6 +161,7 @@ static const u8 sText_Lanettes[] = _("LANETTE's"); //no decapitalize until it is
 static const u8 sText_EnigmaBerry[] = _("ENIGMA BERRY"); //no decapitalize until it is everywhere
 static const u8 sText_BerrySuffix[] = _(" BERRY"); //no decapitalize until it is everywhere
 const u8 gText_EmptyString3[] = _("");
+static const u8 gText_YouThrowABallNowRight[] = _("You throw a BALL now, right?\nI… I'll do my best!");
 
 static const u8 sText_TwoInGameTrainersDefeated[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS} and {B_TRAINER2_NAME_WITH_CLASS}!\p");
 
@@ -892,7 +893,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_NOTVERYEFFECTIVETWOFOES]              = COMPOUND_STRING("It's not very effective on {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}!"),
     [STRINGID_ITDOESNTAFFECTTWOFOES]                = COMPOUND_STRING("It doesn't affect {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}…"),
     [STRINGID_SENDCAUGHTMONPARTYORBOX]              = COMPOUND_STRING("Add {B_DEF_NAME} to your party?"),
-    [STRINGID_STEALTHROCKDESTROYED]                 = COMPOUND_STRING("Rocks were crushed?"),
+    [STRINGID_STEALTHROCKDESTROYED]                 = COMPOUND_STRING("Rocks were crushed!!!"),
+    [STRINGID_CASTFORMCHANGEDWEATHER]               = COMPOUND_STRING ("Weather was altered"),
     [STRINGID_PKMNSENTTOPCAFTERCATCH]               = gText_PkmnSentToPCAfterCatch,
 };
 

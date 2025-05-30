@@ -22048,7 +22048,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Chi Strike"),
         .description = COMPOUND_STRING("Attacks SP.DF."),
-        .effect = EFFECT_CHIT_STRIKE,
+        .effect = EFFECT_CHI_STRIKE,
         .power = 80,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
