@@ -21580,7 +21580,7 @@ const u32 gMonFrontPic_KinglerMega[] = INCBIN_U32("graphics/pokemon/kingler/mega
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Lurantis[] = INCBIN_U32("graphics/pokemon/lurantis/front.4bpp.lz");
+    const u32 gMonFrontPic_Lurantis[] = INCBIN_U32("graphics/pokemon/lurantis/anim_front.4bpp.lz");
     const u32 gMonPalette_Lurantis[] = INCBIN_U32("graphics/pokemon/lurantis/normal.gbapal.lz");
     const u32 gMonBackPic_Lurantis[] = INCBIN_U32("graphics/pokemon/lurantis/back.4bpp.lz");
     const u32 gMonShinyPalette_Lurantis[] = INCBIN_U32("graphics/pokemon/lurantis/shiny.gbapal.lz");

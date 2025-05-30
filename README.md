@@ -10,9 +10,16 @@ Updated to pokeemerald-expansion v1.11.1
 
 To pull from this branch here, just simply use these commands here:
 ```
+
 git remote add AGSMG https://github.com/agsmgmaster64/worldlinkdeluxe-ame/
 git pull AGSMG gacha-expansion
-```
+
+
+
+Based off RHH's pokeemerald-expansion 1.11.2 https://github.com/rh-hideout/pokeemerald-expansion/
+
+For mid battle evo zetraphes/MidBattleEvo
+
 
 
 Below is the rest of the original description from Chris Piche himself:
