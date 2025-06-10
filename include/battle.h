@@ -220,7 +220,9 @@ struct SpecialStatus
     u8 affectionEndured:1;
     // End of byte
     u8 dancerUsedMove:1;
+    u8 concertUsedMove:1;
     u8 dancerOriginalTarget:3;
+    u8 concertOriginalTarget:3;
     u8 distortedTypeMatchups:1;
     u8 teraShellAbilityDone:1;
     u8 criticalHit:1;
@@ -795,6 +797,7 @@ struct BattleStruct
     u8 transformZeroToHero[NUM_BATTLE_SIDES];
     u8 stickySyrupdBy[MAX_BATTLERS_COUNT];
     u8 intrepidSwordBoost[NUM_BATTLE_SIDES];
+    u8 draconicMindBoost[NUM_BATTLE_SIDES];
     u8 dauntlessShieldBoost[NUM_BATTLE_SIDES];
     u8 supersweetSyrup[NUM_BATTLE_SIDES];
     u8 supremeOverlordCounter[MAX_BATTLERS_COUNT];

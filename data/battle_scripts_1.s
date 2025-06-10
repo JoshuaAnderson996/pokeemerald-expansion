@@ -8643,6 +8643,12 @@ BattleScript_DancerActivates::
 	orword gHitMarker, HITMARKER_ALLOW_NO_PP
 	jumptocalledmove TRUE
 
+	BattleScript_ConcertActivates::
+	call BattleScript_AbilityPopUp
+	waitmessage B_WAIT_TIME_SHORT
+	orword gHitMarker, HITMARKER_ALLOW_NO_PP
+	jumptocalledmove TRUE
+
 BattleScript_SynchronizeActivates::
 	waitstate
 	call BattleScript_AbilityPopUp
@@ -10135,3 +10141,12 @@ BattleScript_CastformFormChangeWithStringEnd3::
 	waitanimation
 	handleformchange BS_SCRIPTING, 2
 	end3
+
+BattleScript_GiftOfEmotionActivates::
+    call BattleScript_AbilityPopUp
+    printstring STRINGID_MESPRITSHARESDAMAGE
+    waitmessage 0x40
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    waitstate
+    return

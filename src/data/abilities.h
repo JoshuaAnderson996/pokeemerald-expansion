@@ -2644,5 +2644,54 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .description = COMPOUND_STRING("Bends time to attack first."),
     .aiRating = 6,
     },
- 
+    [ABILITY_DRACOGNITION] =
+    {
+    .name = _("Dracognition"),
+    .description = COMPOUND_STRING("Uses Attack for Psychic/Dragon moves."),
+    .aiRating = 9,
+    },
+    [ABILITY_DRACONIC_MIND] =
+    {
+    .name = _("Draconic Mind"),
+    .description = COMPOUND_STRING("Raises Sp. Atk when entering battle."),
+    .aiRating = 9,
+    },
+    [ABILITY_MEGA_DRACOGNITION] =
+    {
+    .name = _("Dracognition"),
+    .description = COMPOUND_STRING("Uses Attack for Psychic/Dragon moves\n"
+    "also boosts their power"),
+    .aiRating = 9,
+    },
+    [ABILITY_MEGA_DRACONIC_MIND] =
+    {
+    .name = _("Draconic Mind"),
+    .description = COMPOUND_STRING("Raises Sp. Atk when entering battle\n"
+    "also boosts dragon/psychic moves"),
+    .aiRating = 9,
+    },
+    [ABILITY_GIFT_OF_EMOTION] =
+    {
+    .name = _("GiftedEmotion"),
+    .description = COMPOUND_STRING("Reflects damage it receives."),
+    .aiRating = 9,
+    },
+    [ABILITY_GIFT_OF_KNOWLEDGE] =
+    {
+    .name = _("GiftedEmotion"),
+    .description = COMPOUND_STRING("Boosts special attack."),
+    .aiRating = 9,
+    },
+    [ABILITY_UNDERWORLD_RULER] =
+    {
+    .name = _("GiftedEmotion"),
+    .description = COMPOUND_STRING("Boosts special attack."),
+    .aiRating = 9,
+    },
+ [ABILITY_CONCERT] =
+    {
+        .name = _("Concert"),
+        .description = COMPOUND_STRING("Sings for their fans."),
+        .aiRating = 5,
+    },
 };
