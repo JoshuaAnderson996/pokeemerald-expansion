@@ -9818,8 +9818,7 @@ Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
 Lycanroc-Dusk @ Focus Sash  
-Ability: Tough Claws
-Level: 22     
+Ability: Tough Claws    
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
 - Accelerock  
@@ -9828,8 +9827,7 @@ Jolly Nature
 - Righteous Strike  
 
 Arcanine @ Assault Vest  
-Ability: Intimidate 
-Level: 22   
+Ability: Intimidate   
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Extreme Speed  
@@ -9838,8 +9836,7 @@ Jolly Nature
 - Righteous Strike   
 
 Minun @ Light Ball  
-Ability: Heroics  
-Level: 22  
+Ability: Heroics   
 EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
 - Revival Blessing  
@@ -9848,8 +9845,7 @@ Timid Nature
 - Thunderbolt  
 
 Floatzel @ Choice Scarf  
-Ability: Reckless  
-Level: 22  
+Ability: Reckless   
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Wave Crash  
@@ -9859,7 +9855,6 @@ Jolly Nature
 
 Falinks @ Salac Berry  
 Ability: Parental Bond  
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Close Combat  
@@ -9869,7 +9864,6 @@ Jolly Nature
 
 Gallade @ Galladite  
 Ability: Sharpness    
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - No Retreat 
@@ -12674,7 +12668,7 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Arcanine @ Assault Vest  
 Ability: Intimidate  
-Level: 22 
+Level: 29  
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Flame Charge  
@@ -12684,7 +12678,7 @@ Jolly Nature
 
 Lycanroc-Dusk @ Focus Sash  
 Ability: Tough Claws  
-Level: 22  
+Level: 29  
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
 - Accelerock  
@@ -12694,7 +12688,7 @@ Jolly Nature
 
 Gallade @ Galladite  
 Ability: Sharpness  
-Level: 22  
+Level: 29  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Knock Off  
@@ -12714,7 +12708,6 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Donphan @ Leftovers
 Ability: Sturdy
-Level: 22 
 EVs: 252 HP / 252 Def / 4 SpD
 Impish Nature
 - Stealth Rock
@@ -12724,7 +12717,6 @@ Impish Nature
 
 Arcanine @ Assault Vest  
 Ability: Intimidate   
-Level: 22 
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Flame Charge  
@@ -12733,8 +12725,7 @@ Jolly Nature
 - Righteous Strike  
 
 Minun @ Light Ball  
-Ability: Volt Absorb  
-Level: 22  
+Ability: Volt Absorb   
 EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
 - Revival Blessing  
@@ -12744,7 +12735,6 @@ Timid Nature
 
 Floatzel @ Choice Scarf  
 Ability: Reckless   
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Wave Crash  
@@ -12763,7 +12753,6 @@ Calm Nature
 
 Gallade @ Galladite  
 Ability: Sharpness    
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Knock Off  
@@ -12783,7 +12772,6 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Infernape @ Choice Scarf
 Ability: Iron Fist
-Level: 22 
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Flare Blitz
@@ -12793,7 +12781,6 @@ Jolly Nature
 
 Arcanine @ Assault Vest  
 Ability: Intimidate   
-Level: 22 
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Flame Charge  
@@ -12803,7 +12790,6 @@ Jolly Nature
 
 Absol @ Life Orb
 Ability: Sharpness
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Knock Off
@@ -12812,8 +12798,7 @@ Jolly Nature
 - Hero Slash 
 
 Floatzel @ Choice Scarf  
-Ability: Reckless 
-Level: 22   
+Ability: Reckless   
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Wave Crash  
@@ -12831,8 +12816,7 @@ Jolly Nature
 - Righteous Strike   
 
 Gallade @ Galladite  
-Ability: Sharpness  
-Level: 22   
+Ability: Sharpness    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Knock Off  
@@ -12861,7 +12845,6 @@ Jolly Nature
 
 Stoutland @ Assault Vest
 Ability: Intimidate
-Level: 22 
 EVs: 252 HP / 252 Atk / 4 Def
 Adamant Nature
 - Facade
@@ -12871,7 +12854,6 @@ Adamant Nature
 
 Infernape @ Life Orb
 Ability: Sheer Force
-Level: 22 
 EVs: 4 HP / 252 SpA / 252 Spe
 Modest Nature
 - Hero Blast
@@ -12881,7 +12863,6 @@ Modest Nature
 
 Floatzel @ Choice Scarf  
 Ability: Reckless   
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Wave Crash  
@@ -12899,8 +12880,7 @@ Adamant Nature
 - Meteor Assault 
 
 Gallade @ Galladite  
-Ability: Sharpness   
-Level: 22  
+Ability: Sharpness    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - No Retreat 
@@ -12919,8 +12899,7 @@ Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
 Lycanroc-Dusk @ Focus Sash  
-Ability: Tough Claws 
-Level: 22    
+Ability: Tough Claws    
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
 - Accelerock  
@@ -12930,7 +12909,6 @@ Jolly Nature
 
 Arcanine @ Assault Vest  
 Ability: Intimidate   
-Level: 22 
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Extreme Speed  
@@ -12939,8 +12917,7 @@ Jolly Nature
 - Righteous Strike   
 
 Minun @ Light Ball  
-Ability: Heroics  
-Level: 22  
+Ability: Heroics   
 EVs: 4 HP / 252 SpA / 252 Spe  
 Timid Nature  
 - Revival Blessing  
@@ -12950,7 +12927,6 @@ Timid Nature
 
 Floatzel @ Choice Scarf  
 Ability: Reckless   
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Wave Crash  
@@ -12960,7 +12936,6 @@ Jolly Nature
 
 Falinks @ Salac Berry  
 Ability: Parental Bond  
-Level: 22 
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Close Combat  
@@ -12969,8 +12944,7 @@ Jolly Nature
 - Reversal  
 
 Gallade @ Galladite  
-Ability: Sharpness
-Level: 22     
+Ability: Sharpness    
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - No Retreat 

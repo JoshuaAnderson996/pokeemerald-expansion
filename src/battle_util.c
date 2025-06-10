@@ -5235,20 +5235,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_DRACONIC_MIND:
-            if (!gSpecialStatuses[battler].switchInAbilityDone
-                 && CompareStat(battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN)
-                && !(gBattleStruct->draconicMindBoost[GetBattlerSide(battler)] & (1u << gBattlerPartyIndexes[battler])))
-            {
-                gBattleScripting.savedBattler = gBattlerAttacker;
-                gBattlerAttacker = battler;
-                gBattleStruct->draconicMindBoost[GetBattlerSide(battler)] |= 1u << gBattlerPartyIndexes[battler];
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                SET_STATCHANGER(STAT_SPATK, 1, FALSE);
-                BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
-        effect++;
-             }
-    break;
         case ABILITY_WAVE_RIDER:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN)
@@ -5972,23 +5958,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_GIFT_OF_EMOTION:
-    if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
-        && IsBattlerAlive(gBattlerAttacker)
-        && IsBattlerTurnDamaged(gBattlerTarget)
-        && gBattleStruct->moveDamage[gBattlerTarget] > 0)
-    {
-        // Reflect 50% of damage taken
-        gBattleStruct->moveDamage[gBattlerAttacker] = gBattleStruct->moveDamage[gBattlerTarget] / 2;
-        if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
-            gBattleStruct->moveDamage[gBattlerAttacker] = 1;
-
-        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-        BattleScriptPushCursor();
-        gBattlescriptCurrInstr = BattleScript_GiftOfEmotionActivates;
-        effect++;
-    }
-    break;
         case ABILITY_EFFECT_SPORE:
         {
             u32 ability = GetBattlerAbility(gBattlerAttacker);
@@ -6456,32 +6425,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
                 gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
                 BattleScriptExecute(BattleScript_DancerActivates);
-                effect++;
-            }
-            break;
-        case ABILITY_CONCERT:
-            if (IsBattlerAlive(battler)
-             && IsSoundMove(move)
-             && !gSpecialStatuses[battler].concertUsedMove
-             && gBattlerAttacker != battler)
-            {
-            
-                gSpecialStatuses[battler].concertUsedMove = TRUE;
-                gSpecialStatuses[battler].concertOriginalTarget = gBattleStruct->moveTarget[battler] | 0x4;
-                gBattlerAttacker = gBattlerAbility = battler;
-                gCalledMove = move;
-
-                // Set the target to the original target of the mon that first used a Dance move
-                gBattlerTarget = gBattleScripting.savedBattler & 0x3;
-
-                // Edge case for dance moves that hit multiply targets
-                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
-
-                // Make sure that the target isn't an ally - if it is, target the original user
-                if (IsBattlerAlly(gBattlerTarget, gBattlerAttacker))
-                    gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
-                gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
-                BattleScriptExecute(BattleScript_ConcertActivates);
                 effect++;
             }
             break;
@@ -9738,7 +9681,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;   
         case ABILITY_DANCER:
         if (IsDanceMove(move))
-        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); 
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
         break;    
         case ABILITY_CHEF:
         if (IsCookingMove(move))
@@ -9765,11 +9708,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); // 30% damage boost
     }
     break;
-    case ABILITY_MEGA_DRACOGNITION:
-    case ABILITY_MEGA_DRACONIC_MIND:
-    if (moveType == TYPE_PSYCHIC || moveType == TYPE_DRAGON)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
-        break;    
+ 
     }
 
     // field abilities
@@ -10040,10 +9979,6 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (IsBattleMoveSpecial(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;    
-    case ABILITY_GIFT_OF_KNOWLEDGE:
-        if (IsBattleMoveSpecial(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.2));
-        break;     
     case ABILITY_SLOW_START:
         if (gDisableStructs[battlerAtk].slowStartTimer != 0)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
@@ -10158,10 +10093,6 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_FIRE || moveType == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;    
-    case ABILITY_UNDERWORLD_RULER:
-        if (moveType == TYPE_GHOST || moveType == TYPE_DRAGON)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;     
     case ABILITY_TERAVOLT:
         if (moveType == TYPE_ELECTRIC || move == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -10243,25 +10174,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             // Boost damage if the target is infatuated with the attacker
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         }
-        break;;
-    case ABILITY_DRACOGNITION:
-    if (moveType == TYPE_PSYCHIC || moveType == TYPE_DRAGON)
-    {
-        // Psychic/Dragon moves use Attack instead of Sp. Atk
-        atkStat = gBattleMons[battlerAtk].attack;
-        atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
-    }
-    else if (IsBattleMoveSpecial(move))
-    {
-        atkStat = gBattleMons[battlerAtk].spAttack;
-        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
-    }
-    else
-    {
-        atkStat = gBattleMons[battlerAtk].attack;
-        atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
-    }
-    break;    
+        break;;    
     }
 
     // target's abilities
@@ -11258,8 +11171,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
             MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, 0, type2, 0, FALSE);
 
         if ((modifier <= UQ_4_12(1.0)  &&  abilityDef == ABILITY_WONDER_GUARD)
-         || (moveType == TYPE_FIRE     &&  (abilityDef == ABILITY_FLASH_FIRE
-                                        || abilityDef == ABILITY_HEATPROOF))
+         || (moveType == TYPE_FIRE     &&  abilityDef == ABILITY_FLASH_FIRE)
          || (moveType == TYPE_GRASS    &&  abilityDef == ABILITY_SAP_SIPPER)
          || (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE
                                        || IsFloatingSpecies(speciesDef) 
@@ -12872,6 +12784,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_MESPRIT,
     SPECIES_AZELF,
     SPECIES_GIRATINA_ORIGIN, 
+    SPECIES_GIRATINA_ALTERED,
     SPECIES_CRESSELIA,
     SPECIES_TYNAMO,
     SPECIES_EELEKTRIK,
@@ -12935,8 +12848,6 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_GEODUDE,
     SPECIES_CARBINK,
     SPECIES_VENOMOTH,
-    SPECIES_IRON_MOTH,
-    SPECIES_DRAGALGE,
 };
 
 bool32 IsFloatingSpecies(u16 species)

@@ -5659,7 +5659,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_HUGE_POWER, ABILITY_COMPETITIVE, ABILITY_CONCERT },
+        .abilities = { ABILITY_HUGE_POWER, ABILITY_COMPETITIVE, ABILITY_FLUFFY },
     #else
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRISK },
     #endif
@@ -10715,7 +10715,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE },
+        .abilities = { ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_LEVITATE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Magneton"),
         .cryId = CRY_MAGNETON,
@@ -10796,7 +10796,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_MAGNET_PULL, ABILITY_TRANSISTOR, ABILITY_ANALYTIC },
+        .abilities = { ABILITY_MAGNET_PULL, ABILITY_LEVITATE, ABILITY_ANALYTIC },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Magnezone"),
         .cryId = CRY_MAGNEZONE,
@@ -11844,7 +11844,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_PERISH_BODY, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Gastly"),
         .cryId = CRY_GASTLY,
@@ -11917,7 +11917,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_PERISH_BODY, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Haunter"),
         .cryId = CRY_HAUNTER,
@@ -11973,9 +11973,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_UPDATED_ABILITIES >= GEN_7
-#define GENGAR_ABILITIES {ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_INFILTRATOR}
+#define GENGAR_ABILITIES {ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_LEVITATE}
 #else
-#define GENGAR_ABILITIES {ABILITY_INFILTRATOR, ABILITY_NONE, ABILITY_NONE}
+#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE}
 #endif
 
     [SPECIES_GENGAR] =
@@ -14139,9 +14139,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_8
-        .abilities = { ABILITY_NONE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH },
     #else
-        .abilities = { ABILITY_NONE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
     #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Koffing"),
@@ -14216,9 +14216,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
     #if P_UPDATED_ABILITIES >= GEN_8
-        .abilities = { ABILITY_NONE, ABILITY_NEUTRALIZING_GAS, ABILITY_CURIOUS_MEDICINE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_CURIOUS_MEDICINE },
     #else
-        .abilities = { ABILITY_NONE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
     #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = TRUE,
@@ -14292,7 +14292,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_NONE, ABILITY_NEUTRALIZING_GAS, ABILITY_MISTY_SURGE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_MISTY_SURGE },
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
         .speciesName = _("Weezing"),
