@@ -79,11 +79,13 @@ struct MoveInfo
     bool32 slicingMove:1;
     bool32 ninjaMove:1;
     bool32 hammerMove:1;
+    bool32 fieldMove:1;
     bool32 kickingMove:1;
     bool32 auraMove:1;
     bool32 cookingMove:1;
     bool32 magicMove:1;
     bool32 wrestlingMove:1;
+    bool32 lightMove:1;
     bool32 healingMove:1;
     bool32 minimizeDoubleDamage:1;
     bool32 ignoresTargetAbility:1;
@@ -352,6 +354,16 @@ static inline bool32 IsCookingMove(u32 moveId)
 static inline bool32 IsHammerMove(u32 moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].hammerMove;
+}
+
+static inline bool32 IsFieldMove(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].fieldMove;
+}
+
+static inline bool32 IsLightMove(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].lightMove;
 }
 
 static inline bool32 MoveIncreasesPowerToMinimizedTargets(u32 moveId)

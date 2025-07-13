@@ -270,9 +270,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ILLUMINATE] =
     {
         .name = _("Illuminate"),
-        .description = COMPOUND_STRING("Encounter rate increases."),
-        .aiRating = 0,
-        .breakable = TRUE,
+        .description = COMPOUND_STRING("Boosts light moves."),
+        .aiRating = 3,
     },
 
     [ABILITY_TRACE] =
@@ -2426,7 +2425,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
      [ABILITY_EVAPORATE] =
     {
         .name = _("Evaporate"),
-        .description = COMPOUND_STRING("Water moves are negated due to the heat"),
+        .description = COMPOUND_STRING("Water/Ice moves are negated due to the heat"),
         .aiRating = 7,  
     },   
     [ABILITY_KICK_MASTER] =
@@ -2643,6 +2642,47 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Time Lord"),
     .description = COMPOUND_STRING("Bends time to attack first."),
     .aiRating = 6,
+    },
+    [ABILITY_EXPLORER] =
+    {
+    .name = _("Explorer"),
+    .description = COMPOUND_STRING("Boosts field moves."),
+    .aiRating = 6,
+    },
+    [ABILITY_WEATHER_WARRIOR] =
+    {
+    .name = _("Weather Warrior"),
+    .description = COMPOUND_STRING("Stronger during weather."),
+    .aiRating = 6,
+    },
+    [ABILITY_DRAGONS_PRIDE] =
+    {
+    .name = _("Dragons Pride"),
+    .description = COMPOUND_STRING("Gets angry at half HP."),
+    .aiRating = 3,
+    },
+    [ABILITY_MEDIC] =
+    {
+    .name = _("Medic"),
+    .description = COMPOUND_STRING("Boosts healing moves."),
+    .aiRating = 6,
+    },
+    [ABILITY_CLERIC] =
+    {
+    .name = _("Cleric"),
+    .description = COMPOUND_STRING("Better healing and only damaged by attacks."),
+    .aiRating = 6,
+    },
+    [ABILITY_LIGHT_BEARER] =
+    {
+        .name = _("Light Bearer"),
+        .description = COMPOUND_STRING("Master of Light moves."),
+        .aiRating = 6,
+    },
+    [ABILITY_SOLAR_PRAYER] =
+    {
+    .name = _("Solar Prayer"),
+    .description = COMPOUND_STRING("Heals in sunlight each turn."),
     },
  
 };

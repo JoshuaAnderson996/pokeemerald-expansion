@@ -4983,6 +4983,9 @@ s8 GetBattleMovePriority(u32 battler, u16 move)
 
     if (gProtectStructs[battler].quash)
         priority = -8;
+        
+    else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
+        priority += 3;
 
     return priority;
 }

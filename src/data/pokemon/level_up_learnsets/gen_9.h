@@ -6226,6 +6226,7 @@ static const struct LevelUpMove sTogeticLevelUpLearnset[] = {
 static const struct LevelUpMove sTogekissLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_AIR_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_AIR_SLASH),
+    LEVEL_UP_MOVE( 1, MOVE_LUCKY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_FAIRY_WIND),
     LEVEL_UP_MOVE( 1, MOVE_SPARKLY_SWIRL),
     LEVEL_UP_MOVE( 1, MOVE_SKY_ATTACK),
@@ -6812,6 +6813,7 @@ static const struct LevelUpMove sClodsireLevelUpLearnset[] = {
 static const struct LevelUpMove sMurkrowLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
+    LEVEL_UP_MOVE( 1, MOVE_LUCKY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_TAILWIND),
     LEVEL_UP_MOVE( 5, MOVE_GUST),
     LEVEL_UP_MOVE(11, MOVE_HAZE),
@@ -6830,6 +6832,7 @@ static const struct LevelUpMove sMurkrowLevelUpLearnset[] = {
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sHonchkrowLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WING_ATTACK),
+    LEVEL_UP_MOVE( 1, MOVE_LUCKY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_HAZE),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 1, MOVE_SUCKER_PUNCH),
@@ -14133,6 +14136,7 @@ static const struct LevelUpMove sTranquillLevelUpLearnset[] = {
 static const struct LevelUpMove sUnfezantLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_GUST),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_LUCKY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(12, MOVE_TAUNT),
