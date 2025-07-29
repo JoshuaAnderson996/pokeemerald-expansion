@@ -4863,6 +4863,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
     {
         if (ability == ABILITY_SWIFT_SWIM       && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_RAIN)
             speed *= 2;
+        else if (ability == ABILITY_MUDDY_BRAWLER       && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_RAIN)
+            speed *= 2;
         else if (ability == ABILITY_CHLOROPHYLL && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
             speed *= 2;
         else if (ability == ABILITY_SAND_RUSH   && gBattleWeather & B_WEATHER_SANDSTORM)
@@ -4980,12 +4982,17 @@ s8 GetBattleMovePriority(u32 battler, u16 move)
     }
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
         priority += 3;
-
-    if (gProtectStructs[battler].quash)
-        priority = -8;
         
     else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
         priority += 3;
+
+    else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
+{
+    priority++;
+}
+
+if (gProtectStructs[battler].quash)
+        priority = -8;
 
     return priority;
 }
@@ -6056,6 +6063,23 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
             }
             return moveType;
         }
+        break;
+    case EFFECT_WEATHER_SHIFTING:
+    if (monInBattle)
+    {
+        if (move == MOVE_ICE_ORB)
+        {
+            if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+                return TYPE_WATER;
+            return TYPE_ICE;
+        }
+        else if (move == MOVE_MAGMA_ORB)
+        {
+            if ((gBattleWeather & B_WEATHER_RAIN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+                return TYPE_ROCK;
+            return TYPE_FIRE;
+        }
+    }
         break;
     case EFFECT_HIDDEN_POWER:
         {

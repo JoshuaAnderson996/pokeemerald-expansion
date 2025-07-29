@@ -1138,8 +1138,6 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
 bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move)
 {
     u32 moveType;
-    u32 species;
-    species = gBattleMons[battler].species;
     moveType = gMovesInfo[move].type;
 
     //only execute if battler is a CASTFORM and ability FORECAST is active
@@ -1184,7 +1182,7 @@ bool32 IsCastform(u32 battler)
 
 bool32 ProteanTryChangeType(u32 battler, u32 ability, u32 move, u32 moveType)
 {
-      if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
+      if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO || ability == ABILITY_STRIKER)
          && !gDisableStructs[gBattlerAttacker].usedProteanLibero
          && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
              || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
@@ -3107,6 +3105,16 @@ static void CheckSetUnburden(u8 battler)
     }
 }
 
+static void CheckSetFortify(u8 battler)
+{
+    if (GetBattlerAbility(battler) == ABILITY_FORTIFY)
+    {
+        gBattleScripting.battler = battler;
+        BattleScriptPushCursorAndCallback(BattleScript_FortifyActivates);
+        RecordAbilityBattle(battler, ABILITY_FORTIFY);
+    }
+}
+
 // battlerStealer steals the item of battlerItem
 void StealTargetItem(u8 battlerStealer, u8 battlerItem)
 {
@@ -3132,6 +3140,7 @@ void StealTargetItem(u8 battlerStealer, u8 battlerItem)
 
     RecordItemEffectBattle(battlerItem, ITEM_NONE);
     CheckSetUnburden(battlerItem);
+    CheckSetFortify(battlerItem);
 
     BtlController_EmitSetMonData(battlerItem, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].item), &gBattleMons[battlerItem].item);  // remove target item
     MarkBattlerForControllerExec(battlerItem);
@@ -3996,6 +4005,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     gLastUsedItem = gBattleMons[gEffectBattler].item;
                     gBattleMons[gEffectBattler].item = 0;
                     CheckSetUnburden(gEffectBattler);
+                    CheckSetFortify(gEffectBattler);
 
                     BtlController_EmitSetMonData(gEffectBattler, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gEffectBattler);
@@ -4011,6 +4021,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     gLastUsedItem = gBattleMons[gEffectBattler].item;
                     gBattleMons[gEffectBattler].item = 0;
                     CheckSetUnburden(gEffectBattler);
+                    CheckSetFortify(gEffectBattler);
 
                     BtlController_EmitSetMonData(gEffectBattler, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gEffectBattler);
@@ -6215,6 +6226,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
             if (gBattleMons[battlerDef].ability != ABILITY_GORILLA_TACTICS)
                 gBattleStruct->choicedMove[battlerDef] = 0;
             CheckSetUnburden(battlerDef);
+            CheckSetFortify(battlerDef);
 
             // In Gen 5+, Knock Off removes the target's item rather than rendering it unusable.
             if (B_KNOCK_OFF_REMOVAL >= GEN_5)
@@ -7441,6 +7453,8 @@ static void Cmd_moveend(void)
                 gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
             if (gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget)
                 gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget & 0x3;
+            if (gSpecialStatuses[gBattlerAttacker].singerOriginalTarget)
+                gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].singerOriginalTarget & 0x3;    
 
             if (B_RAMPAGE_CANCELLING >= GEN_5
               && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH)           // If we're rampaging
@@ -9164,6 +9178,7 @@ static void BestowItem(u32 battlerAtk, u32 battlerDef)
     BtlController_EmitSetMonData(battlerAtk, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[battlerAtk].item), &gBattleMons[battlerAtk].item);
     MarkBattlerForControllerExec(battlerAtk);
     CheckSetUnburden(battlerAtk);
+    CheckSetFortify(battlerAtk);
 
     gBattleMons[battlerDef].item = gLastUsedItem;
     BtlController_EmitSetMonData(battlerDef, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[battlerDef].item), &gBattleMons[battlerDef].item);
@@ -9220,6 +9235,7 @@ static void Cmd_removeitem(void)
     gBattleMons[battler].item = ITEM_NONE;
     gBattleStruct->canPickupItem |= (1u << battler);
     CheckSetUnburden(battler);
+    CheckSetFortify(battler);
 
     BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[battler].item), &gBattleMons[battler].item);
     MarkBattlerForControllerExec(battler);
@@ -10756,7 +10772,26 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
             return;
         }
-        break;
+        break;    
+    }
+    case VARIOUS_TRY_ACTIVATE_POWER_OF_ALCHEMY:
+    {
+    VARIOUS_ARGS();
+
+    if (IsBattlerAlive(battler)
+        && GetBattlerAbility(battler) == ABILITY_POWER_OF_ALCHEMY
+        && HasAttackerFaintedTarget()
+        && !NoAliveMonsForEitherParty()
+        && !gAbilitiesInfo[gBattleMons[gBattlerTarget].ability].cantBeCopied
+        && GetBattlerHoldEffect(gBattlerTarget, TRUE) != HOLD_EFFECT_ABILITY_SHIELD)
+    {
+        gBattleStruct->tracedAbility[battler] = gBattleMons[gBattlerTarget].ability;
+        gBattleScripting.battler = battler;
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_ReceiverActivates;  // Reuse existing animation
+        return;
+    }
+    break;
     }
     case VARIOUS_TRY_ACTIVATE_BEAST_BOOST:
     {
@@ -15174,6 +15209,7 @@ static void Cmd_tryswapitems(void)
             else
             {
                 CheckSetUnburden(gBattlerAttacker);
+                CheckSetFortify(gBattlerAttacker);
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_SWAP_GIVEN; // attacker's item -> <- nothing
             }
         }

@@ -116,11 +116,11 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Zubat
+Octillery
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
+Sharpedo
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -146,7 +146,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Carvanha
+Jellicent
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -185,7 +185,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Zubat
+Dragalge
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -335,11 +335,11 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Zubat
+Malamar
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Poochyena
+Barraskewda
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -369,15 +369,15 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Poochyena
+Kingler
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Cloyster
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
+Seadra
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -463,7 +463,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Carvanha
+Seaking
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -476,11 +476,11 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Poochyena
+Gyarados
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
+Tentacruel
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -506,7 +506,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Carvanha
+Slowbro
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -519,7 +519,7 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Zubat
+Dewgong
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -554,7 +554,23 @@ Mightyena
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Golbat
+Malamar
+Level: 34
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Sharpedo
+Level: 35
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Crawdaunt
+Level: 34
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Skuntank
+Level: 34
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Blastoise @ Blastoisinite X
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -580,12 +596,33 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Carvanha
-Level: 28
+Jellicent 
+Ability: Regenerator
+Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Mightyena
-Level: 28
+Dragalge  
+Ability: Adaptability
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Lanturn  
+Ability: Drizzle
+Level: 35  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Araquanid  
+Ability: Water Bubble
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Vaporeon  
+Ability: Regenerator
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Kingler @ Kinglerite  
+Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
@@ -597,13 +634,34 @@ Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Sharpedo
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Jellicent 
+Ability: Regenerator
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Mightyena
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Lapras @ Weakness Policy
+Ability: Multiscale
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Lanturn  
+Ability: Drizzle
+Level: 35  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Araquanid  
+Ability: Water Bubble
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Vaporeon  
+Ability: Regenerator
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Kingler @ Kinglerite  
+Level: 34  
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -633,9 +691,8 @@ Timid Nature
 - Scald  
 - Dark Pulse  
 
-Rotom-Wash @ Air Balloon  
+Rotom-Wash @ Damp Rock  
 Ability: Drizzle  
-Tera Type: Electric  
 EVs: 248 HP / 252 SpA / 8 SpD  
 Modest Nature  
 IVs: 0 Atk  
@@ -645,12 +702,12 @@ IVs: 0 Atk
 - Pain Split  
 
 Empoleon @ Assault Vest  
-Ability: Competitive   
+Ability: Big Pecks   
 EVs: 252 HP / 252 SpA / 4 SpD  
 Modest Nature  
 - Scald  
 - Steel Beam  
-- Steelsurge   
+- Bleakwind Storm   
 - Flip Turn  
 
 Toxapex @ Black Sludge  
@@ -735,12 +792,10 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 Medicham
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
 
 Claydol
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
 - Earthquake
 
 === TRAINER_VIOLET ===

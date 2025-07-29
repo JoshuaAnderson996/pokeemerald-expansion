@@ -8643,6 +8643,12 @@ BattleScript_DancerActivates::
 	orword gHitMarker, HITMARKER_ALLOW_NO_PP
 	jumptocalledmove TRUE
 
+	BattleScript_SingerActivates::
+	call BattleScript_AbilityPopUp
+	waitmessage B_WAIT_TIME_SHORT
+	orword gHitMarker, HITMARKER_ALLOW_NO_PP
+	jumptocalledmove TRUE
+
 BattleScript_SynchronizeActivates::
 	waitstate
 	call BattleScript_AbilityPopUp
@@ -10135,3 +10141,11 @@ BattleScript_CastformFormChangeWithStringEnd3::
 	waitanimation
 	handleformchange BS_SCRIPTING, 2
 	end3
+
+BattleScript_FortifyActivates::
+    call BattleScript_AbilityPopUp          
+    setstatchanger STAT_DEF, 1, FALSE
+    statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUp
+    setstatchanger STAT_SPDEF, 1, FALSE
+    statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUp
+    return

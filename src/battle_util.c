@@ -2273,6 +2273,7 @@ u8 DoBattlerEndTurnEffects(void)
                   && ability != ABILITY_SAND_FORCE
                   && ability != ABILITY_SAND_RUSH
                   && ability != ABILITY_OVERCOAT
+                  && ability != ABILITY_WEATHER_WARRIOR
                   && !IsDesertSpecies(gBattleMons[gBattlerAttacker].species) 
                   && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
                   && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
@@ -3651,7 +3652,9 @@ static void CancellerPowderStatus(u32 *effect)
 static void CancellerProtean(u32 *effect)
 {
     u32 moveType = GetBattleMoveType(gCurrentMove);
-    if (ProteanTryChangeType(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), gCurrentMove, moveType))
+    u32 ability = GetBattlerAbility(gBattlerAttacker);
+    if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO || ability == ABILITY_STRIKER)
+    && ProteanTryChangeType(gBattlerAttacker, ability, gCurrentMove, moveType))
     {
         if (B_PROTEAN_LIBERO == GEN_9)
             gDisableStructs[gBattlerAttacker].usedProteanLibero = TRUE;
@@ -4889,6 +4892,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_STRIKER:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_STRIKER;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;    
         case ABILITY_SLOW_START:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -5249,6 +5261,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_DRACONIC_MIND:
+            if (!gSpecialStatuses[battler].switchInAbilityDone
+                 && CompareStat(battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN)
+                && !(gBattleStruct->draconicMindBoost[GetBattlerSide(battler)] & (1u << gBattlerPartyIndexes[battler])))
+            {
+                gBattleScripting.savedBattler = gBattlerAttacker;
+                gBattlerAttacker = battler;
+                gBattleStruct->draconicMindBoost[GetBattlerSide(battler)] |= 1u << gBattlerPartyIndexes[battler];
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                SET_STATCHANGER(STAT_SPATK, 1, FALSE);
+                BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
+        effect++;
+             }
+    break;    
         case ABILITY_WAVE_RIDER:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN)
@@ -6441,6 +6467,32 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
                 gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
                 BattleScriptExecute(BattleScript_DancerActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_SINGER:
+            if (IsBattlerAlive(battler)
+             && IsSoundMove(move)
+             && !gSpecialStatuses[battler].singerUsedMove
+             && gBattlerAttacker != battler)
+            {
+            
+                gSpecialStatuses[battler].singerUsedMove = TRUE;
+                gSpecialStatuses[battler].singerOriginalTarget = gBattleStruct->moveTarget[battler] | 0x4;
+                gBattlerAttacker = gBattlerAbility = battler;
+                gCalledMove = move;
+
+                // Set the target to the original target of the mon that first used a Dance move
+                gBattlerTarget = gBattleScripting.savedBattler & 0x3;
+
+                // Edge case for dance moves that hit multiply targets
+                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
+
+                // Make sure that the target isn't an ally - if it is, target the original user
+                if (IsBattlerAlly(gBattlerTarget, gBattlerAttacker))
+                    gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
+                gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
+                BattleScriptExecute(BattleScript_SingerActivates);
                 effect++;
             }
             break;
@@ -9079,6 +9131,22 @@ u32 CountBattlerStatIncreases(u32 battler, bool32 countEvasionAcc)
     return count;
 }
 
+u32 CountBattlerStatDecreases(u32 battler, bool32 countEvasionAcc)
+{
+    u32 i;
+    u32 count = 0;
+
+    for (i = 0; i < NUM_BATTLE_STATS; i++)
+    {
+        if ((i == STAT_ACC || i == STAT_EVASION) && !countEvasionAcc)
+            continue;
+        if (gBattleMons[battler].statStages[i] < DEFAULT_STAT_STAGE) // stat is lowered
+            count++;  // count just the number of different stats lowered
+    }
+
+    return count;
+}
+
 u32 GetMoveTargetCount(struct DamageCalculationData *damageCalcData)
 {
     u32 battlerAtk = damageCalcData->battlerAtk;
@@ -9356,6 +9424,11 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         if (basePower > 200)
             basePower = 200;
         break;
+    case EFFECT_FINSHING_SLAM:
+        basePower = 60 + (CountBattlerStatDecreases(battlerDef, FALSE) * 20);
+        if (basePower > 200)
+            basePower = 200;
+    break;    
     case EFFECT_STORED_POWER:
         basePower += (CountBattlerStatIncreases(battlerAtk, TRUE) * 20);
         break;
@@ -9471,7 +9544,7 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         break;
     case EFFECT_LAST_RESPECTS:
         basePower += (basePower * min(100, GetBattlerSideFaintCounter(battlerAtk)));
-        break;
+        break;    
     }
 
     // Move-specific base power changes
@@ -9600,6 +9673,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             && weather & B_WEATHER_SANDSTORM)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_MUDDY_BRAWLER:
+        if ((moveType == TYPE_WATER || moveType == TYPE_GROUND)
+            && weather & B_WEATHER_RAIN)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9707,8 +9785,12 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;   
         case ABILITY_DANCER:
         if (IsDanceMove(move))
-        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); 
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); 
         break;    
+        case ABILITY_SINGER:
+        if (IsSoundMove(move))
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); 
+        break;  
         case ABILITY_CHEF:
         if (IsCookingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9752,9 +9834,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_LIGHT_BEARER:
         if (IsLightMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break; 
-    
-
+        break;
+    case ABILITY_QUICK_TEMPERED:
+    modifier = uq4_12_multiply(modifier, UQ_4_12(0.667));
+        break;
 
     }
 
@@ -9893,7 +9976,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case HOLD_EFFECT_PUNCHING_GLOVE:
         if (IsPunchingMove(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case HOLD_EFFECT_OGERPON_MASK:
         if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_OGERPON)
@@ -10154,18 +10237,27 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // extra boost under 50% HP
         }
         break;    
-        case ABILITY_SOLARIS:
+    case ABILITY_SOLARIS:
         if (moveType == TYPE_FIRE)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;    
-        case ABILITY_LUNAR:
+    case ABILITY_LUNAR:
         if (moveType == TYPE_ROCK || moveType == TYPE_COSMIC)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-        case ABILITY_BIG_PECKS:
+    case ABILITY_BIG_PECKS:
         if (moveType == TYPE_FLYING)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;   
+    case ABILITY_MEGA_DRACOGNITION:
+    case ABILITY_MEGA_DRACONIC_MIND:
+    if (moveType == TYPE_PSYCHIC || moveType == TYPE_DRAGON)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;    
+    case ABILITY_UNDERWORLD_RULER:
+        if (moveType == TYPE_GHOST || moveType == TYPE_DRAGON)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break; 
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
         {
@@ -10189,6 +10281,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         }
         break;
     case ABILITY_ORICHALCUM_PULSE:
+    case ABILITY_DESOLATE_LAND:
         if ((weather & B_WEATHER_SUN) && HasWeatherEffect() && IsBattleMovePhysical(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
         break;
@@ -10197,6 +10290,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
         break;
     case ABILITY_AQUA_GODDESS:
+    case ABILITY_PRIMORDIAL_SEA:
     if ((weather & B_WEATHER_RAIN) && HasWeatherEffect() && IsBattleMoveSpecial(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
         break;
@@ -10214,6 +10308,24 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             // Boost damage if the target is infatuated with the attacker
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         }
+    case ABILITY_DRACOGNITION:
+    if (moveType == TYPE_PSYCHIC || moveType == TYPE_DRAGON)
+    {
+        // Psychic/Dragon moves use Attack instead of Sp. Atk
+        atkStat = gBattleMons[battlerAtk].attack;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+    }
+    else if (IsBattleMoveSpecial(move))
+    {
+        atkStat = gBattleMons[battlerAtk].spAttack;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
+    }
+    else
+    {
+        atkStat = gBattleMons[battlerAtk].attack;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+    }
+    break; 
         break;;    
     }
 
@@ -10670,6 +10782,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
             return UQ_4_12(1.5);
         break;
     case ABILITY_TINTED_LENS:
+    case ABILITY_STRIKER:
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
             return UQ_4_12(2.0);
         break;
@@ -11220,26 +11333,19 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
         if (type2 != type1)
             MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, 0, type2, 0, FALSE);
 
-        if ((modifier <= UQ_4_12(1.0)  &&  abilityDef == ABILITY_WONDER_GUARD)
-         || (moveType == TYPE_FIRE     &&  abilityDef == ABILITY_FLASH_FIRE)
-         || (moveType == TYPE_GRASS    &&  abilityDef == ABILITY_SAP_SIPPER)
-         || (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE
-                                       || IsFloatingSpecies(speciesDef) 
-                                       || abilityDef == ABILITY_EARTH_EATER))
-         || (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB
-                                       || abilityDef == ABILITY_DRY_SKIN
-                                       || abilityDef == ABILITY_STORM_DRAIN
-                                       || abilityDef == ABILITY_EVAPORATE))
-         || (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD // TODO: Add Gen 3/4 config check
-                                       || abilityDef == ABILITY_VOLT_ABSORB
-                                       || abilityDef == ABILITY_MOTOR_DRIVE))
-         || (moveType == TYPE_GHOST    &&  abilityDef == ABILITY_EXORCIST)
-         || (moveType == TYPE_ICE      &&  abilityDef == ABILITY_EVAPORATE))
-                                       
-        {
-            modifier = UQ_4_12(0.0);
-        }
+        if ((abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0))
+        || (moveType == TYPE_FIRE && (abilityDef == ABILITY_FLASH_FIRE || abilityDef == ABILITY_HEATPROOF))
+        || (moveType == TYPE_GRASS && abilityDef == ABILITY_SAP_SIPPER)
+        || (moveType == TYPE_GROUND && (abilityDef == ABILITY_LEVITATE || IsFloatingSpecies(speciesDef) || abilityDef == ABILITY_EARTH_EATER))
+        || (moveType == TYPE_WATER && (abilityDef == ABILITY_WATER_ABSORB || abilityDef == ABILITY_DRY_SKIN || abilityDef == ABILITY_STORM_DRAIN || abilityDef == ABILITY_EVAPORATE))
+        || (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD || abilityDef == ABILITY_VOLT_ABSORB || abilityDef == ABILITY_MOTOR_DRIVE))
+        || (moveType == TYPE_GHOST && abilityDef == ABILITY_EXORCIST)
+        || (moveType == TYPE_ROCK && abilityDef == ABILITY_MAGMA_ARMOR)
+        || (moveType == TYPE_ICE && abilityDef == ABILITY_EVAPORATE))
+    {
+        modifier = UQ_4_12(0.0);
     }
+}
     return modifier;
 }
 
@@ -12900,6 +13006,8 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_GEODUDE,
     SPECIES_CARBINK,
     SPECIES_VENOMOTH,
+    SPECIES_IRON_MOTH,
+    SPECIES_DRAGALGE,
 };
 
 bool32 IsFloatingSpecies(u16 species)

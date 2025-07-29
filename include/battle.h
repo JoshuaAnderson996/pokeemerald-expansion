@@ -131,6 +131,7 @@ struct DisableStruct
     u8 boosterEnergyActivates:1;
     u8 roostActive:1;
     u8 unburdenActive:1;
+    u8 fortifyActive:1;
     u8 neutralizingGas:1;
     u8 iceFaceActivationPrevention:1; // fixes hit escape move edge case
     u8 padding:3;
@@ -220,7 +221,9 @@ struct SpecialStatus
     u8 affectionEndured:1;
     // End of byte
     u8 dancerUsedMove:1;
+     u8 singerUsedMove:1;
     u8 dancerOriginalTarget:3;
+    u8 singerOriginalTarget:3;
     u8 distortedTypeMatchups:1;
     u8 teraShellAbilityDone:1;
     u8 criticalHit:1;
@@ -796,6 +799,7 @@ struct BattleStruct
     u8 stickySyrupdBy[MAX_BATTLERS_COUNT];
     u8 intrepidSwordBoost[NUM_BATTLE_SIDES];
     u8 dauntlessShieldBoost[NUM_BATTLE_SIDES];
+    u8 draconicMindBoost[NUM_BATTLE_SIDES];
     u8 supersweetSyrup[NUM_BATTLE_SIDES];
     u8 supremeOverlordCounter[MAX_BATTLERS_COUNT];
     u8 shellSideArmCategory[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT];

@@ -2684,5 +2684,74 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Solar Prayer"),
     .description = COMPOUND_STRING("Heals in sunlight each turn."),
     },
+    [ABILITY_QUICK_TEMPERED] =
+    {
+    .name = _("Quick Tempered"),
+    .description = COMPOUND_STRING("All attacks go first, but deal less damage."),
+    .aiRating = 7,
+    },
+    [ABILITY_MUDDY_BRAWLER] =
+    {
+    .name = _("Muddy Brawler"),
+    .description = COMPOUND_STRING("Boosts Speed & Water/Ground moves in rain."),
+    .aiRating = 8,
+    },
+    [ABILITY_STRIKER] =
+    {
+    .name = _("Striker"),
+    .description = COMPOUND_STRING("Ignores abilities, resistances, and changes type to match its move."),
+    .aiRating = 8,
+    },
+    [ABILITY_FORTIFY] =
+    {
+    .name = _("Fortify"),
+    .description = COMPOUND_STRING("Boosts Defenses when an item is used."),
+    .aiRating = 6,
+    },
+    [ABILITY_DRACOGNITION] =
+    {
+    .name = _("Dracognition"),
+    .description = COMPOUND_STRING("Uses Attack for Psychic/Dragon moves."),
+    .aiRating = 9,
+    },
+    [ABILITY_DRACONIC_MIND] =
+    {
+    .name = _("Draconic Mind"),
+    .description = COMPOUND_STRING("Raises Sp. Atk when entering battle."),
+    .aiRating = 9,
+    },
+    [ABILITY_MEGA_DRACOGNITION] =
+    {
+    .name = _("Dracognition"),
+    .description = COMPOUND_STRING("Uses Attack for Psychic/Dragon moves\n"
+    "also boosts their power"),
+    .aiRating = 9,
+    },
+    [ABILITY_MEGA_DRACONIC_MIND] =
+    {
+    .name = _("Draconic Mind"),
+    .description = COMPOUND_STRING("Raises Sp. Atk when entering battle\n"
+    "also boosts dragon/psychic moves"),
+    .aiRating = 9,
+    },
+    [ABILITY_UNDERWORLD_RULER] =
+    {
+    .name = _("Underworld Ruler"),
+    .description = COMPOUND_STRING("Boosts Ghost/Dragon moves."),
+    .aiRating = 9,
+    },
+    [ABILITY_SINGER] =
+    {
+        .name = _("Singer"),
+        .description = COMPOUND_STRING("Sings for their fans."),
+        .aiRating = 5,
+    },
+    [ABILITY_KENETIC_BARRIER] =
+    {
+        .name = _("Stamina"),
+        .description = COMPOUND_STRING("Boosts SpD when hit."),
+        .aiRating = 6,
+    },
+
  
 };

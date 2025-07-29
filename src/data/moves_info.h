@@ -1813,7 +1813,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A reckless body slam that\n"
             "also hurts the user."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 120,
         .type = TYPE_FIGHTING,
         .accuracy = 80,
         .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 20 : 25,
@@ -3821,6 +3821,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .bitingMove = TRUE,
         .argument = { .absorbPercentage = 50 },
         .makesContact = TRUE,
         .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
@@ -13822,7 +13823,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An electrical tackle that\n"
             "also hurts the user."),
         .effect = EFFECT_HIT,
-        .power = 95,
+        .power = 120,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .recoil = 25,
@@ -18320,10 +18321,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Pyro Ball"),
         .description = COMPOUND_STRING(
             "Launches a fiery ball at the\n"
-            "Electric move also\n"
-            ". It may cause a burn\n"
-            "Electric move also\n"),
-        .effect = EFFECT_TWO_TYPED_MOVE,
+            " It may cause a burn."),
+        .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_FIRE,
         .accuracy = 90,
@@ -18331,7 +18330,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .type = TYPE_ELECTRIC },
         .thawsUser = TRUE,
         .ballisticMove = TRUE,
         .kickingMove = TRUE,
@@ -22294,7 +22292,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "May cause flinching."),
         .effect = EFFECT_HIT,
         .power = 70,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -22643,6 +22641,180 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_DracoMeteor,
+    },
+    [MOVE_DEADLY_WOUND] =
+    {
+        .name = COMPOUND_STRING("Dire Claw"),
+        .description = COMPOUND_STRING(
+            "Inflicts a deep wound\n"
+            "prevent foe from healing."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .slicingMove = TRUE,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PSYCHIC_NOISE,
+            .chance = 100,
+        }),
+        .battleAnimScript = gBattleAnimMove_DireClaw,
+    },
+    [MOVE_RUSTY_BLADE] =
+    {
+        .name = COMPOUND_STRING("Cross Poison"),
+        .description = COMPOUND_STRING(
+            "A slash that may poison a\n"
+            "foe and do critical damage."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_STEEL,
+        .accuracy = 95,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TOXIC,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CrossPoison,
+    },
+    [MOVE_FINSHING_SLAM] =
+    {
+        .name = COMPOUND_STRING("Finishing Slam"),
+        .description = COMPOUND_STRING(
+            "Does more damage if the\n"
+            "foe has lowered stats."),
+        .effect = EFFECT_FINSHING_SLAM,
+        .power = 60,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .wrestlingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Slam
+    },
+    [MOVE_DOMINATE] =
+    {
+        .name = COMPOUND_STRING("Finishing Slam"),
+        .description = COMPOUND_STRING(
+            "Does more damage if the\n"
+            "foe has lowered stats."),
+        .effect = EFFECT_FINSHING_SLAM,
+        .power = 60,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .wrestlingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Slam
+    },
+    [MOVE_ROUGHHOUSE] =
+    {
+        .name = COMPOUND_STRING("Double-Edge"),
+        .description = COMPOUND_STRING(
+            "A life-risking tackle that\n"
+            "also hurts the user."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .recoil = 33,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .wrestlingMove = TRUE,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_HARDEN},
+        .battleAnimScript = gBattleAnimMove_DoubleEdge,
+        .validApprenticeMove = TRUE,
+    },
+    [MOVE_ELECTRO_RADIATION] =
+    {
+        .name = COMPOUND_STRING("Electro Radiation"),
+        .description = COMPOUND_STRING(
+            "This move's power increases\n"
+            "under harsh sunlight."),
+        .effect = EFFECT_HYDRO_STEAM,
+        .power = 70,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_HydroSteam,
+    },
+     [MOVE_MAGMA_ORB] =
+    {
+        .name = COMPOUND_STRING("Magma Orb"),
+        .description = COMPOUND_STRING(
+            "Shoots a magma ball\n"
+            "Rock type in rain."),
+        .effect = EFFECT_WEATHER_SHIFTING,
+        .power = 70,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .magicMove = TRUE,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_ROCK_THROW,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Ember,
+    },
+    [MOVE_ICE_ORB] =
+    {
+        .name = COMPOUND_STRING("Ice Orb"),
+        .description = COMPOUND_STRING(
+            "Shoots a ice ball\n"
+            "Water type in sun."),
+        .effect = EFFECT_WEATHER_SHIFTING,
+        .power = 70,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .magicMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_ROCK_THROW,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_IceBall,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
