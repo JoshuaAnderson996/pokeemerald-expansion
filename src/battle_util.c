@@ -4398,6 +4398,13 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 
             statAmount = 2;
             statId = STAT_DEF;
         }
+        case ABILITY_MAGMA_ARMOR:
+        if (moveType == TYPE_ROCK)
+        {
+            effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
+            statAmount = 2;
+            statId = STAT_DEF;
+        }
         case ABILITY_JUSTIFIED:
         if (moveType == TYPE_DARK)
         {
@@ -6330,6 +6337,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
                 effect++;
             }
+            break;
+        case ABILITY_TOXIC_BLOOM:
+            if (GetMoveType(gCurrentMove) == TYPE_GRASS
+            && RandomPercentage(RNG_SECONDARY_EFFECT, 30)
+            && CanBePoisoned(gBattlerTarget, gBattlerAttacker, ABILITY_TOXIC_BLOOM))
+        {
+        gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
+        gBattleScripting.battler = gBattlerTarget;
+        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+        effect++;
+        }
             break;
         case ABILITY_FLAME_BODY:
         case ABILITY_SOLARIS:
@@ -9785,11 +9806,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;   
         case ABILITY_DANCER:
         if (IsDanceMove(move))
-        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); 
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.1)); 
         break;    
         case ABILITY_SINGER:
         if (IsSoundMove(move))
-        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); 
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.1)); 
         break;  
         case ABILITY_CHEF:
         if (IsCookingMove(move))
@@ -9815,6 +9836,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     {
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); // 30% damage boost
     }
+        break;
+    case ABILITY_TOXIC_BLOOM:
+        if (gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY)
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3)); // 30% damage boost
+            if (damageCalcData->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_TOXIC_BLOOM);
+        }
         break;
     case ABILITY_EXPLORER:
         if (IsFieldMove(move))
@@ -10094,6 +10123,12 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
+    case ABILITY_OVERCHARGED:
+    if (IsBattleMovePhysical(move) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN))
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        }
+        break;
     case ABILITY_ILLUSION:
         if (gBattleStruct->illusion[battlerAtk].on && !gBattleStruct->illusion[battlerAtk].broken)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5)); // 1.5× Attack while disguised
@@ -10333,7 +10368,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     switch (defAbility)
     {
     case ABILITY_THICK_FAT:
-        if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
+        if ((moveType == TYPE_FIRE || moveType == TYPE_ICE) && IsThickfatSpecies(gBattleMons[battlerDef].species))
         {
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
             if (damageCalcData->updateFlags)
@@ -10581,7 +10616,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
     if (B_SANDSTORM_SPDEF_BOOST >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     // snow def boost for ice types
-    if (((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) || IsHibernatingSpecies(speciesDef)) &&
+    if (((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) || IsThickfatSpecies(speciesDef)) &&
      IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) &&
      usesDefStat))
 {
@@ -10786,6 +10821,16 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
             return UQ_4_12(2.0);
         break;
+    case ABILITY_COSMIC_ALLOY:
+    if (typeEffectivenessModifier == UQ_4_12(0.25))
+        return UQ_4_12(0.5);
+    else if (typeEffectivenessModifier == UQ_4_12(0.5))
+        return UQ_4_12(1.0);
+    else if (typeEffectivenessModifier == UQ_4_12(1.0))
+        return UQ_4_12(2.0);
+    else if (typeEffectivenessModifier == UQ_4_12(2.0))
+        return UQ_4_12(2.5);
+    break;
     }
     return UQ_4_12(1.0);
 }
@@ -13022,7 +13067,7 @@ bool32 IsFloatingSpecies(u16 species)
     return FALSE;
 }
 
-static const u16 sHibernatingSpeciesList[] =
+static const u16 sThickfatSpeciesList[] =
 {
     SPECIES_TEDDIURSA,
     SPECIES_URSARING,
@@ -13036,16 +13081,52 @@ static const u16 sHibernatingSpeciesList[] =
     SPECIES_WATCHOG,
     SPECIES_BIBAREL,
     SPECIES_FURRET,
-
+    SPECIES_BEARTIC,
+    SPECIES_CUBCHOO,
+    SPECIES_KOMALA,
+    SPECIES_MUNCHLAX,
+    SPECIES_LICKITUNG,
+    SPECIES_LICKILICKY,
+    SPECIES_VENUSAUR,
+    SPECIES_VENUSAUR_MEGA,
+    SPECIES_WALREIN,
+    SPECIES_SEALEO,
+    SPECIES_SWINUB,
+    SPECIES_PILOSWINE,
+    SPECIES_MAMOSWINE,
+    SPECIES_GRUMPIG,
+    SPECIES_SPOINK,       
+    SPECIES_MARILL,
+    SPECIES_AZUMARILL,
+    SPECIES_SPHEAL,
+    SPECIES_HARIYAMA,
+    SPECIES_RATTATA_ALOLA,
+    SPECIES_RATICATE_ALOLA,
+    SPECIES_SEEL,
+    SPECIES_DEWGONG,
+    SPECIES_MILTANK,
+    SPECIES_ABOMASNOW,
+    SPECIES_ABOMASNOW_MEGA,
+    SPECIES_PURUGLY,
+    SPECIES_TEPIG,
+    SPECIES_PIGNITE,
+    SPECIES_EMBOAR,
+    SPECIES_DEDENNE,
+    SPECIES_APPLETUN,
+    SPECIES_LECHONK,
+    SPECIES_OINKOLOGNE_M,
+    SPECIES_OINKOLOGNE_F,
+    SPECIES_CETODDLE,
+    SPECIES_CETITAN,
 };
 
-    bool32 IsHibernatingSpecies(u16 species)
+    bool32 IsThickfatSpecies(u16 species)
 {
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(sHibernatingSpeciesList); i++)
+    for (i = 0; i < ARRAY_COUNT(sThickfatSpeciesList); i++)
     {
-        if (species == sHibernatingSpeciesList[i])
+        if (species == sThickfatSpeciesList[i])
             return TRUE;
     }
     return FALSE;

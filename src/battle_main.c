@@ -4884,8 +4884,6 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_QUARK_DRIVE && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivates))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
-    else if (ability == ABILITY_OVERCHARGED && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
-        speed *= 1.5;
     else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
         speed *= 2;
 
@@ -4963,6 +4961,14 @@ s8 GetBattleMovePriority(u32 battler, u16 move)
     {
         // Add +8 to whatever the move’s base priority is
         priority += 8;
+    }
+
+    if (GetBattlerAbility(battler) == ABILITY_TOXIC_BLOOM
+    && GetMoveType(move) == TYPE_GRASS
+    && (gBattleWeather & B_WEATHER_SUN)
+    && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
+    {
+    priority++;
     }
 
     if (ability == ABILITY_GALE_WINGS

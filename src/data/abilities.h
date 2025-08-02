@@ -308,7 +308,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("Magma Armor"),
-        .description = COMPOUND_STRING("Prevents freezing."),
+        .description = COMPOUND_STRING("Rock attacks boost Def."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -2534,8 +2534,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
     [ABILITY_OVERCHARGED] =
     {
-        .name = _("Surge Surfer"),
-        .description = COMPOUND_STRING("Stronger on electricity."),
+        .name = _("Overcharged"),
+        .description = COMPOUND_STRING("Physically stronger on electricity."),
         .aiRating = 4,
     },
     [ABILITY_WAVE_RIDER] =
@@ -2748,9 +2748,22 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
     [ABILITY_KENETIC_BARRIER] =
     {
-        .name = _("Stamina"),
+        .name = _("Kenetic Barrier"),
         .description = COMPOUND_STRING("Boosts SpD when hit."),
         .aiRating = 6,
+    },
+    [ABILITY_TOXIC_BLOOM] =
+    {
+        .name = _("Toxic Bloom"),
+        .description = COMPOUND_STRING("Grass poisons foes, boosts damage to ill foes and priority in sun."),
+        .aiRating = 6,
+    },
+    [ABILITY_COSMIC_ALLOY] =
+    {
+        .name = _("Cosmic Alloy"),
+        .description = COMPOUND_STRING("Increases move effectiveness."),
+        .aiRating = 8,
+        .breakable = TRUE,
     },
 
  

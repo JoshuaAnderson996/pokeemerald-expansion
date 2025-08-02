@@ -278,7 +278,7 @@ bool32 CanFling(u32 battler);
 bool32 IsTelekinesisBannedSpecies(u16 species);
 bool32 IsDesertSpecies(u16 species);
 bool32 IsFloatingSpecies(u16 species);
-bool32 IsHibernatingSpecies(u16 species);
+bool32 IsThickfatSpecies(u16 species);
 bool32 IsBatSpecies(u16 species);
 bool32 IsHealBlockPreventingMove(u32 battler, u32 move);
 bool32 IsBelchPreventingMove(u32 battler, u32 move);
