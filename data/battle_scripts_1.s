@@ -10149,3 +10149,9 @@ BattleScript_FortifyActivates::
     setstatchanger STAT_SPDEF, 1, FALSE
     statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUp
     return
+
+BattleScript_AnticipationEvadeAttack::
+    call BattleScript_AbilityPopUp
+    printstring STRINGID_ANTICIPATION_AVOIDED_ATTACK
+    waitmessage B_WAIT_TIME_LONG
+    goto BattleScript_MoveMissedPause

@@ -648,7 +648,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_NONE, 0, SPECIES_SAMUROTT_HISUI}),
+                                {EVO_MOVE, MOVE_CEASELESS_EDGE, SPECIES_SAMUROTT_HISUI}),
     },
 
     [SPECIES_SAMUROTT] =
@@ -6511,7 +6511,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpeed     = 105,
         .baseSpAttack  = 105,
         .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_DARK),
+        .types = MON_TYPES(TYPE_DARK, TYPE_HERO),
         .catchRate = 45,
         .expYield = 179,
         .evYield_SpAttack = 2,
@@ -6655,7 +6655,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_ILLUSION, ABILITY_NONE, ABILITY_NORMALIZE },
+        .abilities = { ABILITY_ILLUSION, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Zoroark"),
         .cryId = CRY_ZOROARK,

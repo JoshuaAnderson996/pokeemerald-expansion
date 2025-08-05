@@ -4579,7 +4579,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
     u32 effect = 0;
     u32 moveType = 0, move = 0;
     u32 side = 0;
-    u32 i = 0, j = 0;
+    u32 i = 0;
     u32 partner = 0;
     struct Pokemon *mon;
 
@@ -4961,35 +4961,43 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_ANTICIPATION:
-            if (!gSpecialStatuses[battler].switchInAbilityDone)
-            {
-                u32 side = GetBattlerSide(battler);
+    {
+        u32 side = GetBattlerSide(battler);
+        u16 move, moveType;
+        s32 i, j;
 
-                for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+        if (!gSpecialStatuses[battler].switchInAbilityDone)
+        {
+        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+        {
+            if (IsBattlerAlive(i) && GetBattlerSide(i) != side)
+            {
+                for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    if (IsBattlerAlive(i) && side != GetBattlerSide(i))
+                    move = gBattleMons[i].moves[j];
+                    if (move == MOVE_NONE)
+                        continue;
+
+                    moveType = GetBattleMoveType(move);
+
+                    if (CalcTypeEffectivenessMultiplier(move, moveType, i, battler, ABILITY_ANTICIPATION, FALSE) >= UQ_4_12(2.0))
                     {
-                        for (j = 0; j < MAX_MON_MOVES; j++)
-                        {
-                            move = gBattleMons[i].moves[j];
-                            moveType = GetBattleMoveType(move);
-                            if (CalcTypeEffectivenessMultiplier(move, moveType, i, battler, ABILITY_ANTICIPATION, FALSE) >= UQ_4_12(2.0))
-                            {
-                                effect++;
-                                break;
-                            }
-                        }
+                        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_ANTICIPATION;
+                        BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                        effect++;
+                        break;
                     }
                 }
-
-                if (effect != 0)
-                {
-                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_ANTICIPATION;
-                    gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                    BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
-                }
             }
-            break;
+        }
+        
+        gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+    }
+
+    // NEW: Reset the "dodge once" flag
+    gSpecialStatuses[battler].anticipationUsed = FALSE;
+    break;
+}
         case ABILITY_FRISK:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -6872,6 +6880,9 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
     if (gStatuses3[battler] & STATUS3_GASTRO_ACID)
         return FALSE;
 
+    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_OVERRIDE_LENS)
+        return TRUE;
+
     return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE || ability == ABILITY_TECTONIC_BLOOM 
         || (ability == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gCurrentMove)));
 }
@@ -6918,6 +6929,10 @@ u32 GetBattlerAbility(u32 battler)
     if (!gBattleStruct->bypassMoldBreakerChecks
      && noAbilityShield
      && CanBreakThroughAbility(gBattlerAttacker, battler, gBattleMons[gBattlerAttacker].ability))
+        return ABILITY_NONE;
+
+        // item disables the holder's ability
+    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_NULLIFIER)
         return ABILITY_NONE;
 
     return gBattleMons[battler].ability;
@@ -10837,6 +10852,17 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
 
 static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 battlerAtk, u32 battlerDef, uq4_12_t typeEffectivenessModifier, u32 abilityDef)
 {
+    
+    // ✅ Anticipation logic added here
+    if (abilityDef == ABILITY_ANTICIPATION
+     && !gSpecialStatuses[battlerDef].anticipationUsed
+     && typeEffectivenessModifier > UQ_4_12(1.0))
+    {
+        gSpecialStatuses[battlerDef].anticipationUsed = TRUE;
+        gBattleScripting.battler = battlerDef;
+        BattleScriptPushCursorAndCallback(BattleScript_AnticipationEvadeAttack);
+        return UQ_4_12(0.0);
+    }
     switch (abilityDef)
     {
     case ABILITY_MULTISCALE:
@@ -10906,6 +10932,11 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
         break;
     case HOLD_EFFECT_LIFE_ORB:
         return UQ_4_12_FLOORED(1.3);
+        break;
+    case HOLD_EFFECT_ADAPTIVE_LENS:
+        if (typeEffectivenessModifier == UQ_4_12(0.25)
+         || typeEffectivenessModifier == UQ_4_12(0.5))
+            return UQ_4_12(1.0); // Treated as neutral
         break;
     }
     return UQ_4_12(1.0);
@@ -13034,9 +13065,6 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_TAPU_FINI,
     SPECIES_DHELMISE,
     SPECIES_COMFEY,
-    SPECIES_AEGISLASH_BLADE,
-    SPECIES_AEGISLASH_SHIELD,
-    SPECIES_AEGISLASH,
     SPECIES_CHARIZARD_MEGA_X,
     SPECIES_FLORGES,
     SPECIES_BEHEEYEM,
@@ -13053,6 +13081,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_VENOMOTH,
     SPECIES_IRON_MOTH,
     SPECIES_DRAGALGE,
+    SPECIES_LEDIAN,
 };
 
 bool32 IsFloatingSpecies(u16 species)

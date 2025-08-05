@@ -169,6 +169,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
 	giveitem ITEM_TM_BULK_UP
+	givemon SPECIES_LILLIGANT_HISUI, 20 
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
@@ -176,6 +177,7 @@ DewfordTown_Gym_EventScript_GiveBulkUp::
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:
 	giveitem ITEM_TM_BULK_UP
+	givemon SPECIES_LILLIGANT_HISUI, 20 
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
@@ -400,19 +402,15 @@ DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 	.string "from BRAWLY.$"
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
-	.string "The KNUCKLE BADGE makes all POKéMON\n"
-	.string "up to Level 30, even those you get in\l"
-	.string "trades, obey without question.\p"
-	.string "And, you'll be able to use the HM move\n"
-	.string "FLASH outside of battle.\p"
-	.string "If you'd like, use this TECHNICAL\n"
-	.string "MACHINE, too.$"
+	.string "The KNUCKLE BADGE proves all your POKéMON\n"
+	.string "are awesome battlers,\l"
+	.string "As a reward take these.$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM08 contains BULK UP.\p"
 	.string "It's a move that raises both ATTACK\n"
 	.string "and DEFENSE stats.\p"
-	.string "… … … … … …$"
+	.string "Also take this MON with you$"
 
 DewfordTown_Gym_Text_RegisteredBrawly:
 	.string "Registered GYM LEADER BRAWLY\n"

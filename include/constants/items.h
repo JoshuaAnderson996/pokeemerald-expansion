@@ -993,7 +993,9 @@
 #define ITEM_POKESHI_DOLL 827
 
 #define ITEM_STRANGE_BALL 828
-#define ITEM_VENUSAURITE_X 829 // Items I've added
+
+//Custom mega stones
+#define ITEM_VENUSAURITE_X 829 
 #define ITEM_CHARIZARDITE_Z 830
 #define ITEM_BLASTOISINITE_X 831
 #define ITEM_BUTTERFITE 832
@@ -1023,10 +1025,15 @@
 #define ITEM_URSHITE_R 856
 #define ITEM_GRIMMITE 857
 
+//Custom items
+#define ITEM_NULLIFIER 858
+#define ITEM_OVERRIDE_LENS 859
+#define ITEM_ADAPTIVE_LENS 860
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 858
+#define ITEMS_COUNT 861
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

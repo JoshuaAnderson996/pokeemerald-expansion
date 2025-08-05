@@ -867,5 +867,6 @@ extern const u8 BattleScript_DamageToQuarterTargetHP[];
 extern const u8 BattleScript_EffectFickleBeam[];
 extern const u8 BattleScript_FickleBeamDoubled[];
 extern const u8 BattleScript_ShellsplinterActivates[];
+extern const u8 BattleScript_AnticipationEvadeAttack[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

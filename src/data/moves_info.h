@@ -227,8 +227,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "incredible power."),
         .effect = EFFECT_HIT,
         .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 85,
+        .type = TYPE_HERO,
+        .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -4915,7 +4915,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .ninjaMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -9146,11 +9145,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = 100,
-        }),
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .pulseMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -21687,7 +21683,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_GMaxSandblast,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SANDBLAST_SIDE,
-            .chance = 30,
+            .chance = 100,
         }),
     },
 
@@ -22815,6 +22811,69 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = COMBO_STARTER_ROCK_THROW,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_IceBall,
+    },
+    [MOVE_GRAVITY_BOMB] =
+    {
+        .name = COMPOUND_STRING("Gravity Bomb"),
+        .description = COMPOUND_STRING(
+            "Shoots an orb of\n"
+            "cosmic energy intensifying gravity."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_COSMIC,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = gBattleAnimMove_GMaxGravitas,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_GRAVITY,
+            .chance = 50,
+            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+        }),
+    },
+    [MOVE_GRAVITY_FIST] =
+    {
+    .name = COMPOUND_STRING("Gravity Fist"),
+    .description = COMPOUND_STRING(
+        "A punch so heavy it warps gravity.\n"
+        "May increase Gravity."),
+    .effect = EFFECT_HIT,
+    .power = 70,
+    .type = TYPE_COSMIC,
+    .accuracy = 100,
+    .pp = 10,
+    .target = MOVE_TARGET_SELECTED,
+    .priority = 0,
+    .category = DAMAGE_CATEGORY_PHYSICAL,
+    .battleAnimScript = gBattleAnimMove_GravApple, // or custom if you like
+    .additionalEffects = ADDITIONAL_EFFECTS({
+        .moveEffect = MOVE_EFFECT_GRAVITY,
+        .chance = 100,
+        .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+    }),
+    },
+    [MOVE_LIGHTSPEED] =
+    {
+    .name = COMPOUND_STRING("Lightspeed"),
+    .description = COMPOUND_STRING(
+        "Strikes faster than light.\n"
+        "Always goes first."),
+    .effect = EFFECT_HIT,
+    .power = 80,
+    .type = TYPE_COSMIC,
+    .accuracy = 100,
+    .pp = 5,
+    .target = MOVE_TARGET_SELECTED,
+    .priority = B_UPDATED_MOVE_DATA >= GEN_5 ? 2 : 1,
+    .category = DAMAGE_CATEGORY_PHYSICAL,
+    .ninjaMove = TRUE,
+    .makesContact = TRUE,
+    .battleAnimScript = gBattleAnimMove_ExtremeSpeed,
+    .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+    .contestCategory = CONTEST_CATEGORY_COOL,
+    .validApprenticeMove = TRUE,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

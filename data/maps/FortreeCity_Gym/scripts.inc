@@ -51,6 +51,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 
 FortreeCity_Gym_EventScript_GiveAerialAce2::
 	giveitem ITEM_TM_AERIAL_ACE
+	givemon SPECIES_BRAVIARY_HISUI, 50
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_AERIAL_ACE
@@ -59,6 +60,7 @@ FortreeCity_Gym_EventScript_GiveAerialAce2::
 
 FortreeCity_Gym_EventScript_GiveAerialAce::
 	giveitem ITEM_TM_AERIAL_ACE
+	givemon SPECIES_BRAVIARY_HISUI, 50
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_AERIAL_ACE
@@ -266,6 +268,9 @@ FortreeCity_Gym_Text_ExplainAerialAce:
 	.string "TM40 contains AERIAL ACE.\p"
 	.string "Its speed…\n"
 	.string "No POKéMON should be able to avoid it.\p"
+	.string "Also take this mon\n"
+	.string "It used to soar the sky\n"
+	.string "in anicent times.\p"
 	.string "… … … … … …$"
 
 FortreeCity_Gym_Text_RegisteredWinona:

@@ -896,6 +896,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_STEALTHROCKDESTROYED]                 = COMPOUND_STRING("Rocks were crushed!!!"),
     [STRINGID_CASTFORMCHANGEDWEATHER]               = COMPOUND_STRING("Weather was altered"),
     [STRINGID_STIKERENTERS]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is Prepared for battle!"),   
+    [STRINGID_ANTICIPATION_AVOIDED_ATTACK ]         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} anticipated the move and avoided it!"),
     [STRINGID_PKMNSENTTOPCAFTERCATCH]               = gText_PkmnSentToPCAfterCatch,
 };
 

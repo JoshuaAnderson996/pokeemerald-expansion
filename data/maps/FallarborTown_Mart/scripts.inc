@@ -357,6 +357,9 @@ FallarborTown_Mart_Pokemart:
 	.2byte ITEM_BLUNDER_POLICY 
 	.2byte ITEM_ROOM_SERVICE 
 	.2byte ITEM_UTILITY_UMBRELLA 
+	.2byte ITEM_NULLIFIER 
+	.2byte ITEM_OVERRIDE_LENS 
+	.2byte ITEM_ADAPTIVE_LENS
 	.2byte ITEM_MAX_REPEL
 	pokemartlistend
 
