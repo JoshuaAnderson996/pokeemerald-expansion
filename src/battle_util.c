@@ -6897,6 +6897,9 @@ static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 
 
 u32 GetBattlerAbility(u32 battler)
 {
+    if (GetBattlerHoldEffectIgnoreAbility(battler, TRUE) == HOLD_EFFECT_NULLIFIER)
+        return ABILITY_NONE;
+
     bool32 noAbilityShield = GetBattlerHoldEffectIgnoreAbility(battler, TRUE) != HOLD_EFFECT_ABILITY_SHIELD;
     bool32 abilityCantBeSuppressed = gAbilitiesInfo[gBattleMons[battler].ability].cantBeSuppressed;
 

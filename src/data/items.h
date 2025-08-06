@@ -14590,19 +14590,21 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
     [ITEM_NULLIFIER] =
     {
     .name = _("Nullifier"),
     .price = 10000,
     .holdEffect = HOLD_EFFECT_NULLIFIER,
     .holdEffectParam = 0,
-    .description = COMPOUND_STRING("Blocks the holders ability."),
+    .description = COMPOUND_STRING("Blocks ability."),
     .pocket = POCKET_ITEMS,
     .type = ITEM_USE_BAG_MENU,
     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     .iconPic = gItemIcon_BindingBand,
     .iconPalette = gItemIconPalette_BindingBand,
     },
+
     [ITEM_OVERRIDE_LENS] =
     {
     .name = _("Override Lens"),
@@ -14616,6 +14618,7 @@ const struct Item gItemsInfo[] =
     .iconPic = gItemIcon_ZoomLens,
     .iconPalette = gItemIconPalette_ZoomLens,
     },
+
     [ITEM_ADAPTIVE_LENS] =
     {
     .name = _("Adaptive Lens"),
