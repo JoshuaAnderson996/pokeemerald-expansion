@@ -5176,11 +5176,11 @@ Level: 26
 - Sucker Punch
 
 Volbeat @ Leftovers
-Ability: Quick Tempered
+Ability: Surge Surfer
 Level: 26
 - Swords Dance
 - X Scissor
-- Wild Charge
+- Quick Attack
 - Moonlight
 
 Lanturn @ Damp Rock
@@ -5191,21 +5191,18 @@ Level: 26
 - Tail Glow
 - Scald
 
-Electrode-Hisui @ Life Orb  
-Ability: Aftermath  
-Level: 1  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Chloroblast  
-- Electro Ball  
-- Volt Switch  
-- Hyper Beam
+Magneton @ Choice Scarf
+Level: 26
+Ability: Levitate 
+- Rising Voltage
+- Mirror Shot
+- Tri Attack
+- Volt Switch
 
 Manectric @ Manectite
 Level: 26
 Shiny: Yes 
-- Volt Switch
+- Quick Attack
 - Thunderclap
 - Thunder
 - Overheat
@@ -5255,16 +5252,13 @@ IVs: 0 Atk
 - Mystical Fire  
 - Magic Bomb  
 
-Typhlosion-Hisui @ Assault Vest  
-Ability: Exorcist  
-Level: 1  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Shadow Ball  
-- Thunderbolt  
-- Blast Burn  
-- HellFire 
+Cinderace @ Choice Band  
+Ability: Libero  
+Level: 38   
+- Pyro Ball  
+- Thunderous Kick  
+- High Jump Kick  
+- Bounce
 
 Camerupt @ Cameruptite  
 Ability: Drought 
@@ -5325,7 +5319,7 @@ Jolly Nature
 - Dragon Hammer  
 - Aerial Ace  
 
-Ursaluna-Bloodmoon @ Adaptive Lens  
+Ursaluna-Bloodmoon @ Leftovers  
 Ability: Minds Eye  
 Level: 45   
 EVs: 248 HP / 252 SpA / 4 SpD  
@@ -5336,7 +5330,7 @@ IVs: 0 Atk
 - Hyper Voice  
 - Moonlight  
 
-Slaking @ Nullifier
+Slaking @ Muscle Band  
 Ability: Truant  
 Level: 45  
 Shiny: Yes   
@@ -5381,17 +5375,16 @@ Level: 55
 - Flare Blitz  
 - U-turn  
 
-Braviary-Hisui @ Choice Scarf  
+Beautifly @ Focus Sash  
 Ability: Tinted Lens  
-Level: 1   
-- Esper Wing  
-- Dazzling Gleam  
-- Wind Rage  
-- Heat Wave
+Level: 55   
+- Bug Buzz  
+- Quiver Dance  
+- Air Cutter  
+- Scorching Sands 
 
 Dodrio @ Choice Band  
 Ability: Parental Bond  
-Level: 1   
 - Drill Run  
 - Drill Peck  
 - Steel Wing  
@@ -5432,7 +5425,7 @@ Level: 60
 - Dragon Pulse  
 - Energy Ball  
 
-Hatterene @ Hatterite  
+Hatterene @ Choice Specs  
 Ability: Magic Bounce  
 Level: 60    
 - Expanding Force  
@@ -5440,17 +5433,15 @@ Level: 60
 - Shadow Ball  
 - Giga Drain  
 
-Wyrdeer @ Salac Berry  
-Ability: Intimidate  
-Level: 1   
-EVs: 252 Atk / 4 SpA / 252 Spe  
-Hasty Nature  
-- Astonish  
-- Dominate 
-- Psyshield Bash  
-- Lunge 
+Gorebyss @ Leftovers  
+Ability: Infiltrator  
+Level: 60  
+- Quiver Dance  
+- Psychic  
+- Muddy Water  
+- Substitute  
 
-Mienshao @ Assault Vest  
+Mienshao @ Room Service  
 Ability: Regenerator  
 Level: 60   
 - U-turn  
@@ -5511,15 +5502,13 @@ IVs: 0 Atk
 - Taunt  
 - Scald  
 
-Samurott-Hisui @ Focus Sash  
-Ability: Sharpness  
-Level: 1  
-EVs: 84 HP / 212 Atk / 212 Spe  
-Jolly Nature  
+Huntail @ White Herb  
+Ability: Swift Swim  
+Level: 75   
 - Shell Smash  
-- Ceaseless Edge  
-- Sucker Punch  
-- Razor Shell
+- Crunch  
+- Aqua Tail  
+- Ice Fang  
 
 Swampert (F) @ Swampertite  
 Ability: Stamina  

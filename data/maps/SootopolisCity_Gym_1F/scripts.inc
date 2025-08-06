@@ -117,7 +117,6 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
 	giveitem ITEM_TM_WATER_PULSE
-	givemon SPECIES_SAMUROTT_HISUI, 70
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -125,7 +124,6 @@ SootopolisCity_Gym_1F_EventScript_GiveWaterPulse::
 
 SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2::
 	giveitem ITEM_TM_WATER_PULSE
-	givemon SPECIES_SAMUROTT_HISUI, 70
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_WATER_PULSE
@@ -239,17 +237,21 @@ SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 	.string "from JUAN.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
-	.string "Ah… A most elegant performance.\n"
-	.string "Your strategy flowed like water.\p"
-	.string "To be bested in such a way...\n"
-	.string "It is truly an honor.\p"
+	.string "Having the RAIN BADGE shall assure you\n"
+	.string "the full obedience of all your POKéMON\l"
+	.string "to your every command.\p"
+	.string "The RAIN BADGE also allows the use\n"
+	.string "of the HM move WATERFALL to scale\l"
+	.string "walls of cascading water.\p"
 	.string "And, so that you never forget the\n"
 	.string "battle we shared, take this…$"
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "The TECHNICAL MACHINE I handed you\n"
 	.string "contains WATER PULSE.\p"
-	.string "Please also that this Pokemon.$"
+	.string "In use, it will occasionally confuse\n"
+	.string "the target with ultrasonic waves.\p"
+	.string "… … … … … …$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan:
 	.string "Registered GYM LEADER JUAN\n"

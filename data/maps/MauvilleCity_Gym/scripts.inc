@@ -113,7 +113,6 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
 	giveitem ITEM_TM_SHOCK_WAVE
-	givemon SPECIES_ELECTRODE_HISUI, 20
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -122,7 +121,6 @@ MauvilleCity_Gym_EventScript_GiveShockWave2::
 
 MauvilleCity_Gym_EventScript_GiveShockWave::
 	giveitem ITEM_TM_SHOCK_WAVE
-	givemon SPECIES_ELECTRODE_HISUI, 20
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -358,18 +356,17 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "from WATTSON.$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-	.string "Wahahah\n"
-	.string "That was an electrifying battle, I tell ya!\p"
-	.string "You're full of spark, kid\n"
-	.string "I like that keeps me feeling young!\p"
+	.string "With the DYNAMO BADGE, POKéMON can\n"
+	.string "use ROCK SMASH out of battle.\p"
+	.string "And, it will make your POKéMON a little\n"
+	.string "bit faster, too.\p"
+	.string "Hmm…\n"
 	.string "You should take this, too!$"
-
 
 MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "That TM34 there contains SHOCK WAVE.\p"
 	.string "It's a trustworthy move that never\n"
 	.string "misses! You can count on it!\p"
-	.string "Take this guy too!\p"
 	.string "… … … … … …$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:

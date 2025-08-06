@@ -14590,44 +14590,4 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
-    [ITEM_NULLIFIER] =
-    {
-    .name = _("Nullifier"),
-    .price = 10000,
-    .holdEffect = HOLD_EFFECT_NULLIFIER,
-    .holdEffectParam = 0,
-    .description = COMPOUND_STRING("Blocks the holders ability."),
-    .pocket = POCKET_ITEMS,
-    .type = ITEM_USE_BAG_MENU,
-    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    .iconPic = gItemIcon_BindingBand,
-    .iconPalette = gItemIconPalette_BindingBand,
-    },
-    [ITEM_OVERRIDE_LENS] =
-    {
-    .name = _("Override Lens"),
-    .price = 10000,
-    .holdEffect = HOLD_EFFECT_OVERRIDE_LENS,
-    .holdEffectParam = 0,
-    .description = COMPOUND_STRING("Holder ignores abilities."),
-    .pocket = POCKET_ITEMS,
-    .type = ITEM_USE_BAG_MENU,
-    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    .iconPic = gItemIcon_ZoomLens,
-    .iconPalette = gItemIconPalette_ZoomLens,
-    },
-    [ITEM_ADAPTIVE_LENS] =
-    {
-    .name = _("Adaptive Lens"),
-    .price = 3000,
-    .holdEffect = HOLD_EFFECT_ADAPTIVE_LENS,
-    .holdEffectParam = 0,
-    .description = COMPOUND_STRING("Holder ignores resistances."),
-    .pocket = POCKET_ITEMS,
-    .type = ITEM_USE_BAG_MENU,
-    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    .iconPic = gItemIcon_WiseGlasses,
-    .iconPalette = gItemIconPalette_WiseGlasses,
-    },
-
 };
