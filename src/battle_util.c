@@ -6880,8 +6880,6 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
     if (gStatuses3[battler] & STATUS3_GASTRO_ACID)
         return FALSE;
 
-    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_OVERRIDE_LENS)
-        return TRUE;
 
     return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE || ability == ABILITY_TECTONIC_BLOOM 
         || (ability == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gCurrentMove)));
@@ -6929,10 +6927,6 @@ u32 GetBattlerAbility(u32 battler)
     if (!gBattleStruct->bypassMoldBreakerChecks
      && noAbilityShield
      && CanBreakThroughAbility(gBattlerAttacker, battler, gBattleMons[gBattlerAttacker].ability))
-        return ABILITY_NONE;
-
-        // item disables the holder's ability
-    if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_NULLIFIER)
         return ABILITY_NONE;
 
     return gBattleMons[battler].ability;
@@ -10932,11 +10926,6 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
         break;
     case HOLD_EFFECT_LIFE_ORB:
         return UQ_4_12_FLOORED(1.3);
-        break;
-    case HOLD_EFFECT_ADAPTIVE_LENS:
-        if (typeEffectivenessModifier == UQ_4_12(0.25)
-         || typeEffectivenessModifier == UQ_4_12(0.5))
-            return UQ_4_12(1.0); // Treated as neutral
         break;
     }
     return UQ_4_12(1.0);
