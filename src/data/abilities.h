@@ -2529,7 +2529,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_VERDANT_FURY] =
     {
         .name = _("Verdant Fury"),
-        .description = COMPOUND_STRING("Ups Grass and Dragon moves in a pinch."),
+        .description = COMPOUND_STRING("STAB boosted in pinch + Sharpness."),
         .aiRating = 5,
     },
     [ABILITY_OVERCHARGED] =

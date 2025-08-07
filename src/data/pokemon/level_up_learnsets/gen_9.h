@@ -15769,7 +15769,7 @@ static const struct LevelUpMove sDeerlingLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sSawsbuckLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_HORN_LEECH),
+    LEVEL_UP_MOVE( 0, MOVE_SEASON_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_HORN_LEECH),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),

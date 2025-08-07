@@ -10191,11 +10191,15 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_VERDANT_FURY:
         if ((moveType == TYPE_GRASS || moveType == TYPE_DRAGON) 
-            && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
+        && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
         {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         }
-        break;    
+        if (IsSlicingMove(move))
+        {
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        }
+        break; 
     case ABILITY_PLUS:
         if (IsBattleMoveSpecial(move) && IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
         {

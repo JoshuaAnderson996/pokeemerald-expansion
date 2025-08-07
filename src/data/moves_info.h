@@ -9190,7 +9190,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "item held by the foe."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 60 : 40,
-        .type = TYPE_NORMAL,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 25 : 40,
         .target = MOVE_TARGET_SELECTED,
@@ -22874,6 +22874,27 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
     .contestCategory = CONTEST_CATEGORY_COOL,
     .validApprenticeMove = TRUE,
+    },
+    [MOVE_SEASON_SMASH] =
+    {
+    .name = COMPOUND_STRING("Revelation Dance"),
+    .description = COMPOUND_STRING(
+            "Attacks with seasonal power.\n"
+            "Matches user's first type."),
+    .effect = EFFECT_REVELATION_DANCE,
+    .power = 90,
+    .type = TYPE_NORMAL,
+    .accuracy = 100,
+    .pp = 15,
+    .target = MOVE_TARGET_SELECTED,
+    .priority = 0,
+    .category = DAMAGE_CATEGORY_PHYSICAL,
+    .danceMove = TRUE,
+    .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+    .contestCategory = CONTEST_CATEGORY_BEAUTY,
+    .contestComboStarterId = 0,
+    .contestComboMoves = {0},
+    .battleAnimScript = gBattleAnimMove_DoubleEdge,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

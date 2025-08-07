@@ -5127,7 +5127,7 @@ Level: 22
 Lilligant-Hisui @ Focus Sash
 Ability: Technician 
 Level: 22    
-- Axe Kick  
+- Triple Axel
 - Victory Dance  
 - Mach Punch  
 - Leaf Blade  
@@ -5144,8 +5144,8 @@ Hariyama @ Assault Vest
 Ability: Sheer Force  
 Level: 22    
 Shiny: Yes 
-- Arm Thrust  
-- Vital Throw  
+- Close Combat
+- Heavy Slam  
 - Knock Off  
 - Ice Punch  
 
@@ -5167,13 +5167,13 @@ Level: 26
 - Flamethrower
 - Parabolic Charge
 
-Pincurchin @ Terrain Extender
+Pincurchin @ Leftovers
 Ability: Electric Surge
 Level: 26
-- Scald
-- Thunder
+- Spikes
+- Rising Voltage
 - Recover
-- Sucker Punch
+- Toxic Spikes
 
 Volbeat @ Leftovers
 Ability: Quick Tempered
@@ -5220,7 +5220,7 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 
-Torkoal @ Heat Rock
+Torkoal @ Leftovers
 Level: 38
 Ability: Drought
 - Iron Defense
@@ -5242,7 +5242,7 @@ Ability: Drought
 - Trick
 - Overheat
 - Volt Switch
-- Shadow Ball
+- Will-O-Wisp
 
 Delphox @ Power Herb    
 Ability: Arcane Power
@@ -5325,7 +5325,7 @@ Jolly Nature
 - Dragon Hammer  
 - Aerial Ace  
 
-Ursaluna-Bloodmoon @ Adaptive Lens  
+Ursaluna-Bloodmoon @ Leftovers
 Ability: Minds Eye  
 Level: 45   
 EVs: 248 HP / 252 SpA / 4 SpD  
@@ -5333,7 +5333,7 @@ Modest Nature
 IVs: 0 Atk  
 - Blood Moon  
 - Earth Power  
-- Hyper Voice  
+- Calm Mind  
 - Moonlight  
 
 Slaking @ Nullifier
@@ -5416,7 +5416,7 @@ Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 
-Claydol @ Terrain Extender  
+Claydol @ Eject Button  
 Ability: Psychic Surge  
 Level: 60  
 - Expanding Force  
@@ -5477,7 +5477,7 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 
-Pelipper @ Damp Rock  
+Pelipper @ Leftovers  
 Ability: Drizzle  
 Level: 75   
 - Hurricane  
@@ -5491,7 +5491,7 @@ Level: 75
 - Waterfall  
 - Wish  
 - Protect  
-- Recover  
+- Toxic 
 
 Masquerain @ Focus Sash  
 Ability: Water Bubble  
@@ -5502,7 +5502,7 @@ IVs: 0 Atk
 - Bug Buzz  
 - Ice Beam  
 
-Politoed @ Red Card  
+Politoed @ Leftovers  
 Ability: Drizzle  
 Level: 75   
 IVs: 0 Atk  
@@ -11240,7 +11240,7 @@ Music: Magma
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Hippowdon @ Smooth Rock  
+Hippowdon @ Leftovers  
 Ability: Sand Stream  
 Level: 34  
 EVs: 248 HP / 4 Atk / 252 Def  
@@ -11518,21 +11518,68 @@ Music: Magma
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Numel
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Camerupt @ Leftovers  
+Level: 1
+Ability: Drought  
+EVs: 252 HP / 252 SpA / 4 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Body Press  
+- Stealth Rock  
+- Flamethrower  
+- Earth Power  
 
-Poochyena
-Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Crobat @ Life Orb  
+Level: 1
+Ability: Poison Specialist    
+EVs: 252 Atk / 4 SpA / 252 Spe  
+Hasty Nature  
+- Heat Wave  
+- Brave Bird  
+- Tailwind  
+- U-turn  
 
-Numel
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Krookodile @ Assault Vest  
+Level: 1
+Ability: Intimidate    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Fire Fang  
+- Earthquake  
+- Knock Off  
+- Close Combat  
 
-Zubat
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Chandelure @ Heavy-Duty Boots
+Level: 1  
+Ability: Drought  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Flamethrower  
+- Shadow Ball  
+- Solar Beam  
+- Will-O-Wisp  
+
+Sawsbuck-Summer (F) @ Choice Band 
+Level: 1 
+Ability: Chlorophyll   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Horn Leech  
+- Play Rough  
+- Stomping Tantrum  
+- Season Smash  
+
+Houndoom @ Houndoominite
+Level: 1  
+Ability: Solar Power  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Dark Pulse  
+- Flamethrower  
+- Taunt  
+- Sludge Bomb  
 
 === TRAINER_JONATHAN ===
 Name: JONATHAN
