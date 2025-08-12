@@ -15866,7 +15866,7 @@ F_TRAINER_FEMALE |
 #line 6351
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 6352
-        .trainerPic = TRAINER_PIC_MAGMA_LEADER_MAXIE2,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
         .encounterMusic_gender =
 #line 6354
             TRAINER_ENCOUNTER_MUSIC_MALE,

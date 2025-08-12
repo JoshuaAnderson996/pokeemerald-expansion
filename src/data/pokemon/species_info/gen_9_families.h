@@ -382,6 +382,75 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sSkeledirgeLevelUpLearnset,
         .teachableLearnset = sSkeledirgeTeachableLearnset,
+        .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeFormChangeTable,
+    },
+
+    #if P_MEGA_EVOLUTIONS
+    [SPECIES_SKELEDIRGE_MEGA] =
+    {
+        .baseHP        = 114,
+        .baseAttack    = 60,
+        .baseDefense   = 125,
+        .baseSpeed     = 66,
+        .baseSpAttack  = 160,
+        .baseSpDefense = 125,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GHOST),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK, ABILITY_PUNK_ROCK },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Skeledirge"),
+        .cryId = CRY_SKELEDIRGE,
+        .natDexNum = NATIONAL_DEX_SKELEDIRGE,
+        .categoryName = _("Singer"),
+        .height = 16,
+        .weight = 3265,
+        .description = COMPOUND_STRING(
+            "Skeledirge's gentle singing\n"
+            "have become roars of pain Its\n"
+            "soul still burn with passion despite this\n"
+            "Its screeches can be heard across the world."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Skeledirge,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SkeledirgeMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_SkeledirgeMega,
+        .shinyPalette = gMonShinyPalette_SkeledirgeMega,
+        .iconSprite = gMonIcon_SkeledirgeMega,
+        .iconPalIndex = 0,
+        SHADOW(6, 7, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Skeledirge)
+        OVERWORLD(
+            sPicTable_Skeledirge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Skeledirge,
+            gShinyOverworldPalette_Skeledirge
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sSkeledirgeLevelUpLearnset,
+        .teachableLearnset = sSkeledirgeTeachableLearnset,
+        .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeFormChangeTable,
     },
 #endif //P_FAMILY_FUECOCO
 

@@ -18,6 +18,7 @@ static const u16 sCharizardFormSpeciesIdTable[] = {
 #if P_MEGA_EVOLUTIONS
     SPECIES_CHARIZARD_MEGA_X,
     SPECIES_CHARIZARD_MEGA_Y,
+    SPECIES_CHARIZARD_MEGA_Z,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_CHARIZARD_GMAX,
@@ -31,6 +32,7 @@ static const u16 sBlastoiseFormSpeciesIdTable[] = {
     SPECIES_BLASTOISE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_BLASTOISE_MEGA,
+    SPECIES_BLASTOISE_MEGA_X,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_BLASTOISE_GMAX,
@@ -2197,3 +2199,23 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+#if P_FAMILY_FUECOCO
+static const u16 sSkeledirgeFormSpeciesIdTable[] = {
+    SPECIES_SKELEDIRGE,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_SKELEDIRGE_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_FUECOCO
+
+#if P_FAMILY_OSHAWOTT
+static const u16 sSamurottHisuianFormChangeIdTable[] = {
+    SPECIES_SAMUROTT_HISUI,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_SAMUROTT_HISUI_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif 

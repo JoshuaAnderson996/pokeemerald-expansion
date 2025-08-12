@@ -248,6 +248,61 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formSpeciesIdTable = sRillaboomFormSpeciesIdTable,
         .formChangeTable = sRillaboomFormChangeTable,
     },
+
+    [SPECIES_RILLABOOM_MEGA_X] =
+    {
+        .baseHP        = 110,
+        .baseAttack    = 160,
+        .baseDefense   = 100,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE, ABILITY_GRASSY_SURGE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Rillaboom"),
+        .cryId = CRY_RILLABOOM,
+        .natDexNum = NATIONAL_DEX_RILLABOOM,
+        .categoryName = _("Drummer"),
+        .height = 280,
+        .weight = 0,
+        .description = COMPOUND_STRING(
+            "Rillaboom has become consumed with rage\n"
+            "abandoning its drums and is only focused\n"
+            "on battling."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+        .frontPic = gMonFrontPic_RillaboomMegaX,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_RillaboomMegaX,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_RillaboomMegaX,
+        .shinyPalette = gMonShinyPalette_RillaboomMegaX,
+        .iconSprite = gMonIcon_RillaboomMegaX,
+        .iconPalIndex = 1,
+        SHADOW(0, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Rillaboom)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sRillaboomLevelUpLearnset,
+        .teachableLearnset = sRillaboomTeachableLearnset,
+        .formSpeciesIdTable = sRillaboomFormSpeciesIdTable,
+        .formChangeTable = sRillaboomFormChangeTable,
+    },
 #endif //P_GIGANTAMAX_FORMS
 
 #if P_GIGANTAMAX_FORMS

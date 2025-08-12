@@ -1052,6 +1052,7 @@ static const struct FormChange sMelmetalFormChangeTable[] = {
 static const struct FormChange sRillaboomFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RILLABOOM_MEGA, ITEM_RILLABITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RILLABOOM_MEGA_X, ITEM_RILLABITE_X},
 #endif     
 #if P_GIGANTAMAX_FORMS
     {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_RILLABOOM_GMAX},
@@ -1380,6 +1381,24 @@ static const struct FormChange sTerapagosFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_TERAPAGOS
+
+#if P_FAMILY_OSHAWOTT
+static const struct FormChange sSamurottHisuianFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_SAMUROTT_HISUI_MEGA, ITEM_SAMURITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};    
+#endif
+
+#if P_FAMILY_FUECOCO
+static const struct FormChange sSkeledirgeFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_SKELEDIRGE_MEGA, ITEM_SKELEDITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};    
+#endif
 
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

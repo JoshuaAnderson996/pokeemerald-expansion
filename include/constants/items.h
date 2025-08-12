@@ -1024,16 +1024,19 @@
 #define ITEM_URSHITE 855
 #define ITEM_URSHITE_R 856
 #define ITEM_GRIMMITE 857
+#define ITEM_SKELEDITE 858
+#define ITEM_RILLABITE_X 859
+#define ITEM_SAMURITE 860
 
 //Custom items
-#define ITEM_NULLIFIER 858
-#define ITEM_OVERRIDE_LENS 859
-#define ITEM_ADAPTIVE_LENS 860
+#define ITEM_NULLIFIER 861
+#define ITEM_OVERRIDE_LENS 862
+#define ITEM_ADAPTIVE_LENS 863
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 861
+#define ITEMS_COUNT 864
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

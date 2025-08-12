@@ -779,8 +779,76 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .isHisuianForm = TRUE,
         .levelUpLearnset = sSamurottHisuiLevelUpLearnset,
         .teachableLearnset = sSamurottHisuiTeachableLearnset,
-        .formSpeciesIdTable = sSamurottFormSpeciesIdTable,
+        .formSpeciesIdTable = sSamurottHisuianFormChangeIdTable,
+        .formChangeTable = sSamurottHisuianFormChangeTable,
     },
+
+    #if P_MEGA_EVOLUTIONS
+    [SPECIES_SAMUROTT_HISUI_MEGA] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 150,
+        .baseDefense   = 95,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DARK),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_SUPREME_OVERLORD, ABILITY_SUPREME_OVERLORD, ABILITY_SUPREME_OVERLORD },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Samurott"),
+        .cryId = CRY_SAMUROTT,
+        .natDexNum = NATIONAL_DEX_SAMUROTT,
+        .categoryName = _("Formidable"),
+        .height = 15,
+        .weight = 582,
+        .description = COMPOUND_STRING(
+            "Mega Evolution has tapped into,\n"
+            "this rare Samurott has unlocked\n"
+            "this Pokémon's evolution\n"
+            "hidden potential."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_SamurottHisuiMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SamurottHisuiMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_SamurottHisuiMega,
+        .shinyPalette = gMonShinyPalette_SamurottHisuiMega,
+        .iconSprite = gMonIcon_SamurottHisuiMega,
+        .iconPalIndex = 0,
+        SHADOW(-2, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Samurott)
+        OVERWORLD(
+            sPicTable_SamurottHisui,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_SamurottHisui,
+            gShinyOverworldPalette_SamurottHisui
+        )
+        .isHisuianForm = TRUE,
+        .levelUpLearnset = sSamurottHisuiLevelUpLearnset,
+        .teachableLearnset = sSamurottHisuiTeachableLearnset,
+        .formSpeciesIdTable = sSamurottHisuianFormChangeIdTable,
+        .formChangeTable = sSamurottHisuianFormChangeTable,
+    },
+#endif     
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_OSHAWOTT
 

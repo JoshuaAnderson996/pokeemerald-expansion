@@ -1667,8 +1667,11 @@
 #define SPECIES_URSHIFU_SINGLE_STRIKE_MEGA              1551
 #define SPECIES_URSHIFU_RAPID_STRIKE_MEGA               1552
 #define SPECIES_CASTFORM_SANDSTORM                      1553
+#define SPECIES_SKELEDIRGE_MEGA                         1554
+#define SPECIES_RILLABOOM_MEGA_X                        1555
+#define SPECIES_SAMUROTT_HISUI_MEGA                     1556
 
-#define SPECIES_EGG                                     1554
+#define SPECIES_EGG                                     1557
 
 #define NUM_SPECIES SPECIES_EGG
 

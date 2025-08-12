@@ -14632,5 +14632,53 @@ const struct Item gItemsInfo[] =
     .iconPic = gItemIcon_WiseGlasses,
     .iconPalette = gItemIconPalette_WiseGlasses,
     },
+    [ITEM_SKELEDITE] =
+    {
+        .name = _("Skeledite"),
+        .price = 15600,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Skeledirge to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Alakazite,
+        .iconPalette = gItemIconPalette_Alakazite,
+    },
+    [ITEM_RILLABITE_X] =
+    {
+        .name = _("Rillabite X"),
+        .price = 15600,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Rillaboom to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Alakazite,
+        .iconPalette = gItemIconPalette_Alakazite,
+    },
+    [ITEM_SAMURITE] =
+    {
+        .name = _("Samurite"),
+        .price = 15600,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Samurott to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Alakazite,
+        .iconPalette = gItemIconPalette_Alakazite,
+    },
 
 };
