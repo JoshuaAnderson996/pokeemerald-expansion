@@ -2765,6 +2765,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
         .breakable = TRUE,
     },
+    [ABILITY_JUNGLE_BEAT] =
+    {
+    .name = _("Jungle Beat"),
+    .description = COMPOUND_STRING("Sound moves become Physical and deal 1.3x damage."),
+    .aiRating = 7,
+    },
 
  
 };

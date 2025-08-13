@@ -9343,7 +9343,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "This is Castform's form in a sandstorm.\n"
             "In an experiment where it was placed\n"
             "in a sandbox, it didn't change to this form.\n"
-            "Its cold skin is as smooth as ice."),
+            "Its skin is as rough as sand."),
         .pokemonScale = 435,
         .pokemonOffset = -5,
         .trainerScale = 256,
@@ -9364,10 +9364,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backPicSize = MON_COORDS_SIZE(56, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
-        .palette = gMonPalette_CastformSnowy,
+        .palette = gMonPalette_CastformSandstorm,
         .shinyPalette = gMonShinyPalette_CastformSandstorm,
         .iconSprite = gMonIcon_CastformSandstorm,
-        .iconPalIndex = 0,
+        .iconPalIndex = 2,
         SHADOW(0, 8, SHADOW_SIZE_S)
         FOOTPRINT(Castform)
         OVERWORLD(

@@ -11953,17 +11953,34 @@ static u32 SwapMoveDamageCategory(u32 move)
 
 u8 GetBattleMoveCategory(u32 moveId)
 {
-    if (gBattleStruct != NULL && gBattleStruct->swapDamageCategory) // Photon Geyser, Shell Side Arm, Light That Burns the Sky, Tera Blast
+    if (gBattleStruct != NULL && gBattleStruct->swapDamageCategory) // Photon Geyser, Shell Side Arm, etc.
         return SwapMoveDamageCategory(moveId);
-    if (gBattleStruct != NULL && (IsZMove(moveId) || IsMaxMove(moveId))) // TODO: Might be buggy depending on when this is called.
-        return gBattleStruct->categoryOverride;
-    if (B_PHYSICAL_SPECIAL_SPLIT >= GEN_4)
-        return GetMoveCategory(moveId);
 
+    if (gBattleStruct != NULL && (IsZMove(moveId) || IsMaxMove(moveId)))
+        return gBattleStruct->categoryOverride;
+
+    if (B_PHYSICAL_SPECIAL_SPLIT >= GEN_4)
+    {
+        u8 cat = GetMoveCategory(moveId); // base category
+
+        // Jungle Beat: make *damaging* sound moves Physical for the attacker
+        if (IsBattlerAlive(gBattlerAttacker)
+            && GetBattlerAbility(gBattlerAttacker) == ABILITY_JUNGLE_BEAT
+            && IsSoundMove(moveId)
+            && cat != DAMAGE_CATEGORY_STATUS)
+        {
+            return DAMAGE_CATEGORY_PHYSICAL;
+        }
+        return cat;
+    }
+
+    // Pre-split fallback (Gen < 4)
     if (IsBattleMoveStatus(moveId))
         return DAMAGE_CATEGORY_STATUS;
+
     return gTypesInfo[GetBattleMoveType(moveId)].damageCategory;
 }
+
 
 static bool32 TryRemoveScreens(u32 battler)
 {
