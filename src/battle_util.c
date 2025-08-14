@@ -6455,6 +6455,29 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         effect++;
             }
             break;
+        case ABILITY_FLURRY_FEET:
+    if (IsKickingMove(move) 
+        && !(gBattleStruct->moveResultFlags[gBattlerTarget] & (MOVE_RESULT_NO_EFFECT
+                                                             | MOVE_RESULT_MISSED
+                                                             | MOVE_RESULT_FAILED))
+        && IsBattlerAlive(gBattlerAttacker)
+        && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+        && IsBattlerTurnDamaged(gBattlerTarget)
+        && CompareStat(gBattlerAttacker, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
+    {   
+
+        gLastUsedAbility = ABILITY_FLURRY_FEET;
+        gBattleScripting.battler = gBattlerAttacker;
+        SET_STATCHANGER(STAT_SPEED, 1, FALSE); // +1 Speed
+
+        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_FlurryFeetActivates;
+        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+        effect++;
+    }
+    break;
+
         case ABILITY_POISON_PUPPETEER:
             if (gBattleMons[gBattlerAttacker].species == SPECIES_PECHARUNT
              && gBattleStruct->poisonPuppeteerConfusion == TRUE
@@ -9795,6 +9818,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_KICK_MASTER:
         if (IsKickingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_FLURRY_FEET:
+        if (IsKickingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_THE_WAY_OF_AURA:
         if (IsAuraMove(move))

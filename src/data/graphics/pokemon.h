@@ -1178,7 +1178,14 @@ const u32 gShinyOverworldPalette_BlastoiseMegaX[] = INCBIN_U32("graphics/pokemon
     const u32 gOverworldPalette_Raichu[] = INCBIN_U32("graphics/pokemon/raichu/overworld_normal.gbapal.lz");
     const u32 gShinyOverworldPalette_Raichu[] = INCBIN_U32("graphics/pokemon/raichu/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/front.4bpp.lz");
+    const u32 gMonPalette_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_RaichuMega[] = INCBIN_U32("graphics/pokemon/raichu/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_RaichuMega[] = INCBIN_U8("graphics/pokemon/raichu/mega/icon.4bpp");
 #endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P
 
 #if P_GENDER_DIFFERENCES
     const u32 gMonFrontPic_RaichuF[] = INCBIN_U32("graphics/pokemon/raichu/anim_frontf.4bpp.lz");
@@ -1367,7 +1374,15 @@ const u32 gShinyOverworldPalette_BlastoiseMegaX[] = INCBIN_U32("graphics/pokemon
     const u32 gOverworldPalette_Nidoqueen[] = INCBIN_U32("graphics/pokemon/nidoqueen/overworld_normal.gbapal.lz");
     const u32 gShinyOverworldPalette_Nidoqueen[] = INCBIN_U32("graphics/pokemon/nidoqueen/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/front.4bpp.lz");
+    const u32 gMonPalette_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_NidoqueenMega[] = INCBIN_U32("graphics/pokemon/nidoqueen/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_NidoqueenMega[] = INCBIN_U8("graphics/pokemon/nidoqueen/mega/icon.4bpp");
 #endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_MEGA_EVOLUTIONS
 
 #if !P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_NidoranM[] = INCBIN_U32("graphics/pokemon/nidoran_m/anim_front.4bpp.lz");
@@ -1449,6 +1464,13 @@ const u32 gShinyOverworldPalette_BlastoiseMegaX[] = INCBIN_U32("graphics/pokemon
     const u32 gShinyOverworldPalette_Nidoking[] = INCBIN_U32("graphics/pokemon/nidoking/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/front.4bpp.lz");
+    const u32 gMonPalette_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_NidokingMega[] = INCBIN_U32("graphics/pokemon/nidoking/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_NidokingMega[] = INCBIN_U8("graphics/pokemon/nidoking/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_NIDORAN
 
 #if P_FAMILY_CLEFAIRY
@@ -12871,6 +12893,17 @@ const u32 gMonFrontPic_KinglerMega[] = INCBIN_U32("graphics/pokemon/kingler/mega
     const u32 gObjectEventPic_MiloticF[] = INCBIN_COMP("graphics/pokemon/milotic/overworldf.4bpp");
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GENDER_DIFFERENCES
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/front.4bpp.lz");
+    const u32 gMonBackPic_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/back.4bpp.lz");
+    const u32 gMonPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/normal.gbapal.lz");
+    const u32 gMonShinyPalette_MiloticMega[] = INCBIN_U32("graphics/pokemon/milotic/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_MiloticMega[] = INCBIN_U8("graphics/pokemon/milotic/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MiloticMega[] = INCBIN_COMP("graphics/pokemon/milotic/overworld.4bpp");
+#endif  //OW_POKEMON_OBJECT_EVENTS
+#endif //MEGA_EVOLUTIONS
 #endif //P_FAMILY_FEEBAS
 
 #if P_FAMILY_CASTFORM
@@ -13126,6 +13159,14 @@ const u32 gMonFrontPic_KinglerMega[] = INCBIN_U32("graphics/pokemon/kingler/mega
     const u32 gShinyOverworldPalette_Tropius[] = INCBIN_U32("graphics/pokemon/tropius/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/front.4bpp.lz");
+    const u32 gMonPalette_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_TropiusMega[] = INCBIN_U32("graphics/pokemon/tropius/mega/shiny.gbapal.lz");
+    const u8 gMonIcon_TropiusMega[] = INCBIN_U8("graphics/pokemon/tropius/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TROPIUS
 
 #if P_FAMILY_CHIMECHO

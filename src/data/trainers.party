@@ -5175,7 +5175,7 @@ Level: 26
 - Recover
 - Toxic Spikes
 
-Volbeat @ Leftovers
+Volbeat @ Focus Sash
 Ability: Quick Tempered
 Level: 26
 - Swords Dance
@@ -5183,7 +5183,7 @@ Level: 26
 - Wild Charge
 - Moonlight
 
-Lanturn @ Damp Rock
+Lanturn @ Magnet
 Ability: Drizzle
 Level: 26
 - Electro Shot
@@ -5511,24 +5511,24 @@ IVs: 0 Atk
 - Taunt  
 - Scald  
 
-Samurott-Hisui @ Focus Sash  
+Swampert (F) @ Assault Vest  
+Ability: Stamina  
+Level: 75  
+- Earthquake  
+- Waterfall  
+- Power-Up Punch  
+- Poison Jab  
+
+Samurott-Hisui @ samurite  
 Ability: Sharpness  
 Level: 1  
+Shiny: Yes 
 EVs: 84 HP / 212 Atk / 212 Spe  
 Jolly Nature  
 - Shell Smash  
 - Ceaseless Edge  
 - Sucker Punch  
 - Razor Shell
-
-Swampert (F) @ Swampertite  
-Ability: Stamina  
-Level: 75  
-Shiny: Yes  
-- Earthquake  
-- Waterfall  
-- Power-Up Punch  
-- Poison Jab  
 
 === TRAINER_JERRY_1 ===
 Name: JERRY
@@ -6667,26 +6667,24 @@ Impish Nature
 - Dragon Tail  
 - Scald  
 
-Rotom-Wash @ Choice Scarf  
+Vaporeon @ Leftovers  
 Ability: Drizzle  
-Level: 100 
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
+EVs: 252 HP / 4 SpA / 252 SpD  
+Calm Nature  
 IVs: 0 Atk  
-- Volt Switch  
-- Trick  
-- Hydro Pump  
-- Thunderbolt  
+- Toxic  
+- Bouncy Bubble  
+- Wish  
+- Protect 
 
-Azumarill @ Sitrus Berry  
-Ability: Huge Power  
-Level: 100 
-EVs: 252 HP / 252 Atk / 4 SpD  
+Beartic @ Choice Band  
+Ability: Swift Swim  
+EVs: 252 Atk / 4 SpD / 252 Spe  
 Adamant Nature  
-- Waterfall  
-- Belly Drum  
-- Aqua Jet  
-- Play Rough  
+- Liquidation  
+- Icicle Crash  
+- Close Combat  
+- Play Rough 
 
 Greninja-Bond (M) @ Waterium Z  
 Ability: Battle Bond 
@@ -6698,19 +6696,18 @@ Timid Nature
 - Hydro Pump  
 - Ice Beam  
 
-Blastoise @ Blastoisinite  
-Ability: Torrent
-Level: 100  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
+Alomomola @ Leftovers  
+Ability: Regenerator  
+EVs: 252 HP / 252 Def / 4 SpD  
+Bold Nature  
 IVs: 0 Atk  
-- Shell Smash  
-- Steel Beam  
-- Hydro Pump  
-- Aura Sphere  
+- Toxic  
+- Scald  
+- Wish  
+- Protect 
 
-Milotic @ Leftovers  
-Ability: Aqua Goddess
+Milotic @ Milotite 
+Ability: Competitive
 Level: 100  
 Shiny: Yes  
 EVs: 252 HP / 252 SpA / 4 SpD  
@@ -13104,29 +13101,67 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
-Goodra  
-Ability: Sap Sipper  
-Level: 60   
+Goodra @ Toxic Orb  
+Ability: Poison Heal  
+Level: 55  
+Tera Type: Dragon  
+EVs: 248 HP / 248 Def / 8 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Protect  
+- Dragon Pulse  
+- Scald  
+- Pheromone Wave
 
-Talonflame  
+Talonflame @ Flyinium Z  
 Ability: Gale Wings  
-Level: 60  
+Level: 55   
+EVs: 248 Atk / 8 SpD / 252 Spe  
+Jolly Nature  
+- Brave Bird  
+- Acrobatics  
+- Flare Blitz  
+- Roost  
 
-Krookodile  
+Krookodile @ Assault Vest  
+Ability: Anger Point  
+Level: 55   
+EVs: 4 HP / 252 Atk / 248 Def  
+Adamant Nature  
+- Counter  
+- Earthquake  
+- Knock Off  
+- Close Combat  
+
+Luxray @ Focus Sash  
 Ability: Intimidate  
-Level: 60   
+Level: 55   
+EVs: 248 HP / 248 Atk / 8 SpD  
+Adamant Nature  
+- No Retreat  
+- Double-Edge  
+- Supercell Slam  
+- Superpower  
 
-Luxray  
-Ability: Rivalry  
-Level: 60   
-
-Tinkaton  
-Ability: Mold Breaker  
-Level: 60 
+Tinkaton @ Choice Band  
+Ability: Hammer Bro  
+Level: 55    
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Heart Stamp  
+- Gigaton Hammer  
+- Ice Hammer  
+- Knock Off  
 
 Sceptile @ Sceptilite  
 Ability: Overgrow  
-Level: 60
+Level: 55   
+EVs: 252 Atk / 4 SpD / 248 Spe  
+Jolly Nature  
+- Dragon Claw  
+- Leaf Blade  
+- Sacred Sword  
+- Hyper Drill  
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
 Name: BRENDAN
@@ -13236,29 +13271,68 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
 
-Garchomp  
+Aggron @ Leftovers  
+Ability: Earth Eater  
+Level: 20  
+Tera Type: Steel  
+EVs: 252 HP / 4 Atk / 252 SpD  
+Careful Nature  
+- Body Press  
+- Heavy Slam  
+- Iron Defense  
+- Stealth Rock  
+
+Garbodor @ Leftovers  
+Ability: Toxic Debris  
+Level: 60  
+Tera Type: Poison  
+EVs: 252 HP / 252 Atk / 4 SpA  
+Brave Nature  
+- Steelsurge  
+- Clear Smog  
+- Gunk Shot  
+- Pain Split  
+
+Garchomp @ Loaded Dice  
 Ability: Rough Skin  
 Level: 60  
+EVs: 252 Atk / 4 SpD / 248 Spe  
+Jolly Nature  
+- Scale Shot  
+- Earthquake  
+- Fire Fang  
+- Iron Head  
 
-Garbodor  
-Ability: Aftermath  
+Rotom-Heat @ Choice Scarf  
+Ability: Drought  
+Level: 1   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Volt Switch  
+- Overheat  
+- Thunderbolt  
+- Trick  
+
+Tsareena @ Assault Vest  
+Ability: Leaf Guard  
 Level: 60  
-
-Crabominable  
-Ability: Iron Fist  
-Level: 60  
-
-Tsareena  
-Ability: Queenly Majesty  
-Level: 60  
-
-Magnezone  
-Ability: Analytic  
-Level: 60
+EVs: 248 HP / 252 Atk / 8 SpD  
+Adamant Nature  
+- Play Rough  
+- Trop Kick  
+- Knock Off  
+- High Jump Kick  
 
 Blaziken @ Blazikenite  
 Ability: Speed Boost  
-Level: 60
+Level: 60  
+EVs: 4 HP / 252 Atk / 252 Spe  
+Adamant Nature  
+- Swords Dance  
+- High Jump Kick  
+- Blaze Kick  
+- Axe Kick  
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
 Name: MAY
@@ -13267,31 +13341,68 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
+
+Dragonite @ Weakness Policy  
+Ability: Multiscale  
+Level: 60   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Dragon Dance  
+- Extreme Speed  
+- Earthquake  
+- Dragon Claw  
+
+Hatterene @ Leftovers  
+Ability: Magic Bounce  
+Level: 60  
+EVs: 248 HP / 12 Atk / 248 SpA  
+Quiet Nature  
+- Nuzzle  
+- Teleport  
+- Draining Kiss  
+- Future Sight  
+
+Mimikyu @ Red Card  
+Ability: Disguise  
+Level: 60   
+EVs: 252 Atk / 4 SpD / 248 Spe  
+Jolly Nature  
+- Swords Dance  
+- Play Rough  
+- Shadow Sneak  
+- Shadow Claw  
+
+Rotom-Wash @ Waterium Z
+Ability: Drizzle  
+Level: 60   
+EVs: 252 SpA / 8 SpD / 248 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Trick  
+- Volt Switch  
+- Scald  
+- Thunderbolt  
+
+Greedent @ Loaded Dice  
+Ability: Weather Warrior  
+Level: 1    
+EVs: 76 SpD / 116 Spe  
+Adamant Nature  
+- Tail Slap  
+- Bullet Seed  
+- Knock Off  
+- Trailblaze  
 
 Swampert @ Swampertite  
 Ability: Torrent  
 Level: 60  
-
-Dragonite  
-Ability: Inner Focus  
-Level: 60  
-
-Hatterene  
-Ability: Magic Bounce  
-Level: 60  
-
-Mimikyu  
-Ability: Disguise  
-Level: 60  
-
-Lycanroc-Dusk  
-Ability: Tough Claws  
-Level: 60  
-
-Rotom-Wash  
-Ability: Levitate  
-Level: 60
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Earthquake  
+- Waterfall  
+- Darkest Lariat  
+- Flip Turn  
 
 === TRAINER_JONAH ===
 Name: JONAH

@@ -1400,5 +1400,51 @@ static const struct FormChange sSkeledirgeFormChangeTable[] = {
 };    
 #endif
 
+#if P_FAMILY_FEEBAS
+static const struct FormChange sMiloticFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MILOTIC_MEGA, ITEM_MILOTITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};    
+#endif
+
+#if P_FAMILY_TROPIUS
+static const struct FormChange sTropiusFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_TROPIUS_MEGA, ITEM_TROPITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_TROPIUS
+
+#if P_FAMILY_PIKACHU
+static const struct FormChange sRaichuFormChangeTable[] = {
+    #if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RAICHU_MEGA, ITEM_RAICHITE},
+    #endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif
+
+#if P_FAMILY_NIDORAN
+static const struct FormChange sNidoqueenFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_NIDOQUEEN_MEGA, ITEM_NIDOQUEENITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},   
+};
+#endif
+
+#if P_FAMILY_NIDORAN
+static const struct FormChange sNidokingFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_NIDOKING_MEGA, ITEM_NIDOKINITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},   
+};
+#endif
+
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

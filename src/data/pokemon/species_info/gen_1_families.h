@@ -4095,7 +4095,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_OVERCHARGED},
+        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Raichu"),
         .cryId = CRY_RAICHU,
@@ -4157,6 +4157,79 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sRaichuTeachableLearnset,
         .formSpeciesIdTable = sRaichuFormSpeciesIdTable,
     },
+
+    #if P_MEGA_EVOLUTIONS
+    [SPECIES_RAICHU_MEGA] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 135,
+        .baseDefense   = 75,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 75,
+        .expYield = RAICHU_EXP_YIELD,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_OVERCHARGED, ABILITY_OVERCHARGED, ABILITY_OVERCHARGED},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Raichu"),
+        .cryId = CRY_RAICHU,
+        .natDexNum = NATIONAL_DEX_RAICHU,
+        .categoryName = _("Mouse"),
+        .height = 8,
+        .weight = 300,
+        .description = COMPOUND_STRING(
+            "With Mega power, it funnels\n"
+            "overloads into a halo of bolts,\n"
+            "then flicks them away with\n"
+            "precise tail snaps."),
+        .pokemonScale = 426,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Raichu,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 56) : MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_STRETCH : ANIM_GROW_VIBRATE,
+        .backPic = gMonBackPic_RaichuMega,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 6,
+        .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
+        .palette = gMonPalette_RaichuMega,
+        .shinyPalette = gMonShinyPalette_RaichuMega,
+        .iconSprite = gMonIcon_RaichuMega,
+        .iconPalIndex = 0,
+        SHADOW(2, 10, SHADOW_SIZE_M)
+        FOOTPRINT(Raichu)
+        OVERWORLD(
+            sPicTable_Raichu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Raichu,
+            gShinyOverworldPalette_Raichu
+        )
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sRaichuLevelUpLearnset,
+        .teachableLearnset = sRaichuTeachableLearnset,
+        .formSpeciesIdTable = sRaichuFormSpeciesIdTable,
+        .formChangeTable = sRaichuFormChangeTable,
+    },
+    #endif
 
 #if P_ALOLAN_FORMS
     [SPECIES_RAICHU_ALOLA] =
@@ -4729,6 +4802,90 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sNidoqueenLevelUpLearnset,
         .teachableLearnset = sNidoqueenTeachableLearnset,
+        .formSpeciesIdTable = sNidoqueenFormSpeciesIdTable,
+        .formChangeTable = sNidoqueenFormChangeTable,
+    },
+
+    #if P_MEGA_EVOLUTIONS
+    [SPECIES_NIDOQUEEN_MEGA] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 102,
+        .baseDefense   = 117,
+        .baseSpeed     = 76,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 135,
+        .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 253,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 227,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 223,
+    #else
+        .expYield = 194,
+    #endif
+        .evYield_HP = 3,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_QUEENLY_MAJESTY, ABILITY_QUEENLY_MAJESTY, ABILITY_QUEENLY_MAJESTY },
+    #else
+        .abilities = { ABILITY_POISON_POINT, ABILITY_QUEENLY_MAJESTY, ABILITY_SHEER_FORCE },
+    #endif
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Nidoqueen"),
+        .cryId = CRY_NIDOQUEEN,
+        .natDexNum = NATIONAL_DEX_NIDOQUEEN,
+        .categoryName = _("Drill"),
+        .height = 13,
+        .weight = 600,
+        .description = COMPOUND_STRING(
+        "Mega Evolution awakens a regal\n"
+        "temper. One whip of its heavy tail\n"
+        "flings boulders, and nothing passes\n"
+        "once it takes its stand."),
+        .pokemonScale = 293,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_NidoqueenMega,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 64) : MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 3 : 2,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 45),
+            ANIMCMD_FRAME(0, 5),
+        ),
+        .frontAnimId = ANIM_H_SHAKE,
+        .backPic = gMonBackPic_NidoqueenMega,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 5,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_NidoqueenMega,
+        .shinyPalette = gMonShinyPalette_NidoqueenMega,
+        .iconSprite = gMonIcon_NidoqueenMega,
+        .iconPalIndex = 2,
+        SHADOW(1, 9, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Nidoqueen)
+        OVERWORLD(
+            sPicTable_Nidoqueen,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Nidoqueen,
+            gShinyOverworldPalette_Nidoqueen
+        )
+        #endif
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sNidoqueenLevelUpLearnset,
+        .teachableLearnset = sNidoqueenTeachableLearnset,
+        .formSpeciesIdTable = sNidoqueenFormSpeciesIdTable,
+        .formChangeTable = sNidoqueenFormChangeTable,
     },
 
     [SPECIES_NIDORAN_M] =
@@ -4900,7 +5057,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_SUPREME_OVERLORD, ABILITY_RIVALRY, ABILITY_SHEER_FORCE },
+        .abilities = { ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_SHEER_FORCE },
     #else
         .abilities = { ABILITY_POISON_POINT, ABILITY_NONE, ABILITY_SHEER_FORCE },
     #endif
@@ -4952,6 +5109,92 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sNidokingLevelUpLearnset,
         .teachableLearnset = sNidokingTeachableLearnset,
+        .formSpeciesIdTable = sNidokingFormSpeciesIdTable,
+        .formChangeTable = sNidokingFormChangeTable,
+    },
+    #if P_MEGA_EVOLUTIONS
+    [SPECIES_NIDOKING_MEGA] =
+    {
+        .baseHP        = 81,
+        .baseAttack    = 125,
+        .baseDefense   = 87,
+        .baseSpeed     = 107,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 253,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 227,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 223,
+    #else
+        .expYield = 195,
+    #endif
+        .evYield_Attack = 3,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_SUPREME_OVERLORD, ABILITY_SUPREME_OVERLORD, ABILITY_SUPREME_OVERLORD },
+    #else
+        .abilities = { ABILITY_POISON_POINT, ABILITY_NONE, ABILITY_SHEER_FORCE },
+    #endif
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Nidoking"),
+        .cryId = CRY_NIDOKING,
+        .natDexNum = NATIONAL_DEX_NIDOKING,
+        .categoryName = _("Drill"),
+        .height = 14,
+        .weight = 620,
+        .description = COMPOUND_STRING(
+        "Upon Mega Evolution, its\n"
+        "tail becomes a wrecking ram.\n"
+        "One swing can buckle steel\n"
+        "towers and crater the earth."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_NidokingMega,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 64) : MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 40),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_H_SHAKE,
+        .frontAnimDelay = 25,
+        .backPic = gMonBackPic_NidokingMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_NidokingMega,
+        .shinyPalette = gMonShinyPalette_NidokingMega,
+        .iconSprite = gMonIcon_NidokingMega,
+        .iconPalIndex = 2,
+        SHADOW(0, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Nidoking)
+        OVERWORLD(
+            sPicTable_Nidoking,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Nidoking,
+            gShinyOverworldPalette_Nidoking
+        )
+        #endif
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sNidokingLevelUpLearnset,
+        .teachableLearnset = sNidokingTeachableLearnset,
+        .formSpeciesIdTable = sNidokingFormSpeciesIdTable,
+        .formChangeTable = sNidokingFormChangeTable,
     },
 #endif //P_FAMILY_NIDORAN
 

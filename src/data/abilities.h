@@ -2771,6 +2771,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .description = COMPOUND_STRING("Sound moves become Physical and deal 1.3x damage."),
     .aiRating = 7,
     },
-
+    [ABILITY_FLURRY_FEET] =
+{
+    .name = _("Flurry Feet"),
+    .description = COMPOUND_STRING("Using a kicking move raises Speed and X1.3 power."),
+    .aiRating = 6, 
+},
  
 };

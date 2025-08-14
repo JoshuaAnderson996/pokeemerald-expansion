@@ -10155,3 +10155,11 @@ BattleScript_AnticipationEvadeAttack::
     printstring STRINGID_ANTICIPATION_AVOIDED_ATTACK
     waitmessage B_WAIT_TIME_LONG
     goto BattleScript_MoveMissedPause
+
+BattleScript_FlurryFeetActivates::
+    waitstate
+    call BattleScript_AbilityPopUp
+    swapattackerwithtarget
+    seteffectsecondary MOVE_EFFECT_SPD_PLUS_1
+    swapattackerwithtarget
+    return
