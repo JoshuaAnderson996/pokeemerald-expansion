@@ -4273,6 +4273,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability
     switch (abilityDef)
     {
     case ABILITY_SOUNDPROOF:
+    case ABILITY_MUSIC_MAESTRO:
         if (IsSoundMove(move) && IsBatSpecies(gBattleMons[battlerDef].species) && !(moveTarget & MOVE_TARGET_USER))
         {
             if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
@@ -4873,6 +4874,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_MOLD_BREAKER:
+        case ABILITY_HITMAN:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_MOLDBREAKER;
@@ -9804,6 +9806,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_MUSIC_MAESTRO:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -10856,6 +10862,7 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
             return UQ_4_12(1.25);
         break;
     case ABILITY_SNIPER:
+    case ABILITY_HITMAN:
         if (isCrit)
             return UQ_4_12(1.5);
         break;

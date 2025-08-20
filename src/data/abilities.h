@@ -2777,5 +2777,17 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .description = COMPOUND_STRING("Using a kicking move raises Speed and X1.3 power."),
     .aiRating = 6, 
 },
+[ABILITY_MUSIC_MAESTRO] =
+{
+    .name = _("Music Maestro"),
+    .description = COMPOUND_STRING("Sound moves: immunity, +1 priority, 1.3× power."),
+    .aiRating = 7,
+},
+[ABILITY_HITMAN] =
+    {
+        .name = _("Hitman"),
+        .description = COMPOUND_STRING("Boosts critical hits and ignores abilities."),
+        .aiRating = 3,
+    },
  
 };

@@ -4871,6 +4871,17 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        else if (ability == ABILITY_FORECAST && gBattleMons[battler].species == SPECIES_CASTFORM)
+        {
+            if (gBattleWeather & B_WEATHER_SUN)
+                speed = (speed * 150) / 100;
+            else if (gBattleWeather & B_WEATHER_RAIN)
+                speed = (speed * 150) / 100;
+            else if (gBattleWeather & B_WEATHER_SANDSTORM)
+                speed = (speed * 150) / 100;
+            else if (gBattleWeather & B_WEATHER_HAIL)
+                speed = (speed * 150) / 100;
+        }
     }
 
     // other abilities
@@ -4991,6 +5002,9 @@ s8 GetBattleMovePriority(u32 battler, u16 move)
         
     else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
         priority += 3;
+
+     else if (ability == ABILITY_MUSIC_MAESTRO && IsSoundMove(move))
+        priority += 1;
 
     else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
 {

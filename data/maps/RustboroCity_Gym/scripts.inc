@@ -54,6 +54,16 @@ RustboroCity_Gym_EventScript_Marc::
 	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+	RustboroCity_Gym_EventScript_Dick::
+	trainerbattle_single TRAINER_DICK, RustboroCity_Gym_Text_DickIntro, RustboroCity_Gym_Text_DickDefeat
+	msgbox RustboroCity_Gym_Text_DickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+	RustboroCity_Gym_EventScript_Quartz::
+	trainerbattle_single TRAINER_QUARTZ, RustboroCity_Gym_Text_QuartzIntro, RustboroCity_Gym_Text_QuartzDefeat
+	msgbox RustboroCity_Gym_Text_QuartzPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 RustboroCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
@@ -171,10 +181,43 @@ RustboroCity_Gym_Text_MarcDefeat:
 	.string "Oh, man oh man!\n"
 	.string "Our challenger is one feisty customer!$"
 
+RustboroCity_Gym_Text_DickIntro:
+    .string "Ahh, the ROCK type… steady and true.\p"
+    .string "Let's see if your footing is as firm\n"
+    .string "as granite, youngster!$"
+
 RustboroCity_Gym_Text_MarcPostBattle:
+	.string "Ho ho! Give me ROCK type POKéMON any day.\p"
+	.string "Sturdy hides, unshakable hearts they hit like\n"
+	.string "landslides and never quit, eh?$"
+
+	RustboroCity_Gym_Text_DickDefeat:
+    .string "Rock-solid resolve… You’ve got it.\p"
+    .string "My praise for ROCK types still stands,\n"
+    .string "but you outlasted me fair and square.$"
+
+	RustboroCity_Gym_Text_DickPostBattle:
 	.string "I have to hand it to our LEADER.\p"
 	.string "It took smarts and sense for her to\n"
 	.string "pick the ROCK type at her young age.$"
+
+	RustboroCity_Gym_Text_QuartzIntro:
+    .string "I'm QUARTZ, the GYM's lab tech.\n"
+    .string "Today's experiment: can your tactics\n"
+    .string "withstand ROCK-type pressure?\p"
+    .string "Hypothesis no. Let's test it!$"
+
+RustboroCity_Gym_Text_QuartzDefeat:
+    .string "Result: hypothesis rejected!\n"
+    .string "Your strategy exceeded my yield\n"
+    .string "strength. Consider me convinced.$"
+
+RustboroCity_Gym_Text_QuartzPostBattle:
+    .string "In our models, ROCK types excel at\n"
+    .string "endurance. Stack defense, set hazards,\n"
+    .string "and wait for cracks. ROXANNE prizes\n"
+    .string "methods you can replicate, not luck.$"
+
 
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Hello, I am ROXANNE, the RUSTBORO\n"
