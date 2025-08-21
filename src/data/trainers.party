@@ -230,10 +230,69 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 3
 
 Poochyena
+Ability: Run Away
+Level: 9
+Tags: Lead
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Tackle
+- Howl
+- Sand Attack
+- Bite
+
+Carvanha
+Ability: Rough Skin
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Bite
+- Leer
+- Water Gun
+- Focus Energy
+
+Corphish
+Ability: Hyper Cutter
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Adamant Nature
+- Bubble
+- Vise Grip
+- Leer
+- Harden
+
+Purrloin
+Ability: Limber
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Jolly Nature
+- Scratch
+- Growl
+- Sand Attack
+- Bite
+
+Nickit
+Ability: Unburden
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Careful Nature
+- Quick Attack
+- Tail Whip
+- Beat Up
+- Hone Claws
+
+Inkay
+Ability: Contrary
+Level: 9
+Tags: Ace
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Naughty Nature
+- Peck
+- Tackle
+- Wrap
+- Hypnosis
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -4740,6 +4799,17 @@ Mugshot: Purple
 Party Size: 6
 Pool Rules: Basic
 
+Zoroark @ Focus Sash  
+Ability: Illusion  
+Tags: Lead
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Calm Mind  
+- Dark Pulse  
+- Extrasensory  
+- Sludge Bomb 
+
 Bisharp @ Eviolite  
 Ability: Sharpness  
 Tags: Lead
@@ -4752,7 +4822,6 @@ Adamant Nature
 
 Grimmsnarl (M) @ Light Clay  
 Ability: Prankster  
-Tags: Lead 
 EVs: 252 HP / 4 Atk / 252 SpD  
 Careful Nature  
 - Light Screen  
@@ -4760,20 +4829,8 @@ Careful Nature
 - Parting Shot  
 - Spirit Break  
 
-Zoroark @ Focus Sash  
-Ability: Illusion  
-Tags: Lead
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Calm Mind  
-- Dark Pulse  
-- Extrasensory  
-- Sludge Bomb 
-
 Mandibuzz (F) @ Leftovers  
 Ability: Fluffy  
-Tags: Lead 
 EVs: 252 HP / 252 Def / 4 SpD  
 Bold Nature  
 IVs: 0 Atk  
@@ -5145,17 +5202,7 @@ IVs: 0 Atk
 - Aurora Veil  
 - Blizzard  
 - Moonblast  
-- Nasty Plot  
-
-Rotom-Frost @ Light Clay  
-Ability: Snow Warning 
-Tags: Lead
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Modest Nature  
-- Aurora Veil  
-- Astonish  
-- Volt Switch  
-- Blizzard  
+- Nasty Plot 
 
 Castform @ Focus Sash  
 Ability: Forecast   
@@ -5167,6 +5214,15 @@ IVs: 0 Atk
 - Flamethrower  
 - Tailwind  
 - Scald 
+
+Rotom-Frost @ Light Clay  
+Ability: Snow Warning 
+EVs: 4 Atk / 252 SpA / 252 Spe  
+Modest Nature  
+- Aurora Veil  
+- Astonish  
+- Volt Switch  
+- Blizzard  
 
 Walrein @ Choice Scarf  
 Ability: Supreme Overlord  
@@ -5283,7 +5339,6 @@ IVs: 0 Atk
 
 Garchomp @ Rocky Helmet  
 Ability: Rough Skin   
-Tags: Lead
 EVs: 252 Atk / 252 Def / 4 SpD  
 Impish Nature  
 - Stealth Rock  
@@ -5293,7 +5348,6 @@ Impish Nature
 
 Goodra-Hisui @ Leftovers  
 Ability: Regenerator   
-Tags: Lead
 EVs: 252 HP / 252 SpA / 4 SpD  
 Modest Nature  
 IVs: 0 Atk  
@@ -5304,7 +5358,6 @@ IVs: 0 Atk
 
 Garchomp @ Loaded Dice  
 Ability: Rough Skin  
-Tags: Lead
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Scale Shot  
@@ -5514,7 +5567,6 @@ Calm Nature
 Bombirdier @ Leftovers  
 Ability: Rocky Payload  
 Level: 16  
-Tags: Lead
 EVs: 252 Atk / 248 Spe  
 Jolly Nature  
 - Rock Slide  
@@ -5524,8 +5576,7 @@ Jolly Nature
 
 Corsola @ Leftovers  
 Ability: Regenerator  
-Level: 16   
-Tags: Lead
+Level: 16 
 EVs: 8 SpA / 244 SpD  
 Calm Nature  
 IVs: 0 Atk  
@@ -5534,7 +5585,7 @@ IVs: 0 Atk
 - Recover  
 - Chilling Water  
 
-Geodude (F) @ Smooth Rock  
+Geodude @ Smooth Rock  
 Ability: Dry Skin  
 Level: 16   
 EVs: 236 Atk / 28 Def / 236 SpD  
@@ -5838,7 +5889,6 @@ Bold Nature
 Jolteon @ Choice Specs  
 Ability: Electric Surge  
 Level: 26  
-Tags: Lead
 EVs: 244 SpA / 12 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -5850,7 +5900,6 @@ IVs: 0 Atk
 Charjabug @ Eviolite  
 Ability: Electric Surge  
 Level: 26  
-Tags: Lead
 EVs: 252 HP / 240 Def / 8 SpA / 4 Spe  
 Bold Nature  
 IVs: 0 Atk  
@@ -5982,8 +6031,7 @@ Calm Nature
 
 Flareon @ Choice Scarf  
 Ability: Drought  
-Level: 30  
-Tags: Lead
+Level: 30 
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
 - Flare Blitz  
@@ -6473,7 +6521,6 @@ Timid Nature
 Golduck @ Light Clay  
 Ability: Cloud Nine
 Level: 30  
-Tags: Lead
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -6606,8 +6653,7 @@ Bold Nature
 
 Vaporeon @ Leftovers  
 Ability: Drizzle  
-Level: 30  
-Tags: Lead
+Level: 30 
 IVs: 0 Atk  
 - Wish  
 - Toxic  
@@ -7862,8 +7908,7 @@ Impish Nature
 - Scald  
 
 Rotom-Wash @ Life Orb  
-Ability: Drizzle 
-Tags: Lead  
+Ability: Drizzle
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -12416,14 +12461,677 @@ Gender: Male
 Music: Intense
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 4
 
 Geodude
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
+Nosepass
+Ability: Sturdy
+Level: 1
+Calm Nature
+- Stealth Rock
+- Thunder Wave
+- Taunt
+- Rock Throw
+
+Onix
+Ability: Sturdy
+Level: 1
+Impish Nature
+- Stealth Rock
+- Roar
+- Rock Tomb
+- Sandstorm
+
+Aron
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Stealth Rock
+- Rock Tomb
+- Metal Claw
+- Roar
+
+Dwebble
+Ability: Sturdy
+Level: 1
+Impish Nature
+- Spikes
+- Stealth Rock
+- Knock Off
+- Rock Blast
+
+Glimmet
+Ability: Toxic Debris
+Level: 1
+Timid Nature
+- Toxic Spikes
+- Rock Throw
+- Smack Down
+- Protect
+
+Carbink
+Ability: Clear Body
+Level: 1
+Calm Nature
+- Reflect
+- Light Screen
+- Stealth Rock
+- Rock Throw
+
+Rolycoly
+Ability: Steam Engine
+Level: 1
+Careful Nature
+- Rapid Spin
+- Rock Throw
+- Smokescreen
+- Tackle
+
+Shuckle
+Ability: Sturdy
+Level: 1
+Careful Nature
+- Sticky Web
+- Encore
+- Knock Off
+- Rock Throw
+
+Binacle
+Ability: Tough Claws
+Level: 1
+Jolly Nature
+- Shell Smash
+- Rock Tomb
+- Aqua Jet
+- Knock Off
+
+Roggenrola
+Ability: Sturdy
+Level: 1
+Brave Nature
+- Stealth Rock
+- Rock Blast
+- Sandstorm
+- Protect
+
+Rhyhorn
+Ability: Rock Head
+Level: 1
+Adamant Nature
+- Stealth Rock
+- Rock Tomb
+- Roar
+- Horn Attack
+
+Larvitar
+Ability: Guts
+Level: 1
+Adamant Nature
+- Rock Tomb
+- Bite
+- Dragon Dance
+- Sandstorm
+
+Nacli
+Ability: Purifying Salt
+Level: 1
+Careful Nature
+- Stealth Rock
+- Salt Cure
+- Recover
+- Rock Throw
+
+Tirtouga
+Ability: Solid Rock
+Level: 1
+Impish Nature
+- Smack Down
+- Aqua Jet
+- Knock Off
+- Protect
+
+=== TRAINER_MICA ===
+Name: MICA
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 2
+Pool Rules: Basic
+
+Binacle
+Ability: Tough Claws
+Level: 1
+Jolly Nature
+- Fury Cutter
+- Water Gun
+- Rock Tomb
+- Hone Claws
+
+Dwebble
+Ability: Sturdy
+Level: 1
+Impish Nature
+- Rock Blast
+- Knock Off
+- Stealth Rock
+- Withdraw
+
+Nosepass
+Ability: Sturdy
+Level: 1
+Calm Nature
+- Thunder Wave
+- Stealth Rock
+- Rock Throw
+- Taunt
+
+Roggenrola
+Ability: Sturdy
+Level: 1
+Brave Nature
+- Rock Throw
+- Headbutt
+- Sand Attack
+- Harden
+
 Geodude
-Level: 8
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Sturdy
+Level: 1
+Adamant Nature
+- Tackle
+- Defense Curl
+- Rollout
+- Rock Tomb
+
+Onix
+Ability: Rock Head
+Level: 1
+Jolly Nature
+- Rock Tomb
+- Bulldoze
+- Bind
+- Screech
+
+Aron
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Metal Claw
+- Rock Tomb
+- Harden
+- Headbutt
+
+Rhyhorn
+Ability: Rock Head
+Level: 1
+Adamant Nature
+- Rock Tomb
+- Horn Attack
+- Scary Face
+- Sandstorm
+
+Carbink
+Ability: Clear Body
+Level: 1
+Calm Nature
+- Rock Throw
+- Reflect
+- Light Screen
+- Safeguard
+
+Relicanth
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Water Gun
+- Rock Tomb
+- Yawn
+- Harden
+
+Rockruff
+Ability: Own Tempo
+Level: 1
+Jolly Nature
+- Tackle
+- Rock Throw
+- Howl
+- Accelerock
+
+Nacli
+Ability: Purifying Salt
+Level: 1
+Careful Nature
+- Rock Throw
+- Salt Cure
+- Harden
+- Recover
+
+Glimmet
+Ability: Toxic Debris
+Level: 1
+Timid Nature
+- Acid
+- Rock Throw
+- Toxic Spikes
+- Smack Down
+
+Stonjourner
+Ability: Power Spot
+Level: 1
+Adamant Nature
+- Rock Tomb
+- Stomp
+- Protect
+- Block
+
+Klawf
+Ability: Anger Shell
+Level: 1
+Jolly Nature
+- Rock Tomb
+- Vise Grip
+- Harden
+- Knock Off
+
+
+=== TRAINER_BASALT ===
+Name: BASALT
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 3
+Pool Rules: Basic
+
+Geodude-Alola
+Ability: Galvanize
+Level: 1
+Jolly Nature
+- Tackle
+- Rock Throw
+- Spark
+- Charge
+
+Growlithe-Hisui
+Ability: Intimidate
+Level: 1
+Adamant Nature
+- Ember
+- Rock Throw
+- Howl
+- Leer
+
+Tyrunt
+Ability: Strong Jaw
+Level: 1
+Jolly Nature
+- Tackle
+- Bite
+- Rock Tomb
+- Stomp
+
+Amaura
+Ability: Refrigerate
+Level: 1
+Calm Nature
+- Powder Snow
+- Rock Throw
+- Thunder Wave
+- Ancient Power
+
+Tirtouga
+Ability: Solid Rock
+Level: 1
+Careful Nature
+- Water Gun
+- Rock Tomb
+- Withdraw
+- Aqua Jet
+
+Archen
+Ability: Defeatist
+Level: 1
+Hasty Nature
+- Rock Throw
+- Peck
+- Quick Attack
+- Rock Polish
+
+Cranidos
+Ability: Mold Breaker
+Level: 1
+Jolly Nature
+- Rock Tomb
+- Headbutt
+- Focus Energy
+- Leer
+
+Shieldon
+Ability: Sturdy
+Level: 1
+Bold Nature
+- Tackle
+- Protect
+- Rock Tomb
+- Iron Defense
+
+Omanyte
+Ability: Swift Swim
+Level: 1
+Timid Nature
+- Water Gun
+- Rock Throw
+- Withdraw
+- Mud-Slap
+
+Kabuto
+Ability: Swift Swim
+Level: 1
+Jolly Nature
+- Scratch
+- Rock Throw
+- Absorb
+- Harden
+
+Lileep
+Ability: Suction Cups
+Level: 1
+Calm Nature
+- Absorb
+- Acid
+- Confuse Ray
+- Ingrain
+
+Anorith
+Ability: Battle Armor
+Level: 1
+Jolly Nature
+- Fury Cutter
+- Rock Tomb
+- Scratch
+- Harden
+
+Onix
+Ability: Sturdy
+Level: 1
+Impish Nature
+- Rock Tomb
+- Bind
+- Screech
+- Rock Polish
+
+Rockruff
+Ability: Own Tempo
+Level: 1
+Jolly Nature
+- Tackle
+- Rock Throw
+- Sand Attack
+- Accelerock
+
+=== TRAINER_OPAL ===
+Name: OPAL
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 4
+Pool Rules: Basic
+
+Rhyhorn
+Ability: Rock Head
+Level: 1
+Adamant Nature
+- Rock Tomb
+- Horn Attack
+- Leer
+- Sandstorm
+
+Shuckle
+Ability: Sturdy
+Level: 1
+Careful Nature
+- Sticky Web
+- Rock Throw
+- Encore
+- Wrap
+
+Solrock
+Ability: Levitate
+Level: 1
+Impish Nature
+- Rock Throw
+- Confusion
+- Will-O-Wisp
+- Morning Sun
+
+Lunatone
+Ability: Levitate
+Level: 1
+Calm Nature
+- Rock Throw
+- Confusion
+- Hypnosis
+- Light Screen
+
+Minior
+Ability: Shields Down
+Level: 1
+Jolly Nature
+- Rock Throw
+- Acrobatics
+- Rapid Spin
+- Self-Destruct
+
+Rolycoly
+Ability: Steam Engine
+Level: 1
+Impish Nature
+- Rock Throw
+- Rapid Spin
+- Smokescreen
+- Tackle
+
+Nacli
+Ability: Purifying Salt
+Level: 1
+Careful Nature
+- Rock Throw
+- Salt Cure
+- Harden
+- Recover
+
+Glimmet
+Ability: Toxic Debris
+Level: 1
+Timid Nature
+- Acid
+- Rock Throw
+- Toxic Spikes
+- Smack Down
+
+Stonjourner
+Ability: Power Spot
+Level: 1
+Adamant Nature
+- Rock Tomb
+- Stomp
+- Protect
+- Block
+
+Klawf
+Ability: Anger Shell
+Level: 1
+Jolly Nature
+- Rock Tomb
+- Vise Grip
+- Harden
+- Knock Off
+
+Bonsly
+Ability: Sturdy
+Level: 1
+Careful Nature
+- Rock Throw
+- Fake Tears
+- Copycat
+- Flail
+
+Relicanth
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Water Gun
+- Rock Tomb
+- Yawn
+- Harden
+
+=== TRAINER_GARNET ===
+Name: GARNET
+Class: Lady
+Pic: Lady
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
+Party Size: 4
+Pool Rules: Basic
+
+Amaura
+Ability: Refrigerate
+Level: 1
+Modest Nature
+- Powder Snow
+- Rock Throw
+- Thunder Wave
+- Icy Wind
+
+Rockruff
+Ability: Keen Eye
+Level: 1
+Jolly Nature
+- Tackle
+- Rock Throw
+- Howl
+- Bite
+
+Nosepass
+Ability: Sturdy
+Level: 1
+Calm Nature
+- Thunder Wave
+- Stealth Rock
+- Rock Throw
+- Harden
+
+Roggenrola
+Ability: Sturdy
+Level: 1
+Brave Nature
+- Tackle
+- Rock Throw
+- Sand Attack
+- Harden
+
+Geodude
+Ability: Sturdy
+Level: 1
+Adamant Nature
+- Tackle
+- Defense Curl
+- Mud-Slap
+- Rock Throw
+
+Onix
+Ability: Rock Head
+Level: 1
+Jolly Nature
+- Tackle
+- Rock Throw
+- Bind
+- Screech
+
+Aron
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Tackle
+- Metal Claw
+- Rock Tomb
+- Harden
+
+Bonsly
+Ability: Sturdy
+Level: 1
+Careful Nature
+- Rock Throw
+- Fake Tears
+- Copycat
+- Flail
+
+Dwebble
+Ability: Sturdy
+Level: 1
+Impish Nature
+- Fury Cutter
+- Rock Throw
+- Withdraw
+- Bug Bite
+
+Binacle
+Ability: Tough Claws
+Level: 1
+Jolly Nature
+- Fury Cutter
+- Water Gun
+- Rock Tomb
+- Hone Claws
+
+Corsola
+Ability: Natural Cure
+Level: 1
+Bold Nature
+- Water Gun
+- Recover
+- Rock Tomb
+- Harden
+
+Relicanth
+Ability: Rock Head
+Level: 1
+Impish Nature
+- Water Gun
+- Rock Tomb
+- Yawn
+- Harden
+
+Larvitar
+Ability: Guts
+Level: 1
+Adamant Nature
+- Bite
+- Leer
+- Rock Tomb
+- Sandstorm
+
+Carbink
+Ability: Clear Body
+Level: 1
+Calm Nature
+- Rock Throw
+- Reflect
+- Light Screen
+- Safeguard
 
 === TRAINER_QUARTZ ===
 Name: QUARTZ
@@ -12457,7 +13165,6 @@ Adamant Nature
 Aerodactyl
 Ability: Rock Head
 Level: 1
-Tags: Lead
 Jolly Nature
 - Bite
 - Rock Throw
@@ -18454,17 +19161,7 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-
-Skarmory @ Leftovers  
-Ability: Sturdy  
-Level: 100
-Tags: Lead
-EVs: 252 HP / 232 Def / 24 Spe  
-Impish Nature  
-- Steelsurge  
-- Stealth Rock  
-- Body Press  
-- Roost  
+Party Size: 6
 
 Armaldo (M) @ Steelium Z  
 Ability: Anger Shell  
@@ -18477,10 +19174,19 @@ Jolly Nature
 - Stone Axe  
 - X-Scissor 
 
+Skarmory @ Leftovers  
+Ability: Sturdy  
+Level: 100
+EVs: 252 HP / 232 Def / 24 Spe  
+Impish Nature  
+- Steelsurge  
+- Stealth Rock  
+- Body Press  
+- Roost  
+
 Claydol @ Light Clay  
 Ability: Psychic Surge  
 Level: 100   
-Tags: Lead
 EVs: 252 HP / 4 Atk / 252 SpD  
 Sassy Nature  
 - Reflect  
