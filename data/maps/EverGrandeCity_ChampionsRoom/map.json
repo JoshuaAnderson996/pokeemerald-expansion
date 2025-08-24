@@ -5,11 +5,7 @@
   "music": "MUS_VICTORY_ROAD",
   "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
   "requires_flash": false,
-<<<<<<< HEAD
-  "weather": "WEATHER_RAIN",
-=======
   "weather": "WEATHER_NONE",
->>>>>>> parent of 5e68b6c607 (Add new abilities, moves, and trainers; update maps and learnsets)
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
