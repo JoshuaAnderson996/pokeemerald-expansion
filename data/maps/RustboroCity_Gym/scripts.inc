@@ -59,49 +59,16 @@ RustboroCity_Gym_EventScript_Marc::
 	msgbox RustboroCity_Gym_Text_DickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-	RustboroCity_Gym_EventScript_Garnet::
-	trainerbattle_single TRAINER_GARNET, RustboroCity_Gym_Text_GarnetIntro, RustboroCity_Gym_Text_GarnetDefeat
-	msgbox RustboroCity_Gym_Text_GarnetPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 	RustboroCity_Gym_EventScript_Quartz::
 	trainerbattle_single TRAINER_QUARTZ, RustboroCity_Gym_Text_QuartzIntro, RustboroCity_Gym_Text_QuartzDefeat
 	msgbox RustboroCity_Gym_Text_QuartzPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-	RustboroCity_Gym_EventScript_Mica::
-	trainerbattle_single TRAINER_MICA, RustboroCity_Gym_Text_MicaIntro, RustboroCity_Gym_Text_MicaDefeat
-	msgbox RustboroCity_Gym_Text_MicaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-	RustboroCity_Gym_EventScript_Opal::
-	trainerbattle_single TRAINER_OPAL, RustboroCity_Gym_Text_OpalIntro, RustboroCity_Gym_Text_OpalDefeat
-	msgbox RustboroCity_Gym_Text_OpalPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-	RustboroCity_Gym_EventScript_Basalt::
-	trainerbattle_single TRAINER_BASALT, RustboroCity_Gym_Text_BasaltIntro, RustboroCity_Gym_Text_BasaltDefeat
-	msgbox RustboroCity_Gym_Text_BasaltPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-	RustboroCity_Gym_EventScript_GymGuide::
+RustboroCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_Gym_EventScript_EnteranceAnnouncement::
-	lock
-	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_EnteranceAnnouncementPostVictory
-	msgbox RustboroCity_Gym_Text_EnteranceAnnouncement, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_Gym_EventScript_EnteranceAnnouncementPostVictory::
-	lock
-	msgbox RustboroCity_Gym_Text_EnteranceAnnouncementPostVictory, MSGBOX_DEFAULT
 	release
 	end
 
@@ -148,31 +115,38 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	end
 
 RustboroCity_Gym_Text_GymGuideAdvice:
-    .string "RUSTBORO GYM OFFICIATING DESK.\n"
-    .string "Now announcing today's match:\p"
-    .string "CHALLENGER {PLAYER} vs. LEADER ROXANNE,\n"
-    .string "specialist in ROCK-type POKEMON.\p"
-    .string "Standard GYM regulations in effect.\n"
-    .string "Trainers, begin when ready!$"
+	.string "Yo, how's it going?\p"
+	.string "Listen, my friend!\n"
+	.string "Would you like to become the CHAMPION?\p"
+	.string "I'm no TRAINER, not me, but I can\n"
+	.string "sure give you winning advice.\p"
+	.string "That's settled, then! We'll aim for the\n"
+	.string "POKéMON CHAMPIONSHIP together!\p"
+	.string "It's your job as a TRAINER to collect\n"
+	.string "GYM BADGES, am I right?\p"
+	.string "But GYM LEADERS aren't pushovers!\p"
+	.string "And that's where I come in!\n"
+	.string "I'm here to provide expert advice!\p"
+	.string "ROXANNE, the GYM LEADER, is a user\n"
+	.string "of ROCK-type POKéMON.\p"
+	.string "The ROCK type is very durable, but\n"
+	.string "it can't stand WATER-type and\l"
+	.string "GRASS-type moves.\p"
+	.string "Come see me afterwards, if you beat\n"
+	.string "the GYM LEADER.\p"
+	.string "Well, go for it!$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
-    .string "OFFICIAL RESULT {PLAYER} defeats\n"
-    .string "LEADER ROXANNE!\p"
-    .string "Congratulations, {PLAYER}. STONE BADGE\n"
-    .string "awarded. You may request a rematch when\n"
-    .string "LEADER ROXANNE is ready to accept.$"
-
-	RustboroCity_Gym_Text_EnteranceAnnouncement:
-    .string "Now entering the RUSTBORO GYM.\n"
-    .string "Safety notice one challenger at a time.\p"
-    .string "This GYM specializes in ROCK type POKEMON.\n"
-    .string "Expect solid defense and steady pressure.\p"
-    .string "Defeat the trainers to reveal the path to\n"
-    .string "LEADER ROXANNE. Good luck!$"
-
-	RustboroCity_Gym_Text_EnteranceAnnouncementPostVictory:
-    .string "Congratulations, STONE BADGE holder!\n"
-    .string "You have bested LEADER ROXANNE.$"
+	.string "Whoa! What a breathtaking victory!\n"
+	.string "My cheering must've worked!\p"
+	.string "Great!\n"
+	.string "Check your TRAINER CARD.\p"
+	.string "The STONE BADGE you got should be\n"
+	.string "properly recorded on it.\p"
+	.string "In other words…\p"
+	.string "You've climbed the first step on\n"
+	.string "the stairs to the CHAMPIONSHIP!\p"
+	.string "That's got to feel awesome!$"
 
 RustboroCity_Gym_Text_JoshIntro:
 	.string "Don't take us GYM TRAINERS lightly!\n"
@@ -244,60 +218,6 @@ RustboroCity_Gym_Text_QuartzPostBattle:
     .string "and wait for cracks. ROXANNE prizes\n"
     .string "methods you can replicate, not luck.$"
 
-
-RustboroCity_Gym_Text_MicaIntro:
-	.string "They call me MICA. Thin layers, big\n"
-	.string "structured smart play over raw power!\p"
-	.string "Ready to peel back your game plan?$"
-
-RustboroCity_Gym_Text_MicaDefeat:
-	.string "You kept your formation tight no\n"
-	.string "cracks for me to pry open.$"
-
-RustboroCity_Gym_Text_MicaPostBattle:
-	.string "Against ROCK types, chip adds up.\n"
-	.string "If you rush, you just blunt your own edge.$"
-
-RustboroCity_Gym_Text_OpalIntro:
-	.string "OPAL here! Don’t be fooled by the shimmer\n"
-	.string "our defenses are the real treasure.\p"
-	.string "Show me your brightest move!$"
-
-RustboroCity_Gym_Text_OpalDefeat:
-	.string "Brilliant! Your reads refracted every\n"
-	.string "angle I tried.$"
-
-RustboroCity_Gym_Text_OpalPostBattle:
-	.string "Roxanne teaches balance set up, stabilize,\n"
-	.string "then strike once the field is yours.$"
-
-RustboroCity_Gym_Text_BasaltIntro:
-	.string "Name’s BASALT. I’m the bedrock of this\n"
-	.string "Gym’s training dense, steady, unmoving.\p"
-	.string "Let’s test your foundation!$"
-
-RustboroCity_Gym_Text_BasaltDefeat:
-	.string "Heh. Your footing held firm. Respect\n"
-	.string "to your groundwork.$"
-
-RustboroCity_Gym_Text_BasaltPostBattle:
-	.string "When in doubt, set STEALTH ROCK and keep\n"
-	.string "switch pressure high. That’s how we wear\n"
-	.string "down even the toughest visitors.$"
-
-RustboroCity_Gym_Text_GarnetIntro:
-	.string "I’m GARNET, Roxanne’s apprentice.\n"
-	.string "Pressure makes gems and champions.\p"
-	.string "Let’s see if you can shine under it!$"
-
-RustboroCity_Gym_Text_GarnetDefeat:
-	.string "You kept your facets flawless.\n"
-	.string "No flaws for me to strike.$"
-
-RustboroCity_Gym_Text_GarnetPostBattle:
-	.string "Against ROCK types, patient setup wins.\n"
-	.string "Chip damage, hazard control, then break\n"
-	.string "through at the perfect moment.$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Hello, I am ROXANNE, the RUSTBORO\n"
