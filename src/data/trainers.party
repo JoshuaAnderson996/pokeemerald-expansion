@@ -4737,173 +4737,6 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Force Setup First Turn / Risky
 Mugshot: Purple
-Party Size: 6
-Pool Rules: Basic
-
-Bisharp @ Eviolite  
-Ability: Sharpness  
-Tags: Lead
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Knock Off  
-- Guillotine  
-- Psycho Cut  
-- Stealth Rock 
-
-Grimmsnarl (M) @ Light Clay  
-Ability: Prankster  
-Tags: Lead 
-EVs: 252 HP / 4 Atk / 252 SpD  
-Careful Nature  
-- Light Screen  
-- Reflect  
-- Parting Shot  
-- Spirit Break  
-
-Zoroark @ Focus Sash  
-Ability: Illusion  
-Tags: Lead
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Calm Mind  
-- Dark Pulse  
-- Extrasensory  
-- Sludge Bomb 
-
-Mandibuzz (F) @ Leftovers  
-Ability: Fluffy  
-Tags: Lead 
-EVs: 252 HP / 252 Def / 4 SpD  
-Bold Nature  
-IVs: 0 Atk  
-- Tailwind  
-- Roost  
-- Toxic  
-- Foul Play  
-
-Skuntank @ Leftovers  
-Ability: Neutralizing Gas   
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Knock Off  
-- Gunk Shot  
-- Memento  
-- Defog  
-
-Krookodile @ Choice Scarf  
-Ability: Moxie  
-Tera Type: Ground  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Knock Off  
-- Earthquake  
-- Close Combat  
-- Gunk Shot  
-
-Scrafty @ Leftovers  
-Ability: Intimidate  
-Tera Type: Dark  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
-- Dragon Dance  
-- Close Combat  
-- Crunch  
-- Dragon Claw  
-
-Liepard @ Mirror Herb  
-Ability: Opportunist
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Swagger  
-- Knock Off  
-- Fake Out  
-- U-turn  
-
-Malamar @ Leftovers  
-Ability: Contrary  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Superpower  
-- Baton Pass  
-- Disable  
-- Throat Chop   
-
-Hydreigon @ Choice Scarf  
-Ability: Parental Bond  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Draco Meteor  
-- Dark Pulse  
-- Flash Cannon  
-- Earth Power    
-
-Zoroark @ Focus Sash  
-Ability: Quick Tempered  
-Happiness: 0   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Nasty Plot  
-- Dark Pulse  
-- Extrasensory  
-- Sludge Bomb  
-
-Cacturne @ Leftovers  
-Ability: Prankster   
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Spiky Shield  
-- Destiny Bond  
-- Seed Bomb  
-- Knock Off  
-
-Muk-Alola @ Leftovers  
-Ability: Toxic Debris  
-EVs: 252 HP / 4 Atk / 252 SpD  
-Careful Nature  
-- Minimize  
-- Crunch  
-- Gunk Shot  
-- Protect  
-
-Tyranitar @ Life Orb  
-Ability: Sheer Force   
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Rock Slide  
-- Crunch  
-- Superpower  
-- Hone Claws  
-
-Weavile @ Life Orb  
-Ability: Shinobi  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Night Slash  
-- Ice Spinner  
-- Flash Bang  
-- Fury Cutter  
-
-Overqwil @ Focus Sash  
-Ability: Anger Point  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Crunch  
-- Barb Barrage  
-- Swords Dance  
-- Aqua Jet   
-
-Honchkrow @ Focus Sash  
-Ability: Supreme Overlord  
-EVs: 248 HP / 252 SpA / 8 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Calm Mind  
-- Dark Pulse  
-- Hurricane  
-- Tailwind  
 
 Mightyena @ Choice Scarf  
 Ability: Moxie   
@@ -4956,20 +4789,9 @@ Adamant Nature
 - Iron Head  
 - Zen Headbutt  
 
-Grimmsnarl (M) @ Grimmite 
-Ability: Prankster
-Tags: Ace
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Bulk Up  
-- Darkest Lariat  
-- Parting Shot  
-- Spirit Break
-
 Absol (M) @ Absolite  
 Ability: Justified
 Level: 100  
-Tags: Ace
 Shiny: Yes  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
@@ -4977,16 +4799,6 @@ Jolly Nature
 - Play Rough  
 - Swords Dance  
 - Night Slash  
-
-Inteleon @ Intelite
-Ability: Torrent   
-Tags: Ace
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Snipe Shot  
-- Kill Shot  
-- Air Slash  
-- U-turn 
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4998,65 +4810,6 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 Mugshot: Green
-Party Size: 6
-Pool Rules: Basic
-
-Dusclops @ Eviolite  
-Ability: Pressure  
-Tags: Lead
-EVs: 252 HP / 4 Def / 252 SpD  
-Calm Nature  
-IVs: 0 Atk  
-- Curse  
-- Pain Split  
-- Destiny Bond  
-- Will-O-Wisp  
-
-Shedinja @ Heavy-Duty Boots  
-Ability: Wonder Guard  
-EVs: 252 Atk / 4 Def / 252 Spe  
-Jolly Nature  
-- Swords Dance  
-- Bug Bite  
-- Shadow Sneak  
-- Poltergeist  
-
-Polteageist @ Focus Sash  
-Ability: Weak Armor   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Shell Smash  
-- Shadow Ball  
-- Stored Power  
-- Strength Sap  
-
-Accelgor @ Life Orb  
-Ability: Infiltrator   
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Hasty Nature  
-- Bug Buzz  
-- Shadow Ball  
-- Knock Off  
-- Final Gambit  
-
-Basculegion (M) @ Choice Scarf  
-Ability: Adaptability  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Last Respects  
-- Wave Crash  
-- Flip Turn  
-- Head Smash  
-
-Garganacl @ Leftovers  
-Ability: Purifying Salt  
-EVs: 252 HP / 104 Def / 152 SpD  
-Sassy Nature  
-- Salt Cure  
-- Rage Fist  
-- Recover  
-- Iron Defense  
 
 Sableye @ Leftovers  
 Ability: Prankster
@@ -5129,16 +4882,13 @@ Pic: Elite Four Glacia
 Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 Mugshot: Pink
-Party Size: 6
-Pool Rules: Weather Doubles
 
 Ninetales-Alola @ Light Clay  
 Ability: Snow Warning 
 Level: 100   
-Tags: Lead
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
@@ -5147,68 +4897,12 @@ IVs: 0 Atk
 - Moonblast  
 - Nasty Plot  
 
-Rotom-Frost @ Light Clay  
-Ability: Snow Warning 
-Tags: Lead
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Modest Nature  
-- Aurora Veil  
-- Astonish  
-- Volt Switch  
-- Blizzard  
-
-Castform @ Focus Sash  
-Ability: Forecast   
-Tags: Lead
-EVs: 248 HP / 252 SpA / 8 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Blizzard  
-- Flamethrower  
-- Tailwind  
-- Scald 
-
-Walrein @ Choice Scarf  
-Ability: Supreme Overlord  
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Hasty Nature  
-- Surf  
-- Blizzard  
-- Earthquake  
-- Echoed Voice  
-
-Sandslash-Alola @ Choice Band  
-Ability: Slush Rush  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Ice Spinner  
-- Iron Head  
-- Aqua Tail  
-- Earthquake  
-
-Sneasler @ Poison Barb  
-Ability: Merciless  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Ice Punch  
-- Dire Claw  
-- Bulk Up  
-- Close Combat   
-
-Sawsbuck-Winter @ Life Orb  
-Ability: Weather Warrior 
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
-- Horn Leech  
-- Swords Dance  
-- High Horsepower  
-- Season Smash  
-
 Walrein @ Chesto Berry  
 Ability: Unaware
 Level: 100    
 EVs: 248 HP / 8 SpA / 252 SpD  
-Calm Nature   
+Calm Nature  
+IVs: 0 Atk  
 - Toxic  
 - Surf  
 - Roar  
@@ -5266,13 +4960,10 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 Mugshot: Blue
-Party Size: 6
-Pool Rules: Basic
 
 Archaludon @ Assault Vest
 Ability: Drizzle
 Level: 100
-Tags: Lead
 EVs: 160 HP / 252 SpA / 96 SpD  
 Sassy Nature  
 IVs: 0 Atk  
@@ -5280,161 +4971,6 @@ IVs: 0 Atk
 - Body Press  
 - Dragon Pulse  
 - Flash Cannon  
-
-Garchomp @ Rocky Helmet  
-Ability: Rough Skin   
-Tags: Lead
-EVs: 252 Atk / 252 Def / 4 SpD  
-Impish Nature  
-- Stealth Rock  
-- Earthquake  
-- Iron Head  
-- Dragon Claw  
-
-Goodra-Hisui @ Leftovers  
-Ability: Regenerator   
-Tags: Lead
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Stealth Rock  
-- Draco Meteor  
-- Steel Beam  
-- Counter  
-
-Garchomp @ Loaded Dice  
-Ability: Rough Skin  
-Tags: Lead
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Scale Shot  
-- Iron Head  
-- Poison Jab  
-- Earthquake  
-
-Serperior @ Heavy-Duty Boots  
-Ability: Contrary  
-Tera Type: Grass  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Draco Meteor  
-- Leaf Storm  
-- Defog  
-- Leech Seed  
-
-Haxorus @ Focus Sash  
-Ability: Sharpness  
-Tera Type: Dragon  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
-- Guillotine  
-- Dragon Claw  
-- Dragon Dance  
-- Close Combat  
-
-Aurorus @ Leftovers  
-Ability: Ice Scales 
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Calm Mind  
-- Dragon Pulse  
-- Ice Beam  
-- Thunder Wave  
-
-Tyrantrum @ Assault Vest  
-Ability: Strong Jaw   
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Dragon Claw  
-- Crunch  
-- Head Smash  
-- Iron Head  
-
-Clawitzer @ Assault Vest  
-Ability: Mega Launcher  
-EVs: 252 HP / 252 SpA / 4 SpD  
-Quiet Nature  
-- Dragon Pulse  
-- Aura Sphere  
-- Aqua Jet  
-- Dark Pulse  
-
-Kommo-o @ Kommonium Z  
-Ability: Bulletproof  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Clangorous Soul  
-- Clanging Scales  
-- Aura Sphere  
-- Vacuum Wave  
-
-Cyclizar @ Sitrus Berry  
-Ability: Regenerator   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Shed Tail  
-- Draco Meteor  
-- Hyper Voice  
-- Rapid Spin  
-
-Huntail @ Focus Sash  
-Ability: Strong Jaw  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Crunch  
-- Shell Smash  
-- Aqua Tail  
-- Sucker Punch  
-
-Huntail @ Focus Sash  
-Ability: Swift Swim   
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
-- Shell Smash  
-- Dragon Tail  
-- Crunch  
-- Ice Fang  
-
-Flygon @ Life Orb  
-Ability: Arena Trap  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
-- Dragon Dance  
-- Dragon Claw  
-- Earthquake  
-- Roost  
-
-Flygon @ Life Orb  
-Ability: Sheer Force  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Bug Buzz  
-- Draco Meteor  
-- Earth Power  
-- Fire Blast  
-
-Kingdra @ Choice Specs  
-Ability: Storm Herald 
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Hurricane  
-- Twister  
-- Blizzard  
-- Gust  
-
-Yanmega  
-Ability: Tinted Lens  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-- Boomburst  
-- U-turn  
-- Air Slash  
-- Dragon Breath  
 
 Kingdra @ Choice Specs  
 Ability: Swift Swim
@@ -5446,7 +4982,7 @@ Modest Nature
 - Draco Meteor  
 - Flip Turn  
 
-Altaria @ Leftovers 
+Altaria @ Dragonium Z  
 Ability: Fluffy
 Level: 100    
 EVs: 252 HP / 252 SpD  
@@ -5497,125 +5033,62 @@ Music: Female
 Items: Potion / Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware 
-Party Size: 6
-Pool Rules: Basic
 
 Carbink @ Light Clay  
 Ability: Sturdy  
-Level: 16  
-Tags: Lead
-EVs: 4 Def / 252 SpD  
-Calm Nature  
+Level: 16      
+Serious Nature  
 - Light Screen  
 - Reflect  
 - Stealth Rock  
-- Body Press  
-
-Bombirdier @ Leftovers  
-Ability: Rocky Payload  
-Level: 16  
-Tags: Lead
-EVs: 252 Atk / 248 Spe  
-Jolly Nature  
-- Rock Slide  
-- Brave Bird  
-- Knock Off  
-- Tailwind  
-
-Corsola @ Leftovers  
-Ability: Regenerator  
-Level: 16   
-Tags: Lead
-EVs: 8 SpA / 244 SpD  
-Calm Nature  
-IVs: 0 Atk  
-- Stealth Rock  
-- Toxic  
-- Recover  
-- Chilling Water  
+- Body Press 
 
 Geodude (F) @ Smooth Rock  
 Ability: Dry Skin  
-Level: 16   
-EVs: 236 Atk / 28 Def / 236 SpD  
+Level: 16     
 Adamant Nature  
 - Defense Curl  
 - Rollout  
 - Rock Slide  
-- Sandblast  
+- Sandblast
 
 Glimmet @ Power Herb  
 Ability: Toxic Debris  
-Level: 16   
-EVs: 16 Def / 236 SpA / 248 SpD  
-Modest Nature  
+Level: 16      
+Serious Nature  
 - Dazzling Gleam  
 - Sludge Wave  
 - Power Gem  
-- Meteor Beam  
+- Meteor Beam
 
 Aerodactyl @ Muscle Band  
 Ability: Rock Head  
-Level: 16  
+Level: 16   
 EVs: 12 HP / 236 Atk / 4 SpD / 236 Spe  
 Jolly Nature  
 - Brave Bird  
 - Wild Charge  
 - Earthquake  
-- Head Smash  
+- Head Smash
 
 Growlithe-Hisui @ Loaded Dice  
 Ability: Intimidate  
-Level: 16   
-EVs: 252 Atk / 4 SpD / 236 Spe  
+Level: 16     
 Jolly Nature  
 - Rock Blast  
 - Flame Charge  
 - Close Combat  
-- Wild Charge  
-
-Shuckle @ Sitrus Berry  
-Ability: Contrary  
-Level: 16  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Shell Smash  
-- Stealth Rock  
-- Infestation  
-- Toxic  
-
-Klawf @ Assault Vest  
-Ability: Anger Shell  
-Level: 16   
-EVs: 252 Atk / 8 Def / 236 SpD / 4 Spe  
-Adamant Nature  
-- Knock Off  
-- Trailblaze  
-- Temper Flare  
-- Rock Slide  
-
-Stonjourner @ Weakness Policy  
-Ability: Sturdy  
-Level: 16   
-EVs: 252 Atk / 244 Spe  
-Adamant Nature  
-- Agility  
-- Stone Edge  
-- High Horsepower  
-- Superpower  
+- Wild Charge
 
 Nosepass @ Eviolite  
 Ability: Sturdy  
-Level: 16  
-Tags: Ace
-Shiny: Yes  
-EVs: 12 HP / 16 Atk / 248 Def / 232 SpD  
+Level: 16     
+Shiny: Yes 
 Impish Nature  
 - Body Press  
 - Curse  
 - Volt Switch  
-- Rock Slide  
+- Rock Slide
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -5626,191 +5099,55 @@ Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
 Hitmonchan @ Muscle Band  
 Ability: Iron Fist  
-Level: 22  
-EVs: 240 HP / 236 Atk / 16 SpD / 16 Spe  
-Adamant Nature  
+Level: 22   
 - Concussive Hit  
 - Drain Punch  
 - Ice Punch  
 - Bullet Punch  
 
-Pawmot @ Leppa Berry  
+Pawmot @ Leppa Berry 
 Ability: Fluffy  
-Level: 22   
-EVs: 248 Atk / 16 SpD / 236 Spe  
-Jolly Nature  
+Level: 22    
 - Revival Blessing  
 - Wild Charge  
 - Drain Punch  
 - Dig  
 
-Lucario @ Choice Scarf  
-Ability: Mega Launcher  
+Lucario @ Choice Scarf
+Ability: Mega Launcher   
 Level: 22   
-EVs: 248 SpA / 8 SpD / 248 Spe  
-Timid Nature  
 - Aura Sphere  
 - Dragon Pulse  
 - Dark Pulse  
 - Steel Beam  
 
-Lilligant-Hisui @ Focus Sash  
-Ability: Technician  
-Level: 22  
-EVs: 236 Atk / 24 SpD / 236 Spe  
-Jolly Nature  
-- Triple Axel  
+Lilligant-Hisui @ Focus Sash
+Ability: Technician 
+Level: 22    
+- Triple Axel
 - Victory Dance  
 - Mach Punch  
 - Leaf Blade  
 
-Primeape @ Eviolite  
+Primeape @ Eviolite
 Ability: Anger Point  
-Level: 22   
-EVs: 236 Atk / 28 SpD / 244 Spe  
-Jolly Nature  
+Level: 22    
 - Bulk Up  
 - Temper Flare  
 - Cross Chop  
 - Lash Out  
 
-Breloom @ Toxic Orb  
-Ability: Poison Heal  
-Level: 22    
-EVs: 252 HP / 236 Def / 16 SpD  
-Impish Nature  
-- Protect  
-- Drain Punch  
-- Substitute  
-- Leech Seed  
-
-Breloom @ Loaded Dice  
-Ability: Technician  
-Level: 22  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Bullet Seed  
-- Mach Punch  
-- Arm Thrust  
-- Aerial Ace  
-
-Hitmontop @ Assault Vest  
-Ability: Technician  
-Level: 22   
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Fake Out  
-- Mach Punch  
-- Rapid Spin  
-- Triple Axel  
-
-Hitmonlee @ Choice Band  
-Ability: Adaptability  
-Level: 22  
-EVs: 244 Atk / 16 SpD / 236 Spe  
-Jolly Nature  
-- Axe Kick  
-- Blaze Kick  
-- High Jump Kick  
-- Mega Kick  
-
-Hitmontop @ Leftovers  
-Ability: Intimidate  
-Level: 22   
-EVs: 240 HP / 244 Atk / 16 SpD / 8 Spe  
-Adamant Nature  
-- Bulk Up  
-- Toxic  
-- Close Combat  
-- Mach Punch  
-
-Flamigo @ Life Orb  
-Ability: Tough Claws  
-Level: 22   
-EVs: 248 Atk / 4 SpD / 248 Spe  
-Jolly Nature  
-- Brave Bird  
-- Liquidation  
-- Close Combat  
-- U-turn  
-
-Heracross @ Loaded Dice  
-Ability: Moxie  
-Level: 22  
-Tera Type: Bug  
-EVs: 240 Atk / 8 SpD / 252 Spe  
-Jolly Nature  
-- Bullet Seed  
-- Trailblaze  
-- Pin Missile  
-- Arm Thrust  
-
-Falinks @ Leftovers  
-Ability: Parental Bond  
-Level: 22   
-EVs: 248 HP / 240 Atk / 16 SpD / 4 Spe  
-Adamant Nature  
-- Fake Out  
-- No Retreat  
-- Close Combat  
-- Iron Head  
-
-Tauros-Paldea-Blaze @ Choice Scarf  
-Ability: Anger Point  
-Level: 22  
-EVs: 252 Atk / 8 SpD / 240 Spe  
-Jolly Nature  
-- Temper Flare  
-- Zen Headbutt  
-- Close Combat  
-- Dive Bomb  
-
-Poliwrath @ Assault Vest  
-Ability: Bubble Brawl  
-Level: 22    
-EVs: 244 Atk / 12 SpD / 244 Spe  
-Adamant Nature  
-- Close Combat  
-- Stonesurge  
-- High Horsepower  
-- Throat Chop  
-
-Tauros-Paldea-Combat @ Assault Vest  
-Ability: Intimidate  
-Level: 22   
-EVs: 252 Atk / 8 SpD / 240 Spe  
-Jolly Nature  
-- Lash Out  
-- Outrage  
-- Close Combat  
-- Wild Charge  
-
-Heracross @ Toxic Orb  
-Ability: Guts  
-Level: 22   
-EVs: 240 Atk / 8 SpD / 252 Spe  
-Jolly Nature  
-- Facade  
-- Close Combat  
-- Megahorn  
-- Knock Off  
-
-Hariyama @ Assault Vest  
+Hariyama @ Assault Vest
 Ability: Sheer Force  
-Level: 22  
-Tags: Ace
-Shiny: Yes  
-EVs: 252 HP / 244 Atk / 4 Spe  
-Adamant Nature  
-- Close Combat  
+Level: 22    
+Shiny: Yes 
+- Close Combat
 - Heavy Slam  
 - Knock Off  
-- Ice Punch   
+- Ice Punch  
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
@@ -5821,141 +5158,57 @@ Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
-Pincurchin @ Leftovers  
-Ability: Electric Surge  
-Level: 26  
-Tags: Lead
-EVs: 248 HP / 240 Def / 12 SpA / 4 Spe  
-Bold Nature  
-- Spikes  
-- Rising Voltage  
-- Recover  
-- Toxic Spikes  
+Heliolisk @ Choice Specs
+Ability: Earth Eater
+Level: 26
+- Volt Switch
+- Scorching Sands
+- Flamethrower
+- Parabolic Charge
 
-Jolteon @ Choice Specs  
-Ability: Electric Surge  
-Level: 26  
-Tags: Lead
-EVs: 244 SpA / 12 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Volt Switch  
-- Alluring Voice  
-- Shadow Ball  
-- Thunderbolt  
+Pincurchin @ Leftovers
+Ability: Electric Surge
+Level: 26
+- Spikes
+- Rising Voltage
+- Recover
+- Toxic Spikes
 
-Charjabug @ Eviolite  
-Ability: Electric Surge  
-Level: 26  
-Tags: Lead
-EVs: 252 HP / 240 Def / 8 SpA / 4 Spe  
-Bold Nature  
-IVs: 0 Atk  
-- Sticky Web  
-- Baton Pass  
-- Toxic  
-- Charge Beam  
+Volbeat @ Focus Sash
+Ability: Quick Tempered
+Level: 26
+- Swords Dance
+- X Scissor
+- Wild Charge
+- Moonlight
 
-Heliolisk @ Choice Specs  
-Ability: Earth Eater  
-Level: 26  
-Tera Type: Electric  
+Lanturn @ Magnet
+Ability: Drizzle
+Level: 26
+- Electro Shot
+- Thunder
+- Tail Glow
+- Scald
+
+Electrode-Hisui @ Life Orb  
+Ability: Aftermath  
+Level: 1  
 EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
-- Volt Switch  
-- Scorching Sands  
-- Flamethrower  
-- Parabolic Charge  
-
-Volbeat @ Focus Sash  
-Ability: Quick Tempered  
-Level: 26  
-EVs: 248 Atk / 12 SpD / 244 Spe  
-Jolly Nature  
-- Swords Dance  
-- X Scissor  
-- Wild Charge  
-- Moonlight  
-
-Plusle @ Light Ball  
-Ability: Lightning Rod  
-Level: 1   
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Modest Nature  
-- Nuzzle  
-- Revival Blessing  
-- Moonblast  
-- Thunderbolt  
-
-Lanturn @ Magnet  
-Ability: Drizzle  
-Level: 26  
-EVs: 248 HP / 240 SpA / 8 SpD / 4 Spe  
-Modest Nature  
-- Electro Shot  
-- Thunder  
-- Tail Glow  
-- Scald  
-
-Zebstrika @ Choice Band  
-Ability: Lightning Rod  
-Level: 26   
-EVs: 248 Atk / 4 SpD / 244 Spe  
-Jolly Nature  
-- Flare Blitz  
-- Wild Charge  
-- Double-Edge  
-- Volt Switch  
-
-Eelektross @ Life Orb  
-Ability: Sheer Force  
-Level: 26    
-EVs: 228 HP / 252 SpA / 24 SpD  
-Modest Nature  
 IVs: 0 Atk  
-- Ice Beam  
-- Flamethrower  
-- Thunderbolt  
-- Chilling Water  
-
-Eelektross @ Life Orb  
-Ability: Levitate  
-Level: 26  
-Tera Type: Electric  
-EVs: 228 HP / 252 Atk / 24 SpD  
-Adamant Nature  
-- Coil  
-- Close Combat  
-- Aqua Tail  
-- Supercell Slam  
-
-Vikavolt @ Life Orb  
-Ability: Speed Boost  
-Level: 26  
-EVs: 16 HP / 240 SpA / 240 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Thunderbolt  
-- Tail Glow  
-- Bug Buzz  
-- Protect  
-
-
-Manectric @ Manectite  
-Ability: Intimidate  
-Level: 26  
-Tags: Ace
-Shiny: Yes  
-EVs: 252 SpA / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
+- Chloroblast  
+- Electro Ball  
 - Volt Switch  
-- Thunderclap  
-- Thunder  
-- Overheat  
+- Hyper Beam
+
+Manectric @ Manectite
+Level: 26
+Shiny: Yes 
+- Volt Switch
+- Thunderclap
+- Thunder
+- Overheat
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -5966,55 +5219,35 @@ Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
-Torkoal @ Leftovers  
-Ability: Drought  
-Level: 38  
-Tags: Lead
-EVs: 244 HP / 20 SpA / 244 SpD  
-Calm Nature  
-- Iron Defense  
-- Body Press  
-- Stealth Rock  
-- Clear Smog  
+Torkoal @ Leftovers
+Level: 38
+Ability: Drought
+- Iron Defense
+- Body Press
+- Stealth Rock
+- Clear Smog
 
-Flareon @ Choice Scarf  
-Ability: Drought  
-Level: 30  
-Tags: Lead
-EVs: 252 Atk / 252 Spe  
-Jolly Nature  
-- Flare Blitz  
-- Trailblaze  
-- Superpower  
-- Iron Tail  
+Magcargo @ White Herb
+Level: 38
+Ability: Evaporate
+- Shell Smash
+- Flamethrower
+- Power Gem
+- Solar Beam
 
-Magcargo @ White Herb  
-Ability: Evaporate  
-Level: 38   
-EVs: 252 SpA / 8 SpD / 248 Spe  
-Modest Nature  
-- Shell Smash  
-- Flamethrower  
-- Power Gem  
-- Solar Beam  
+Rotom-Heat @ Choice Scarf
+Level: 38
+Ability: Drought
+- Trick
+- Overheat
+- Volt Switch
+- Will-O-Wisp
 
-Rotom-Heat @ Choice Scarf  
-Ability: Drought  
-Level: 38   
-EVs: 248 SpA / 252 Spe  
-Timid Nature  
-- Trick  
-- Overheat  
-- Volt Switch  
-- Will-O-Wisp  
-
-Delphox @ Power Herb  
-Ability: Arcane Power  
-Level: 38  
-EVs: 4 HP / 8 Atk / 252 SpA / 244 Spe  
+Delphox @ Power Herb    
+Ability: Arcane Power
+Level: 38
+EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
 - Meteor Beam  
@@ -6025,79 +5258,22 @@ IVs: 0 Atk
 Typhlosion-Hisui @ Assault Vest  
 Ability: Exorcist  
 Level: 1  
-EVs: 92 HP / 52 Def / 124 SpA  
-Jolly Nature  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
 IVs: 0 Atk  
 - Shadow Ball  
 - Thunderbolt  
 - Blast Burn  
-- HellFire  
+- HellFire 
 
-Heliolisk @ Choice Scarf  
-Ability: Solar Power  
-Level: 30  
-EVs: 244 SpA / 20 SpD / 244 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Volt Switch  
-- Parabolic Charge  
-- Dragon Pulse  
-- Weather Ball  
-
-Pyroar (F) @ Life Orb  
-Ability: Soul-Heart  
-Level: 30  
-EVs: 4 HP / 244 SpA / 16 SpD / 244 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Hyper Voice  
-- Flamethrower  
-- Solar Beam  
-- Yawn  
-
-Incineroar @ Incinium Z  
-Ability: Intimidate  
-Level: 30  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Darkest Lariat  
-- Bulk Up  
-- Temper Flare  
-- Parting Shot  
-
-Turtonator @ Weakness Policy  
-Ability: Anger Shell  
-Level: 30  
-EVs: 244 SpA / 12 SpD / 244 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Shell Trap  
-- Shell Smash  
-- Dragon Pulse  
-- Flamethrower  
-
-Infernape @ Life Orb  
-Ability: Sheer Force  
-Level: 30   
-EVs: 244 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
+Camerupt @ Cameruptite  
+Ability: Drought 
+Level: 38 
+Shiny: Yes    
 - Fire Blast  
+- Solar Beam  
 - Scorching Sands  
-- Focus Blast  
-- Hero Blast  
-
-Skeledirge @ Skeledite
-Ability: Blaze  
-Level: 36  
-Tags: Ace
-EVs: 244 HP / 252 SpA / 12 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Alluring Voice  
-- Torch Song  
-- Psychic Noise  
-- Torture Screech 
+- Ancient Power
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -6108,163 +5284,16 @@ Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
 Zoroark-Hisui @ Choice Specs  
 Ability: Illusion  
 Level: 45   
-Tags: Lead
 EVs: 248 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Bitter Malice  
 - Blood Moon  
 - Psychic  
 - U-turn  
-
-Gothitelle @ Leftovers  
-Ability: Frisk  
-Level: 30   
-EVs: 252 HP / 252 SpA  
-Modest Nature  
-IVs: 0 Atk  
-- Stored Power  
-- Cosmic Power  
-- Hyper Voice  
-- Nasty Plot  
-
-Throh @ Assault Vest  
-Ability: Stamina  
-Level: 30   
-EVs: 252 HP / 252 Atk  
-Adamant Nature  
-- Body Slam  
-- Circle Throw  
-- Knock Off  
-- Bulldoze  
-
-Ambipom @ Choice Band  
-Ability: Technician  
-Level: 30  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Triple Axel  
-- Dual Chop  
-- Revenge  
-- Return  
-
-Dubwool @ Leftovers  
-Ability: Fluffy  
-Level: 30   
-EVs: 248 HP / 252 SpD  
-Calm Nature  
-IVs: 0 Atk  
-- Baton Pass  
-- Swords Dance  
-- Cotton Guard  
-- Body Press  
-
-Unfezant @ Leftovers  
-Ability: Big Pecks  
-Level: 30  
-EVs: 252 HP / 252 Def  
-Impish Nature  
-- Tailwind  
-- Roost  
-- Dual Wingbeat  
-- Defog  
-
-Drampa @ Leftovers  
-Ability: Cloud Nine  
-Level: 30   
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Hyper Voice  
-- Draco Meteor  
-- Glare  
-- Tailwind  
-
-Ursaring @ Eviolite  
-Ability: Intimidate  
-Level: 30  
-EVs: 252 HP / 252 Atk  
-Adamant Nature  
-- Double-Edge  
-- Earthquake  
-- Rest  
-- Sleep Talk  
-
-Ambipom @ Life Orb  
-Ability: Quick Tempered  
-Level: 30  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Fake Out  
-- Curse  
-- Foul Play  
-- Return  
-
-Banette @ Choice Scarf  
-Ability: Normalize  
-Level: 30  
-EVs: 252 Atk / 252 Spe  
-Jolly Nature  
-- Skill Swap  
-- Return  
-- Disable  
-- Poltergeist  
-
-Obstagoon @ Assault Vest  
-Ability: Defiant  
-Level: 30  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Iron Tail  
-- Knock Off  
-- Return  
-- Close Combat  
-
-Vigoroth @ Eviolite  
-Ability: Vital Spirit  
-Level: 30  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Bulk Up  
-- Crush Claw  
-- Play Rough  
-- Knock Off  
-
-Exploud @ Choice Specs  
-Ability: Soundproof  
-Level: 30  
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Psychic Noise  
-- Boomburst  
-- Blizzard  
-- Fire Blast  
-
-Spinda @ Assault Vest  
-Ability: Contrary  
-Level: 30   
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Superpower  
-- Drain Punch  
-- Return  
-- Close Combat  
-
-Cinccino @ Loaded Dice  
-Ability: Skill Link  
-Level: 30  
-EVs: 252 Atk / 252 Spe  
-Jolly Nature  
-- Tidy Up  
-- Tail Slap  
-- Bullet Seed  
-- Double Slap  
 
 Ursaluna (F) @ Flame Orb  
 Ability: Guts  
@@ -6311,7 +5340,6 @@ Slaking @ Nullifier
 Ability: Truant  
 Level: 45  
 Shiny: Yes   
-Tags: Ace
 EVs: 244 HP / 252 Atk / 8 SpD / 4 Spe  
 Adamant Nature  
 - Play Rough  
@@ -6328,15 +5356,10 @@ Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware / Risky
-Party Size: 6
-Pool Rules: Basic
 
 Corviknight @ Light Clay  
 Ability: Mirror Armor  
-Level: 55    
-Tags: Lead
-EVs: 244 HP / 252 Def / 12 SpD  
-Bold Nature  
+Level: 55   
 - Reflect  
 - Light Screen  
 - Roost  
@@ -6344,61 +5367,15 @@ Bold Nature
 
 Gliscor @ Toxic Orb  
 Ability: Poison Heal  
-Level: 55  
-EVs: 252 HP / 184 Def / 72 Spe  
-Impish Nature  
+Level: 55   
 - Protect  
 - Knock Off  
 - Toxic Spikes  
 - Roost  
 
-Swellow @ Flame Orb  
-Ability: Guts  
-Level: 30   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Boomburst  
-- Air Slash  
-- U-turn  
-- Whirlwind  
-
-Beautifly @ Life Orb  
-Ability: Tinted Lens  
-Level: 30  
-EVs: 252 SpA / 252 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Quiver Dance  
-- Giga Drain  
-- Roost  
-- Air Cutter  
-
-Toucannon @ Assault Vest  
-Ability: Intimidate  
-Level: 30  
-Happiness: 1  
-EVs: 236 HP / 252 Atk / 12 SpD  
-Adamant Nature  
-- Beak Blast  
-- Gunk Shot  
-- Knock Off  
-- Frustration 
-
-Hawlucha @ Leftovers  
-Ability: Luchador  
-Level: 30   
-EVs: 248 Atk / 252 Spe  
-Jolly Nature  
-- Flying Press  
-- Close Combat  
-- Defog  
-- Bulk Up  
-
 Talonflame @ Flying Gem  
 Ability: Gale Wings  
 Level: 55  
-EVs: 248 Atk / 8 SpD / 252 Spe  
-Jolly Nature  
 - Tailwind  
 - Acrobatics  
 - Flare Blitz  
@@ -6407,18 +5384,14 @@ Jolly Nature
 Braviary-Hisui @ Choice Scarf  
 Ability: Tinted Lens  
 Level: 1   
-EVs: 12 Atk / 180 SpA / 156 Spe  
-Hasty Nature  
 - Esper Wing  
 - Dazzling Gleam  
 - Wind Rage  
-- Heat Wave  
+- Heat Wave
 
 Dodrio @ Choice Band  
 Ability: Parental Bond  
-Level: 1  
-EVs: 196 Atk / 196 Spe  
-Jolly Nature  
+Level: 1   
 - Drill Run  
 - Drill Peck  
 - Steel Wing  
@@ -6427,10 +5400,7 @@ Jolly Nature
 Altaria @ Altarianite  
 Ability: Cloud Nine  
 Level: 55  
-Shiny: Yes   
-Tags: Ace
-EVs: 252 HP / 248 SpA / 4 SpD  
-Modest Nature  
+Shiny: Yes  
 - Boomburst  
 - Roost  
 - Dragon Pulse  
@@ -6445,15 +5415,10 @@ Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
 Claydol @ Eject Button  
 Ability: Psychic Surge  
 Level: 60  
-Tags: Lead
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
 - Expanding Force  
 - Earth Power  
 - Teleport  
@@ -6462,86 +5427,32 @@ Modest Nature
 Armarouge @ Choice Scarf  
 Ability: Mega Launcher  
 Level: 60  
-Tags: Lead
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
 - Expanding Force  
 - Armor Cannon  
 - Dragon Pulse  
 - Energy Ball  
 
-Golduck @ Light Clay  
-Ability: Cloud Nine
-Level: 30  
-Tags: Lead
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Light Screen  
-- Reflect  
-- Scald  
-- Psychic Noise  
-
-Chimecho @ Leftovers  
-Ability: Friend Guard  
-Level: 30  
-EVs: 252 HP / 252 SpA  
-Modest Nature  
-IVs: 0 Atk  
-- Heal Pulse  
-- Encore  
+Hatterene @ Hatterite  
+Ability: Magic Bounce  
+Level: 60    
 - Expanding Force  
-- Calm Mind  
-
-Meowstic @ Choice Specs  
-Ability: Psychic Surge  
-Level: 30  
-Tera Type: Psychic  
-EVs: 252 SpA / 4 SpD / 244 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Expanding Force  
-- Alluring Voice  
-- Thunderbolt  
-- Trick  
-
-Meowstic-F @ Assault Vest  
-Ability: Soul-Heart  
-Level: 30   
-EVs: 252 SpA / 4 SpD / 244 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Expanding Force  
-- Alluring Voice  
+- Mystical Fire  
 - Shadow Ball  
-- Thunderbolt  
-
-Espathra @ Assault Vest  
-Ability: Speed Boost  
-Level: 30   
-EVs: 252 HP / 252 Def / 4 SpA  
-Bold Nature  
-IVs: 0 Atk  
-- Lumina Crash  
-- Calm Mind  
-- Roost  
-- Substitute   
+- Giga Drain  
 
 Wyrdeer @ Salac Berry  
 Ability: Intimidate  
 Level: 1   
-EVs: 236 Atk / 76 SpD / 156 Spe  
-Jolly Nature  
+EVs: 252 Atk / 4 SpA / 252 Spe  
+Hasty Nature  
 - Astonish  
-- Dominate  
+- Dominate 
 - Psyshield Bash  
-- Lunge  
+- Lunge 
 
 Mienshao @ Assault Vest  
 Ability: Regenerator  
-Level: 60  
-EVs: 252 Atk / 4 SpA / 252 Spe  
-Hasty Nature  
+Level: 60   
 - U-turn  
 - Lumina Crash  
 - Close Combat  
@@ -6549,37 +5460,12 @@ Hasty Nature
 
 Gardevoir (F) @ Gardevoirite  
 Ability: Psychic Surge  
-Tags: Ace
 Level: 60  
 Shiny: Yes  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
 - Expanding Force  
 - Hyper Voice  
 - Thunderbolt  
 - Aura Sphere  
-
-Hatterene @ Hatterite  
-Ability: Magic Bounce  
-Level: 60   
-Tags: Ace
-EVs: 248 HP / 248 SpA / 12 SpD  
-Modest Nature  
-- Expanding Force  
-- Mystical Fire  
-- Shadow Ball  
-- Giga Drain  
-
-Alakazam @ Alakazite   
-Level: 30  
-Tags: Ace
-EVs: 252 SpA / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Expanding Force  
-- Energy Ball  
-- Recover  
-- Dazzling Gleam 
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
@@ -6590,45 +5476,26 @@ Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
-Party Size: 6
-Pool Rules: Basic
 
 Pelipper @ Leftovers  
 Ability: Drizzle  
-Level: 75    
-Tags: Lead
-EVs: 252 HP / 252 Def / 4 SpA  
-Bold Nature  
+Level: 75   
 - Hurricane  
 - Scald  
 - Roost  
 - U-turn  
 
-Vaporeon @ Leftovers  
-Ability: Drizzle  
-Level: 30  
-Tags: Lead
-IVs: 0 Atk  
-- Wish  
-- Toxic  
-- Protect  
-- Scald  
-
 Alomomola @ Red Card  
 Ability: Regenerator  
 Level: 75   
-EVs: 252 HP / 4 Atk / 252 Def  
-Impish Nature  
 - Waterfall  
 - Wish  
 - Protect  
-- Toxic  
+- Toxic 
 
 Masquerain @ Focus Sash  
 Ability: Water Bubble  
 Level: 75   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
 IVs: 0 Atk  
 - Quiver Dance  
 - Scald  
@@ -6637,73 +5504,16 @@ IVs: 0 Atk
 
 Politoed @ Leftovers  
 Ability: Drizzle  
-Level: 75    
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
+Level: 75   
 IVs: 0 Atk  
 - Perish Song  
 - Whirlpool  
 - Taunt  
 - Scald  
 
-Luvdisc @ Life Orb  
-Ability: Soul-Heart  
-Level: 30   
-EVs: 252 SpA / 248 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Draining Kiss  
-- Ice Beam  
-- Water Sport  
-- Scald  
-
-Huntail @ Choice Band  
-Ability: Swift Swim  
-Level: 30  
-EVs: 244 Atk / 12 SpD / 248 Spe  
-Adamant Nature  
-- Aqua Tail  
-- Crunch  
-- Dragon Tail  
-- Ice Fang  
-
-Gorebyss @ Choice Specs  
-Ability: Swift Swim  
-Level: 30   
-EVs: 244 SpA / 12 SpD / 248 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Psychic  
-- Scald  
-- Signal Beam  
-- Shadow Ball  
-
-Vaporeon @ Leftovers  
-Ability: Regenerator  
-Level: 30  
-EVs: 252 HP / 252 Def  
-Bold Nature  
-IVs: 0 Atk  
-- Wish  
-- Toxic  
-- Protect  
-- Scald  
-
-Seismitoad @ Assault Vest  
-Ability: Poison Touch  
-Level: 30  
-EVs: 252 HP / 252 Atk / 4 SpA  
-Brave Nature  
-- Knock Off  
-- Liquidation  
-- Earthquake  
-- Venoshock  
-
 Swampert (F) @ Assault Vest  
 Ability: Stamina  
-Level: 75   
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
+Level: 75  
 - Earthquake  
 - Waterfall  
 - Power-Up Punch  
@@ -6711,15 +5521,14 @@ Adamant Nature
 
 Samurott-Hisui @ samurite  
 Ability: Sharpness  
-Level: 75 
-Tags: Ace 
-Shiny: Yes  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Adamant Nature  
+Level: 1  
+Shiny: Yes 
+EVs: 84 HP / 212 Atk / 212 Spe  
+Jolly Nature  
 - Shell Smash  
 - Ceaseless Edge  
 - Sucker Punch  
-- Razor Shell  
+- Razor Shell
 
 === TRAINER_JERRY_1 ===
 Name: JERRY
@@ -7847,66 +6656,16 @@ Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 Mugshot: Yellow
-Party Size: 6
-Pool Rules: Basic
 
 Goodra @ Toxic Orb  
 Ability: Poison Heal   
 Level: 100
-Tags: Lead
 EVs: 248 HP / 8 Atk / 252 Def  
 Impish Nature  
 - Toxic Spikes  
 - Recover  
 - Dragon Tail  
 - Scald  
-
-Rotom-Wash @ Life Orb  
-Ability: Drizzle 
-Tags: Lead  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Hydro Pump  
-- Pain Split  
-- Electro Shot  
-- Shadow Ball  
-
-Simipour @ Heavy-Duty Boots  
-Ability: Drizzle   
-EVs: 252 HP / 4 Atk / 252 Spe  
-Hasty Nature  
-- Water Sport  
-- Bouncy Bubble  
-- Ice Ball  
-- Taunt  
-
-Lanturn @ Assault Vest  
-Ability: Drizzle
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-- Electro Shot  
-- Flip Turn  
-- Scald  
-- Icy Wind  
-
-Dondozo @ Red Card  
-Ability: Unaware   
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Curse  
-- Liquidation  
-- Bulldoze  
-- Body Slam  
-
-Tatsugiri @ Heavy-Duty Boots  
-Ability: Drizzle  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- Draco Meteor  
-- Muddy Water  
-- Icy Wind  
-- Rapid Spin  
 
 Vaporeon @ Leftovers  
 Ability: Drizzle  
@@ -7926,63 +6685,6 @@ Adamant Nature
 - Icicle Crash  
 - Close Combat  
 - Play Rough 
-
-Quaquaval @ Assault Vest  
-Ability: Moxie   
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Aqua Step  
-- Close Combat  
-- Triple Axel  
-- Knock Off  
-
-Swanna @ Heavy-Duty Boots  
-Ability: Gale Wings   
-EVs: 252 HP / 4 SpA / 252 SpD  
-Calm Nature  
-IVs: 0 Atk  
-- Hurricane  
-- Roost  
-- Defog  
-- Tailwind  
-
-Rotom-Wash @ Choice Scarf  
-Ability: Water Bubble   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Hydro Pump  
-- Thunderbolt  
-- Trick  
-- Shadow Ball  
-
-Lumineon @ Leftovers  
-Ability: Swift Swim   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-IVs: 0 Atk  
-- Quiver Dance  
-- Surf  
-- Moonblast  
-- Aqua Ring  
-
-Ludicolo @ Life Orb  
-Ability: Swift Swim  
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Modest Nature  
-- Giga Drain  
-- Fake Out  
-- Weather Ball  
-- Ice Beam  
-
-Dracovish @ Life Orb  
-Ability: Swift Swim   
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Fishious Rend  
-- Crunch  
-- Dragon Rush  
-- Spiky Shield  
 
 Greninja-Bond (M) @ Waterium Z  
 Ability: Battle Bond 
@@ -14590,68 +13292,29 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Grimmsnarl @ Light Clay  
+Baxcalibur  
+Ability: Thermal Exchange  
+Level: 60  
+
+Grimmsnarl  
 Ability: Prankster  
-Level: 60   
-EVs: 244 HP / 12 Atk / 252 SpD  
-Careful Nature  
-- Light Screen  
-- Reflect  
-- Parting Shot  
-- Spirit Break  
+Level: 60  
 
-Baxcalibur @ Life Orb  
-Ability: Tough Claws  
-Level: 60    
-EVs: 252 Atk / 8 SpD / 248 Spe  
-Jolly Nature  
-- Glaive Rush  
-- Slip Slide  
-- Ice Shard  
-- Zen Headbutt  
+Greedent  
+Ability: Cheek Pouch  
+Level: 60  
 
-Beautifly @ Heavy-Duty Boots  
-Ability: Tinted Lens  
-Level: 60   
-EVs: 244 HP / 252 Def / 12 SpA  
-Bold Nature  
-IVs: 0 Atk  
-- Quiver Dance  
-- Wind Rage  
-- Giga Drain  
-- Roost  
+Clawitzer  
+Ability: Mega Launcher  
+Level: 60  
 
-Roserade @ Leftovers  
-Ability: Cute Charm  
-Level: 60   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Sludge Bomb  
-- Giga Drain  
-- Pheromone Wave
-- Toxic Spikes  
-
-Altaria @ Leftovers  
-Ability: Fluffy  
-Level: 60   
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
-IVs: 0 Atk  
-- Roost  
-- Fire Spin  
-- Perish Song  
-- Dragon Pulse  
+Toxtricity
+Ability: Punk Rock  
+Level: 60
 
 Blaziken @ Blazikenite  
-Ability: Speed Boost  
-Level: 60  
-EVs: 4 HP / 252 Atk / 252 Spe  
-Jolly Nature  
-- High Jump Kick  
-- Blaze Kick  
-- Triple Axel  
-- U-turn  
+Ability: Blaze  
+Level: 60 
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
 Name: BRENDAN
@@ -14662,67 +13325,29 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware
 
-Appletun @ Light Clay  
-Ability: Grassy Surge  
-EVs: 248 HP / 8 SpA / 252 SpD  
-Calm Nature  
-IVs: 0 Atk  
-- Light Screen  
-- Reflect  
-- Apple Acid  
-- Recover  
+Flapple  
+Ability: Hustle  
+Level: 60    
 
-Lokix @ Choice Band  
+Lokix  
 Ability: Tinted Lens  
 Level: 60   
-EVs: 248 Atk / 12 SpD / 248 Spe  
-Jolly Nature  
-- First Impression  
-- Axe Kick  
-- Brick Break  
-- U-turn  
 
-Oricorio-Sensu @ Leftovers  
-Ability: Dancer  
+Grafaiai  
+Ability: Unburden  
 Level: 60  
-EVs: 244 HP / 252 Def / 12 SpA  
-Bold Nature  
-IVs: 0 Atk  
-- Quiver Dance  
-- Revelation Dance  
-- Hurricane  
-- Roost  
 
-Electivire @ Life Orb  
+Oricorio-Sensu  
+Ability: Dancer  
+Level: 60    
+
+Electivire  
 Ability: Adaptability  
 Level: 60    
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Close Combat  
-- Supercell Slam  
-- Knock Off  
-- Earthquake  
-
-Grafaiai @ Sticky Barb  
-Ability: Prankster  
-Level: 60   
-EVs: 252 HP / 4 Def / 248 SpD / 4 Spe  
-Calm Nature  
-IVs: 0 Atk  
-- Rain Dance  
-- Switcheroo  
-- Foul Play  
-- Taunt  
 
 Swampert @ Swampertite  
 Ability: Torrent  
-Level: 60  
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Wave Crash  
-- Earthquake  
-- Ice Punch  
-- Rock Slide    
+Level: 60    
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
 Name: MAY
@@ -14733,65 +13358,29 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Switching / Prediction / HP Aware  
 
-Corviknight @ Light Clay  
+Haxorus  
+Ability: Rivalry  
+Level: 60   
+
+Corviknight  
 Ability: Mirror Armor  
 Level: 60   
-EVs: 252 HP / 252 Def / 4 SpD  
-Impish Nature  
-- Light Screen  
-- Reflect  
-- U-turn  
-- Roost  
 
-Haxorus @ Muscle Band  
-Ability: Sharpness  
-Level: 60  
-EVs: 248 Atk / 12 SpD / 248 Spe  
-Adamant Nature  
-- Guillotine  
-- Dragon Claw  
-- Dragon Dance  
-- Earthquake  
+Coalossal  
+Ability: Flame Body  
+Level: 60   
 
-Coalossal @ Heavy-Duty Boots  
-Ability: Evaporate 
-Level: 60  
-EVs: 252 HP / 4 Atk / 252 SpD  
-Careful Nature  
-- Tar Shot  
-- Heat Crash  
-- Iron Defense  
-- Body Press  
-
-Togedemaru @ Light Ball  
+Togedemaru  
 Ability: Iron Barbs  
 Level: 60  
-EVs: 252 Atk / 8 SpD / 248 Spe  
-Jolly Nature  
-- Zippy Zap  
-- Nuzzle  
-- Iron Head  
-- Spiky Shield  
 
-Dragapult @ Life Orb  
+Dragapult  
 Ability: Infiltrator  
 Level: 60    
-EVs: 252 Atk / 4 SpD / 248 Spe  
-Jolly Nature  
-- U-turn  
-- Dragon Darts  
-- Substitute  
-- Shadow Force  
 
 Sceptile @ Sceptilite  
 Ability: Overgrow  
-Level: 60   
-EVs: 4 Atk / 252 SpA / 252 Spe  
-Hasty Nature  
-- Leaf Storm  
-- Dragon Pulse  
-- Frenzy Plant  
-- Extreme Speed  
+Level: 60  
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
 Name: MAY
@@ -14804,7 +13393,8 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Aggron @ Leftovers  
 Ability: Earth Eater  
-Level: 20   
+Level: 20  
+Tera Type: Steel  
 EVs: 252 HP / 4 Atk / 252 SpD  
 Careful Nature  
 - Body Press  
@@ -14815,6 +13405,7 @@ Careful Nature
 Garbodor @ Leftovers  
 Ability: Toxic Debris  
 Level: 60  
+Tera Type: Poison  
 EVs: 252 HP / 252 Atk / 4 SpA  
 Brave Nature  
 - Steelsurge  
@@ -18457,8 +17048,8 @@ AI: Smart Trainer / Check Bad Move / Try To Faint / Check Viability / Smart Swit
 
 Skarmory @ Leftovers  
 Ability: Sturdy  
-Level: 100
-Tags: Lead
+Level: 100 
+Tera Type: Steel  
 EVs: 252 HP / 232 Def / 24 Spe  
 Impish Nature  
 - Steelsurge  
@@ -18466,27 +17057,15 @@ Impish Nature
 - Body Press  
 - Roost  
 
-Armaldo (M) @ Steelium Z  
+Armaldo (M) @ Assault Vest  
 Ability: Anger Shell  
 Level: 100  
-Tags: Lead
 EVs: 4 HP / 252 Atk / 4 SpD / 248 Spe  
 Jolly Nature  
-- Guillotine  
-- Swords Dance
+- First Impression  
+- G-Max Stonesurge  
 - Stone Axe  
-- X-Scissor 
-
-Claydol @ Light Clay  
-Ability: Psychic Surge  
-Level: 100   
-Tags: Lead
-EVs: 252 HP / 4 Atk / 252 SpD  
-Sassy Nature  
-- Reflect  
-- Light Screen  
-- Expanding Force  
-- Earthquake
+- X-Scissor  
 
 Aggron (M) @ Rocky Helmet  
 Ability: Rocky Payload  
@@ -18498,72 +17077,6 @@ Adamant Nature
 - Body Press  
 - Metal Jaw  
 
-Gholdengo @ Choice Specs  
-Ability: Good as Gold  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Make It Rain  
-- Shadow Ball  
-- Focus Blast  
-- Dazzling Gleam  
-
-Tinkaton (F) @ Life Orb  
-Ability: Hammer Bro  
-Tera Type: Fairy  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Heart Stamp  
-- Gigaton Hammer  
-- Fake Out  
-- Ice Hammer  
-
-Orthworm @ Sitrus Berry  
-Ability: Earth Eater   
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Coil  
-- Shed Tail  
-- Body Press  
-- Iron Head  
-
-Melmetal @ Assault Vest  
-Ability: Iron Fist   
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Double Iron Bash  
-- Mega Punch  
-- Thunder Punch  
-- Bullet Punch  
-
-Iron Crown @ Booster Energy  
-Ability: Quark Drive   
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Modest Nature  
-IVs: 20 Atk  
-- Stored Power  
-- Tachyon Cutter  
-- Calm Mind  
-- Agility  
-
-Jirachi @ Leftovers  
-Ability: Serene Grace    
-EVs: 224 HP / 252 Atk / 32 Spe  
-Adamant Nature  
-- Iron Head  
-- Body Slam  
-- Wish  
-- Meteor Mash  
-
-Registeel @ Assault Vest  
-Ability: Steelworker  
-EVs: 252 HP / 252 Def / 4 SpD  
-Impish Nature  
-- Heavy Slam  
-- Body Press  
-- Ice Punch  
-- Brick Break  
-
 Cradily @ Power Herb  
 Ability: Regenerator  
 Level: 100   
@@ -18572,7 +17085,17 @@ Quiet Nature
 - Meteor Beam  
 - Giga Drain  
 - Power Gem  
-- Astonish    
+- Astonish  
+
+Claydol @ Red Card  
+Ability: Psychic Surge  
+Level: 100   
+EVs: 252 HP / 4 Atk / 252 SpD  
+Sassy Nature  
+- Reflect  
+- Light Screen  
+- Expanding Force  
+- Earthquake  
 
 Metagross @ Metagrossite  
 Ability: Filter  
