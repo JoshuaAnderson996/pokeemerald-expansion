@@ -4511,7 +4511,7 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 
         gBattleStruct->pledgeMove = FALSE;
         if (!gDisableStructs[battlerDef].exorcistBoosted)
         {
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FLASH_FIRE_BOOST;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_EXORCIST_BOOST;
             if (gProtectStructs[battlerAtk].notFirstStrike)
                 battleScript = BattleScript_ExorcistBoost;
             else
@@ -11337,6 +11337,19 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
             RecordAbilityBattle(battlerDef, ABILITY_LEVITATE);
         }
     }
+    else if ((moveType == TYPE_WATER || moveType == TYPE_ICE) && defAbility == ABILITY_EVAPORATE)
+    {
+    // Evaporate: full immunity to Water/Ice, like Levitate vs Ground
+    modifier = UQ_4_12(0.0);
+    if (recordAbilities)
+    {
+        gBattleStruct->moveResultFlags[battlerDef] |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastUsedAbility = ABILITY_EVAPORATE;
+        gLastLandedMoves[battlerDef] = 0;
+        gBattleStruct->missStringId[battlerDef] = B_MSG_AVOIDED_DMG; // reuse generic "avoided damage" text
+        RecordAbilityBattle(battlerDef, ABILITY_EVAPORATE);
+    }
+    }
     else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
     {
         modifier = UQ_4_12(0.0);
@@ -11402,6 +11415,9 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
                 && ( abilityDef == ABILITY_LEVITATE
                    || IsFloatingSpecies(speciesDef) )
                 && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            modifier = UQ_4_12(0.0);
+            if ((moveType == TYPE_WATER || moveType == TYPE_ICE)
+            && abilityDef == ABILITY_EVAPORATE)
             modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
             modifier = UQ_4_12(0.0);
@@ -13031,7 +13047,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_WEEZING,
     SPECIES_MISDREAVUS,
     SPECIES_VOLBEAT,
-    SPECIES_PROBOPASS,
+    SPECIES_ILLUMISE,
     SPECIES_UNOWN,
     SPECIES_VIBRAVA,
     SPECIES_FLYGON,
@@ -13064,8 +13080,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_UXIE,
     SPECIES_MESPRIT,
     SPECIES_AZELF,
-    SPECIES_GIRATINA_ORIGIN, 
-    SPECIES_GIRATINA_ALTERED,
+    SPECIES_GIRATINA_ORIGIN,
     SPECIES_CRESSELIA,
     SPECIES_TYNAMO,
     SPECIES_EELEKTRIK,
@@ -13085,7 +13100,6 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_VOLCARONA,
     SPECIES_PECHARUNT,
     SPECIES_CHANDELURE,
-    SPECIES_UNOWN,
     SPECIES_PORYGON,
     SPECIES_PORYGON2,
     SPECIES_PORYGON_Z,
@@ -13115,18 +13129,20 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_CHARIZARD_MEGA_X,
     SPECIES_FLORGES,
     SPECIES_BEHEEYEM,
+    SPECIES_KLINK,
+    SPECIES_KLANG,
     SPECIES_KLINKLANG,
     SPECIES_VANILLUXE,
     SPECIES_REUNICLUS,
     SPECIES_GLALIE,
     SPECIES_FROSLASS,
-    SPECIES_WAILORD,
     SPECIES_SHEDINJA,
     SPECIES_CELEBI,
-    SPECIES_GEODUDE,
     SPECIES_CARBINK,
     SPECIES_VENOMOTH,
     SPECIES_IRON_MOTH,
+    SPECIES_MAGEARNA,
+    SPECIES_PROBOPASS,
     SPECIES_DRAGALGE,
     SPECIES_LEDIAN,
 };
@@ -13175,6 +13191,7 @@ static const u16 sThickfatSpeciesList[] =
     SPECIES_MARILL,
     SPECIES_AZUMARILL,
     SPECIES_SPHEAL,
+    SPECIES_MAKUHITA,
     SPECIES_HARIYAMA,
     SPECIES_RATTATA_ALOLA,
     SPECIES_RATICATE_ALOLA,
@@ -13187,6 +13204,7 @@ static const u16 sThickfatSpeciesList[] =
     SPECIES_TEPIG,
     SPECIES_PIGNITE,
     SPECIES_EMBOAR,
+    SPECIES_TORTERRA,
     SPECIES_DEDENNE,
     SPECIES_APPLETUN,
     SPECIES_LECHONK,

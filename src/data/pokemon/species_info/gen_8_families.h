@@ -1339,7 +1339,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_PRESSURE, ABILITY_PRESSURE, ABILITY_PRESSURE },
+        .abilities = { ABILITY_WEAK_ARMOR, ABILITY_WEAK_ARMOR, ABILITY_WEAK_ARMOR },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Corviknight"),
         .cryId = CRY_CORVIKNIGHT,
@@ -1348,10 +1348,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 140,
         .weight = 0,
         .description = COMPOUND_STRING(
-            "Imbued with Gigantamax energy, its\n"
-            "wings can whip up winds more\n"
-            "forceful than any a hurricane could\n"
-            "muster. The gusts blow everything away."),
+        "Awash in Mega energy, its wings\n"
+        "whip up winds surpassing any\n"
+        "hurricane. One mighty beat can\n"
+        "blast everything out of its path."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 348,

@@ -8201,7 +8201,7 @@ BattleScript_ExorcistBoost::
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
-	printfromtable gFlashFireStringIds
+	printfromtable gExorcistStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

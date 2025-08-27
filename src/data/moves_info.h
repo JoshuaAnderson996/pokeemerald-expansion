@@ -748,7 +748,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "with intense force."),
         .effect = EFFECT_HIT,
         .power = 120,
-        .type = TYPE_NORMAL,
+        .type = TYPE_HERO,
         .accuracy = 75,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
