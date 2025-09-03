@@ -917,11 +917,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Sandslash
 Level: 23
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
 
 === TRAINER_CHIP ===
 Name: CHIP
@@ -6020,13 +6015,46 @@ Music: Twins
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Taillow @ Oran Berry
-Level: 16
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Swellow @ Flame Orb  
+Ability: Bravado  
+Level: 10   
+EVs: 36 Atk / 236 SpA / 236 Spe  
+Naive Nature  
+- Boomburst  
+- Air Slash  
+- Heat Wave  
+- Quick Attack  
 
-Zigzagoon @ Oran Berry
-Level: 16
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Linoone @ Sitrus Berry  
+Ability: Tough Claws  
+Level: 10  
+EVs: 236 Atk / 28 SpD / 236 Spe  
+Jolly Nature  
+- Belly Drum  
+- Extreme Speed  
+- Dig  
+- Covet  
+
+Weezing @ Leftovers  
+Ability: Neutralizing Gas  
+Level: 10  
+EVs: 236 Def / 36 SpA / 236 SpD  
+Bold Nature  
+IVs: 0 Atk  
+- Haze  
+- Clear Smog  
+- Sludge Wave  
+- Toxic  
+
+Snorlax @ Snorlaxite
+Ability: Immunity  
+Level: 10  
+EVs: 236 Atk / 36 Def / 236 SpD  
+Adamant Nature  
+- Ice Punch  
+- Giga Impact  
+- Seed Bomb  
+- Supercell Slam  
 
 === TRAINER_MIGUEL_1 ===
 Name: MIGUEL
@@ -6159,9 +6187,66 @@ Music: Twins
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability / Try To Faint
 
-Roselia @ Oran Berry
-Level: 17
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Pikachu @ Light Ball  
+Ability: Static  
+Level: 30  
+EVs: 252 Atk / 16 SpA / 240 Spe  
+Hasty Nature  
+IVs: 0 HP / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Zippy Zap  
+- Splishy Splash  
+- Floaty Fall  
+- Pika Papow  
+
+Pikachu-PhD @ Light Ball  
+Ability: Download  
+Level: 30  
+EVs: 252 Atk / 252 Spe  
+Hasty Nature  
+- Pika Papow  
+- Psybeam  
+- Zippy Zap  
+- Double Slap  
+
+Pikachu-Belle @ Light Ball  
+Ability: Ice Scales  
+Level: 30  
+EVs: 252 SpA / 252 Spe  
+Hasty Nature  
+- Icy Wind  
+- Electro Ball  
+- Nasty Plot  
+- Nuzzle  
+
+Pikachu-Rock-Star @ Light Ball  
+Ability: Steely Spirit  
+Level: 30  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Iron Tail  
+- Volt Tackle  
+- Mega Kick  
+- Ice Punch  
+
+Pikachu-Pop-Star @ Light Ball  
+Ability: Pixilate  
+Level: 30   
+EVs: 252 SpA / 252 Spe  
+Hasty Nature  
+- Hyper Voice  
+- Overdrive  
+- Wish  
+- Fake Out  
+
+Pikachu-Libre @ Light Ball  
+Ability: Luchador  
+Level: 30  
+EVs: 252 Atk / 252 Spe  
+Hasty Nature  
+- Flying Press  
+- Body Slam  
+- Pika Papow  
+- Fake Out 
 
 === TRAINER_VANESSA ===
 Name: VANESSA
@@ -6372,13 +6457,46 @@ Music: Intense
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Meditite
-Level: 18
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- High Jump Kick
-- Meditate
-- Confusion
-- Detect
+Forretress @ Normal Gem  
+Ability: Sturdy  
+Level: 10  
+EVs: 236 Atk / 36 Def / 236 SpD  
+Brave Nature  
+IVs: 0 Spe  
+- Stealth Rock  
+- Rapid Spin  
+- Explosion  
+- Gyro Ball  
+
+Meditite @ Life Orb  
+Ability: Pure Power  
+Level: 10  
+EVs: 236 Atk / 36 SpA / 236 SpD  
+Lonely Nature  
+- Fake Out  
+- High Jump Kick  
+- Thunder Punch  
+- Psycho Cut  
+
+Blissey @ Leftovers  
+Ability: Natural Cure  
+Level: 10  
+EVs: 236 Def / 236 SpD / 36 Spe  
+Bold Nature  
+- Wish  
+- Protect  
+- Toxic  
+- Counter  
+
+Nidoking @ Nidokinite 
+Ability: Poison Point  
+Level: 20  
+EVs: 240 Atk / 16 SpA / 236 Spe  
+Naive Nature  
+- Earth Power  
+- Poison Jab  
+- Fire Blast  
+- Ice Punch  
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
@@ -9136,21 +9254,11 @@ Music: Girl
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Sandshrew
+Sandslash
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sand Attack
-- Poison Sting
-- Slash
-- Dig
 
-Marill
+Azumarill
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rollout
-- Bubble Beam
-- Tail Whip
-- Defense Curl
 
 === TRAINER_CAROL ===
 Name: CAROL
@@ -12048,17 +12156,65 @@ Music: Female
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Marill
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Aerodactyl @ Focus Sash  
+Ability: Rock Head  
+Level: 20   
+EVs: 16 HP / 236 Atk / 16 SpD / 236 Spe  
+Jolly Nature  
+- Stealth Rock  
+- Head Smash  
+- Brave Bird  
+- Aqua Tail  
 
-Shroomish
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Pinsir @ Choice Scarf  
+Ability: Moxie  
+Level: 20  
+EVs: 236 Atk / 36 SpD / 236 Spe  
+Jolly Nature  
+- Close Combat  
+- X-Scissor  
+- Stone Edge  
+- Knock Off  
 
-Numel
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Banette @ Focus Sash  
+Ability: Normalize  
+Level: 20  
+EVs: 244 HP / 236 Atk / 12 SpD / 16 Spe  
+Adamant Nature  
+- Skill Swap  
+- Swords Dance  
+- Shadow Claw  
+- Destiny Bond  
+
+Absol @ Absolite  
+Ability: Pressure  
+Level: 20  
+EVs: 236 Atk / 36 SpD / 236 Spe  
+Jolly Nature  
+- Night Slash  
+- Hero Slash  
+- Play Rough  
+- Close Combat  
+
+Raichu @ Assault Vest  
+Ability: Static  
+Level: 20  
+EVs: 236 Atk / 36 SpD / 236 Spe  
+Jolly Nature  
+- Fake Out  
+- Extreme Speed  
+- Iron Tail  
+- Wild Charge  
+
+Mawile @ Assault Vest  
+Ability: Intimidate  
+Level: 20  
+EVs: 236 HP / 236 Atk / 36 SpD  
+Adamant Nature  
+- Sucker Punch  
+- Metal Burst  
+- Play Rough  
+- Psychic Fangs  
 
 === TRAINER_HALEY_2 ===
 Name: HALEY
@@ -14350,9 +14506,12 @@ Music: Hiker
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Numel
+Camerupt
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Breloom
+Level: 10
 
 === TRAINER_SOPHIE ===
 Name: SOPHIE
@@ -14953,13 +15112,11 @@ Music: Girl
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Marill
+Azumarill
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lombre
+Ludicolo
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRYAN ===
 Name: BRYAN
@@ -14987,13 +15144,11 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Taillow
+Swellow
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Nuzleaf
+Shiftry
 Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRYANT ===
 Name: BRYANT
@@ -15004,13 +15159,11 @@ Music: Hiker
 Double Battle: No
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Numel
+Camerupt
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Slugma
+Magcargo
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHAYLA ===
 Name: SHAYLA
