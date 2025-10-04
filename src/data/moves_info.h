@@ -1536,6 +1536,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
@@ -1570,9 +1571,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Surf"),
         .description = COMPOUND_STRING(
-            "Creates a huge wave, then\n"
-            "crashes it down on the foe."),
-        .effect = EFFECT_HIT,
+        "Summons a massive wave that\n"
+        "washes away hazards before\n"
+        "crashing down on the foe."),
+        .effect = EFFECT_RAPID_SPIN,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95,
         .type = TYPE_WATER,
         .accuracy = 100,
@@ -1643,7 +1645,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .windMove = TRUE,
-        .magicMove = TRUE,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
             .chance = 10,
@@ -2415,6 +2417,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .disasterMove = TRUE,
         .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
         .damagesUnderground = TRUE,
         .skyBattleBanned = TRUE,
@@ -3394,6 +3397,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .magicMove = TRUE,
+        .ballisticMove = TRUE,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
@@ -4234,6 +4238,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 30,
@@ -4866,6 +4871,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .windMove = TRUE,
         .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -5613,6 +5619,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .ballisticMove = TRUE,
         .instructBanned = TRUE,
         .parentalBondBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
@@ -6051,6 +6058,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .damagesUnderground = TRUE,
         .skyBattleBanned = TRUE,
+        .disasterMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_WHEN_AUDIENCE_EXCITED,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -6480,7 +6488,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Whips up a vicious twister\n"
             "to tear at the foe."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_RAPID_SPIN,
         .power = 60,
         .type = TYPE_DRAGON,
         .accuracy = 100,
@@ -6490,6 +6498,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .damagesAirborneDoubleDamage = TRUE,
         .windMove = TRUE,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 20,
@@ -6757,9 +6766,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Rock Smash"),
         .description = COMPOUND_STRING(
-            "A rock-crushing attack\n"
-            "that may lower Defense."),
-        .effect = EFFECT_HIT,
+        "A rock-crushing strike that\n"
+        "shatters field hazards and\n"
+        "may lower the foe's Defense."),
+        .effect = EFFECT_RAPID_SPIN,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 40 : 20,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -6981,6 +6991,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .disasterMove = TRUE,
         .windMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
@@ -7680,6 +7691,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .disasterMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_WHEN_LATER,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -8087,8 +8099,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud Sport"),
         .description = COMPOUND_STRING(
-            "Covers the user in mud to\n"
-            "raise electrical resistance."),
+            "Clears hazards and\n"
+            "raises resistance to electric."),
         .effect = EFFECT_MUD_SPORT,
         .power = 0,
         .type = TYPE_GROUND,
@@ -8101,10 +8113,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .skyBattleBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEFOG,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_MUD_SPORT,
@@ -9150,7 +9158,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .pulseMove = TRUE,
+        .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -9272,8 +9280,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Water Sport"),
         .description = COMPOUND_STRING(
-            "The user becomes soaked to\n"
-            "raise resistance to fire."),
+            "Clears hazards and\n"
+            "raises resistance to fire."),
         .effect = EFFECT_WATER_SPORT,
         .power = 0,
         .type = TYPE_WATER,
@@ -9286,10 +9294,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .skyBattleBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEFOG,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_WATER_SPORT,
@@ -11077,6 +11081,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .punchingMove = TRUE,
+        .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -11096,6 +11101,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = -4,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .disasterMove = TRUE,
         .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -11358,6 +11364,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .lightMove = TRUE,
+        .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
             .chance = 30,
@@ -11532,6 +11539,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 30,
@@ -13706,9 +13714,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Bulldoze"),
         .description = COMPOUND_STRING(
-            "Stomps down on the ground.\n"
-            "Lowers Speed."),
-        .effect = EFFECT_EARTHQUAKE,
+        "Stomps the ground with force,\n"
+        "clearing hazards and lowering\n"
+        "the user's Speed."),
+        .effect = EFFECT_RAPID_SPIN,
         .power = 60,
         .type = TYPE_GROUND,
         .accuracy = 100,
@@ -14042,9 +14051,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Steamroller"),
         .description = COMPOUND_STRING(
-            "Crushes the foe with its\n"
-            "body. May cause flinching."),
-        .effect = EFFECT_HIT,
+        "Crushes the foe with its body,\n"
+        "clearing hazards and possibly\n"
+        "causing flinching."),
+        .effect = EFFECT_RAPID_SPIN,
         .power = 65,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -14171,6 +14181,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .windMove = TRUE,
+        .disasterMove = TRUE,
         .damagesAirborne = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_CONFUSION,
@@ -14268,6 +14279,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .argument = { .holdEffect = HOLD_EFFECT_DRIVE },
         .metronomeBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
@@ -15265,6 +15277,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .magicMove = TRUE,
+        .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
             .chance = 30,
@@ -15995,6 +16008,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .damagesAirborne = TRUE,
+        .ballisticMove = TRUE,
         .ignoreTypeIfFlyingAndUngrounded = TRUE,
         .metronomeBanned = TRUE,
         .skyBattleBanned = TRUE,
@@ -17893,12 +17907,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "The user ignores effects\n"
             "that draw in moves."),
         .effect = EFFECT_SNIPE_SHOT,
-        .power = 80,
+        .power = 70,
         .type = TYPE_WATER,
         .accuracy = 100,
-        .criticalHitStage = 1,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
+        .alwaysCriticalHit = TRUE,
+        .ballisticMove = TRUE,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
@@ -17915,14 +17930,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "The user shoots a sure\n"
             "fire attach that always hits."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 70,
         .type = TYPE_DARK,
         .accuracy = 0,
-        .criticalHitStage = 1,
+        .alwaysCriticalHit = TRUE,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -18093,6 +18109,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
         .strikeCount = 2,
         .parentalBondBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
@@ -18836,6 +18853,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
         .argument = { .moveProperty = MOVE_EFFECT_SCALE_SHOT },
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -19738,6 +19756,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .accuracy = 95,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
+        .ballisticMove = TRUE,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .battleAnimScript = gBattleAnimMove_Chloroblast,
@@ -19819,6 +19838,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 60,
         .type = TYPE_POISON,
         .accuracy = 100,
+        .ballisticMove = TRUE,
         .pp = B_UPDATED_MOVE_DATA >= GEN_9 ? 10 : 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -19910,6 +19930,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
         .ninjaMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
@@ -19982,6 +20003,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .windMove = TRUE,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .chance = 30,
@@ -20004,6 +20026,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .windMove = TRUE,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 20,
@@ -20026,6 +20049,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .windMove = TRUE,
+        .disasterMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 20,
@@ -20088,6 +20112,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .forcePressure = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TERA_BLAST,
@@ -20245,9 +20270,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_SPIN_OUT] =
     {
         .name = COMPOUND_STRING("Spin Out"),
-        .description = COMPOUND_STRING(
-            "Furiously strains its legs.\n"
-            "Harshly lowers user's Speed."),
+       .description = COMPOUND_STRING(
+        "Furiously stomps the ground,\n"
+        "clearing hazards but harshly\n"
+        "lowering the user's Speed."),
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_STEEL,
@@ -20280,6 +20306,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .ballisticMove = TRUE,
         .slicingMove = TRUE,
         .metronomeBanned = TRUE,
         .strikeCount = 10,

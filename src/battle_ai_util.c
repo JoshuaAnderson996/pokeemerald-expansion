@@ -352,6 +352,7 @@ bool32 IsTruantMonVulnerable(u32 battlerAI, u32 opposingBattler)
 bool32 IsAffectedByPowder(u32 battler, u32 ability, u32 holdEffect)
 {
     if (ability == ABILITY_OVERCOAT
+        || ability == ABILITY_DAMP
         || (B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
         || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
@@ -1496,6 +1497,8 @@ bool32 IsHazardClearingMove(u32 move)
     {
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
+    case EFFECT_MUD_SPORT:
+    case EFFECT_WATER_SPORT:
         return TRUE;
     case EFFECT_DEFOG:
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
@@ -2654,6 +2657,7 @@ static bool32 BattlerAffectedBySandstorm(u32 battlerId, u32 ability)
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
       && ability != ABILITY_SAND_RUSH
+      && ability != ABILITY_MAGIC_GUARD
       && ability != ABILITY_OVERCOAT)
         return TRUE;
     return FALSE;
@@ -2664,6 +2668,7 @@ static bool32 BattlerAffectedByHail(u32 battlerId, u32 ability)
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
       && ability != ABILITY_SNOW_CLOAK
       && ability != ABILITY_OVERCOAT
+        && ability != ABILITY_MAGIC_GUARD
       && ability != ABILITY_ICE_BODY)
         return TRUE;
     return FALSE;
@@ -2779,7 +2784,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
     if (flags == 0)
         return FALSE;
 
-    if (ability == ABILITY_MAGIC_GUARD)
+    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_LIMBER)
         return FALSE;
     if (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM || ability == ABILITY_KLUTZ)
         holdEffect = HOLD_EFFECT_NONE;

@@ -4306,27 +4306,54 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability
                 battleScriptBlocksMove = BattleScript_GoodAsGoldActivates;
         }
         break;
+    case ABILITY_CLEAR_BODY:
+        if (IsLightMove(move))
+        {
+            if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
+                gHitMarker |= HITMARKER_NO_PPDEDUCT;
+            battleScriptBlocksMove = BattleScript_SoundproofProtected;
+        }
+        break;
+        case ABILITY_CALAMITY_EDGE:
+    if (IsDisasterMove(move) && !IsBattlerAlly(battlerAtk, battlerDef))
+    {
+        if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
+            gHitMarker |= HITMARKER_NO_PPDEDUCT;
+    battleScriptBlocksMove = BattleScript_SoundproofProtected;
+    }
+    break;
     }
 
 
     // Check def partner ability
     if (IsDoubleBattle() && IsBattlerAlive(BATTLE_PARTNER(battlerDef)))
     {
-        switch (GetBattlerAbility(BATTLE_PARTNER(battlerDef)))
+    switch (GetBattlerAbility(BATTLE_PARTNER(battlerDef)))
+    {
+    case ABILITY_DAZZLING:
+    case ABILITY_QUEENLY_MAJESTY:
+    case ABILITY_ARMOR_TAIL:
+        if (atkPriority > 0 && !IsBattlerAlly(battlerAtk, BATTLE_PARTNER(battlerDef)))
         {
-        case ABILITY_DAZZLING:
-        case ABILITY_QUEENLY_MAJESTY:
-        case ABILITY_ARMOR_TAIL:
-            if (atkPriority > 0 && !IsBattlerAlly(battlerAtk, BATTLE_PARTNER(battlerDef)))
-            {
-                if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
-                    gHitMarker |= HITMARKER_NO_PPDEDUCT;
-                battlerAbility = BATTLE_PARTNER(battlerDef);
-                battleScriptBlocksMove = BattleScript_DazzlingProtected;
-            }
-            break;
+            if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
+                gHitMarker |= HITMARKER_NO_PPDEDUCT;
+            battlerAbility = BATTLE_PARTNER(battlerDef);
+            battleScriptBlocksMove = BattleScript_DazzlingProtected;
         }
+        break;
+
+    case ABILITY_CALAMITY_EDGE:
+        if (IsDisasterMove(move) && !IsBattlerAlly(battlerAtk, BATTLE_PARTNER(battlerDef)))
+        {
+            if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
+                gHitMarker |= HITMARKER_NO_PPDEDUCT;
+            battlerAbility = BATTLE_PARTNER(battlerDef);         // <— show partner’s ability
+            battleScriptBlocksMove = BattleScript_DazzlingProtected;
+        }
+        break;
     }
+    }
+    
 
     if (battleScriptBlocksMove == NULL)
         return FALSE;
@@ -6020,6 +6047,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             u32 ability = GetBattlerAbility(gBattlerAttacker);
             if ((!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS) || B_POWDER_GRASS < GEN_6)
              && ability != ABILITY_OVERCOAT
+             && ability != ABILITY_DAMP
              && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
                 u32 poison, paralysis, sleep;
@@ -9763,6 +9791,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_STEELWORKER:
+    case ABILITY_REFRACTORY_METAL:
         if (moveType == TYPE_STEEL)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
@@ -9815,6 +9844,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_SHARPNESS:
+    case ABILITY_CALAMITY_EDGE:
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
@@ -9947,8 +9977,8 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     // target's abilities
     switch (defAbility)
     {
-    case ABILITY_HEATPROOF:
     case ABILITY_WATER_BUBBLE:
+    case ABILITY_REFRACTORY_METAL:
         if (moveType == TYPE_FIRE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
@@ -10428,6 +10458,19 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW))
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));   
         break;
+    case ABILITY_HEAVY_METAL:
+        if (IsMoveMakingContact(move, gBattlerAttacker))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+        break;
+    case ABILITY_BATTLE_ARMOR:
+    case ABILITY_SHELL_ARMOR:
+        if (IsSlicingMove(move))
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+            if (damageCalcData->updateFlags)
+                RecordAbilityBattle(battlerDef, defAbility);
+        }
+        break;
     }
 
     // ally's abilities
@@ -10610,6 +10653,12 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
     case ABILITY_PURIFYING_SALT:
         if (moveType == TYPE_GHOST)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+    case ABILITY_HEAVY_METAL:
+        if (usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.2));
+        if (!usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.2));   
         break;
     }
 
@@ -11419,6 +11468,9 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
             if ((moveType == TYPE_WATER || moveType == TYPE_ICE)
             && abilityDef == ABILITY_EVAPORATE)
             modifier = UQ_4_12(0.0);
+            if (moveType == TYPE_FIRE
+                && abilityDef == ABILITY_HEATPROOF)
+                modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
             modifier = UQ_4_12(0.0);
     }
@@ -12952,8 +13004,10 @@ bool32 IsMovePowderBlocked(u32 battlerAtk, u32 battlerDef, u32 move)
 
     if (IsPowderMove(move) && (battlerAtk != battlerDef))
     {
-        if (B_POWDER_GRASS >= GEN_6
-         && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS) || GetBattlerAbility(battlerDef) == ABILITY_OVERCOAT))
+        if ((B_POWDER_GRASS >= GEN_6
+             && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)))
+            || GetBattlerAbility(battlerDef) == ABILITY_OVERCOAT
+            || GetBattlerAbility(battlerDef) == ABILITY_DAMP)          
         {
             gBattlerAbility = battlerDef;
             RecordAbilityBattle(gBattlerTarget, ABILITY_OVERCOAT);

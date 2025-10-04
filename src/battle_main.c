@@ -4897,6 +4897,10 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_LIGHT_METAL)
+        speed = (speed * 150) / 100;
+    else if (ability == ABILITY_HEAVY_METAL)
+        speed = (speed * 50) / 100;
 
     // stat stages
     speed *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][0];

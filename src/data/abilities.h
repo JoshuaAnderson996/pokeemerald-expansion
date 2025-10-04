@@ -33,7 +33,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BATTLE_ARMOR] =
     {
         .name = _("Battle Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
+        .description = COMPOUND_STRING("Blocks critical hits and cutting moves."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -49,7 +49,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DAMP] =
     {
         .name = _("Damp"),
-        .description = COMPOUND_STRING("Prevents self-destruction."),
+        .description = COMPOUND_STRING("Prevents self-destruction and powder."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -57,7 +57,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIMBER] =
     {
         .name = _("Limber"),
-        .description = COMPOUND_STRING("Prevents paralysis."),
+        .description = COMPOUND_STRING("Prevents paralysis and avoids hazards."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -226,7 +226,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CLEAR_BODY] =
     {
         .name = _("Clear Body"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .description = COMPOUND_STRING("Blocks light and Prevents ability reduction."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -566,7 +566,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] =
     {
         .name = _("Shell Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
+        .description = COMPOUND_STRING("Blocks critical hits and slicing move damage."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -1005,7 +1005,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HEAVY_METAL] =
     {
         .name = _("Heavy Metal"),
-        .description = COMPOUND_STRING("Doubles weight."),
+        .description = COMPOUND_STRING("Doubles weight and reduces contact moves."),
         .aiRating = -1,
         .breakable = TRUE,
     },
@@ -1013,7 +1013,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIGHT_METAL] =
     {
         .name = _("Light Metal"),
-        .description = COMPOUND_STRING("Halves weight."),
+        .description = COMPOUND_STRING("Halves weight and boosts speed."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -2789,5 +2789,17 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Boosts critical hits and ignores abilities."),
         .aiRating = 3,
     },
+[ABILITY_REFRACTORY_METAL] =
+    {
+    .name = _("Refractory Metal"),
+    .description = COMPOUND_STRING("Boosts steel and reduces fire damage, can't be burnt."),
+    .aiRating = 7,
+    },
  
+    [ABILITY_CALAMITY_EDGE] =
+    {
+    .name = _("Calamity Edge"),
+    .description = COMPOUND_STRING("Shields from calamities and boosts slicing power."),
+    .aiRating = 8,
+    },
 };

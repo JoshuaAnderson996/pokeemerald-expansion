@@ -87,6 +87,7 @@ struct MoveInfo
     bool32 wrestlingMove:1;
     bool32 lightMove:1;
     bool32 healingMove:1;
+    bool32 disasterMove:1;
     bool32 minimizeDoubleDamage:1;
     bool32 ignoresTargetAbility:1;
     bool32 ignoresTargetDefenseEvasionStages:1;
@@ -359,6 +360,11 @@ static inline bool32 IsHammerMove(u32 moveId)
 static inline bool32 IsFieldMove(u32 moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].fieldMove;
+}
+
+static inline bool32 IsDisasterMove(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].disasterMove;
 }
 
 static inline bool32 IsLightMove(u32 moveId)
