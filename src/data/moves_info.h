@@ -3266,7 +3266,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the foe."),
         .effect = EFFECT_HIT,
         .power = 100,
-        .type = TYPE_NORMAL,
+        .type = TYPE_FLYING,
         .accuracy = 75,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -10690,6 +10690,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_SeedBomb,
+    },
+
+    [MOVE_GLITTER_BOMB] =
+    {
+        .name = COMPOUND_STRING("Glitter Bomb"),
+        .description = COMPOUND_STRING( 
+            "Throws glitter bomb at foe\n"
+            "may confuse."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),    
+        .ballisticMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MindBlown,
     },
 
     [MOVE_AIR_SLASH] =
