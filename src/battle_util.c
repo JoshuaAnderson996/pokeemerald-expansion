@@ -4989,44 +4989,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
             }
             break;
-        case ABILITY_ANTICIPATION:
-    {
-        u32 side = GetBattlerSide(battler);
-        u16 move, moveType;
-        s32 i, j;
-
-        if (!gSpecialStatuses[battler].switchInAbilityDone)
-        {
-        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        {
-            if (IsBattlerAlive(i) && GetBattlerSide(i) != side)
-            {
-                for (j = 0; j < MAX_MON_MOVES; j++)
-                {
-                    move = gBattleMons[i].moves[j];
-                    if (move == MOVE_NONE)
-                        continue;
-
-                    moveType = GetBattleMoveType(move);
-
-                    if (CalcTypeEffectivenessMultiplier(move, moveType, i, battler, ABILITY_ANTICIPATION, FALSE) >= UQ_4_12(2.0))
-                    {
-                        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_ANTICIPATION;
-                        BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
-                        effect++;
-                        break;
-                    }
-                }
-            }
-        }
-        
-        gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-    }
-
-    // NEW: Reset the "dodge once" flag
-    gSpecialStatuses[battler].anticipationUsed = FALSE;
-    break;
-}
+       
         case ABILITY_FRISK:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -10922,13 +10885,13 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
         break;
     case ABILITY_COSMIC_ALLOY:
     if (typeEffectivenessModifier == UQ_4_12(0.25))
-        return UQ_4_12(0.5);
-    else if (typeEffectivenessModifier == UQ_4_12(0.5))
-        return UQ_4_12(1.0);
-    else if (typeEffectivenessModifier == UQ_4_12(1.0))
         return UQ_4_12(2.0);
+    else if (typeEffectivenessModifier == UQ_4_12(0.5))
+        return UQ_4_12(2.0);
+    else if (typeEffectivenessModifier == UQ_4_12(1.0))
+        return UQ_4_12(1.5);
     else if (typeEffectivenessModifier == UQ_4_12(2.0))
-        return UQ_4_12(2.5);
+        return UQ_4_12(1.5);
     break;
     }
     return UQ_4_12(1.0);
@@ -10936,17 +10899,6 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
 
 static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 battlerAtk, u32 battlerDef, uq4_12_t typeEffectivenessModifier, u32 abilityDef)
 {
-    
-    // ✅ Anticipation logic added here
-    if (abilityDef == ABILITY_ANTICIPATION
-     && !gSpecialStatuses[battlerDef].anticipationUsed
-     && typeEffectivenessModifier > UQ_4_12(1.0))
-    {
-        gSpecialStatuses[battlerDef].anticipationUsed = TRUE;
-        gBattleScripting.battler = battlerDef;
-        BattleScriptPushCursorAndCallback(BattleScript_AnticipationEvadeAttack);
-        return UQ_4_12(0.0);
-    }
     switch (abilityDef)
     {
     case ABILITY_MULTISCALE:
@@ -10958,6 +10910,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     case ABILITY_FILTER:
     case ABILITY_SOLID_ROCK:
     case ABILITY_PRISM_ARMOR:
+    case ABILITY_ANTICIPATION:
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             return UQ_4_12(0.75);
         break;
