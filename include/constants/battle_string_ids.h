@@ -749,357 +749,238 @@
 // and read when e.g. the command printfromtable is used.
 
 // gStatUpStringIds
-enum StatUpStringID
-{
-    B_MSG_ATTACKER_STAT_ROSE,
-    B_MSG_DEFENDER_STAT_ROSE,
-    B_MSG_STAT_WONT_INCREASE,
-    B_MSG_STAT_ROSE_EMPTY,
-    B_MSG_STAT_ROSE_ITEM,
-    B_MSG_USED_DIRE_HIT,
-};
+#define B_MSG_ATTACKER_STAT_ROSE 0
+#define B_MSG_DEFENDER_STAT_ROSE 1
+#define B_MSG_STAT_WONT_INCREASE 2
+#define B_MSG_STAT_ROSE_EMPTY    3
+#define B_MSG_STAT_ROSE_ITEM     4
+#define B_MSG_USED_DIRE_HIT      5
 
 // gStatDownStringIds
-enum StatDownStringID
-{
-    B_MSG_ATTACKER_STAT_FELL = 0,
-    B_MSG_DEFENDER_STAT_FELL = 1,
-    B_MSG_STAT_WONT_DECREASE,
-    B_MSG_STAT_FELL_EMPTY,
-};
+#define B_MSG_ATTACKER_STAT_FELL 0
+#define B_MSG_DEFENDER_STAT_FELL 1
+#define B_MSG_STAT_WONT_DECREASE 2
+#define B_MSG_STAT_FELL_EMPTY    3
 
 // gMissStringIds
-enum MissStringID
-{
-    B_MSG_MISSED,
-    B_MSG_PROTECTED,
-    B_MSG_AVOIDED_ATK,
-    // Ability-related messages need to below this comment
-    B_MSG_AVOIDED_DMG,
-    B_MSG_GROUND_MISS,
-};
+#define B_MSG_MISSED       0
+#define B_MSG_PROTECTED    1
+#define B_MSG_AVOIDED_ATK  2
+#define B_MSG_AVOIDED_DMG  3
+#define B_MSG_GROUND_MISS  4
 
 // gAbsorbDrainStringIds
-enum AbsorbDrainStringID
-{
-    B_MSG_ABSORB,
-    B_MSG_ABSORB_OOZE,
-};
+#define B_MSG_ABSORB      0
+#define B_MSG_ABSORB_OOZE 1
 
 // gLeechSeedStringIds
-enum LeechSeedStringID
-{
-    B_MSG_LEECH_SEED_SET,
-    B_MSG_LEECH_SEED_MISS,
-    B_MSG_LEECH_SEED_FAIL,
-    B_MSG_LEECH_SEED_DRAIN,
-    B_MSG_LEECH_SEED_OOZE,
-};
+#define B_MSG_LEECH_SEED_SET   0
+#define B_MSG_LEECH_SEED_MISS  1
+#define B_MSG_LEECH_SEED_FAIL  2
+#define B_MSG_LEECH_SEED_DRAIN 3
+#define B_MSG_LEECH_SEED_OOZE  4
 
 // gMoveWeatherChangeStringIds
-enum MoveWeatherChangeStringID
-{
-    B_MSG_STARTED_RAIN,
-    B_MSG_STARTED_DOWNPOUR,
-    B_MSG_WEATHER_FAILED,
-    B_MSG_STARTED_SANDSTORM,
-    B_MSG_STARTED_SUNLIGHT,
-    B_MSG_STARTED_HAIL,
-    B_MSG_STARTED_SNOW,
-    B_MSG_STARTED_FOG,
-};
+#define B_MSG_STARTED_RAIN      0
+#define B_MSG_STARTED_DOWNPOUR  1
+#define B_MSG_WEATHER_FAILED    2
+#define B_MSG_STARTED_SANDSTORM 3
+#define B_MSG_STARTED_SUNLIGHT  4
+#define B_MSG_STARTED_HAIL      5
+#define B_MSG_STARTED_SNOW      6
+#define B_MSG_STARTED_FOG       7
 
 // gWeatherEndsStringIds
-enum WeatherEndStringID
-{
-    B_MSG_WEATHER_END_RAIN,
-    B_MSG_WEATHER_END_SUN,
-    B_MSG_WEATHER_END_SANDSTORM,
-    B_MSG_WEATHER_END_HAIL,
-    B_MSG_WEATHER_END_SNOW,
-    B_MSG_WEATHER_END_FOG,
-    B_MSG_WEATHER_END_STRONG_WINDS,
-    B_MSG_WEATHER_END_COUNT
-};
+#define B_MSG_WEATHER_END_RAIN         0
+#define B_MSG_WEATHER_END_SUN          1
+#define B_MSG_WEATHER_END_SANDSTORM    2
+#define B_MSG_WEATHER_END_HAIL         3
+#define B_MSG_WEATHER_END_SNOW         4
+#define B_MSG_WEATHER_END_FOG          5
+#define B_MSG_WEATHER_END_STRONG_WINDS 6
+#define B_MSG_WEATHER_END_COUNT        7
 
 // gWeatherTurnStringIds
-enum WeatherTurnStringID
-{
-    B_MSG_WEATHER_TURN_RAIN,
-    B_MSG_WEATHER_TURN_DOWNPOUR,
-    B_MSG_WEATHER_TURN_SUN,
-    B_MSG_WEATHER_TURN_SANDSTORM,
-    B_MSG_WEATHER_TURN_HAIL,
-    B_MSG_WEATHER_TURN_SNOW,
-    B_MSG_WEATHER_TURN_FOG,
-    B_MSG_WEATHER_TURN_STRONG_WINDS,
-};
+#define B_MSG_WEATHER_TURN_RAIN         0
+#define B_MSG_WEATHER_TURN_DOWNPOUR     1
+#define B_MSG_WEATHER_TURN_SUN          2
+#define B_MSG_WEATHER_TURN_SANDSTORM    3
+#define B_MSG_WEATHER_TURN_HAIL         4
+#define B_MSG_WEATHER_TURN_SNOW         5
+#define B_MSG_WEATHER_TURN_FOG          6
+#define B_MSG_WEATHER_TURN_STRONG_WINDS 7
+#define B_MSG_WEATHER_TURN_COUNT        8
+
+// gRainContinuesStringIds
+#define B_MSG_RAIN_CONTINUES     0
+#define B_MSG_DOWNPOUR_CONTINUES 1
+#define B_MSG_RAIN_STOPPED       2
 
 // gSandStormHailSnowContinuesStringIds / gSandStormHailDmgStringIds/ gSandStormHailSnowEndStringIds
-enum SandstormHailSnowStringID
-{
-    B_MSG_SANDSTORM,
-    B_MSG_HAIL,
-};
+#define B_MSG_SANDSTORM  0
+#define B_MSG_HAIL       1
+#define B_MSG_SNOW       2
 
 // gReflectLightScreenSafeguardStringIds
-enum ReflectLightScreenSafeguardStringID
-{
-    B_MSG_SIDE_STATUS_FAILED,
-    B_MSG_SET_REFLECT_SINGLE,
-    B_MSG_SET_REFLECT_DOUBLE,
-    B_MSG_SET_LIGHTSCREEN_SINGLE,
-    B_MSG_SET_LIGHTSCREEN_DOUBLE,
-    B_MSG_SET_SAFEGUARD,
-};
+#define B_MSG_SIDE_STATUS_FAILED     0
+#define B_MSG_SET_REFLECT_SINGLE     1
+#define B_MSG_SET_REFLECT_DOUBLE     2
+#define B_MSG_SET_LIGHTSCREEN_SINGLE 3
+#define B_MSG_SET_LIGHTSCREEN_DOUBLE 4
+#define B_MSG_SET_SAFEGUARD          5
 
 // gProtectLikeUsedStringIds
-enum ProtectLikeUsedStringID
-{
-    B_MSG_PROTECTED_ITSELF,
-    B_MSG_BRACED_ITSELF,
-    B_MSG_PROTECT_FAILED,
-    B_MSG_PROTECTED_TEAM,
-};
+#define B_MSG_PROTECTED_ITSELF 0
+#define B_MSG_BRACED_ITSELF    1
+#define B_MSG_PROTECT_FAILED   2
+#define B_MSG_PROTECTED_TEAM   3
 
 // gRestUsedStringIds
-enum RestUsedStringID
-{
-    B_MSG_REST,
-    B_MSG_REST_STATUSED,
-};
+#define B_MSG_REST           0
+#define B_MSG_REST_STATUSED  1
 
 // gWokeUpStringIds
-enum WokeUpStringID
-{
-    B_MSG_WOKE_UP,
-    B_MSG_WOKE_UP_UPROAR,
-};
+#define B_MSG_WOKE_UP        0
+#define B_MSG_WOKE_UP_UPROAR 1
 
 // gUproarAwakeStringIds
-enum UproarAwakeStringID
-{
-    B_MSG_CANT_SLEEP_UPROAR,
-    B_MSG_UPROAR_KEPT_AWAKE,
-};
+#define B_MSG_CANT_SLEEP_UPROAR  0
+#define B_MSG_UPROAR_KEPT_AWAKE  1
 
 // gUproarOverTurnStringIds
-enum UproarOverTurnStringID
-{
-    B_MSG_UPROAR_CONTINUES,
-    B_MSG_UPROAR_ENDS,
-};
+#define B_MSG_UPROAR_CONTINUES  0
+#define B_MSG_UPROAR_ENDS       1
 
 // gStockpileUsedStringIds
-enum StockpileUsedStringID
-{
-    B_MSG_STOCKPILED,
-    B_MSG_CANT_STOCKPILE,
-};
+#define B_MSG_STOCKPILED     0
+#define B_MSG_CANT_STOCKPILE 1
 
 // gSwallowFailStringIds
-enum SwallowFailStringID
-{
-    B_MSG_SWALLOW_FAILED,
-    B_MSG_SWALLOW_FULL_HP,
-};
+#define B_MSG_SWALLOW_FAILED  0
+#define B_MSG_SWALLOW_FULL_HP 1
 
 // gKOFailedStringIds
-enum KOFailedStringID
-{
-    B_MSG_KO_MISS,
-    B_MSG_KO_UNAFFECTED,
-};
+#define B_MSG_KO_MISS       0
+#define B_MSG_KO_UNAFFECTED 1
 
 // gMistUsedStringIds
-enum MistUsedStringID
-{
-    B_MSG_SET_MIST,
-    B_MSG_MIST_FAILED,
-};
+#define B_MSG_SET_MIST    0
+#define B_MSG_MIST_FAILED 1
 
 // gFocusEnergyUsedStringIds
-enum FocusEnergyUsedStringID
-{
-    B_MSG_GETTING_PUMPED,
-    B_MSG_FOCUS_ENERGY_FAILED,
-};
+#define B_MSG_GETTING_PUMPED      0
+#define B_MSG_FOCUS_ENERGY_FAILED 1
 
 // gTransformUsedStringIds
-enum TransformUsedStringID
-{
-    B_MSG_TRANSFORMED,
-    B_MSG_TRANSFORM_FAILED,
-};
+#define B_MSG_TRANSFORMED      0
+#define B_MSG_TRANSFORM_FAILED 1
 
 // gSubstituteUsedStringIds
-enum SubstituteUsedStringID
-{
-    B_MSG_SET_SUBSTITUTE,
-    B_MSG_SUBSTITUTE_FAILED,
-};
+#define B_MSG_SET_SUBSTITUTE    0
+#define B_MSG_SUBSTITUTE_FAILED 1
 
 // gPartyStatusHealStringIds
-enum PartyStatusHealStringID
-{
-    B_MSG_BELL,
-    B_MSG_BELL_SOUNDPROOF_ATTACKER,
-    B_MSG_BELL_SOUNDPROOF_PARTNER,
-    B_MSG_BELL_BOTH_SOUNDPROOF,
-    B_MSG_SOOTHING_AROMA,
-};
+#define B_MSG_BELL                     0
+#define B_MSG_BELL_SOUNDPROOF_ATTACKER 1
+#define B_MSG_BELL_SOUNDPROOF_PARTNER  2
+#define B_MSG_BELL_BOTH_SOUNDPROOF     3
+#define B_MSG_SOOTHING_AROMA           4
 
 // gFutureMoveUsedStringIds
-enum FutureMoveUsedStringID
-{
-    B_MSG_FUTURE_SIGHT,
-    B_MSG_DOOM_DESIRE,
-};
+#define B_MSG_FUTURE_SIGHT 0
+#define B_MSG_DOOM_DESIRE  1
 
 // gItemSwapStringIds
-enum ItemSwapStringID
-{
-    B_MSG_ITEM_SWAP_TAKEN,
-    B_MSG_ITEM_SWAP_GIVEN,
-    B_MSG_ITEM_SWAP_BOTH,
-};
+#define B_MSG_ITEM_SWAP_TAKEN 0
+#define B_MSG_ITEM_SWAP_GIVEN 1
+#define B_MSG_ITEM_SWAP_BOTH  2
 
 // gSportsUsedStringIds
-enum SportsUsedStringID
-{
-    B_MSG_WEAKEN_ELECTRIC,
-    B_MSG_WEAKEN_FIRE,
-};
+#define B_MSG_WEAKEN_ELECTRIC 0
+#define B_MSG_WEAKEN_FIRE     1
 
 // gCaughtMonStringIds
-enum CaughtMonStringID
-{
-    B_MSG_NO_MESSSAGE_SKIP,
-    // "Lanette's" should always follow "someone's"
-    B_MSG_SENT_SOMEONES_PC,
-    B_MSG_SENT_LANETTES_PC,
-    B_MSG_SOMEONES_BOX_FULL,
-    B_MSG_LANETTES_BOX_FULL,
-    B_MSG_SWAPPED_INTO_PARTY,
-};
+#define B_MSG_NO_MESSSAGE_SKIP   0
+#define B_MSG_SENT_SOMEONES_PC   1
+#define B_MSG_SENT_LANETTES_PC   2
+#define B_MSG_SOMEONES_BOX_FULL  3
+#define B_MSG_LANETTES_BOX_FULL  4
+#define B_MSG_SWAPPED_INTO_PARTY 5
 
 // gPrimalWeatherBlocksStringIds
-enum PrimalWeatherBlockStringID
-{
-    B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN,
-    B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN,
-};
+#define B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN    0
+#define B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN  1
 
 // gInobedientStringIds
-enum InobedientStringID
-{
-    B_MSG_LOAFING,
-    B_MSG_WONT_OBEY,
-    B_MSG_TURNED_AWAY,
-    B_MSG_PRETEND_NOT_NOTICE,
-    B_MSG_INCAPABLE_OF_POWER,
-};
-
+#define B_MSG_LOAFING            0
+#define B_MSG_WONT_OBEY          1
+#define B_MSG_TURNED_AWAY        2
+#define B_MSG_PRETEND_NOT_NOTICE 3
+#define B_MSG_INCAPABLE_OF_POWER 4
 // For randomly selecting a disobey string
 // Skips the one used for Battle Palace
-#define NUM_LOAF_STRINGS (B_MSG_PRETEND_NOT_NOTICE + 1)
+#define NUM_LOAF_STRINGS 4
 
 // gSafariGetNearStringIds
-enum SafariGetNearStringID
-{
-    B_MSG_CREPT_CLOSER,
-    B_MSG_CANT_GET_CLOSER,
-};
+#define B_MSG_CREPT_CLOSER    0
+#define B_MSG_CANT_GET_CLOSER 1
 
 // gSafariPokeblockResultStringIds
-enum SafariPokeblockResultStringID
-{
-    B_MSG_MON_CURIOUS,
-    B_MSG_MON_ENTHRALLED,
-    B_MSG_MON_IGNORED,
-};
+#define B_MSG_MON_CURIOUS    0
+#define B_MSG_MON_ENTHRALLED 1
+#define B_MSG_MON_IGNORED    2
 
 // gFlashFireStringIds
-enum FlashFireStringID
-{
-    B_MSG_FLASH_FIRE_BOOST,
-    B_MSG_FLASH_FIRE_NO_BOOST,
-};
+#define B_MSG_FLASH_FIRE_BOOST    0
+#define B_MSG_FLASH_FIRE_NO_BOOST 1
 
 #define B_MSG_EXORCIST_BOOST 0
 
 // gBerryEffectStringIds
-enum BerryEffectStringID
-{
-    B_MSG_CURED_PROBLEM,
-    B_MSG_NORMALIZED_STATUS,
-};
+#define B_MSG_CURED_PROBLEM     0
+#define B_MSG_NORMALIZED_STATUS 1
 
 // gNoEscapeStringIds
-enum NoEscapeStringID
-{
-    B_MSG_CANT_ESCAPE,
-    B_MSG_DONT_LEAVE_BIRCH,
-    B_MSG_PREVENTS_ESCAPE,
-    B_MSG_CANT_ESCAPE_2,
-    B_MSG_ATTACKER_CANT_ESCAPE,
-};
+#define B_MSG_CANT_ESCAPE          0
+#define B_MSG_DONT_LEAVE_BIRCH     1
+#define B_MSG_PREVENTS_ESCAPE      2
+#define B_MSG_CANT_ESCAPE_2        3
+#define B_MSG_ATTACKER_CANT_ESCAPE 4
 
 // gGotPoisonedStringIds / gGotParalyzedStringIds / gFellAsleepStringIds
 // gGotBurnedStringIds / gGotFrozenStringIds / gAttractUsedStringIds
-enum GotStatusedStringID
-{
-    B_MSG_STATUSED,
-    B_MSG_STATUSED_BY_ABILITY,
-};
+#define B_MSG_STATUSED            0
+#define B_MSG_STATUSED_BY_ABILITY 1
 
-// gStatusPreventionStringIds
-enum StatusPreventionStringID
-{
-    B_MSG_ABILITY_PREVENTS_MOVE_BURN,
-    B_MSG_ABILITY_PREVENTS_MOVE_PARALYSIS,
-    B_MSG_ABILITY_PREVENTS_MOVE_POISON,
-    B_MSG_ABILITY_PREVENTS_ABILITY_STATUS,
-    B_MSG_STATUS_HAD_NO_EFFECT,
-    B_MSG_ABILITY_PASTEL_VEIL,
-};
+// gBRNPreventionStringIds / gPRLZPreventionStringIds / gPSNPreventionStringIds
+#define B_MSG_ABILITY_PREVENTS_MOVE_STATUS    0
+#define B_MSG_ABILITY_PREVENTS_ABILITY_STATUS 1
+#define B_MSG_STATUS_HAD_NO_EFFECT            2
 
 // gGotDefrostedStringIds
-enum GotDefrostedStringID
-{
-    B_MSG_DEFROSTED,
-    B_MSG_DEFROSTED_BY_MOVE,
-};
+#define B_MSG_DEFROSTED         0
+#define B_MSG_DEFROSTED_BY_MOVE 1
 
 // gFrostbiteHealedStringIds
-enum FrostbiteHealedStringID
-{
-    B_MSG_FROSTBITE_HEALED,
-    B_MSG_FROSTBITE_HEALED_BY_MOVE,
-};
+#define B_MSG_FROSTBITE_HEALED         0
+#define B_MSG_FROSTBITE_HEALED_BY_MOVE 1
 
 // gBattlePalaceFlavorTextTable
-enum BattlePalaceFlavorTextID
-{
-    B_MSG_GLINT_IN_EYE,
-    B_MSG_GETTING_IN_POS,
-    B_MSG_GROWL_DEEPLY,
-    B_MSG_EAGER_FOR_MORE,
-};
+#define B_MSG_GLINT_IN_EYE   0
+#define B_MSG_GETTING_IN_POS 1
+#define B_MSG_GROWL_DEEPLY   2
+#define B_MSG_EAGER_FOR_MORE 3
 
 // gRefereeStringsTable
-enum RefereeStringID
-{
-    B_MSG_REF_NOTHING_IS_DECIDED = 0, // Default, likely actually a magic number somewhere that should be assigned this instead if used at all
-    B_MSG_REF_THATS_IT,
-    B_MSG_REF_JUDGE_MIND,
-    B_MSG_REF_JUDGE_SKILL,
-    B_MSG_REF_JUDGE_BODY,
-    B_MSG_REF_PLAYER_WON,
-    B_MSG_REF_OPPONENT_WON,
-    B_MSG_REF_DRAW,
-    B_MSG_REF_COMMENCE_BATTLE,
-};
+#define B_MSG_REF_NOTHING_IS_DECIDED 0
+#define B_MSG_REF_THATS_IT           1
+#define B_MSG_REF_JUDGE_MIND         2
+#define B_MSG_REF_JUDGE_SKILL        3
+#define B_MSG_REF_JUDGE_BODY         4
+#define B_MSG_REF_PLAYER_WON         5
+#define B_MSG_REF_OPPONENT_WON       6
+#define B_MSG_REF_DRAW               7
+#define B_MSG_REF_COMMENCE_BATTLE    8
 
 // gSwitchInAbilityStringIds
 #define B_MSG_SWITCHIN_MOLDBREAKER      0
@@ -1122,107 +1003,84 @@ enum RefereeStringID
 #define B_MSG_SWITCHIN_STRIKER          17
 
 // gMentalHerbCureStringIds
-enum MentalHerbCureStringID
-{
-    B_MSG_MENTALHERBCURE_INFATUATION,
-    B_MSG_MENTALHERBCURE_TAUNT,
-    B_MSG_MENTALHERBCURE_ENCORE,
-    B_MSG_MENTALHERBCURE_TORMENT,
-    B_MSG_MENTALHERBCURE_HEALBLOCK,
-    B_MSG_MENTALHERBCURE_DISABLE,
-};
+#define B_MSG_MENTALHERBCURE_INFATUATION       0
+#define B_MSG_MENTALHERBCURE_TAUNT             1
+#define B_MSG_MENTALHERBCURE_ENCORE            2
+#define B_MSG_MENTALHERBCURE_TORMENT           3
+#define B_MSG_MENTALHERBCURE_HEALBLOCK         4
+#define B_MSG_MENTALHERBCURE_DISABLE           5
 
 // gTerrainPreventsStringIds
-enum TerrainPreventsStringID
-{
-    B_MSG_TERRAINPREVENTS_MISTY,
-    B_MSG_TERRAINPREVENTS_ELECTRIC,
-    B_MSG_TERRAINPREVENTS_PSYCHIC,
-};
+#define B_MSG_TERRAINPREVENTS_MISTY     0
+#define B_MSG_TERRAINPREVENTS_ELECTRIC  1
+#define B_MSG_TERRAINPREVENTS_PSYCHIC   2
 
 // gTerrainStringIds
-enum TerrainStringID
-{
-    B_MSG_TERRAIN_SET_MISTY,
-    B_MSG_TERRAIN_SET_ELECTRIC,
-    B_MSG_TERRAIN_SET_PSYCHIC,
-    B_MSG_TERRAIN_SET_GRASSY,
-    B_MSG_TERRAIN_END_MISTY,
-    B_MSG_TERRAIN_END_ELECTRIC,
-    B_MSG_TERRAIN_END_PSYCHIC,
-    B_MSG_TERRAIN_END_GRASSY,
-    B_MSG_TERRAIN_COUNT
-};
+#define B_MSG_TERRAIN_SET_MISTY     0
+#define B_MSG_TERRAIN_SET_ELECTRIC  1
+#define B_MSG_TERRAIN_SET_PSYCHIC   2
+#define B_MSG_TERRAIN_SET_GRASSY    3
+#define B_MSG_TERRAIN_END_MISTY     4
+#define B_MSG_TERRAIN_END_ELECTRIC  5
+#define B_MSG_TERRAIN_END_PSYCHIC   6
+#define B_MSG_TERRAIN_END_GRASSY    7
+#define B_MSG_TERRAIN_COUNT         8
 
 // gStartingStatusStringIds
-enum StartingStatusStringID
-{
-    B_MSG_SET_TRICK_ROOM = (B_MSG_TERRAIN_SET_GRASSY + 1),
-    B_MSG_SET_MAGIC_ROOM,
-    B_MSG_SET_WONDER_ROOM,
-    B_MSG_SET_TAILWIND,
-    B_MSG_SET_RAINBOW,
-    B_MSG_SET_SEA_OF_FIRE,
-    B_MSG_SET_SWAMP,
-    B_MSG_STARTING_STATUS_COUNT,
-};
+#define B_MSG_TERRAIN_SET_MISTY     0
+#define B_MSG_TERRAIN_SET_ELECTRIC  1
+#define B_MSG_TERRAIN_SET_PSYCHIC   2
+#define B_MSG_TERRAIN_SET_GRASSY    3
+#define B_MSG_SET_TRICK_ROOM        4
+#define B_MSG_SET_MAGIC_ROOM        5
+#define B_MSG_SET_WONDER_ROOM       6
+#define B_MSG_SET_TAILWIND          7
+#define B_MSG_SET_RAINBOW           8
+#define B_MSG_SET_SEA_OF_FIRE       9
+#define B_MSG_SET_SWAMP             10
+#define B_MSG_STARTING_STATUS_COUNT 11
+
 
 // gWrappedStringIds
-// These correspond in order to sTrappingMoves!
-enum WrappedStringID
-{
-    B_MSG_WRAPPED_BIND,
-    B_MSG_WRAPPED_WRAP,
-    B_MSG_WRAPPED_FIRE_SPIN,
-    B_MSG_WRAPPED_CLAMP,
-    B_MSG_WRAPPED_WHIRLPOOL,
-    B_MSG_WRAPPED_SAND_TOMB,
-    B_MSG_WRAPPED_MAGMA_STORM,
-    B_MSG_WRAPPED_INFESTATION,
-    B_MSG_WRAPPED_SNAP_TRAP,
-    B_MSG_WRAPPED_THUNDER_CAGE,
-    NUM_TRAPPING_MOVES,
-};
+#define B_MSG_WRAPPED_BIND         0
+#define B_MSG_WRAPPED_WRAP         1
+#define B_MSG_WRAPPED_FIRE_SPIN    2
+#define B_MSG_WRAPPED_CLAMP        3
+#define B_MSG_WRAPPED_WHIRLPOOL    4
+#define B_MSG_WRAPPED_SAND_TOMB    5
+#define B_MSG_WRAPPED_MAGMA_STORM  6
+#define B_MSG_WRAPPED_INFESTATION  7
+#define B_MSG_WRAPPED_SNAP_TRAP    8
+#define B_MSG_WRAPPED_THUNDER_CAGE 9
+#define NUM_TRAPPING_MOVES         10
 
 // z effects
-enum ZEffectStringID
-{
-    B_MSG_Z_RESET_STATS,
-    B_MSG_Z_ALL_STATS_UP,
-    B_MSG_Z_BOOST_CRITS,
-    B_MSG_Z_FOLLOW_ME,
-    B_MSG_Z_RECOVER_HP,
-    B_MSG_Z_STAT_UP,
-    B_MSG_Z_HP_TRAP,
-};
+#define B_MSG_Z_RESET_STATS   0
+#define B_MSG_Z_ALL_STATS_UP  1
+#define B_MSG_Z_BOOST_CRITS   2
+#define B_MSG_Z_FOLLOW_ME     3
+#define B_MSG_Z_RECOVER_HP    4
+#define B_MSG_Z_STAT_UP       5
+#define B_MSG_Z_HP_TRAP       6
 
 // gDmgHazardsStringIds
-enum DmgHazardStringID
-{
-    B_MSG_PKMNHURTBYSPIKES,
-    B_MSG_STEALTHROCKDMG,
-    B_MSG_SHARPSTEELDMG,
-    B_MSG_POINTEDSTONESFLOAT,
-    B_MSG_SPIKESSCATTERED,
-    B_MSG_SHARPSTEELFLOATS,
-};
+#define B_MSG_PKMNHURTBYSPIKES   0
+#define B_MSG_STEALTHROCKDMG     1
+#define B_MSG_SHARPSTEELDMG      2
+#define B_MSG_POINTEDSTONESFLOAT 3
+#define B_MSG_SPIKESSCATTERED    4
+#define B_MSG_SHARPSTEELFLOATS   5
 
 // gDamageNonTypesStartStringIds
-enum DamageNonTypesStartStringID
-{
-    B_MSG_TRAPPED_WITH_VINES,
-    B_MSG_CAUGHT_IN_VORTEX,
-    B_MSG_SURROUNDED_BY_FIRE,
-    B_MSG_SURROUNDED_BY_ROCKS,
-};
+#define B_MSG_TRAPPED_WITH_VINES  0
+#define B_MSG_CAUGHT_IN_VORTEX    1
+#define B_MSG_SURROUNDED_BY_FIRE  2
+#define B_MSG_SURROUNDED_BY_ROCKS 3
 
 // gDamageNonTypesDmgStringIds
-enum DamageNonTypesDmgStringID
-{
-    B_MSG_HURT_BY_VINES,
-    B_MSG_HURT_BY_VORTEX,
-    B_MSG_BURNING_UP,
-    B_MSG_HURT_BY_ROCKS_THROWN,
-};
+#define B_MSG_HURT_BY_VINES  0
+#define B_MSG_HURT_BY_VORTEX    1
+#define B_MSG_BURNING_UP  2
+#define B_MSG_HURT_BY_ROCKS_THROWN 3
 
 #endif // GUARD_CONSTANTS_BATTLE_STRING_IDS_H

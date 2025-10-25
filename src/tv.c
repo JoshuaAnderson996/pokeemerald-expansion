@@ -198,31 +198,31 @@ static const struct {
         .species = SPECIES_SEEDOT,
         .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
         .level = 3,
-        .location = MAP_NUM(MAP_ROUTE102)
+        .location = MAP_NUM(ROUTE102)
     },
     {
         .species = SPECIES_NUZLEAF,
         .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
         .level = 15,
-        .location = MAP_NUM(MAP_ROUTE114),
+        .location = MAP_NUM(ROUTE114),
     },
     {
         .species = SPECIES_SEEDOT,
         .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
         .level = 13,
-        .location = MAP_NUM(MAP_ROUTE117),
+        .location = MAP_NUM(ROUTE117),
     },
     {
         .species = SPECIES_SEEDOT,
         .moves = {MOVE_GIGA_DRAIN, MOVE_FRUSTRATION, MOVE_SOLAR_BEAM, MOVE_LEECH_SEED},
         .level = 25,
-        .location = MAP_NUM(MAP_ROUTE120),
+        .location = MAP_NUM(ROUTE120),
     },
     {
         .species = SPECIES_SKITTY,
         .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
         .level = 8,
-        .location = MAP_NUM(MAP_ROUTE116),
+        .location = MAP_NUM(ROUTE116),
     }
 };
 
@@ -835,8 +835,8 @@ void UpdateTVScreensOnMap(int width, int height)
         break;
 //  case PLAYERS_HOUSE_TV_NONE:
     default:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
         {
             // NPC in Lilycove Hotel is always watching TV
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
@@ -983,7 +983,6 @@ static void TakeGabbyAndTyOffTheAir(void)
     gSaveBlock1Ptr->gabbyAndTyData.onAir = FALSE;
 }
 
-// See gabby_and_ty.inc for details
 u8 GabbyAndTyGetBattleNum(void)
 {
     if (gSaveBlock1Ptr->gabbyAndTyData.battleNum > 5)
@@ -1025,42 +1024,41 @@ u8 GabbyAndTyGetLastBattleTrivia(void)
     return 0;
 }
 
-// See gabby_and_ty.inc for details
 void GetGabbyAndTyLocalIds(void)
 {
     switch (GabbyAndTyGetBattleNum())
     {
     case 1:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_1;
+        gSpecialVar_0x8004 = 14;
+        gSpecialVar_0x8005 = 13;
         break;
     case 2:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_1;
+        gSpecialVar_0x8004 = 5;
+        gSpecialVar_0x8005 = 6;
         break;
     case 3:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_1;
+        gSpecialVar_0x8004 = 18;
+        gSpecialVar_0x8005 = 17;
         break;
     case 4:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_2;
+        gSpecialVar_0x8004 = 21;
+        gSpecialVar_0x8005 = 22;
         break;
     case 5:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_2;
+        gSpecialVar_0x8004 = 8;
+        gSpecialVar_0x8005 = 9;
         break;
     case 6:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_2;
+        gSpecialVar_0x8004 = 19;
+        gSpecialVar_0x8005 = 20;
         break;
     case 7:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_3;
+        gSpecialVar_0x8004 = 23;
+        gSpecialVar_0x8005 = 24;
         break;
     case 8:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_3;
+        gSpecialVar_0x8004 = 10;
+        gSpecialVar_0x8005 = 11;
         break;
     }
 }
@@ -1492,8 +1490,8 @@ void TryPutSmartShopperOnAir(void)
     TVShow *show;
     u8 i;
 
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_HILL_ENTRANCE))
-     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_MART))
+    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
+     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_MART))
      && !rbernoulli(1, 3))
     {
         sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
@@ -2652,14 +2650,14 @@ static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
     switch (newsKind)
     {
     case POKENEWS_SLATEPORT:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SLATEPORT_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SLATEPORT_CITY)
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
          && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
             return TRUE;
         return FALSE;
     case POKENEWS_LILYCOVE:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
             return TRUE;
         return FALSE;
     }
@@ -3329,18 +3327,18 @@ u32 GetPlayerIDAsU32(void)
 u8 CheckForPlayersHouseNews(void)
 {
     // Check if not in Littleroot house map group
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
         return PLAYERS_HOUSE_TV_NONE;
 
     // Check if not in player's house (dependent on gender)
     if (gSaveBlock2Ptr->playerGender == MALE)
     {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
             return PLAYERS_HOUSE_TV_NONE;
     }
     else
     {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F))
+        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(LITTLEROOT_TOWN_MAYS_HOUSE_1F))
             return PLAYERS_HOUSE_TV_NONE;
     }
 
@@ -3356,11 +3354,11 @@ u8 CheckForPlayersHouseNews(void)
 void GetMomOrDadStringForTVMessage(void)
 {
     // If the player is checking the TV in their house it will only refer to their Mom.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
     {
         if (gSaveBlock2Ptr->playerGender == MALE)
         {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
             {
                 StringCopy(gStringVar1, gText_Mom);
                 VarSet(VAR_TEMP_3, 1);
@@ -3368,7 +3366,7 @@ void GetMomOrDadStringForTVMessage(void)
         }
         else
         {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F))
+            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(LITTLEROOT_TOWN_MAYS_HOUSE_1F))
             {
                 StringCopy(gStringVar1, gText_Mom);
                 VarSet(VAR_TEMP_3, 1);
@@ -3412,7 +3410,7 @@ void GetMomOrDadStringForTVMessage(void)
 void HideBattleTowerReporter(void)
 {
     VarSet(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0);
-    RemoveObjectEventByLocalIdAndMap(LOCALID_TOWER_LOBBY_REPORTER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    RemoveObjectEventByLocalIdAndMap(LOCALID_BATTLE_TOWER_LOBBY_REPORTER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     FlagSet(FLAG_HIDE_BATTLE_TOWER_REPORTER);
 }
 
