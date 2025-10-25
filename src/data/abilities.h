@@ -798,7 +798,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ANTICIPATION] =
     {
         .name = _("Anticipation"),
-        .description = COMPOUND_STRING("Reduces Super effective moves by 25%."),
+        .description = COMPOUND_STRING("Senses dangerous moves."),
         .aiRating = 2,
     },
 
