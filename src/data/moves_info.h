@@ -990,7 +990,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A full-body slam that may\n"
             "cause paralysis."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SMACK_DOWN,
         .power = 85,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -1005,9 +1005,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 30,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
 
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
@@ -9701,7 +9698,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A swinging fist attack\n"
             "that also lowers Speed."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SMACK_DOWN,
         .power = 100,
         .type = TYPE_FIGHTING,
         .accuracy = 90,
@@ -9714,9 +9711,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .self = TRUE,
-        },
-         {
-            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -16469,7 +16463,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Swings the fist to strike.\n"
             "Lowers the user's Speed."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SMACK_DOWN,
         .power = 100,
         .type = TYPE_ICE,
         .accuracy = 90,
@@ -16482,9 +16476,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
             .self = TRUE,
-        },
-         {
-            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -17150,7 +17141,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Swings its whole body\n"
             "like a hammer to damage."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SMACK_DOWN,
         .power = 90,
         .type = TYPE_DRAGON,
         .accuracy = 100,
@@ -17160,9 +17151,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .hammerMove = TRUE,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-         .moveEffect = MOVE_EFFECT_SMACK_DOWN,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -18082,7 +18070,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Prevents the user and\n"
             "the target from escaping."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SMACK_DOWN,
         .power = 80,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -18094,9 +18082,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .bitingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TRAP_BOTH,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_SMACK_DOWN,
         }),
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -22328,7 +22313,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 100,
         .type = TYPE_COSMIC,
         .accuracy = 100,
-        .recoil = 33,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -22356,7 +22340,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 100,
         .type = TYPE_COSMIC,
         .accuracy = 100,
-        .recoil = 33,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -22943,11 +22926,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A life-risking tackle that\n"
             "also hurts the user."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_FAIRY,
         .accuracy = 100,
-        .recoil = 33,
+        .argument = { .recoilPercentage = 33 },
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,

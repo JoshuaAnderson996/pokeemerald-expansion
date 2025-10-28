@@ -528,6 +528,12 @@ bool32 IsDamageMoveUnusable(u32 battlerAtk, u32 battlerDef, u32 move, u32 moveTy
 
     switch (GetMoveEffect(move))
     {
+    case EFFECT_HIT:
+            return FALSE;
+    
+    case EFFECT_NON_VOLATILE_STATUS: 
+        return FALSE;
+
     case EFFECT_DREAM_EATER:
         if (!AI_IsBattlerAsleepOrComatose(battlerDef))
             return TRUE;
@@ -565,11 +571,18 @@ bool32 IsDamageMoveUnusable(u32 battlerAtk, u32 battlerDef, u32 move, u32 moveTy
     case EFFECT_MIND_BLOWN:
         if (battlerDefAbility == ABILITY_DAMP || partnerDefAbility == ABILITY_DAMP)
             return TRUE;
-        break;
-    }
+        case EFFECT_PLACEHOLDER:
+    return TRUE;
 
-    return FALSE;
+default:
+    break; // nothing special
 }
+
+// If we didn't early-return TRUE (unusable), it's usable:
+return FALSE;
+}
+    
+
 
 static inline s32 GetDamageByRollType(s32 dmg, enum DamageRollType rollType)
 {

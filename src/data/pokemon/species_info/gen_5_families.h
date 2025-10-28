@@ -656,8 +656,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_MOVE, MOVE_CEASELESS_EDGE, SPECIES_SAMUROTT_HISUI}),
+        .evolutions = EVOLUTION(
+        {EVO_LEVEL, 36, SPECIES_SAMUROTT_HISUI, CONDITIONS({ IF_KNOWS_MOVE, MOVE_CEASELESS_EDGE })},
+            {EVO_LEVEL, 36, SPECIES_SAMUROTT}
+        ),
     },
 
     [SPECIES_SAMUROTT] =

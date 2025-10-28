@@ -10680,25 +10680,7 @@ static void Cmd_various(void)
         }
         break;    
     }
-    case VARIOUS_TRY_ACTIVATE_POWER_OF_ALCHEMY:
-    {
-    VARIOUS_ARGS();
-
-    if (IsBattlerAlive(battler)
-        && GetBattlerAbility(battler) == ABILITY_POWER_OF_ALCHEMY
-        && HasAttackerFaintedTarget()
-        && !NoAliveMonsForEitherParty()
-        && !gAbilitiesInfo[gBattleMons[gBattlerTarget].ability].cantBeCopied
-        && GetBattlerHoldEffect(gBattlerTarget, TRUE) != HOLD_EFFECT_ABILITY_SHIELD)
-    {
-        gBattleStruct->tracedAbility[battler] = gBattleMons[gBattlerTarget].ability;
-        gBattleScripting.battler = battler;
-        BattleScriptPush(cmd->nextInstr);
-        gBattlescriptCurrInstr = BattleScript_ReceiverActivates;  // Reuse existing animation
-        return;
-    }
-    break;
-    }
+    
     case VARIOUS_TRY_ACTIVATE_SOULHEART:
     {
         VARIOUS_ARGS();
@@ -15047,13 +15029,13 @@ static void Cmd_trywish(void)
 {
     CMD_ARGS(u8 turnNumber, const u8 *failInstr, const u8 *healBlockedInstr);
 
-    if (gStatuses3[gBattlerTarget] & STATUS3_HEAL_BLOCK)
+    switch (cmd->turnNumber)
     {
     case 0: // use wish
         if (gWishFutureKnock.wishCounter[gBattlerAttacker] <= gBattleTurnCounter)
         {
-            gWishFutureKnock.wishCounter[gBattlerAttacker] = gBattleTurnCounter + 2;
-            gWishFutureKnock.wishPartyId[gBattlerAttacker] = gBattlerPartyIndexes[gBattlerAttacker];
+            gWishFutureKnock.wishCounter[gBattlerAttacker]   = gBattleTurnCounter + 2;
+            gWishFutureKnock.wishPartyId[gBattlerAttacker]   = gBattlerPartyIndexes[gBattlerAttacker];
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else
@@ -15061,24 +15043,31 @@ static void Cmd_trywish(void)
             gBattlescriptCurrInstr = cmd->failInstr;
         }
         break;
+
     case 1: // heal effect
         PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattlerTarget, gWishFutureKnock.wishPartyId[gBattlerTarget])
+
         if (B_WISH_HP_SOURCE >= GEN_5)
             gBattleStruct->moveDamage[gBattlerTarget] = max(1, GetMonData(&GetBattlerParty(gBattlerTarget)[gWishFutureKnock.wishPartyId[gBattlerTarget]], MON_DATA_MAX_HP) / 2);
         else
             gBattleStruct->moveDamage[gBattlerTarget] = max(1, GetNonDynamaxMaxHP(gBattlerAttacker) / 2);
 
         gBattleStruct->moveDamage[gBattlerTarget] *= -1;
-	if (gStatuses3[gBattlerTarget] & STATUS3_HEAL_BLOCK)
-	    gBattlescriptCurrInstr = cmd->healBlockedInstr;
-	else if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
+
+        if (gStatuses3[gBattlerTarget] & STATUS3_HEAL_BLOCK)
+            gBattlescriptCurrInstr = cmd->healBlockedInstr;
+        else if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
             gBattlescriptCurrInstr = cmd->failInstr;
         else
             gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
 
+    default:
+        gBattlescriptCurrInstr = cmd->nextInstr;
         break;
     }
 }
+
 
 static void Cmd_settoxicspikes(void)
 {

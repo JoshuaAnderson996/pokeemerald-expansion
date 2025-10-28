@@ -5877,7 +5877,12 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case EFFECT_CHANGE_TYPE_ON_ITEM:
     case EFFECT_REVELATION_DANCE:
     case EFFECT_TERRAIN_PULSE:
+    case EFFECT_PLACEHOLDER:     
+        return TYPE_NONE;
         return ateType;
+
+        default:
+        break;
     }
 
     switch (attackerAbility)
@@ -5908,7 +5913,6 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
         break;           
     default:
         ateType = TYPE_NONE;
-        break;
     }
 
     return ateType;

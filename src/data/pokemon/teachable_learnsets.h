@@ -32091,8 +32091,8 @@ static const u16 sFlappleTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_BULLET_SEED,
-    MOVE_DRAGON_DANCE,
     MOVE_DEFENSE_CURL,
+    MOVE_DRAGON_DANCE,
     MOVE_ENDURE,
     MOVE_FACADE,
     MOVE_FLY,
@@ -33189,8 +33189,8 @@ static const u16 sZamazentaTeachableLearnset[] = {
 
 #if P_FAMILY_ETERNATUS
 static const u16 sEternatusTeachableLearnset[] = {
-    MOVE_DRAGON_DANCE,
     MOVE_BODY_SLAM,
+    MOVE_DRAGON_DANCE,
     MOVE_ENDURE,
     MOVE_FACADE,
     MOVE_FIRE_BLAST,
@@ -34992,8 +34992,8 @@ static const u16 sDondozoTeachableLearnset[] = {
 
 #if P_FAMILY_TATSUGIRI
 static const u16 sTatsugiriTeachableLearnset[] = {
-    MOVE_DRAGON_DANCE,
     MOVE_COUNTER,
+    MOVE_DRAGON_DANCE,
     MOVE_ENDURE,
     MOVE_FACADE,
     MOVE_HYPER_BEAM,

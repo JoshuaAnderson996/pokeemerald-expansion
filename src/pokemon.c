@@ -3716,26 +3716,26 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst, bool8 re
     dst->types[0] = gSpeciesInfo[dst->species].types[0];
     dst->types[1] = gSpeciesInfo[dst->species].types[1];
     dst->types[2] = TYPE_MYSTERY;
-    dst->isShiny = IsMonShiny(src);
+    dst->isShiny = GetMonData(src, MON_DATA_IS_SHINY, NULL);
     dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
 
-    if (resetStats)
-    {
-        for (i = 0; i < NUM_BATTLE_STATS; i++)
-            dst->statStages[i] = DEFAULT_STAT_STAGE;
+    for (i = 0; i < NUM_BATTLE_STATS; i++)
+        dst->statStages[i] = DEFAULT_STAT_STAGE;
 
-        dst->status2 = 0;
-    }
+    dst->status2 = 0;
 }
 
 void CopyPartyMonToBattleData(u32 battler, u32 partyIndex)
 {
     u32 side = GetBattlerSide(battler);
     struct Pokemon *party = GetSideParty(side);
-    PokemonToBattleMon(&party[partyIndex], &gBattleMons[battler]);
+
+    // Rebuild the BattlePokemon from the party data and reset stats/stages
+    PokemonToBattleMon(&party[partyIndex], &gBattleMons[battler], TRUE);
+
     gBattleStruct->hpOnSwitchout[side] = gBattleMons[battler].hp;
     UpdateSentPokesToOpponentValue(battler);
     ClearTemporarySpeciesSpriteData(battler, FALSE, FALSE);
