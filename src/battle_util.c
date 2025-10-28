@@ -9406,7 +9406,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if ((weather & B_WEATHER_SANDSTORM) && HasWeatherEffect() && IsBattleMovePhysical(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));    
         break;
-    case ABILITY_FROST_MONARC:
+    case ABILITY_FROST_MONARCH:
     if ((gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && HasWeatherEffect() && IsBattleMoveSpecial(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
     break;

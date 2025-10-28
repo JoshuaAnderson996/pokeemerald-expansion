@@ -2585,7 +2585,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("All contact lowers Def."),
         .aiRating = 7,
     },
-    [ABILITY_FROST_MONARC] =
+    [ABILITY_FROST_MONARCH] =
     {
         .name = _("Snow Warning"),
     #if B_SNOW_WARNING >= GEN_9
