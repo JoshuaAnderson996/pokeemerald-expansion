@@ -5086,33 +5086,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_FLAME_BODY:
         case ABILITY_SOLARIS:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
-             && IsBattlerAlive(gBattlerTarget)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
-             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
-             && IsMoveMakingContact(move, gBattlerAttacker)
-             && IsBattlerTurnDamaged(gBattlerTarget) // Actually hit the target
-             && RandomPercentage(RNG_FLAME_BODY, 100)) // 30% chance
+            && IsBattlerAlive(gBattlerAttacker) // attacker must be alive to receive status
+            && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+            && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), move)
+            && IsBattlerTurnDamaged(gBattlerTarget) // holder actually took damage
+            && CanBeBurned(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker)) // attacker can be burned
+            && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
+            && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
             {
-                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
-                gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
-                effect++;
-            }
-            break;
-        case ABILITY_STATIC:
-            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
-             && IsBattlerAlive(gBattlerTarget)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeParalyzed(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
-             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
-             && IsMoveMakingContact(move, gBattlerAttacker)
-             && IsBattlerTurnDamaged(gBattlerTarget) // Actually hit the target
-             && RandomPercentage(RNG_STATIC, 100)) // 30% chance
-            {
-                gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
+                gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_BURN; // apply to move user
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
@@ -5167,16 +5149,16 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             && IsBattlerAlive(gBattlerAttacker)
             && CompareStat(gBattlerAttacker, STAT_DEF, MIN_STAT_STAGE, CMP_GREATER_THAN)
             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+            && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), move)
             && IsBattlerTurnDamaged(gBattlerTarget)
-            && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
-            && IsMoveMakingContact(move, gBattlerAttacker))
+            && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS)
             {
-        SET_STATCHANGER(STAT_DEF, 1, TRUE); // Lower DEF by 1 stage
-        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-        BattleScriptPushCursor();
-        gBattlescriptCurrInstr = BattleScript_ShellsplinterActivates;
-        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
-        effect++;
+                SET_STATCHANGER(STAT_DEF, 1, TRUE); // Lower DEF by 1 stage
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_ShellsplinterActivates;
+                gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                effect++;
             }
             break;
         case ABILITY_FLURRY_FEET:
@@ -9469,9 +9451,15 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));   
         break;
     case ABILITY_HEAVY_METAL:
-        if (IsMoveMakingContact(move, gBattlerAttacker))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
-        break;
+    if (!CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget,
+                                      GetBattlerAbility(gBattlerAttacker),
+                                      GetBattlerHoldEffect(gBattlerAttacker, TRUE),
+                                      move)
+     && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS)
+    {
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+    }
+    break;
     case ABILITY_BATTLE_ARMOR:
     case ABILITY_SHELL_ARMOR:
         if (IsSlicingMove(move))
