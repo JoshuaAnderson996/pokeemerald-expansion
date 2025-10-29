@@ -9707,27 +9707,36 @@ BattleScript_SleepClausePreventsEnd::
 	end2
 
 BattleScript_ShellsplinterActivates::
-    waitstate
-    call BattleScript_AbilityPopUp
-    seteffectsecondary MOVE_EFFECT_DEF_MINUS_1
-    swapattackerwithtarget
-    return
+	waitstate
+	call BattleScript_AbilityPopUp
+	swapattackerwithtarget
+	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_DEF_MINUS_1
+	swapattackerwithtarget
+	return
 
 BattleScript_FortifyActivates::
-    call BattleScript_AbilityPopUp          
-    setstatchanger STAT_DEF, 1, FALSE
-    statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUp
-    setstatchanger STAT_SPDEF, 1, FALSE
-    statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatUp
-    return
+	call BattleScript_AbilityPopUp          
+	setstatchanger STAT_DEF, 1, FALSE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_FortifyTrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_FortifyTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FortifyTrySpDef:
+	setstatchanger STAT_SPDEF, 1, FALSE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_FortifyEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_FortifyEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FortifyEnd:
+	return
 
 BattleScript_FlurryFeetActivates::
-    waitstate
-    call BattleScript_AbilityPopUp
-    swapattackerwithtarget
-    seteffectsecondary MOVE_EFFECT_SPD_PLUS_1
-    swapattackerwithtarget
-    return
+	waitstate
+	call BattleScript_AbilityPopUp
+	swapattackerwithtarget
+	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_SPD_PLUS_1
+	swapattackerwithtarget
+	return
 
 BattleScript_QuestionForfeitBattle::
 	printselectionstring STRINGID_QUESTIONFORFEITBATTLE

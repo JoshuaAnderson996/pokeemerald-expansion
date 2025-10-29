@@ -4066,9 +4066,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .lightMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_ACCURACY_DOWN,
-                .chance = 100,
-            }),
+            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+            .chance = 100,
+        }),
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
@@ -4343,35 +4343,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Sharpen,
-        .validApprenticeMove = TRUE,
-    },
-
-    [MOVE_BETTER_EGDE] =
-    {
-        .name = COMPOUND_STRING("Better Edge"),
-        .description = COMPOUND_STRING(
-            "Sharpens blade edges\n"
-            "and raises Attack."),
-        .effect = EFFECT_ATTACK_UP,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 30,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_FOCUS_ENERGY,
-            .chance = 100,
-        }),
         .snatchAffected = TRUE,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
@@ -12030,7 +12001,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_ELECTRIC,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -12038,7 +12009,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
             .self = TRUE,
-            .chance = 100,
+            .chance = 50,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -14555,7 +14526,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
             .self = TRUE,
-            .chance = 100,
+            .chance = 50,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -17630,7 +17601,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .additionalEffects = ADDITIONAL_EFFECTS({
             .chance = 100,
-            .sheerForceBoost = SHEER_FORCE_BOOST,
+            .sheerForceOverride = TRUE,
             .moveEffect = MOVE_EFFECT_ION_DELUGE,
         }),
         .battleAnimScript = gBattleAnimMove_PlasmaFists,
@@ -18106,7 +18077,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .bitingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_SPEED_DOWN,
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 100,
         }),
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -21724,7 +21696,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_EFFECT_SPORE_SIDE,
             .chance = 100,
-            .sheerForceBoost = SHEER_FORCE_BOOST,
+            .sheerForceOverride = TRUE,
         }),
     },
 
@@ -21768,10 +21740,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pulseMove = TRUE,
         .magicMove = TRUE,
         .ballisticMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-        .moveEffect = EFFECT_MAGIC_ROOM,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -21795,7 +21763,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ninjaMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_ACCURACY_DOWN,
+            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
                 .chance = 100,
             }),
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
@@ -21825,8 +21793,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_STEALTH_ROCK,
-                .chance = 100,
-            }),
+            .chance = 100,
+        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -22751,57 +22719,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_ZingZap,
     },
-    [MOVE_LUCKY_DANCE] =
-    {
-        .name = COMPOUND_STRING("Lucky Dance"),
-        .description = COMPOUND_STRING(
-            "The users does a ritual dance\n"
-            "that boosts speed and Crit."),
-        .effect = EFFECT_SPEED_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_FOCUS_ENERGY,
-            .chance = 100,
-        }),
-        .snatchAffected = TRUE,
-        .danceMove = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Sharpen,
-        .validApprenticeMove = TRUE,
-    },
-     [MOVE_ENERGY_BEAM] =
-    {
-        .name = COMPOUND_STRING("Energy Beam"),
-        .description = COMPOUND_STRING(
-            "Shoots a beam of light.\n"
-            "ups SP.Atk."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .lightMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        }),
-        .battleAnimScript = gBattleAnimMove_FickleBeam,
-    },
+    
     [MOVE_ANCIENT_METEOR] =
     {
         .name = COMPOUND_STRING("Ancient Meteor"),
@@ -23019,7 +22937,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_GRAVITY,
             .chance = 50,
-            .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+            .sheerForceOverride = TRUE,
         }),
     },
     [MOVE_GRAVITY_FIST] =
@@ -23040,7 +22958,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     .additionalEffects = ADDITIONAL_EFFECTS({
         .moveEffect = MOVE_EFFECT_GRAVITY,
         .chance = 100,
-        .sheerForceBoost = SHEER_FORCE_NO_BOOST,
+        .sheerForceOverride = TRUE,
     }),
     },
     [MOVE_LIGHTSPEED] =

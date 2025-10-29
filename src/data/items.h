@@ -6367,7 +6367,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BUTTERFITE] =
     {
-        .name = _("Butterfite"),
+        .name = ITEM_NAME("Butterfite"),
         .price = 12000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6375,16 +6375,16 @@ const struct Item gItemsInfo[] =
             "Butterfree to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-
     [ITEM_MACHAMPITE] =
     {
-        .name = _("Machampite"),
+        .name = ITEM_NAME("Machampite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6392,16 +6392,16 @@ const struct Item gItemsInfo[] =
             "Machamp to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-
     [ITEM_KINGLERITE] =
     {
-        .name = _("Kinglerite"),
+        .name = ITEM_NAME("Kinglerite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6409,16 +6409,16 @@ const struct Item gItemsInfo[] =
             "Kingler to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-
     [ITEM_LAPRASITE] =
     {
-        .name = _("Laprasite"),
+        .name = ITEM_NAME("Laprasite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6426,16 +6426,16 @@ const struct Item gItemsInfo[] =
             "Lapras to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-
     [ITEM_SNORLAXITE] =
     {
-        .name = _("Snorlaxite"),
+        .name = ITEM_NAME("Snorlaxite"),
         .price = 12000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6443,322 +6443,322 @@ const struct Item gItemsInfo[] =
             "Snorlax to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-    
 [ITEM_GARBODORITE] = 
-    {
-        .name = _("Garbodorite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Garbodor to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Garbodorite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Garbodor to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_MELMETALITE] = 
-    {
-        .name = _("Melmetalite"),
-        .price = 20000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Melmetal to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Melmetalite"),
+    .price = 20000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Melmetal to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_RILLABITE] = 
-    {
-        .name = _("Rillabite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Rillaboom to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Rillabite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Rillaboom to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_CINDERITE] = 
-    {
-        .name = _("Cinderite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Cinderace to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Cinderite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Cinderace to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_INTELITE] = 
-    {
-        .name = _("Intelite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Inteleon to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Intelite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Inteleon to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_CORVIKNITE] = 
-    {
-        .name = _("Corviknite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Corviknight to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Corviknite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Corviknight to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_ORBITE] = 
-    {
-        .name = _("Orbite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Orbeetle to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Orbite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Orbeetle to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_DREDNITE] = 
-    {
-        .name = _("Drednite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Drednaw to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Drednite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Drednaw to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_COALOSSALITE] = 
-    {
-        .name = _("Coalossalite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Coalossal to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Coalossalite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Coalossal to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_FLAPPLITE] = 
-    {
-        .name = _("Flapplite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Flapple to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Flapplite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Flapple to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_APPLITE] = 
-    {
-        .name = _("Applite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Appletun to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Applite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Appletun to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_SANDITE] = 
-    {
-        .name = _("Sandite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Sandaconda to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Sandite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Sandaconda to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_TOXTRITE] = 
-    {
-        .name = _("Toxtrite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Toxtricity to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Toxtrite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Toxtricity to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_CENTITE] = 
-    {
-        .name = _("Centite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Centiskorch to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Centite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Centiskorch to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_HATTERITE] = 
-    {
-        .name = _("Hatterite"),
-        .price = 15600,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Hatterene to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Hatterite"),
+    .price = 15600,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Hatterene to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_ALCREMITE] = 
-    {
-        .name = _("Alcremite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Alcremie to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Alcremite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Alcremie to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_COPPERITE] = 
-    {
-        .name = _("Copperite"),
-        .price = 12000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Copperajah to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Copperite"),
+    .price = 12000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Copperajah to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
 [ITEM_URSHITE] = 
-    {
-        .name = _("Urshite"),
-        .price = 20000,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Urshifu to Mega\n"
-            "Evolve in battle."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 80,
-        .iconPic = gItemIcon_Diancite,
-        .iconPalette = gItemIconPalette_Diancite,
-    },
-
+{
+    .name = ITEM_NAME("Urshite"),
+    .price = 20000,
+    .holdEffect = HOLD_EFFECT_MEGA_STONE,
+    .description = COMPOUND_STRING(
+        "This stone enables\n"
+        "Urshifu to Mega\n"
+        "Evolve in battle."),
+    .pocket = POCKET_ITEMS,
+    .sortType = ITEM_TYPE_MEGA_STONE,
+    .type = ITEM_USE_BAG_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    .flingPower = 80,
+    .iconPic = gItemIcon_Diancite,
+    .iconPalette = gItemIconPalette_Diancite,
+},
     [ITEM_URSHITE_R] = 
     {
-        .name = _("Urshite R"),
+        .name = ITEM_NAME("Urshite R"),
         .price = 20000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -6766,6 +6766,7 @@ const struct Item gItemsInfo[] =
             "Urshifu to Mega\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
@@ -6775,7 +6776,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_GRIMMITE] = 
     {
-        .name = _("Grimmite"),
+        .name = ITEM_NAME("Grimmite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15018,7 +15019,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_NULLIFIER] =
     {
-    .name = _("Nullifier"),
+    .name = ITEM_NAME("Nullifier"),
     .price = 10000,
     .holdEffect = HOLD_EFFECT_NULLIFIER,
     .holdEffectParam = 0,
@@ -15032,7 +15033,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_OVERRIDE_LENS] =
     {
-    .name = _("Override Lens"),
+    .name = ITEM_NAME("Override Lens"),
     .price = 10000,
     .holdEffect = HOLD_EFFECT_OVERRIDE_LENS,
     .holdEffectParam = 0,
@@ -15046,7 +15047,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ADAPTIVE_LENS] =
     {
-    .name = _("Adaptive Lens"),
+    .name = ITEM_NAME("Adaptive Lens"),
     .price = 3000,
     .holdEffect = HOLD_EFFECT_ADAPTIVE_LENS,
     .holdEffectParam = 0,
@@ -15059,7 +15060,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_SKELEDITE] =
     {
-        .name = _("Skeledite"),
+        .name = ITEM_NAME("Skeledite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15075,7 +15076,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_RILLABITE_X] =
     {
-        .name = _("Rillabite X"),
+        .name = ITEM_NAME("Rillabite X"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15091,7 +15092,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_SAMURITE] =
     {
-        .name = _("Samurite"),
+        .name = ITEM_NAME("Samurite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15107,7 +15108,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_MILOTITE] =
     {
-        .name = _("Milotite"),
+        .name = ITEM_NAME("Milotite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15123,7 +15124,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_TROPITE] =
     {
-        .name = _("Tropite"),
+        .name = ITEM_NAME("Tropite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15139,7 +15140,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_RAICHITE] =
     {
-        .name = _("Raichite"),
+        .name = ITEM_NAME("Raichite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15155,7 +15156,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_NIDOQUEENITE] =
     {
-        .name = _("Nidoqueenite"),
+        .name = ITEM_NAME("Nidoqueenite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15171,7 +15172,7 @@ const struct Item gItemsInfo[] =
     },
     [ITEM_NIDOKINITE] = 
     {
-        .name = _("Nidokinite"),
+        .name = ITEM_NAME("Nidokinite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
