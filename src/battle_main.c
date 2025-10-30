@@ -4923,9 +4923,6 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     && (gBattleWeather & B_WEATHER_SUN)
     && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
     {
-    priority++;
-    }
-    {
         priority++;
     }
     else if (IsBattleMoveStatus(move) && IsAbilityAndRecord(battler, ability, ABILITY_PRANKSTER))
@@ -4940,24 +4937,29 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
     {
         priority += 3;
-        
-    else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
-        priority += 3;
-
-     else if (ability == ABILITY_MUSIC_MAESTRO && IsSoundMove(move))
-        priority += 1;
-
-    else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
+    }
+else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
+{
+    priority += 3;
+}
+else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
+{
+    priority += 3;
+}
+else if (ability == ABILITY_MUSIC_MAESTRO && IsSoundMove(move))
+{
+    priority += 1;
+}
+else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
 {
     priority++;
 }
 
 if (gProtectStructs[battler].quash)
-        priority = -8;
-    }
-
+    priority = -8;
     return priority;
 }
+
 
 s32 GetWhichBattlerFasterArgs(u32 battler1, u32 battler2, bool32 ignoreChosenMoves, u32 ability1, u32 ability2,
                               enum ItemHoldEffect holdEffectBattler1, enum ItemHoldEffect holdEffectBattler2, u32 speedBattler1, u32 speedBattler2, s32 priority1, s32 priority2)
