@@ -1,9 +1,7 @@
 //
 // DO NOT MODIFY THIS FILE! It is auto-generated from test/battle/trainer_control.party
 //
-// If you want to modify this file set COMPETITIVE_PARTY_SYNTAX to FALSE
-// in include/config/general.h and remove this notice.
-// Use sed -i '/^#line/d' 'test/battle/trainer_control.h' to remove #line markers.
+// If you want to modify this file see expansion PR #7154
 //
 
 #line 1 "test/battle/trainer_control.party"
@@ -22,6 +20,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 7
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -102,6 +102,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 39
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -133,6 +135,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 51
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -164,6 +168,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 63
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -195,6 +201,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 75
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -225,6 +233,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 87
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 88
         .partySize = 1,
         .poolSize = 4,
@@ -290,6 +300,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 104
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 105
         .partySize = 3,
         .poolSize = 6,
@@ -387,6 +399,8 @@
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 131
         .poolRuleIndex = POOL_RULESET_WEATHER_DOUBLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 130
         .partySize = 3,
         .poolSize = 10,
@@ -536,6 +550,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 169
         .poolRuleIndex = POOL_RULESET_BASIC,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 168
         .partySize = 2,
         .poolSize = 3,
@@ -600,6 +616,8 @@
         .poolRuleIndex = POOL_RULESET_BASIC,
 #line 189
         .poolPruneIndex = POOL_PRUNE_TEST,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 187
         .partySize = 2,
         .poolSize = 3,
@@ -660,6 +678,8 @@
         .poolRuleIndex = POOL_RULESET_BASIC,
 #line 207
         .poolPickIndex = POOL_PICK_LOWEST,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 205
         .partySize = 2,
         .poolSize = 3,
@@ -718,6 +738,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 223
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 224
         .partySize = 2,
         .poolSize = 2,
@@ -728,9 +750,9 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 227
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 227
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -739,9 +761,9 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 229
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 229
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -761,6 +783,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 236
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
 #line 237
         .partySize = 2,
         .poolSize = 2,
@@ -771,9 +795,9 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 240
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 240
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
@@ -782,9 +806,9 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 242
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 242
-            .lvl = 100,
+            .lvl = 150,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
