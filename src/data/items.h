@@ -5546,6 +5546,24 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Venusaurite,
     },
 
+    [ITEM_VENUSAURITE_X] =
+    {
+        .name = ITEM_NAME("Venusaurite"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Venusaur to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Venusaurite,
+        .iconPalette = gItemIconPalette_Venusaurite,
+    },
+
     [ITEM_CHARIZARDITE_X] =
     {
         .name = ITEM_NAME("Charizardite X"),
@@ -5578,6 +5596,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_CharizarditeY,
     },
 
+    [ITEM_CHARIZARDITE_Z] =
+    {
+        .name = ITEM_NAME("Charizardite Z"),
+        .pluralName = ITEM_PLURAL_NAME("Charizardites Z"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sCharizarditeDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_CharizarditeY,
+        .iconPalette = gItemIconPalette_CharizarditeY,
+    },
+
     [ITEM_BLASTOISINITE] =
     {
         .name = ITEM_NAME("Blastoisinite"),
@@ -5586,6 +5620,24 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "This stone enables\n"
             "Blastoise to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Blastoisinite,
+        .iconPalette = gItemIconPalette_Blastoisinite,
+    },
+
+    [ITEM_BLASTOISINITE_X] =
+    {
+        .name = ITEM_NAME("Blastoisinite X"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Mega Blastoise X to\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
@@ -5676,6 +5728,24 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "This stone enables\n"
             "Gengar to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_MEGA_STONE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Gengarite,
+        .iconPalette = gItemIconPalette_Gengarite,
+    },
+
+    [ITEM_GENGARITE_X] =
+    {
+        .name = ITEM_NAME("Gengarite X"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Mega Gengar X to\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
@@ -15059,6 +15129,7 @@ const struct Item gItemsInfo[] =
     .iconPic = gItemIcon_WiseGlasses,
     .iconPalette = gItemIconPalette_WiseGlasses,
     },
+
     [ITEM_SKELEDITE] =
     {
         .name = ITEM_NAME("Skeledite"),
@@ -15075,6 +15146,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_RILLABITE_X] =
     {
         .name = ITEM_NAME("Rillabite X"),
@@ -15091,6 +15163,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_SAMURITE] =
     {
         .name = ITEM_NAME("Samurite"),
@@ -15107,6 +15180,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_MILOTITE] =
     {
         .name = ITEM_NAME("Milotite"),
@@ -15123,6 +15197,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_TROPITE] =
     {
         .name = ITEM_NAME("Tropite"),
@@ -15139,6 +15214,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_RAICHITE] =
     {
         .name = ITEM_NAME("Raichite"),
@@ -15155,6 +15231,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_NIDOQUEENITE] =
     {
         .name = ITEM_NAME("Nidoqueenite"),
@@ -15171,6 +15248,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
     [ITEM_NIDOKINITE] = 
     {
         .name = ITEM_NAME("Nidokinite"),
@@ -15187,6 +15265,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Alakazite,
         .iconPalette = gItemIconPalette_Alakazite,
     },
+
 };
 
 #undef ITEM_NAME

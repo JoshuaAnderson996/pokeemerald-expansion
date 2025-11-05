@@ -5505,6 +5505,25 @@ break;
         break;
     }
 
+        if (!gDisableStructs[battler].terrainAbilityDone
+    && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+    && !gBattleMons[battler].volatiles.transformed
+    && !gDisableStructs[battler].boosterEnergyActivated
+    && IsParadoxFutureSpecies(gBattleMons[battler].species)
+    && GetBattlerAbilityInternal(battler, FALSE, FALSE) != ABILITY_QUARK_DRIVE)
+    {
+    gDisableStructs[battler].terrainAbilityDone = TRUE;
+
+    // Use the same stat picker Quark Drive uses (your helper may differ)
+    PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+
+    gBattleScripting.battler = battler;
+    BattleScriptPushCursorAndCallback(BattleScript_InnateQuarkDriveActivates);
+    effect++;
+
+    // _skipSpeciesQuark: ;
+}
+
     if (effect && gLastUsedAbility != 0xFFFF)
         RecordAbilityBattle(battler, gLastUsedAbility);
     if (effect && caseID <= ABILITYEFFECT_MOVE_END)
@@ -12373,6 +12392,54 @@ bool32 IsFloatingSpecies(u16 species)
     for (i = 0; i < ARRAY_COUNT(sFloatingSpeciesList); i++)
     {
         if (species == sFloatingSpeciesList[i])
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static const u16 sParadoxPastSpeciesList[] =
+{
+    SPECIES_GREAT_TUSK,
+    SPECIES_SCREAM_TAIL,
+    SPECIES_BRUTE_BONNET,
+    SPECIES_FLUTTER_MANE,
+    SPECIES_SLITHER_WING,
+    SPECIES_SANDY_SHOCKS,
+    SPECIES_ROARING_MOON,
+    SPECIES_WALKING_WAKE,
+    SPECIES_GOUGING_FIRE,
+    SPECIES_RAGING_BOLT,
+};
+
+bool32 IsParadoxPastSpecies(u16 species)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sParadoxPastSpeciesList); i++)
+    {
+        if (species == sParadoxPastSpeciesList[i])
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static const u16 sParadoxFutureSpeciesList[] =
+{
+    SPECIES_IRON_TREADS,
+    SPECIES_IRON_BUNDLE,
+    SPECIES_IRON_HANDS,
+    SPECIES_IRON_JUGULIS,
+    SPECIES_IRON_MOTH,
+    SPECIES_IRON_THORNS,
+    SPECIES_IRON_VALIANT,
+    SPECIES_IRON_LEAVES,
+    SPECIES_IRON_BOULDER,
+    SPECIES_IRON_CROWN,
+};
+
+bool32 IsParadoxFutureSpecies(u16 species)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sParadoxFutureSpeciesList); i++)
+    {
+        if (species == sParadoxFutureSpeciesList[i])
             return TRUE;
     }
     return FALSE;

@@ -479,6 +479,7 @@ extern const u8 BattleScript_WindRiderActivatesMoveEnd[];
 extern const u8 BattleScript_WindPowerActivates[];
 extern const u8 BattleScript_ProtosynthesisActivates[];
 extern const u8 BattleScript_QuarkDriveActivates[];
+extern const u8 BattleScript_InnateQuarkDriveActivates[];
 extern const u8 BattleScript_GoodAsGoldActivates[];
 extern const u8 BattleScript_RuinAbilityActivates[];
 extern const u8 BattleScript_CudChewActivates[];

@@ -5512,7 +5512,7 @@ BattleScript_IceBodyHeal::
 	datahpupdate BS_ATTACKER
 	printstring STRINGID_ICEBODYHPGAIN
 	waitmessage B_WAIT_TIME_LONG
-	end3
+	end3    @ end3 is intentional here, matching other ability activation scripts
 
 BattleScript_OverworldStatusStarts::
 	printfromtable gStartingStatusStringIds
@@ -9772,6 +9772,16 @@ BattleScript_FlurryFeetActivates::
 	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_SPD_PLUS_1
 	swapattackerwithtarget
 	return
+
+BattleScript_InnateQuarkDriveActivates::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_INNATEQUARKDRIVEACTIVATES
+    waitmessage B_WAIT_TIME_MED
+    printstring STRINGID_STATWASHEIGHTENED
+    waitmessage B_WAIT_TIME_MED
+	waitstate
+    end3
+
 
 BattleScript_QuestionForfeitBattle::
 	printselectionstring STRINGID_QUESTIONFORFEITBATTLE
