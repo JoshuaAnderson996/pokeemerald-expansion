@@ -6,7 +6,7 @@ Some new music and changes to the Mauville Corner have been made as well, so kee
 existing project. Credits to AsparagusEduardo for the basis of this merge here, I just mainly tweaked things around to help
 out any developers who may want to use this as well.
 
-Updated to pokeemerald-expansion v1.11.1
+Updated to pokeemerald-expansion v1.12.0
 
 To pull from this branch here, just simply use these commands here:
 ```
@@ -102,4 +102,8 @@ If you are looking to [report a bug](CONTRIBUTING.md#Bug-Report), [open a pull r
 
 [![](https://dcbadge.limes.pink/api/server/6CzjAG6GZk)](https://discord.gg/6CzjAG6GZk)
 
+<<<<<<< HEAD
 Our community uses the [ROM Hacking Hideout (RHH) Discord server](https://discord.gg/6CzjAG6GZk) to communicate and organize. Most of our discussions take place there, and we welcome anybody to join us!
+=======
+Our community uses the [Rom Hacking Hideout (RHH) Discord server](https://discord.gg/6CzjAG6GZk) to communicate and organize. Most of our discussions take place there, and we welcome anybody to join us!
+>>>>>>> 8d80f484bf6cfdbd19f2df6df5ebe106d7a00876

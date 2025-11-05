@@ -33,7 +33,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BATTLE_ARMOR] =
     {
         .name = _("Battle Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits and cutting moves."),
+        .description = COMPOUND_STRING("0.75% to cutting moves / Blocks Crits."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -57,7 +57,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIMBER] =
     {
         .name = _("Limber"),
-        .description = COMPOUND_STRING("Prevents paralysis and avoids hazards."),
+        .description = COMPOUND_STRING("Avoids hazards and paralysis."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -969,7 +969,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DEFEATIST] =
     {
         .name = _("Defeatist"),
-        .description = COMPOUND_STRING("Gives up in a pinch."),
+        .description = COMPOUND_STRING("0.75x to damage at <30% HP but moves get +1 priority."),
         .aiRating = -1,
     },
 

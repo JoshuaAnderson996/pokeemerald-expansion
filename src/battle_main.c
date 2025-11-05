@@ -4954,6 +4954,11 @@ else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
 {
     priority++;
 }
+else if (ability == ABILITY_DEFEATIST
+      && (gBattleMons[battler].hp * 2) <= gBattleMons[battler].maxHP) // ≤ 50% HP
+{
+    priority += 2;
+}
 
 if (gProtectStructs[battler].quash)
     priority = -8;
