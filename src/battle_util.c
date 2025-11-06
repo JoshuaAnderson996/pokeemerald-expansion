@@ -5474,6 +5474,31 @@ break;
             break;
         }
         break;
+    {
+        if (!gDisableStructs[battler].terrainAbilityDone
+    && (gBattleWeather & B_WEATHER_SUN) && HasWeatherEffect()
+    && !gBattleMons[battler].volatiles.transformed
+    && !gDisableStructs[battler].boosterEnergyActivated
+    && IsParadoxFutureSpecies(gBattleMons[battler].species)
+    && GetBattlerAbilityInternal(battler, FALSE, FALSE) != ABILITY_PROTOSYNTHESIS)
+    {
+    gDisableStructs[battler].terrainAbilityDone = TRUE;
+
+    // Use the same stat picker Quark Drive uses (your helper may differ)
+    PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+
+    gBattleScripting.battler = battler;
+    BattleScriptPushCursorAndCallback(BattleScript_InnateProtosynthesisActivates);
+    effect++;
+}
+
+    if (effect && gLastUsedAbility != 0xFFFF)
+        RecordAbilityBattle(battler, gLastUsedAbility);
+    if (effect && caseID <= ABILITYEFFECT_MOVE_END)
+        gBattlerAbility = battler;
+
+    return effect;
+}
     case ABILITYEFFECT_ON_TERRAIN:  // For ability effects that activate when the field terrain changes.
         gLastUsedAbility = GetBattlerAbility(battler);
         switch (gLastUsedAbility)
@@ -5520,8 +5545,6 @@ break;
     gBattleScripting.battler = battler;
     BattleScriptPushCursorAndCallback(BattleScript_InnateQuarkDriveActivates);
     effect++;
-
-    // _skipSpeciesQuark: ;
 }
 
     if (effect && gLastUsedAbility != 0xFFFF)
@@ -12409,6 +12432,7 @@ static const u16 sParadoxPastSpeciesList[] =
     SPECIES_WALKING_WAKE,
     SPECIES_GOUGING_FIRE,
     SPECIES_RAGING_BOLT,
+    SPECIES_KORAIDON,
 };
 
 bool32 IsParadoxPastSpecies(u16 species)
@@ -12433,6 +12457,7 @@ static const u16 sParadoxFutureSpeciesList[] =
     SPECIES_IRON_LEAVES,
     SPECIES_IRON_BOULDER,
     SPECIES_IRON_CROWN,
+    SPECIES_MIRAIDON,
 };
 
 bool32 IsParadoxFutureSpecies(u16 species)

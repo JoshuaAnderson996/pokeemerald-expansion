@@ -9782,6 +9782,15 @@ BattleScript_InnateQuarkDriveActivates::
 	waitstate
     end3
 
+	BattleScript_InnateProtosynthesisActivates::
+    pause B_WAIT_TIME_SHORT
+    printstring STRINGID_INNATEPROTOSYNTHESISACTIVATES
+    waitmessage B_WAIT_TIME_MED
+    printstring STRINGID_STATWASHEIGHTENED
+    waitmessage B_WAIT_TIME_MED
+	waitstate
+    end3
+
 
 BattleScript_QuestionForfeitBattle::
 	printselectionstring STRINGID_QUESTIONFORFEITBATTLE
