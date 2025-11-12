@@ -15266,6 +15266,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Alakazite,
     },
 
+    [ITEM_BLADE_SHARPENER] =
+    {
+        .name = ITEM_NAME("Blade Sharpener"),
+        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .holdEffect = HOLD_EFFECT_BLADE_SHARPENER,
+        .description = COMPOUND_STRING(
+            "Raises Atk. if\n"
+            "the holder uses a\n"
+            "slicing move."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_RustedSword,
+        .iconPalette = gItemIconPalette_RustedWeapons,
+    },
 };
 
 #undef ITEM_NAME

@@ -1087,7 +1087,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BIG_PECKS] =
     {
         .name = _("Big Pecks"),
-        .description = COMPOUND_STRING("Ups flying moves prevents Defense loss."),
+        .description = COMPOUND_STRING("Ups flying moves and prevents Defense loss."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -1102,7 +1102,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WONDER_SKIN] =
     {
         .name = _("Wonder Skin"),
-        .description = COMPOUND_STRING("May avoid status problems."),
+        .description = COMPOUND_STRING("Avoids status problems."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2426,7 +2426,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
      [ABILITY_EVAPORATE] =
     {
         .name = _("Evaporate"),
-        .description = COMPOUND_STRING("Water/Ice moves are negated due to the heat"),
+        .description = COMPOUND_STRING("Water/Ice moves are negated."),
         .aiRating = 7,  
     },   
     [ABILITY_KICK_MASTER] =
@@ -2802,5 +2802,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Calamity Edge"),
     .description = COMPOUND_STRING("Shields from calamities and boosts slicing power."),
     .aiRating = 8,
+    },
+    [ABILITY_CURSED_METAL] =
+    {
+    .name = _("Cursed Metal"),
+    .description = COMPOUND_STRING("Boosts slicing moves and contact may curse foes."),
+    .aiRating = 7,
     },
 };

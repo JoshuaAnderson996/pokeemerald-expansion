@@ -9564,6 +9564,27 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_NEBULA_BURST] =
+    {
+        .name = COMPOUND_STRING("Nebula Burst"),
+        .description = COMPOUND_STRING(
+            "A mysterious burst of\n"
+            "cosmic energy."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_COSMIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MeteorMash,
+    },
+
     [MOVE_ROOST] =
     {
         .name = COMPOUND_STRING("Roost"),
@@ -18563,7 +18584,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Swings its tail to attack.\n"
             "Lowers the Atk of those hit."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_BRICK_BREAK,
         .power = 60,
         .type = TYPE_DRAGON,
         .accuracy = 100,

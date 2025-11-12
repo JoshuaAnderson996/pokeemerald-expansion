@@ -999,12 +999,13 @@ bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move)
     if (IsCastform(battler) && ability == ABILITY_FORECAST)
     {
         //don't execute in Primal Weather
-        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) && !(gBattleWeather & B_WEATHER_STRONG_WINDS)) {
+        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) && !(gBattleWeather & B_WEATHER_STRONG_WINDS))
+        {
             if (moveType == TYPE_WATER || move == MOVE_THUNDER || move == MOVE_HURRICANE) {
                 SetCurrentAndNextWeather(WEATHER_DOWNPOUR);
                 return TRUE;
             }
-            if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS || move == MOVE_MORNING_SUN || move == MOVE_MOONLIGHT || move == MOVE_GROWTH) {
+            if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS || move == MOVE_MORNING_SUN || move == MOVE_GROWTH) {
                 SetCurrentAndNextWeather(WEATHER_DROUGHT);
                 return TRUE;
             }
@@ -6606,6 +6607,22 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_ITEM_BLADE_SHARPENER:
+    if (IsSlicingMove(gCurrentMove)
+     && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+     && GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_BLADE_SHARPENER
+     && IsBattlerAlive(gBattlerAttacker)
+     && IsAnyTargetAffected(gBattlerAttacker)
+     && !NoAliveMonsForEitherParty())
+    {
+        gLastUsedItem = gBattleMons[gBattlerAttacker].item;
+        gBattleScripting.battler = gBattlerAttacker;
+        SET_STATCHANGER(STAT_ATK, 1, FALSE);
+        effect = TRUE;
+        BattleScriptCall(BattleScript_AttackerItemStatRaise);
+    }
+    gBattleScripting.moveendState++;
+    break;
         case MOVEEND_ABILITY_BLOCK:
             effect = HandleMoveEndAbilityBlock(gBattlerAttacker, gBattlerTarget, gCurrentMove);
             gBattleScripting.moveendState++;

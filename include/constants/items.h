@@ -1038,11 +1038,12 @@
 #define ITEM_NULLIFIER 866
 #define ITEM_OVERRIDE_LENS 867
 #define ITEM_ADAPTIVE_LENS 868
+#define ITEM_BLADE_SHARPENER 869
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 869
+#define ITEMS_COUNT 870
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

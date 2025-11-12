@@ -524,26 +524,37 @@ static const struct FormChange sRayquazaFormChangeTable[] = {
 #endif //P_FAMILY_RAYQUAZA
 
 #if P_FAMILY_DEOXYS
-static const struct FormChange sDeoxysNormalFormChangeTable[] = {
-    {FORM_CHANGE_ITEM_USE, SPECIES_DEOXYS_ATTACK,  ITEM_METEORITE},
-    {FORM_CHANGE_TERMINATOR},
-};
+static const struct FormChange sDeoxysFormChangeTable[] = {
+    // --- Specific defensive moves -> DEFENSE first (put specific rules before broad ones)
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_DEOXYS_DEFENSE, MOVE_COSMIC_POWER,  ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_DEOXYS_DEFENSE, MOVE_PROTECT,       ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_DEOXYS_DEFENSE, MOVE_RECOVER,       ABILITY_NONE},
 
-static const struct FormChange sDeoxysAttackFormChangeTable[] = {
-    {FORM_CHANGE_ITEM_USE, SPECIES_DEOXYS_DEFENSE,  ITEM_METEORITE},
-    {FORM_CHANGE_TERMINATOR},
-};
+    // --- Specific offensive signature -> ATTACK
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_DEOXYS_ATTACK,  MOVE_PSYCHO_BOOST,  ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_DEOXYS_ATTACK,  MOVE_NEBULA_BURST,  ABILITY_NONE},
 
-static const struct FormChange sDeoxysDefenseFormChangeTable[] = {
-    {FORM_CHANGE_ITEM_USE, SPECIES_DEOXYS_SPEED,  ITEM_METEORITE},
-    {FORM_CHANGE_TERMINATOR},
-};
+    // (Optional) If you have a custom Cosmic physical move you want to force ATTACK for:
+    // {FORM_CHANGE_BATTLE_BEFORE_MOVE,       SPECIES_DEOXYS_ATTACK,  MOVE_YOUR_COSMIC_PHYS, ABILITY_NONE},
 
-static const struct FormChange sDeoxysSpeedFormChangeTable[] = {
-    {FORM_CHANGE_ITEM_USE, SPECIES_DEOXYS_NORMAL,  ITEM_METEORITE},
+    // --- Broad intents
+    // Any STATUS move (that wasn’t caught by the DEFENSE rules above) -> SPEED
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_DEOXYS_SPEED,   DAMAGE_CATEGORY_STATUS,   ABILITY_NONE},
+
+    // Any damaging move -> ATTACK
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_DEOXYS_ATTACK,  DAMAGE_CATEGORY_PHYSICAL, ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_DEOXYS_ATTACK,  DAMAGE_CATEGORY_SPECIAL,  ABILITY_NONE},
+
+    // --- Normalize outside-of-action states
+    {FORM_CHANGE_BATTLE_SWITCH,               SPECIES_DEOXYS,                                     /* no ability field */},
+    {FORM_CHANGE_FAINT,                       SPECIES_DEOXYS},
+    {FORM_CHANGE_BATTLE_TURN_END,             SPECIES_DEOXYS_NORMAL,       ABILITY_NONE}, // In case form wasn’t changed back during the turn
+    {FORM_CHANGE_END_BATTLE,                  SPECIES_DEOXYS},
+
     {FORM_CHANGE_TERMINATOR},
 };
-#endif //P_FAMILY_DEOXYS
+#endif
+ //P_FAMILY_DEOXYS
 
 #if P_FAMILY_BURMY
 static const struct FormChange sBurmyFormChangeTable[] = {
@@ -829,9 +840,9 @@ static const struct FormChange sFurfrouFormChangeTable[] = {
 
 #if P_FAMILY_HONEDGE
 static const struct FormChange sAegislashFormChangeTable[] = {
-    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_AEGISLASH_BLADE,  DAMAGE_CATEGORY_PHYSICAL, ABILITY_STANCE_CHANGE},
-    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_AEGISLASH_BLADE,  DAMAGE_CATEGORY_SPECIAL,  ABILITY_STANCE_CHANGE},
-    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_AEGISLASH_SHIELD, MOVE_KINGS_SHIELD,        ABILITY_STANCE_CHANGE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_AEGISLASH_BLADE,  DAMAGE_CATEGORY_PHYSICAL, ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY, SPECIES_AEGISLASH_BLADE,  DAMAGE_CATEGORY_SPECIAL,  ABILITY_NONE},
+    {FORM_CHANGE_BATTLE_BEFORE_MOVE,          SPECIES_AEGISLASH_SHIELD, MOVE_KINGS_SHIELD,        ABILITY_NONE},
     {FORM_CHANGE_BATTLE_SWITCH,               SPECIES_AEGISLASH_SHIELD},
     {FORM_CHANGE_FAINT,                       SPECIES_AEGISLASH_SHIELD},
     {FORM_CHANGE_END_BATTLE,                  SPECIES_AEGISLASH_SHIELD},
