@@ -18391,6 +18391,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_BodyPress,
     },
 
+    [MOVE_GALE_FORCE] =
+    {
+        .name = COMPOUND_STRING("Gale Force"),
+        .description = COMPOUND_STRING(
+            "Does more damage the\n"
+            "higher the user's Speed."),
+        .effect = EFFECT_GALE_FORCE,
+        .power = 60,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .ballisticMove = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BraveBird,
+    },
+
     [MOVE_DECORATE] =
     {
         .name = COMPOUND_STRING("Decorate"),
@@ -19373,13 +19397,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Throws scorching sand at\n"
             "the target. May leave a burn."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 70,
         .type = TYPE_GROUND,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .argument = { .type = TYPE_FIRE },
         .category = DAMAGE_CATEGORY_SPECIAL,
         .thawsUser = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({

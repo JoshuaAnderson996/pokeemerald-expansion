@@ -285,6 +285,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_FAIRY_LOCK,
     EFFECT_ALLY_SWITCH,
     EFFECT_BODY_PRESS,
+    EFFECT_GALE_FORCE,
     EFFECT_JUNGLE_HEALING,
     EFFECT_COACHING,
     EFFECT_LASH_OUT,

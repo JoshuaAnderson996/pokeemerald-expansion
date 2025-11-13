@@ -4014,7 +4014,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_CLOUD_NINE:
-        case ABILITY_AIR_LOCK:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -4126,6 +4125,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_DELTA_STREAM:
+        case ABILITY_AIR_LOCK:
             if (TryChangeBattleWeather(battler, BATTLE_WEATHER_STRONG_WINDS, gLastUsedAbility))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_DeltaStreamActivates);
@@ -9006,36 +9006,45 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
         }
     }
-    else if (moveEffect == EFFECT_BODY_PRESS)
+else if (moveEffect == EFFECT_BODY_PRESS)
+{
+    if (IsBattleMovePhysical(move))
     {
-        if (IsBattleMovePhysical(move))
-        {
-            atkStat = gBattleMons[battlerAtk].defense;
-            // Edge case: Body Press used during Wonder Room. For some reason, it still uses Defense over Sp.Def, but uses Sp.Def stat changes
-            if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
-                atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
-            else
-                atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
-        }
-        else
-        {
-            atkStat = gBattleMons[battlerAtk].spDefense;
+        atkStat = gBattleMons[battlerAtk].defense;
+        // Edge case: Body Press used during Wonder Room. For some reason, it still uses Defense over Sp.Def, but uses Sp.Def stat changes
+        if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
             atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
-        }
+        else
+            atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
     }
     else
     {
-        if (IsBattleMovePhysical(move))
-        {
-            atkStat = gBattleMons[battlerAtk].attack;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
-        }
-        else
-        {
-            atkStat = gBattleMons[battlerAtk].spAttack;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
-        }
+        atkStat = gBattleMons[battlerAtk].spDefense;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
     }
+}
+else if (moveEffect == EFFECT_GALE_FORCE)
+{
+    // Uses Speed as the attacking stat (physical or special both read Speed).
+    // If you only ever make it physical, this single path still works.
+    atkStat  = gBattleMons[battlerAtk].speed;
+    atkStage = gBattleMons[battlerAtk].statStages[STAT_SPEED];
+}
+
+else
+{
+    if (IsBattleMovePhysical(move))
+    {
+        atkStat = gBattleMons[battlerAtk].attack;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+    }
+    else
+    {
+        atkStat = gBattleMons[battlerAtk].spAttack;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
+    }
+}
+
 
     // critical hits ignore attack stat's stage drops
     if (ctx->isCrit && atkStage < DEFAULT_STAT_STAGE)
@@ -12181,7 +12190,6 @@ bool32 HasWeatherEffect(void)
         switch (ability)
         {
         case ABILITY_CLOUD_NINE:
-        case ABILITY_AIR_LOCK:
             return FALSE;
         }
     }
