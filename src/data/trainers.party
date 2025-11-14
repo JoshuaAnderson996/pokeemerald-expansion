@@ -17450,3 +17450,62 @@ Music: Male
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_RITCHER ===
+Name: RITCHER
+Class: Mega Master
+Pic: Hiker
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability  
+Mugshot: Blue
+
+Claydol @ Light Clay
+Ability: Well-Baked Body
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- Reflect
+- Light Screen
+- Earth Power
+- Psychic
+
+Aggron @ Leftovers
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Iron Head
+- Earthquake
+- Head Smash
+
+Tyranitar @ Choice Band
+Ability: Sand Stream
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Stone Edge
+- Crunch
+
+Gigalith @ Smooth Rock
+Ability: Sand Stream
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Stone Edge
+- Explosion
+
+Excadrill @ Life Orb
+Ability: Sand Rush
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Iron Head
+- Earthquake
+- Rock Slide
+- Swords Dance
+
+Copperajah @ Copperite
+Ability: Heavy Metal
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Heavy Slam
+- High Horsepower
+- Liquidation
+- Play Rough

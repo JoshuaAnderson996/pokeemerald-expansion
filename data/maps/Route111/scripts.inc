@@ -561,6 +561,49 @@ Route111_EventScript_Branden::
 	msgbox Route111_Text_BrandenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route111_EventScript_Ritcher::
+    lock
+    faceplayer
+    msgbox Route111_Text_RitcherIntro, MSGBOX_YESNO
+    compare VAR_RESULT, YES
+    goto_if_eq Route111_EventScript_RitcherBattle
+    msgbox Route111_Text_RitcherDecline, MSGBOX_AUTOCLOSE
+    release
+    end
+
+Route111_EventScript_RitcherBattle::
+    trainerbattle_single TRAINER_RITCHER, Route111_Text_RitcherStartBattle, Route111_Text_RitcherDefeat
+    msgbox Route111_Text_RitcherPostBattle, MSGBOX_DEFAULT
+    giveitem ITEM_COPPERITE, 1
+    waitfanfare
+    msgbox Route111_Text_RitcherFarewell, MSGBOX_AUTOCLOSE
+    release
+    end
+
+Route111_Text_RitcherIntro:
+    .string "I am one of the Mega Masters.\n"
+    .string "Do you wish to challenge me?$"
+
+Route111_Text_RitcherDecline:
+    .string "Hmph. Return when you feel you are\n"
+    .string "ready to face a true master.$"
+
+Route111_Text_RitcherStartBattle:
+    .string "Very well! Let's see if your bond with\n"
+    .string "your Pokémon is strong enough!$"
+
+Route111_Text_RitcherDefeat:
+    .string "To think I would be defeated...\n"
+    .string "Your power is truly remarkable.$"
+
+Route111_Text_RitcherPostBattle:
+    .string "You have proven your strength. As a\n"
+    .string "symbol of your victory, take this.$"
+
+Route111_Text_RitcherFarewell:
+    .string "With that stone, you can unlock the\n"
+    .string "true potential of Copperajah. Farewell.$"
+
 Route111_EventScript_TrainerHillSign::
 	msgbox Route111_Text_TrainerHillSign, MSGBOX_SIGN
 	end

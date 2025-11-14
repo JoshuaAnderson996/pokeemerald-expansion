@@ -2799,6 +2799,18 @@ bool32 HasNoMonsToSwitch(u32 battler, u8 partyIdBattlerOn1, u8 partyIdBattlerOn2
 
 bool32 TryChangeBattleWeather(u32 battler, u32 battleWeatherId, u32 ability)
 {
+    for (u32 i = 0; i < gBattlersCount; i++)
+    {
+        if (GetBattlerAbility(i) == ABILITY_NONE)
+            continue;
+            
+        if (GetBattlerAbility(i) == ABILITY_CLOUD_NINE)
+        {
+            // If the weather to be set is not a primal weather, block it.
+            if (!(sBattleWeatherInfo[battleWeatherId].flag & B_WEATHER_PRIMAL_ANY))
+                return FALSE;
+        }
+    }
     if (gBattleWeather & sBattleWeatherInfo[battleWeatherId].flag)
     {
         return FALSE;
@@ -3899,6 +3911,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_CLOUD_NINE:
+    if (gBattleWeather != 0 && !(gBattleWeather & B_WEATHER_PRIMAL_ANY))
+    {
+        gBattleWeather = 0;
+        gWishFutureKnock.weatherDuration = 0;
+        BattleScriptPushCursorAndCallback(BattleScript_WeatherDisappears);
+        effect++;
+    }
+    break;
         case ABILITY_DRIZZLE:
         case ABILITY_AQUA_GODDESS:
             if (TryChangeBattleWeather(battler, BATTLE_WEATHER_RAIN, gLastUsedAbility))
@@ -4010,14 +4031,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 GetBattlerPartyState(battler)->supersweetSyrup = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_SupersweetSyrupActivates);
-                effect++;
-            }
-            break;
-        case ABILITY_CLOUD_NINE:
-            if (!gSpecialStatuses[battler].switchInAbilityDone)
-            {
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                BattleScriptPushCursorAndCallback(BattleScript_AnnounceAirLockCloudNine);
                 effect++;
             }
             break;
@@ -4590,7 +4603,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break; 
-        case ABILITY_KENETIC_BARRIER:
+        case ABILITY_KINETIC_BARRIER:
             if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT)
              && gBattlerAttacker != gBattlerTarget
              && IsBattlerTurnDamaged(gBattlerTarget)

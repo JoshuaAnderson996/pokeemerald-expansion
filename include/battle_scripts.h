@@ -874,6 +874,7 @@ extern const u8 BattleScript_FickleBeamDoubled[];
 extern const u8 BattleScript_ShellsplinterActivates[];
 extern const u8 BattleScript_AnticipationEvadeAttack[];
 extern const u8 BattleScript_FlurryFeetActivates[];
+extern const u8 BattleScript_WeatherDisappears[];
 extern const u8 BattleScript_QuestionForfeitBattle[];
 extern const u8 BattleScript_ForfeitBattleGaveMoney[];
 extern const u8 BattleScript_AbilityPopUp[];

@@ -9791,6 +9791,13 @@ BattleScript_InnateQuarkDriveActivates::
 	waitstate
     end3
 
+	BattleScript_WeatherDisappears::
+    pause B_WAIT_TIME_SHORT               
+    printstring STRINGID_WEATHERDISAPPEARS 
+    waitmessage B_WAIT_TIME_MED             
+    end3                      
+
+
 
 BattleScript_QuestionForfeitBattle::
 	printselectionstring STRINGID_QUESTIONFORFEITBATTLE

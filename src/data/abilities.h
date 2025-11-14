@@ -104,7 +104,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CLOUD_NINE] =
     {
         .name = _("Cloud Nine"),
-        .description = COMPOUND_STRING("Negates weather effects."),
+        .description = COMPOUND_STRING("Negates weather."),
         .aiRating = 5,
     },
 
@@ -574,7 +574,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_AIR_LOCK] =
     {
         .name = _("Air Lock"),
-        .description = COMPOUND_STRING("Negates weather effects."),
+        .description = COMPOUND_STRING("Summons Strong Winds."),
         .aiRating = 5,
     },
 
@@ -2747,9 +2747,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Sings for their fans."),
         .aiRating = 5,
     },
-    [ABILITY_KENETIC_BARRIER] =
+    [ABILITY_KINETIC_BARRIER] =
     {
-        .name = _("Kenetic Barrier"),
+        .name = _("Kinetic Barrier"),
         .description = COMPOUND_STRING("Boosts SpD when hit."),
         .aiRating = 6,
     },
