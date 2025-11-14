@@ -2781,7 +2781,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 [ABILITY_MUSIC_MAESTRO] =
 {
     .name = _("Music Maestro"),
-    .description = COMPOUND_STRING("Sound moves: immunity, +1 priority, 1.3× power."),
+    .description = COMPOUND_STRING("Immune to foe sound moves but boosts own."),
     .aiRating = 7,
 },
 [ABILITY_HITMAN] =

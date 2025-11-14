@@ -4950,10 +4950,6 @@ else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
 {
     priority += 3;
 }
-else if (ability == ABILITY_MUSIC_MAESTRO && IsSoundMove(move))
-{
-    priority += 1;
-}
 else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
 {
     priority++;

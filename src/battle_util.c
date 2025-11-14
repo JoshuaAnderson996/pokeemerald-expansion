@@ -8734,7 +8734,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     case ABILITY_MUSIC_MAESTRO:
         if (IsSoundMove(move))
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
