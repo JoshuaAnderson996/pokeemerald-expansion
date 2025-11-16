@@ -471,3 +471,46 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "If a POKéMON runs out of PP, it must be\n"
 	.string "taken to a POKéMON CENTER.$"
 
+PetalburgWoods_EventScript_Bram::
+    lock
+    faceplayer
+    msgbox PetalburgWoods_Text_BramIntro, MSGBOX_YESNO
+    compare VAR_RESULT, YES
+    goto_if_eq PetalburgWoods_EventScript_BramBattle
+    msgbox PetalburgWoods_Text_BramDecline, MSGBOX_AUTOCLOSE
+    release
+    end
+
+PetalburgWoods_EventScript_BramBattle::
+    trainerbattle_single TRAINER_BRAM, PetalburgWoods_Text_BramStartBattle, PetalburgWoods_Text_BramDefeat
+    msgbox PetalburgWoods_Text_BramPostBattle, MSGBOX_DEFAULT
+    giveitem ITEM_CENTITE, 1
+    waitfanfare
+    msgbox PetalburgWoods_Text_BramFarewell, MSGBOX_AUTOCLOSE
+    release
+    end
+
+PetalburgWoods_Text_BramIntro:
+    .string "I am one of the Mega Masters.\n"
+    .string "I specialize in Bug-type Pokémon.\n"
+    .string "Do you wish to challenge me?$"
+
+PetalburgWoods_Text_BramDecline:
+    .string "Hmph. Come back when you've\n"
+    .string "sharpened your team and resolve.$"
+
+PetalburgWoods_Text_BramStartBattle:
+    .string "Very well! Prepare yourself\n"
+    .string "for a sting you won't forget!$"
+
+PetalburgWoods_Text_BramDefeat:
+    .string "I... was outmaneuvered...\n"
+    .string "Your skill is impressive.$"
+
+PetalburgWoods_Text_BramPostBattle:
+    .string "You have proven your strength.\n"
+    .string "Take this Centite as proof.$"
+
+PetalburgWoods_Text_BramFarewell:
+    .string "Let Centiskorch's power burn bright\n"
+    .string "for you. Farewell, trainer.$"

@@ -17509,3 +17509,72 @@ Adamant Nature
 - High Horsepower
 - Liquidation
 - Play Rough
+
+=== TRAINER_BRAM ===
+Name: BRAM
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Suspicious
+AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
+
+Ribombee @ Focus Sash
+Ability: Shield Dust
+Level: 60
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Quiver Dance
+- Moonblast
+- Sticky Web
+- Bug Buzz
+
+Scizor @ Choice Band
+Ability: Technician
+Level: 60
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Bullet Punch
+- U-turn
+- Superpower
+- Knock Off
+
+Volcarona @ Booster Energy  
+Ability: Protosynthesis  
+Level: 60
+EVs: 176 HP / 76 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Fiery Dance  
+- Quiver Dance  
+- Giga Drain  
+- Hurricane
+
+Heracross @ Choice Scarf
+Ability: Moxie
+Level: 60
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Close Combat
+- Megahorn
+- Rock Slide
+- Night Slash
+
+Durant @ Choice Scarf
+Ability: Hustle
+Level: 60
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- First Impression
+- Iron Head
+- Superpower
+- Rock Slide
+
+Centiskorch-Mega @ Centite
+Ability: Flash Fire
+Level: 60
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+- Fire Lash
+- Leech Life
+- Swords Dance
+- Earthquake
