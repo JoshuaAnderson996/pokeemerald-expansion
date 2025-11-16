@@ -10783,8 +10783,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws glitter bomb at foe\n"
             "may confuse."),
         .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_GRASS,
+        .power = 70,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
