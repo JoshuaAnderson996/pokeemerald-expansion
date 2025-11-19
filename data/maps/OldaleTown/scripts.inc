@@ -395,3 +395,10 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+Common_EventScript_QuestHouse::
+	msgbox gText_QuestHouse, MSGBOX_SIGN
+	end
+
+	gText_QuestHouse::
+	.string "Open soon when I am bothered.\n"
+	.string "QUEST HOUSE$"

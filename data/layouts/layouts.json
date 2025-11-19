@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_POKEMON_CENTER_1F_2",
+      "name": "OldaleTown_PokemonCenter_1F_2_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_POKEMON_CENTER2",
+      "name": "OldaleTown_PokemonCenter_1F_2_2_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_POKEMON_CENTER_2",
+      "name": "OldaleTown_PokemonCenter_1F_2_2_2_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_POKEMON_CENTER_1F_2_2_2_2",
+      "name": "OldaleTown_PokemonCenter_1F_2_2_2_2_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2_2_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_PokemonCenter_1F_2_2_2_2/map.bin"
     }
   ]
 }

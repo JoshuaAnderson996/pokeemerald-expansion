@@ -887,8 +887,9 @@ gText_PokemartSign::
 	.string "POKéMON MART$"
 
 gText_PokemonCenterSign::
-	.string "“Rejuvenate your tired partners!”\n"
-	.string "POKéMON CENTER$"
+	.string "Buy goods!”\n"
+    .string "“Rejuvenate your pokemon!\p"
+    .string "POKéMON CENTER$"
 
 gText_MomOrDadMightLikeThisProgram::
 	.string "{STR_VAR_1} might like this program.\n"
@@ -1158,3 +1159,10 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/maps/OldaleTown_PokemonCenter_1F_2/scripts.inc"
+
+	.include "data/maps/OldaleTown_PokemonCenter_1F_2_2/scripts.inc"
+
+	.include "data/maps/OldaleTown_PokemonCenter_1F_2_2_2/scripts.inc"
+
+	.include "data/maps/OldaleTown_PokemonCenter_1F_2_2_2_2/scripts.inc"
