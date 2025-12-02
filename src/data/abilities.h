@@ -12,7 +12,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STENCH] =
     {
         .name = _("Stench"),
-        .description = COMPOUND_STRING("May cause a foe to flinch."),
+        .description = COMPOUND_STRING("Attacks may cause a foe to flinch."),
         .aiRating = 1,
     },
 
@@ -49,7 +49,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DAMP] =
     {
         .name = _("Damp"),
-        .description = COMPOUND_STRING("Prevents self-destruction and powder."),
+        .description = COMPOUND_STRING("Blocks self-destruct and powder."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -96,7 +96,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OBLIVIOUS] =
     {
         .name = _("Oblivious"),
-        .description = COMPOUND_STRING("Prevents attraction."),
+        .description = COMPOUND_STRING("Prevents attraction and taunts."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -2486,7 +2486,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SEA_GUARDIAN] =
     {
         .name = _("Sea Guardian"),
-        .description = COMPOUND_STRING("Powers up Water moves."),
+        .description = COMPOUND_STRING("Summons rain, boosts Water moves and reduces damage in rain."),
         .aiRating = 6,
     },
     [ABILITY_AMOURED_SHELL] =
@@ -2569,7 +2569,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 [ABILITY_HEROS_LAST_STAND] =
     {
         .name = _("Heros Last Stand"),
-        .description = COMPOUND_STRING("2x atk power at 1/2 HP."),
+        .description = COMPOUND_STRING("Becomes much stronger at 1/3 HP."),
         .aiRating = 7,
     },
 
@@ -2583,7 +2583,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHELLSPLINTER] =
     {
         .name = _("Shellsplit"),
-        .description = COMPOUND_STRING("All contact lowers Def."),
+        .description = COMPOUND_STRING("Contact moves lowers foes Def."),
         .aiRating = 7,
     },
     [ABILITY_FROST_MONARCH] =
@@ -2622,9 +2622,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
     [ABILITY_LUNAR] =
     {
-    .name = _("Lunar"),
-    .description = COMPOUND_STRING("Bestowed with the power\n"
-        "of the Moon."),
+    .name = _("Lunar Soul"),
+    .description = COMPOUND_STRING("Rock/Cosmic moves X1.5"),
     },
     [ABILITY_CHEF] =
     {
@@ -2809,4 +2808,112 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .description = COMPOUND_STRING("Boosts slicing moves and contact may curse foes."),
     .aiRating = 7,
     },
-};
+    [ABILITY_DRAGON_FORCE] =
+    {
+    .name = _("Dragon Force"),
+    .description = COMPOUND_STRING("Sheer Force + Tough Claws."),
+    .aiRating = 9,
+    },
+    [ABILITY_ULTRA_LAUNCHER] =
+    {
+    .name = _("Ultra Launcher"),
+    .description = COMPOUND_STRING("1.5X to pulse moves and they can't be blocked."),
+    .aiRating = 7,
+    },
+    [ABILITY_IRIDESCENT_EYES] =
+    {
+    .name = _("Iridescent Eyes"),
+    .description = COMPOUND_STRING("Tinted Lens + Compound Eyes."),
+        .aiRating = 8,
+    },
+    [ABILITY_FOCUSED_ASSAULT] =
+    {
+    .name = _("Focused Assault"),
+    .description = COMPOUND_STRING("Tinted Lens + STAB does 1.75x damage."),
+        .aiRating = 9,
+    },
+    [ABILITY_UNERRING_FORCE] =
+    {
+    .name = _("Unerring Force"),
+    .description = COMPOUND_STRING("No Guard + Sheer Force."),
+        .aiRating = 9,
+    },
+    [ABILITY_QUEENS_SUPREMACY] =
+    {
+        .name = _("Queens Supremacy"),
+        .description = COMPOUND_STRING("Rivalry + Queens Majesty."),
+        .aiRating = 7,
+    },
+    [ABILITY_KINGS_MIGHT] =
+    {
+        .name = _("Kings Might"),
+        .description = COMPOUND_STRING("Supreme Overlord + Sheer Force."),
+        .aiRating = 7,
+    },
+    [ABILITY_CEREBRAL_SANCTUARY] =
+    {
+        .name = _("Cerebral Force"),
+        .description = COMPOUND_STRING("Magic Guard + Wonder Guard when at max HP."),
+        .aiRating = 9,
+    },
+    [ABILITY_DRACONIC_FLARE] =
+    {
+        .name = _("Draconic Flare"),
+        .description = COMPOUND_STRING("Summons sunlight and boosts special moves."),
+        .aiRating = 8,
+    },
+    [ABILITY_PHANTOM_ONSLAUGHT] =
+    {
+        .name = _("Phantom Threat"),
+        .description = COMPOUND_STRING("Traps foes and does more damage to them."),
+        .aiRating = 8,
+    },
+    [ABILITY_PHANTOM_AEGIS] =
+    {
+        .name = _("Phantom Aegis"),
+        .description = COMPOUND_STRING("Traps foe and reduces damage taken by them."),
+        .aiRating = 8,
+    },
+        [ABILITY_MOTHERS_BOND] =
+    {
+        .name = _("Mother's Bond"),
+        .description = COMPOUND_STRING("Moves hit twice (second hit stronger)."),
+        .aiRating = 10,
+    },
+    [ABILITY_SUPER_TECHNICIAN] =
+    {
+        .name = _("Super Technician"),
+        .description = COMPOUND_STRING("Boosts weaker moves even more."),
+        .aiRating = 8,
+    },
+    [ABILITY_AERIAL_DOMINANCE] =
+    {
+        .name = _("Aerial Dominance"),
+        .description = COMPOUND_STRING("Aerilate + Air lock ."),
+        .aiRating = 8,  
+    },
+    [ABILITY_TIDAL_TERROR] =
+    {
+        .name = _("Tidal Terror"),
+        .description = COMPOUND_STRING("Dark/Water are x1.3 and bites hit twice."),
+        .aiRating = 8,
+    },
+    [ABILITY_AURORA_GUARDIAN] =
+    {
+        .name = _("Aurora Guardian"),
+        .description = COMPOUND_STRING("Snow Warning + Spd Boost in hail/snow."),
+        .aiRating = 8,
+    },
+    [ABILITY_PRIMORDIAL_RESURGE] =
+    {
+        .name = _("Primal Resurge"),
+        .description = COMPOUND_STRING("Tough Claws + Sheer Force + Mold Breaker."),
+        .aiRating = 10,
+    },
+        [ABILITY_VERDANT_GUARDIAN] =
+        {
+            .name = _("Verdant Guardian"),
+            .description = COMPOUND_STRING("Grassy Surge ups best stat."),
+            .aiRating = 8,
+        },
+    };

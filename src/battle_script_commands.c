@@ -1166,7 +1166,7 @@ static void Cmd_attackcanceler(void)
         return;
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
-     && GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND
+     && (GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_TIDAL_TERROR)
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)
@@ -3420,7 +3420,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
         gBattleStruct->moveDamage[gEffectBattler] = (gBattleMons[gEffectBattler].maxHP) / 4;
         if (gBattleStruct->moveDamage[gEffectBattler] == 0)
             gBattleStruct->moveDamage[gEffectBattler] = 1;
-        if (GetBattlerAbility(gEffectBattler) == ABILITY_PARENTAL_BOND)
+        if (GetBattlerAbility(gEffectBattler) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_TIDAL_TERROR)
             gBattleStruct->moveDamage[gEffectBattler] *= 2;
 
         BattleScriptPush(gBattlescriptCurrInstr + 1);

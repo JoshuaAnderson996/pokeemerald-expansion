@@ -5958,7 +5958,10 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
         break;  
     case ABILITY_SPACE_AGE:
         ateType = TYPE_COSMIC;
-        break;           
+        break; 
+    case ABILITY_AERIAL_DOMINANCE:
+        ateType = TYPE_FLYING;
+        break;          
     default:
         ateType = TYPE_NONE;
     }
