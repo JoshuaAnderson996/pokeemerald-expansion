@@ -2344,7 +2344,7 @@ static enum MoveCanceller CancellerWeatherPrimal(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN;
             effect = MOVE_STEP_BREAK;
         }
-        else if (moveType == TYPE_WATER && (gBattleWeather & B_WEATHER_SUN_PRIMAL))
+        else if ((moveType == TYPE_WATER || moveType == TYPE_ICE) && (gBattleWeather & B_WEATHER_SUN_PRIMAL))
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN;
             effect = MOVE_STEP_BREAK;
@@ -5426,6 +5426,32 @@ break;
         gLastUsedAbility = GetBattlerAbility(battler);
         switch (gLastUsedAbility)
         {
+        case ABILITY_RAIN_WARDEN:
+            if (!gDisableStructs[battler].weatherAbilityDone
+             && (gBattleWeather & B_WEATHER_RAIN) && HasWeatherEffect()
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].weatherAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_RainWardenActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_SAND_SCOURGE:
+            if (!gDisableStructs[battler].weatherAbilityDone
+             && (gBattleWeather & B_WEATHER_SANDSTORM) && HasWeatherEffect()
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].weatherAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_SandScourgeActivates);
+                effect++;
+            }
+            break;
         case ABILITY_FORECAST:
             if ((IsBattlerWeatherAffected(battler, gBattleWeather)
                  || gBattleWeather == B_WEATHER_NONE
@@ -5527,6 +5553,20 @@ break;
         gLastUsedAbility = GetBattlerAbility(battler);
         switch (gLastUsedAbility)
         {
+        case ABILITY_VERDANT_GUARDIAN:
+        if (!gDisableStructs[battler].terrainAbilityDone
+             && gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN
+                && !gBattleMons[battler].volatiles.transformed
+                && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].terrainAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattlerAbility = gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_VerdantGuardianActivates);
+                effect++;
+            }
+            break;
+
         case ABILITY_MIMICRY:
             if (!gDisableStructs[battler].terrainAbilityDone && ChangeTypeBasedOnTerrain(battler))
             {
@@ -8968,6 +9008,33 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(0.7));
         }
         break;
+        case ABILITY_RAIN_WARDEN:
+        {
+            u8 defHighestStat = GetHighestStatId(battlerDef);
+            if ((ctx->weather & B_WEATHER_RAIN)
+             && ((IsBattleMovePhysical(move) && defHighestStat == STAT_DEF) || (IsBattleMoveSpecial(move) && defHighestStat == STAT_SPDEF))
+             && !(gBattleMons[battlerDef].volatiles.transformed))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.7));
+        }
+        break;
+        case ABILITY_VERDANT_GUARDIAN:
+        {
+            u8 defHighestStat = GetHighestStatId(battlerDef);
+            if ((IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_GRASSY_TERRAIN))
+             && ((IsBattleMovePhysical(move) && defHighestStat == STAT_DEF) || (IsBattleMoveSpecial(move) && defHighestStat == STAT_SPDEF))
+             && !(gBattleMons[battlerDef].volatiles.transformed))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.7));
+        }
+        break;
+        case ABILITY_SAND_SCOURGE:
+        {
+            u8 defHighestStat = GetHighestStatId(battlerDef);
+            if ((ctx->weather & B_WEATHER_SANDSTORM)
+             && ((IsBattleMovePhysical(move) && defHighestStat == STAT_DEF) || (IsBattleMoveSpecial(move) && defHighestStat == STAT_SPDEF))
+             && !(gBattleMons[battlerDef].volatiles.transformed))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.7));
+        }
+        break;
     }
 
     holdEffectParamAtk = GetBattlerHoldEffectParam(battlerAtk);
@@ -9323,6 +9390,15 @@ else
         if (moveType == TYPE_GHOST || moveType == TYPE_DRAGON)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break; 
+    case ABILITY_RAIN_WARDEN:
+        {
+            u8 defHighestStat = GetHighestStatId(battlerDef);
+            if ((ctx->weather & B_WEATHER_RAIN)
+             && ((IsBattleMovePhysical(move) && defHighestStat == STAT_DEF) || (IsBattleMoveSpecial(move) && defHighestStat == STAT_SPDEF))
+             && !(gBattleMons[battlerDef].volatiles.transformed))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(0.7));
+        }
+        break;
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].volatiles.transformed))
         {
@@ -9339,6 +9415,28 @@ else
         {
             u32 atkHighestStat = GetHighestStatId(battlerAtk);
             if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gDisableStructs[battlerAtk].boosterEnergyActivated)
+            {
+                if ((IsBattleMovePhysical(move) && atkHighestStat == STAT_ATK) || (IsBattleMoveSpecial(move) && atkHighestStat == STAT_SPATK))
+                    modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            }
+        }
+        break;
+    case ABILITY_VERDANT_GUARDIAN:
+        if (!(gBattleMons[battlerAtk].volatiles.transformed))
+        {
+            u32 atkHighestStat = GetHighestStatId(battlerAtk);
+            if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_GRASSY_TERRAIN))
+            {
+                if ((IsBattleMovePhysical(move) && atkHighestStat == STAT_ATK) || (IsBattleMoveSpecial(move) && atkHighestStat == STAT_SPATK))
+                    modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            }
+        }
+        break;
+    case ABILITY_SAND_SCOURGE:
+        if (!(gBattleMons[battlerAtk].volatiles.transformed))
+        {
+            u32 atkHighestStat = GetHighestStatId(battlerAtk);
+            if (ctx->weather & B_WEATHER_SANDSTORM)
             {
                 if ((IsBattleMovePhysical(move) && atkHighestStat == STAT_ATK) || (IsBattleMoveSpecial(move) && atkHighestStat == STAT_SPATK))
                     modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));

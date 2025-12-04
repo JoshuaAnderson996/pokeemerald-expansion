@@ -137,6 +137,7 @@ static bool32 DoesAbilityBenefitFromWeather(u32 ability, u32 weather)
     case ABILITY_SAND_FORCE:
     case ABILITY_SAND_RUSH:
     case ABILITY_SAND_VEIL:
+    case ABILITY_SAND_SCOURGE:
         return (weather & B_WEATHER_SANDSTORM);
     case ABILITY_ICE_BODY:
     case ABILITY_ICE_FACE:
@@ -148,6 +149,7 @@ static bool32 DoesAbilityBenefitFromWeather(u32 ability, u32 weather)
     case ABILITY_HYDRATION:
     case ABILITY_RAIN_DISH:
     case ABILITY_SWIFT_SWIM:
+    case ABILITY_RAIN_WARDEN:
         return (weather & B_WEATHER_RAIN);
     case ABILITY_CHLOROPHYLL:
     case ABILITY_FLOWER_GIFT:
@@ -174,6 +176,7 @@ static bool32 DoesAbilityBenefitFromFieldStatus(u32 ability, u32 fieldStatus)
     case ABILITY_SURGE_SURFER:
         return (fieldStatus & STATUS_FIELD_ELECTRIC_TERRAIN);
     case ABILITY_GRASS_PELT:
+    case ABILITY_VERDANT_GUARDIAN:
         return (fieldStatus & STATUS_FIELD_GRASSY_TERRAIN);
     // no abilities inherently benefit from Misty or Psychic Terrains
     // return (fieldStatus & STATUS_FIELD_MISTY_TERRAIN);

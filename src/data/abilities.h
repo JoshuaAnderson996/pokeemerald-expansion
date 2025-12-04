@@ -2916,4 +2916,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .description = COMPOUND_STRING("Grassy Surge ups best stat."),
             .aiRating = 8,
         },
+        [ABILITY_SAND_SCOURGE] =
+        {
+            .name = _("Sand Scourge"),
+            .description = COMPOUND_STRING("Sandstorm ups best stat."),
+            .aiRating = 8,
+        },
+        [ABILITY_RAIN_WARDEN] =
+        {
+            .name = _("Rain Warden"),
+            .description = COMPOUND_STRING("Rain Dance ups best stat."),
+            .aiRating = 8,
+        },
     };

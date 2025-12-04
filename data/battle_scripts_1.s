@@ -7564,6 +7564,30 @@ BattleScript_QuarkDriveActivates::
 	waitmessage B_WAIT_TIME_MED
 	end3
 
+BattleScript_RainWardenActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_RAINWARDENACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
+BattleScript_VerdantGuardianActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_VERDANTGUARDIANACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
+BattleScript_SandScourgeActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_SANDSCOURGEACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
 BattleScript_RuinAbilityActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ABILITYWEAKENEDSURROUNDINGMONSSTAT

@@ -16797,7 +16797,10 @@ void BS_TryBoosterEnergy(void)
 
         u32 ability = GetBattlerAbility(battlerByTurnOrder);
         if (!(ability == ABILITY_PROTOSYNTHESIS && cmd->onFieldStatus != ON_TERRAIN)
-         && !(ability == ABILITY_QUARK_DRIVE && cmd->onFieldStatus != ON_WEATHER))
+         && !(ability == ABILITY_QUARK_DRIVE && cmd->onFieldStatus != ON_WEATHER)
+         && !(ability == ABILITY_VERDANT_GUARDIAN && cmd->onFieldStatus != ON_TERRAIN)
+         && !(ability == ABILITY_SAND_SCOURGE && cmd->onFieldStatus != ON_WEATHER)
+         && !(ability == ABILITY_RAIN_WARDEN && cmd->onFieldStatus != ON_WEATHER))
             continue;
 
         if (TryBoosterEnergy(battlerByTurnOrder, ability, ITEMEFFECT_NONE))
