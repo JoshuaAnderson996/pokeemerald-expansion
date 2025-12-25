@@ -7588,6 +7588,30 @@ BattleScript_SandScourgeActivates::
 	waitmessage B_WAIT_TIME_MED
 	end3
 
+BattleScript_SnowProtocolActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_SNOWPROTOCOLACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
+BattleScript_PsychoMatrixActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PSYCHOMATRIXACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
+BattleScript_EtherealDreamActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_ETHEREALDREAMACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
 BattleScript_RuinAbilityActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ABILITYWEAKENEDSURROUNDINGMONSSTAT

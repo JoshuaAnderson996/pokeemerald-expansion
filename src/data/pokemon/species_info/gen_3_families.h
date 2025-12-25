@@ -2831,7 +2831,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = RALTS_FAMILY_EGG_GROUPS,
-        .abilities = { ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE, ABILITY_TELEPATHY },
+        .abilities = { ABILITY_KINETIC_BARRIER, ABILITY_PSYCHIC_SURGE, ABILITY_TELEPATHY },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Gardevoir"),
         .cryId = CRY_GARDEVOIR,
@@ -4497,7 +4497,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_FUR_COAT, ABILITY_WONDER_SKIN },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_FUR_COAT, ABILITY_MEGA_MIND },
     #else
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_WONDER_SKIN },
     #endif
@@ -7135,7 +7135,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_FILTER, ABILITY_MAGIC_GUARD, ABILITY_MEGA_MIND },
+        .abilities = { ABILITY_FILTER, ABILITY_MAGIC_GUARD, ABILITY_PSYCHO_MATRIX },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Grumpig"),
         .cryId = CRY_GRUMPIG,
@@ -7208,7 +7208,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CLOUD_NINE, ABILITY_DANCER, ABILITY_CONTRARY },
+        .abilities = { ABILITY_MEGA_MIND, ABILITY_DANCER, ABILITY_CONTRARY },
     #else
         .abilities = { ABILITY_OWN_TEMPO, ABILITY_NONE, ABILITY_CONTRARY },
     #endif
@@ -8602,7 +8602,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_WELL_BAKED_BODY, ABILITY_NONE, ABILITY_PSYCHIC_SURGE },
+        .abilities = { ABILITY_WELL_BAKED_BODY, ABILITY_KINETIC_BARRIER, ABILITY_PSYCHIC_SURGE },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Claydol"),
         .cryId = CRY_CLAYDOL,
@@ -10398,7 +10398,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 115,
         .baseSpDefense = P_UPDATED_STATS >= GEN_7 ? 100 : 80,
-        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_STEEL),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
         .expYield = 159,
@@ -11103,7 +11103,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_UNAWARE, ABILITY_ICE_BODY, ABILITY_RAIN_WARDEN },
+        .abilities = { ABILITY_UNAWARE, ABILITY_SNOW_PROTOCOL, ABILITY_RAIN_WARDEN },
     #else
         .abilities = { ABILITY_THICK_FAT, ABILITY_NONE, ABILITY_OBLIVIOUS },
     #endif

@@ -4850,8 +4850,14 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_RAIN_WARDEN && !(gBattleMons[battler].volatiles.transformed) && (gBattleWeather & B_WEATHER_RAIN || gDisableStructs[battler].boosterEnergyActivated))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_SNOW_PROTOCOL && !(gBattleMons[battler].volatiles.transformed) && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW) || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_PSYCHO_MATRIX && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_ETHEREAL_DREAM && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_LIGHT_METAL)
         speed = (speed * 150) / 100;
     else if (ability == ABILITY_HEAVY_METAL)

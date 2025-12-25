@@ -2560,7 +2560,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 77,
         .baseSpAttack  = 40,
         .baseSpDefense = 90,
-        .types = MON_TYPES(TYPE_DARK, TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_DARK, TYPE_POISON),
         .catchRate = 127,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 145 : 116,
         .evYield_Speed = 2,
@@ -2570,7 +2570,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_GLUTTONY, ABILITY_FUR_COAT, ABILITY_CHEEK_POUCH },
+        .abilities = { ABILITY_MERCILESS, ABILITY_FUR_COAT, ABILITY_CHEEK_POUCH },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Raticate"),
         .cryId = CRY_RATICATE,
@@ -2622,7 +2622,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 77,
         .baseSpAttack  = 40,
         .baseSpDefense = 90,
-        .types = MON_TYPES(TYPE_DARK, TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_DARK, TYPE_POISON),
         .catchRate = 127,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 145 : 116,
         .evYield_Speed = 2,
@@ -8953,7 +8953,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_PSYCHIC_SURGE, ABILITY_INNER_FOCUS, ABILITY_MAGIC_GUARD },
+        .abilities = { ABILITY_PSYCHIC_SURGE, ABILITY_KINETIC_BARRIER, ABILITY_MAGIC_GUARD },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Alakazam"),
         .cryId = CRY_ALAKAZAM,
@@ -13023,7 +13023,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_PRANKSTER, ABILITY_BAD_DREAMS },
+        .abilities = { ABILITY_PSYCHO_MATRIX, ABILITY_PRANKSTER, ABILITY_BAD_DREAMS },
     #else
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_INNER_FOCUS },
     #endif
@@ -16276,7 +16276,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_FILTER, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_SOUNDPROOF, ABILITY_KINETIC_BARRIER, ABILITY_TECHNICIAN },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Mr. Mime"),
         .cryId = CRY_MR_MIME,
@@ -16883,7 +16883,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_OBLIVIOUS, ABILITY_CUTE_CHARM, ABILITY_DRY_SKIN },
+        .abilities = { ABILITY_OBLIVIOUS, ABILITY_CUTE_CHARM, ABILITY_PSYCHO_MATRIX },
     #else
         .abilities = { ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_DRY_SKIN },
     #endif

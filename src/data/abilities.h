@@ -2913,7 +2913,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         [ABILITY_VERDANT_GUARDIAN] =
         {
             .name = _("Verdant Guardian"),
-            .description = COMPOUND_STRING("Grassy Surge ups best stat."),
+            .description = COMPOUND_STRING("Grassy Terrain ups best stat."),
             .aiRating = 8,
         },
         [ABILITY_SAND_SCOURGE] =
@@ -2926,6 +2926,24 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         {
             .name = _("Rain Warden"),
             .description = COMPOUND_STRING("Rain Dance ups best stat."),
+            .aiRating = 8,
+        },
+        [ABILITY_SNOW_PROTOCOL] =
+        {
+            .name = _("Snow Protocol"),
+            .description = COMPOUND_STRING("Snow/ Hail ups best stat."),
+            .aiRating = 8,
+        },
+        [ABILITY_PSYCHO_MATRIX] =
+        {
+            .name = _("Psycho Matrix"),
+            .description = COMPOUND_STRING("Psychic Terrain ups best stat."),
+            .aiRating = 8,
+        },
+        [ABILITY_ETHEREAL_DREAM] =
+        {
+            .name = _("Ethereal Dream"),
+            .description = COMPOUND_STRING("Misty Terrain ups best stat."),
             .aiRating = 8,
         },
     };

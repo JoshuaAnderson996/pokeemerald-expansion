@@ -5452,6 +5452,19 @@ break;
                 effect++;
             }
             break;
+        case ABILITY_SNOW_PROTOCOL:
+            if (!gDisableStructs[battler].weatherAbilityDone
+             && (gBattleWeather & B_WEATHER_HAIL) && HasWeatherEffect()
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].weatherAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_SnowProtocolActivates);
+                effect++;
+            }
+            break;
         case ABILITY_FORECAST:
             if ((IsBattlerWeatherAffected(battler, gBattleWeather)
                  || gBattleWeather == B_WEATHER_NONE
@@ -5563,6 +5576,34 @@ break;
                 PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
                 gBattlerAbility = gBattleScripting.battler = battler;
                 BattleScriptPushCursorAndCallback(BattleScript_VerdantGuardianActivates);
+                effect++;
+            }
+            break;
+
+        case ABILITY_ETHEREAL_DREAM:
+            if (!gDisableStructs[battler].terrainAbilityDone
+             && gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].terrainAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattlerAbility = gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_EtherealDreamActivates);
+                effect++;
+            }
+            break;
+
+        case ABILITY_PSYCHO_MATRIX:
+            if (!gDisableStructs[battler].terrainAbilityDone
+             && gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].terrainAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattlerAbility = gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_PsychoMatrixActivates);
                 effect++;
             }
             break;
@@ -9888,6 +9929,14 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
+        if (ctx->weather & B_WEATHER_FOG)
+    {
+        if (ctx->moveType == TYPE_GHOST || ctx->moveType == TYPE_FAIRY || ctx->moveType == TYPE_DARK)
+            return UQ_4_12(1.5);
+        if (ctx->moveType == TYPE_PSYCHIC)
+            return UQ_4_12(0.5);
+        return UQ_4_12(1.0);
+    }
     return UQ_4_12(1.0);
 }
 
@@ -10475,6 +10524,10 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
             RecordItemEffectBattle(ctx->battlerDef, HOLD_EFFECT_RING_TARGET);
     }
     else if ((ctx->moveType == TYPE_FIGHTING || ctx->moveType == TYPE_NORMAL) && defType == TYPE_GHOST && gBattleMons[ctx->battlerDef].volatiles.foresight && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+    }
+    else if (ctx->moveType == TYPE_GHOST && defType == TYPE_NORMAL && gBattleWeather & B_WEATHER_FOG && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
     }
