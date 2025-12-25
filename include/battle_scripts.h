@@ -177,6 +177,7 @@ extern const u8 BattleScript_IntimidateActivates[];
 extern const u8 BattleScript_IntimidatePrevented[];
 extern const u8 BattleScript_IntimidateInReverse[];
 extern const u8 BattleScript_DroughtActivates[];
+extern const u8 BattleScript_FogCallingActivates[];
 extern const u8 BattleScript_TookAttack[];
 extern const u8 BattleScript_SturdyPreventsOHKO[];
 extern const u8 BattleScript_DampStopsExplosion[];

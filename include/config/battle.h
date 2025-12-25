@@ -53,7 +53,7 @@
 #define B_UPROAR_TURNS              GEN_LATEST // In Gen5+, Uproar lasts for 3 turns instead of 2-5 turns.
 #define B_UPROAR_IGNORE_SOUNDPROOF  GEN_LATEST // In Gen5+, Uproar status ignores Soundproof.
 #define B_DISABLE_TURNS             GEN_LATEST // Disable's turns. See Cmd_disablelastusedattack.
-#define B_TAILWIND_TURNS            GEN_4 // In Gen5+, Tailwind lasts 4 turns instead of 3.
+#define B_TAILWIND_TURNS            GEN_LATEST // In Gen5+, Tailwind lasts 4 turns instead of 3.
 #define B_SLEEP_TURNS               GEN_LATEST // In Gen5+, sleep lasts for 1-3 turns instead of 2-5 turns.
 #define B_TAUNT_TURNS               GEN_LATEST // In Gen5+, Taunt lasts 3 turns if the user acts before the target, or 4 turns if the target acted before the user. In Gen3, taunt lasts 2 turns and in Gen 4, 3-5 turns.
 #define B_SPORT_TURNS               GEN_LATEST // In Gen6+, Water/Mud Sport last 5 turns, even if the user switches out.
@@ -250,9 +250,9 @@
 #define B_ICE_WEATHER_HAIL              1
 #define B_ICE_WEATHER_SNOW              2
 
-#define B_ABILITY_WEATHER               GEN_LATEST // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
+#define B_ABILITY_WEATHER               GEN_5 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
 #define B_SANDSTORM_SPDEF_BOOST         GEN_LATEST // In Gen4+, Sandstorm weather multiplies the Sp. Defense of Rock-type Pokémon by x1.5.
-#define B_OVERWORLD_FOG                 GEN_LATEST // In Gen8+, overworld Fog summons Misty Terrain in battle. In Gen4 only, overworld Fog summons the unique fog weather condition in battle.
+#define B_OVERWORLD_FOG                 GEN_4 // In Gen8+, overworld Fog summons Misty Terrain in battle. In Gen4 only, overworld Fog summons the unique fog weather condition in battle.
 #define B_OVERWORLD_SNOW                GEN_LATEST // In Gen9+, overworld Snow will summon snow instead of hail in battle.
 #define B_SNOW_WARNING                  GEN_LATEST // In Gen9+, Snow Warning will summon snow instead of hail.
 #define B_PREFERRED_ICE_WEATHER         B_ICE_WEATHER_BOTH // Toggles Hail move effects to Snow and vice versa.

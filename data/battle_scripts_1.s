@@ -7503,6 +7503,15 @@ BattleScript_SupersweetSyrupContrary:
 	printfromtable gStatUpStringIds
 	goto BattleScript_SupersweetSyrupEffect_WaitString
 
+BattleScript_FogCallingActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_FOGWEATHERSTARTS
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_FOG_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp

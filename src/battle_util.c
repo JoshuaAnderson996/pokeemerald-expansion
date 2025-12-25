@@ -3989,6 +3989,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_FOG_CALLING:
+            if (B_OVERWORLD_FOG >= GEN_8 && TryChangeBattleWeather(battler, BATTLE_WEATHER_FOG, gLastUsedAbility))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_FogCallingActivates);
+                effect++;
+            }
+            else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect() && !gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                effect++;
+            }
+            break;
         case ABILITY_ELECTRIC_SURGE:
         case ABILITY_HADRON_ENGINE:
             if (TryChangeBattleTerrain(battler, STATUS_FIELD_ELECTRIC_TERRAIN))
@@ -8729,6 +8742,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && moveType == TYPE_PSYCHIC)
         modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+    if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_GRASSY_TERRAIN) && moveType == TYPE_GRASS)
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+    if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_MISTY_TERRAIN) && moveType == TYPE_FAIRY)
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
     if (IsFieldMudSportAffected(ctx->moveType))
         modifier = uq4_12_multiply(modifier, UQ_4_12(B_SPORT_DMG_REDUCTION >= GEN_5 ? 0.33 : 0.5));
     if (IsFieldWaterSportAffected(ctx->moveType))
@@ -9931,7 +9948,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
     }
         if (ctx->weather & B_WEATHER_FOG)
     {
-        if (ctx->moveType == TYPE_GHOST || ctx->moveType == TYPE_FAIRY || ctx->moveType == TYPE_DARK)
+        if (ctx->moveType == TYPE_GHOST || ctx->moveType == TYPE_DARK)
             return UQ_4_12(1.5);
         if (ctx->moveType == TYPE_PSYCHIC)
             return UQ_4_12(0.5);

@@ -2946,4 +2946,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .description = COMPOUND_STRING("Misty Terrain ups best stat."),
             .aiRating = 8,
         },
+        [ABILITY_FOG_CALLING] =
+        {
+            .name = _("Fog Calling"),
+            .description = COMPOUND_STRING("Summons fog."),
+            .aiRating = 8,
+        },
     };
