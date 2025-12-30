@@ -3990,7 +3990,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_FOG_CALLING:
-            if (B_OVERWORLD_FOG >= GEN_8 && TryChangeBattleWeather(battler, BATTLE_WEATHER_FOG, gLastUsedAbility))
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_FOG, gLastUsedAbility))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_FogCallingActivates);
                 effect++;
@@ -5475,6 +5475,19 @@ break;
                 PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
                 gBattleScripting.battler = battler;
                 BattleScriptPushCursorAndCallback(BattleScript_SnowProtocolActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_PHANTOM_AURA:
+            if (!gDisableStructs[battler].weatherAbilityDone
+             && (gBattleWeather & B_WEATHER_FOG) && HasWeatherEffect()
+             && !gBattleMons[battler].volatiles.transformed
+             && !gDisableStructs[battler].boosterEnergyActivated)
+            {
+                gDisableStructs[battler].weatherAbilityDone = TRUE;
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, GetHighestStatId(battler));
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_PhantomAuraActivates);
                 effect++;
             }
             break;
@@ -13284,7 +13297,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         calc = (calc * 90) / 100;
 
     if (HasWeatherEffect() && gBattleWeather & B_WEATHER_FOG)
-        calc = (calc * 60) / 100; // modified by 3/5
+        calc = (calc * 75) / 100;
 
     return calc;
 }

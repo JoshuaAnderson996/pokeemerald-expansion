@@ -485,6 +485,7 @@ extern const u8 BattleScript_QuarkDriveActivates[];
 extern const u8 BattleScript_VerdantGuardianActivates[];
 extern const u8 BattleScript_RainWardenActivates[];
 extern const u8 BattleScript_PsychoMatrixActivates[];
+extern const u8 BattleScript_PhantomAuraActivates[];
 extern const u8 BattleScript_EtherealDreamActivates[];
 extern const u8 BattleScript_InnateQuarkDriveActivates[];
 extern const u8 BattleScript_InnateProtosynthesisActivates[];

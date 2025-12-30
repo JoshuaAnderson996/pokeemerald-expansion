@@ -2952,4 +2952,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .description = COMPOUND_STRING("Summons fog."),
             .aiRating = 8,
         },
+        [ABILITY_PHANTOM_AURA] =
+        {
+            .name = _("Phantom Aura"),
+            .description = COMPOUND_STRING("Fog ups best stat."),
+            .aiRating = 8,
+        },
+        [ABILITY_HAZE_STEP] =
+        {
+            .name = _("Haze Step"),
+            .description = COMPOUND_STRING("Raises Speed in fog."),
+            .aiRating = 6,
+        },
     };

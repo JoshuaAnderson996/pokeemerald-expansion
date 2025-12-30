@@ -16803,7 +16803,8 @@ void BS_TryBoosterEnergy(void)
          && !(ability == ABILITY_ETHEREAL_DREAM && cmd->onFieldStatus != ON_TERRAIN)
          && !(ability == ABILITY_VERDANT_GUARDIAN && cmd->onFieldStatus != ON_TERRAIN)
          && !(ability == ABILITY_SAND_SCOURGE && cmd->onFieldStatus != ON_WEATHER)
-         && !(ability == ABILITY_RAIN_WARDEN && cmd->onFieldStatus != ON_WEATHER))
+         && !(ability == ABILITY_RAIN_WARDEN && cmd->onFieldStatus != ON_WEATHER)
+         && !(ability == ABILITY_PHANTOM_AURA && cmd->onFieldStatus != ON_WEATHER))
             continue;
 
         if (TryBoosterEnergy(battlerByTurnOrder, ability, ITEMEFFECT_NONE))

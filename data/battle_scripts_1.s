@@ -7605,6 +7605,14 @@ BattleScript_SnowProtocolActivates::
 	waitmessage B_WAIT_TIME_MED
 	end3
 
+	BattleScript_PhantomAuraActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PHANTOMAURAACTIVATES
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_STATWASHEIGHTENED
+	waitmessage B_WAIT_TIME_MED
+	end3
+
 BattleScript_PsychoMatrixActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PSYCHOMATRIXACTIVATES

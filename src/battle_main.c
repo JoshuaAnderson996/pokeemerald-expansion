@@ -4820,6 +4820,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        else if (ability == ABILITY_HAZE_STEP && gBattleWeather & B_WEATHER_FOG)
+        speed *= 2;
         else if (ability == ABILITY_FORECAST && gBattleMons[battler].species == SPECIES_CASTFORM)
         {
             if (gBattleWeather & B_WEATHER_SUN)
@@ -4854,10 +4856,12 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_PSYCHO_MATRIX && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
-    else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
-        speed *= 2;
     else if (ability == ABILITY_ETHEREAL_DREAM && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_PHANTOM_AURA && !(gBattleMons[battler].volatiles.transformed) && (gBattleWeather & B_WEATHER_FOG || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
+        speed *= 2;
     else if (ability == ABILITY_LIGHT_METAL)
         speed = (speed * 150) / 100;
     else if (ability == ABILITY_HEAVY_METAL)
@@ -4954,26 +4958,22 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority += 3;
     }
-else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
-{
-    priority += 3;
-}
-else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
-{
-    priority += 3;
-}
-else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
-{
-    priority++;
-}
-else if (ability == ABILITY_DEFEATIST
-      && (gBattleMons[battler].hp * 2) <= gBattleMons[battler].maxHP) // ≤ 50% HP
-{
-    priority += 2;
-}
+    else if (ability == ABILITY_LIGHT_BEARER && IsLightMove(move))
+    {
+        priority += 3;
+    }
+    else if (ability == ABILITY_QUICK_TEMPERED && !IsBattleMoveStatus(move))
+    {
+        priority++;
+    }
+    else if (ability == ABILITY_DEFEATIST
+          && (gBattleMons[battler].hp * 2) <= gBattleMons[battler].maxHP) // ≤ 50% HP
+    {
+        priority += 2;
+    }
 
-if (gProtectStructs[battler].quash)
-    priority = -8;
+    if (gProtectStructs[battler].quash)
+        priority = -8;
     return priority;
 }
 
