@@ -9586,18 +9586,24 @@ else
         }
         break;
     case ABILITY_ICE_BODY:
-    if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW))
-        modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));   
-        break;
-    case ABILITY_HEAVY_METAL:
-    if (!CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget,
-                                      GetBattlerAbility(gBattlerAttacker),
-                                      GetBattlerHoldEffect(gBattlerAttacker, TRUE),
-                                      move)
-     && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS)
-    {
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
-    }
+    if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW) 
+        && IsBattleMovePhysical(move)
+        && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)  // Only attacker bypasses
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
+    break;
+
+case ABILITY_SNOW_CLOAK:
+    if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW) 
+        && IsBattleMoveSpecial(move)
+        && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)  // Only attacker bypasses
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
+    break;
+
+case ABILITY_SAND_VEIL:
+    if (gBattleWeather & (B_WEATHER_SANDSTORM) 
+        && IsBattleMovePhysical(move)
+        && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)  // Only attacker bypasses
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
     break;
     case ABILITY_BATTLE_ARMOR:
     case ABILITY_SHELL_ARMOR:
@@ -9943,14 +9949,16 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
     return UQ_4_12(1.5);
 }
 
-// Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
+// Utility Umbrella holders take normal damage from moves modified.
 static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
 {
     if (ctx->weather == B_WEATHER_NONE)
         return UQ_4_12(1.0);
     if (GetMoveEffect(ctx->move) == EFFECT_HYDRO_STEAM && (ctx->weather & B_WEATHER_SUN) && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.5);
-    if (ctx->holdEffectDef == HOLD_EFFECT_UTILITY_UMBRELLA)
+    
+    // ONLY attacker's Umbrella blocks weather damage modifiers
+    if (ctx->holdEffectAtk == HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.0);
 
     if (ctx->weather & B_WEATHER_RAIN)
@@ -9965,7 +9973,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
-        if (ctx->weather & B_WEATHER_FOG)
+    if (ctx->weather & B_WEATHER_FOG)
     {
         if (ctx->moveType == TYPE_GHOST || ctx->moveType == TYPE_DARK)
             return UQ_4_12(1.5);
@@ -10184,21 +10192,24 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         }
         break;
     case ABILITY_LEAF_GUARD:
-        if (IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SUN))
+        if (IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SUN)
+            && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
         {
             modifier = UQ_4_12(0.75);
             recordAbility = TRUE;
         }
         break;
     case ABILITY_AURORA_GUARDIAN:
-        if (IsBattlerWeatherAffected(ctx->battlerDef, B_WEATHER_SNOW) && IsBattleMoveSpecial(ctx->move))
+        if (IsBattlerWeatherAffected(ctx->battlerDef, B_WEATHER_SNOW) && IsBattleMoveSpecial(ctx->move)
+            && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
         {
             modifier = UQ_4_12(0.75);
             recordAbility = TRUE;
         }
         break;
     case ABILITY_SEA_GUARDIAN:
-        if (IsBattlerWeatherAffected(ctx->battlerDef, B_WEATHER_RAIN))
+        if (IsBattlerWeatherAffected(ctx->battlerDef, B_WEATHER_RAIN)
+            && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
         {
             modifier = UQ_4_12(0.75);
             recordAbility = TRUE;
@@ -10585,7 +10596,11 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
     {
         mod = UQ_4_12(1.0);
     }
-    else if (ctx->moveType == TYPE_GHOST && defType == TYPE_NORMAL && gBattleWeather & B_WEATHER_FOG && mod == UQ_4_12(0.0))
+    else if (ctx->moveType == TYPE_GHOST 
+        && defType == TYPE_NORMAL 
+        && gBattleWeather & B_WEATHER_FOG
+        && ctx->holdEffectDef != HOLD_EFFECT_UTILITY_UMBRELLA
+        && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
     }
@@ -10608,10 +10623,11 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
         mod = UQ_4_12(2.0);
 
     // B_WEATHER_STRONG_WINDS weakens Super Effective moves against Flying-type Pokémon
-    if (gBattleWeather & B_WEATHER_STRONG_WINDS && HasWeatherEffect() && !ctx->isAnticipation)
+   if (gBattleWeather & B_WEATHER_STRONG_WINDS && HasWeatherEffect() && ! ctx->isAnticipation)
     {
-        if (defType == TYPE_FLYING && mod >= UQ_4_12(2.0))
-            mod = UQ_4_12(1.0);
+    if (defType == TYPE_FLYING && mod >= UQ_4_12(2.0) 
+        && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)  // Only attacker bypasses
+        mod = UQ_4_12(1.0);
     }
 
     if (gSpecialStatuses[ctx->battlerDef].distortedTypeMatchups || (mod > UQ_4_12(0.0) && ShouldTeraShellDistortTypeMatchups(ctx->move, ctx->battlerDef, ctx->abilityDef)))
@@ -12010,8 +12026,9 @@ bool32 IsBattlerWeatherAffected(u32 battler, u32 weatherFlags)
     if (gBattleWeather & weatherFlags && HasWeatherEffect())
     {
         // given weather is active -> check if its sun, rain against utility umbrella (since only 1 weather can be active at once)
-        if (gBattleWeather & (B_WEATHER_SUN | B_WEATHER_RAIN) && GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA)
-            return FALSE; // utility umbrella blocks sun, rain effects
+        if (gBattleWeather & (B_WEATHER_SUN | B_WEATHER_RAIN | B_WEATHER_STRONG_WINDS | B_WEATHER_FOG | B_WEATHER_SNOW) && GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA)
+        return FALSE;
+        // Blocks all weather effects
 
         return TRUE;
     }
@@ -13266,14 +13283,6 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     // Target's ability
     switch (defAbility)
     {
-    case ABILITY_SAND_VEIL:
-        if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
-            calc = (calc * 80) / 100; // 1.2 sand veil loss
-        break;
-    case ABILITY_SNOW_CLOAK:
-        if (HasWeatherEffect() && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
-            calc = (calc * 80) / 100; // 1.2 snow cloak loss
-        break;
     case ABILITY_TANGLED_FEET:
         if (gBattleMons[battlerDef].volatiles.confusionTurns)
             calc = (calc * 50) / 100; // 1.5 tangled feet loss

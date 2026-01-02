@@ -10156,8 +10156,8 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_UTILITY_UMBRELLA,
         .description = COMPOUND_STRING(
             "An umbrella that\n"
-            "protects from\n"
-            "weather effects."),
+            "negates weather\n"
+            "based effects."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,

@@ -992,28 +992,39 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
 
 bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move)
 {
-    u32 moveType;
-    moveType = gMovesInfo[move].type;
+    u32 moveType = gMovesInfo[move].type;
 
-    //only execute if battler is a CASTFORM and ability FORECAST is active
+    // Only execute if battler is Castform and ability Forecast is active
     if (IsCastform(battler) && ability == ABILITY_FORECAST)
     {
-        //don't execute in Primal Weather
-        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) && !(gBattleWeather & B_WEATHER_STRONG_WINDS))
+        // Don't execute in Primal Weather
+        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) 
+            && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) 
+            && !(gBattleWeather & B_WEATHER_STRONG_WINDS))
         {
-            if (moveType == TYPE_WATER || move == MOVE_THUNDER || move == MOVE_HURRICANE) {
+            // Rain weather
+            if (moveType == TYPE_WATER || move == MOVE_HURRICANE || move == MOVE_THUNDER)
+            {
                 SetCurrentAndNextWeather(WEATHER_DOWNPOUR);
                 return TRUE;
             }
-            if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS || move == MOVE_MORNING_SUN || move == MOVE_GROWTH) {
+            // Sun weather
+            else if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM 
+                || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS 
+                || move == MOVE_MORNING_SUN || move == MOVE_GROWTH)
+            {
                 SetCurrentAndNextWeather(WEATHER_DROUGHT);
                 return TRUE;
             }
-            if (moveType == TYPE_ICE || move == MOVE_THUNDER || move == MOVE_HURRICANE) {
+            // Snow weather
+            else if (moveType == TYPE_ICE || move == MOVE_BLIZZARD)
+            {
                 SetCurrentAndNextWeather(WEATHER_SNOW);
                 return TRUE;
             }
-            if (moveType == TYPE_GROUND || moveType == TYPE_ROCK) {
+            // Sandstorm weather
+            else if (moveType == TYPE_GROUND || moveType == TYPE_ROCK)
+            {
                 SetCurrentAndNextWeather(WEATHER_SANDSTORM);
                 return TRUE;
             }
