@@ -2479,6 +2479,12 @@ static enum MoveCanceller CancellerMultihitMoves(void)
                 gBattlerTarget = BATTLE_PARTNER(gBattlerTarget);
         }
 
+        // Initialize Tri Attack counter here, inside the multi-hit block
+        if (gCurrentMove == MOVE_TRI_ATTACK)
+        {
+            gSpecialStatuses[gBattlerAttacker].triAttackHitNumber = 0;
+        }
+
         PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 3, 0)
     }
     else if (B_BEAT_UP >= GEN_5 && GetMoveEffect(gCurrentMove) == EFFECT_BEAT_UP)
@@ -10519,6 +10525,28 @@ bool32 IsFutureSightAttackerInParty(u32 battlerAtk, u32 battlerDef, u32 move)
 
 s32 CalculateMoveDamage(struct DamageContext *ctx)
 {
+    // Update type for each hit of Tri Attack
+    if (gCurrentMove == MOVE_TRI_ATTACK && gMultiHitCounter > 0)
+    {
+        gSpecialStatuses[ctx->battlerAtk].triAttackHitNumber++;  // Increment:  1, 2, 3
+        
+        switch(gSpecialStatuses[ctx->battlerAtk].triAttackHitNumber)
+        {
+            case 1:  // First hit - Fire
+                gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_SET;
+                ctx->moveType = TYPE_FIRE;
+                break;
+            case 2:  // Second hit - Electric
+                gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+                ctx->moveType = TYPE_ELECTRIC;
+                break;
+            case 3:  // Third hit - Ice
+                gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_SET;
+                ctx->moveType = TYPE_ICE;
+                break;
+        }
+    }
+
     ctx->weather = GetWeather();
     ctx->abilityAtk = GetBattlerAbility(ctx->battlerAtk);
     ctx->abilityDef = GetBattlerAbility(ctx->battlerDef);

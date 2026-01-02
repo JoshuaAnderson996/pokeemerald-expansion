@@ -218,7 +218,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "2 to 5 times."),
         .effect = EFFECT_MULTI_HIT,
         .power = 25,
-        .type = TYPE_COSMIC, //Make Cosmic TYPE
+        .type = TYPE_COSMIC,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -940,15 +940,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A one-hit KO attack that\n"
             "uses a horn like a drill."),
-        .effect = EFFECT_OHKO,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 30,
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .ignoresProtect = TRUE,
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -1149,7 +1150,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A toxic attack with barbs,\n"
             "etc., that may poison."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_MULTI_HIT,
         .power = 15,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -1175,9 +1176,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Foreleg stingers jab foe\n"
             "twice. May poison."),
         .effect = EFFECT_HIT,
-        .power = 25,
+        .power = 40,
         .type = TYPE_BUG,
-        .accuracy = 100,
+        .accuracy = 90,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1387,7 +1388,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .accuracy = 90,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = 1,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .argument = { .fixedDamage = 20 },
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
@@ -2258,7 +2259,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_FIXED_HP_DAMAGE,
         .power = 1,
         .type = TYPE_DRAGON,
-        .accuracy = 100,
+        .accuracy = 90,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
@@ -2946,6 +2947,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
         .magicCoatAffected = TRUE,
+        .ninjaMove = TRUE,
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -3273,7 +3275,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_FINAL_STAND] =
     {
-        .name = COMPOUND_STRING("Self-Destruct"),
+        .name = COMPOUND_STRING("Final Stand"),
         .description = COMPOUND_STRING(
             "Inflicts severe damage but\n"
             "makes the user faint."),
@@ -4159,7 +4161,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Hammers with a pincer. Has a\n"
             "high critical-hit ratio."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 100 : 90,
+        .power = 90,
         .type = TYPE_WATER,
         .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85,
         .criticalHitStage = 1,
@@ -4394,8 +4396,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #else
             "May burn/paralyze/freeze."),
         #endif
-        .effect = EFFECT_HIT,
-        .power = 80,
+        .effect = EFFECT_MULTI_HIT,
+        .power = 30,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 10,
@@ -4406,6 +4408,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_TRI_ATTACK,
             .chance = 30,
         }),
+        .strikeCount = 3,
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,

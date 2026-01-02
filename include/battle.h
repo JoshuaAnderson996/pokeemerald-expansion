@@ -208,6 +208,7 @@ struct SpecialStatus
     u8 parentalBondState:2;
     u8 multiHitOn:1;    // See VARIOUS_TRY_END_NEUTRALIZING_GAS
     u8 affectionEndured:1;
+    u8 triAttackHitNumber:2;
     // End of byte
      u8 singerUsedMove:1;
     u8 singerOriginalTarget:3;

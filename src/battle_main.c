@@ -6253,6 +6253,23 @@ void SetTypeBeforeUsingMove(u32 move, u32 battler)
     gBattleStruct->battlerState[battler].ateBoost = FALSE;
     gSpecialStatuses[battler].gemBoost = FALSE;
 
+    // TRI ATTACK LOGIC FIRST - before other type changes
+    if (gCurrentMove == MOVE_TRI_ATTACK && gMultiHitCounter > 0)
+    {
+        switch(gMultiHitCounter)
+        {
+            case 3:  // First hit
+                gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_SET;
+                return;
+            case 2:  // Second hit
+                gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+                return;
+            case 1:  // Third hit
+                gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_SET;
+                return;
+        }
+    }
+
     moveType = GetDynamicMoveType(GetBattlerMon(battler),
                                   move,
                                   battler,
@@ -6278,7 +6295,6 @@ void SetTypeBeforeUsingMove(u32 move, u32 battler)
         gSpecialStatuses[battler].gemBoost = TRUE;
     }
 }
-
 // Queues stat boosts for a given battler for totem battles
 void ScriptSetTotemBoost(struct ScriptContext *ctx)
 {
