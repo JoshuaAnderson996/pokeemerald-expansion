@@ -2395,6 +2395,7 @@ static enum MoveCanceller CancellerProtean(void)
 {
     u32 moveType = GetBattleMoveType(gCurrentMove);
     u32 ability = GetBattlerAbility(gBattlerAttacker);
+    
     if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO || ability == ABILITY_STRIKER)
     && ProteanTryChangeType(gBattlerAttacker, ability, gCurrentMove, moveType))
     {
@@ -2407,6 +2408,7 @@ static enum MoveCanceller CancellerProtean(void)
         BattleScriptCall(BattleScript_ProteanActivates);
         return MOVE_STEP_BREAK;
     }
+    CastformTriggerWeatherChange(gBattlerAttacker, ability, gCurrentMove);
     return MOVE_STEP_SUCCESS;
 }
 
@@ -5498,29 +5500,29 @@ break;
             }
             break;
         case ABILITY_FORECAST:
-            if ((IsBattlerWeatherAffected(battler, gBattleWeather)
-                 || gBattleWeather == B_WEATHER_NONE
-                 || !HasWeatherEffect()) // Air Lock active
-                 && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_WEATHER)) 
-            {
-                //enhancement wiz1989
-                //differentiate between regular forecast and self inflicted weather change
-                if (FlagGet(FLAG_INBATTLE_WEATHER_CHANGED)) {
-                    //BS is skipping some texts and popups as they have already been shown earlier
-                    BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
-
-                    effect++;
-                }
-                //regular forecast handling
-                else {
-                    BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
-
-                    effect++;
-                }
-            }
-            FlagClear(FLAG_INBATTLE_WEATHER_CHANGED); //always reset the flag
-            //enhancement end
-            break;
+    if (! gDisableStructs[battler].weatherAbilityDone
+        && (IsBattlerWeatherAffected(battler, gBattleWeather)
+         || gBattleWeather == B_WEATHER_NONE
+         || ! HasWeatherEffect()) // Air Lock active
+        && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_WEATHER)) 
+        {
+        gDisableStructs[battler].weatherAbilityDone = TRUE;
+        gBattleScripting.battler = battler;
+        
+        if (FlagGet(FLAG_INBATTLE_WEATHER_CHANGED)) {
+            // Self-inflicted weather change - special handling if needed
+            BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
+        }
+        else {
+            // Regular forecast handling
+            BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
+        }
+        effect++;
+        }
+    // Clear flag after checking (do this outside the main if so it always clears)
+    if (FlagGet(FLAG_INBATTLE_WEATHER_CHANGED))
+        FlagClear(FLAG_INBATTLE_WEATHER_CHANGED);
+    break;
         case ABILITY_FLOWER_GIFT:
             if ((IsBattlerWeatherAffected(battler, gBattleWeather)
              || gBattleWeather == B_WEATHER_NONE
@@ -12672,6 +12674,11 @@ static const u16 sDesertSpeciesList[] =
     SPECIES_GOLETT,
     SPECIES_GOLURK,
     SPECIES_CASTFORM,
+    SPECIES_CASTFORM_NORMAL,
+    SPECIES_CASTFORM_SUNNY,
+    SPECIES_CASTFORM_RAINY,
+    SPECIES_CASTFORM_SNOWY,
+    SPECIES_CASTFORM_SANDSTORM,
     SPECIES_SILICOBRA,
     SPECIES_SANDACONDA,
     SPECIES_PHANPY,
@@ -12758,6 +12765,11 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_PORYGON_Z,
     SPECIES_DUSTOX,
     SPECIES_CASTFORM,
+    SPECIES_CASTFORM_NORMAL,
+    SPECIES_CASTFORM_SUNNY,
+    SPECIES_CASTFORM_RAINY,
+    SPECIES_CASTFORM_SNOWY,
+    SPECIES_CASTFORM_SANDSTORM,
     SPECIES_ETERNATUS,
     SPECIES_DRAGAPULT,
     SPECIES_DREEPY,

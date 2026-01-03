@@ -990,56 +990,73 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
     return FALSE;
 }
 
-bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move)
+bool32 CastformTriggerWeatherChange(u32 battler, u32 ability, u32 move) 
 {
-    u32 moveType = gMovesInfo[move].type;
+    // Only execute if battler is Castform with Forecast ability
+    if (! IsCastform(battler) || ability != ABILITY_FORECAST)
+        return FALSE;
 
-    // Only execute if battler is Castform and ability Forecast is active
-    if (IsCastform(battler) && ability == ABILITY_FORECAST)
+    // Don't execute in Primal Weather
+    if (gBattleWeather & (B_WEATHER_SUN_PRIMAL | B_WEATHER_RAIN_PRIMAL | B_WEATHER_STRONG_WINDS))
+        return FALSE;
+
+    u32 weatherToSet = B_WEATHER_NONE;
+    u32 moveType = GetBattleMoveType(move);  // Now this is fine!
+    
+    // Specific move-based weather triggers
+    if (move == MOVE_HURRICANE || move == MOVE_THUNDER)
     {
-        // Don't execute in Primal Weather
-        if (!(gBattleWeather & B_WEATHER_SUN_PRIMAL) 
-            && !(gBattleWeather & B_WEATHER_RAIN_PRIMAL) 
-            && !(gBattleWeather & B_WEATHER_STRONG_WINDS))
-        {
-            // Rain weather
-            if (moveType == TYPE_WATER || move == MOVE_HURRICANE || move == MOVE_THUNDER)
-            {
-                SetCurrentAndNextWeather(WEATHER_DOWNPOUR);
-                return TRUE;
-            }
-            // Sun weather
-            else if (moveType == TYPE_FIRE || move == MOVE_SOLAR_BEAM 
-                || move == MOVE_SOLAR_BLADE || move == MOVE_SYNTHESIS 
-                || move == MOVE_MORNING_SUN || move == MOVE_GROWTH)
-            {
-                SetCurrentAndNextWeather(WEATHER_DROUGHT);
-                return TRUE;
-            }
-            // Snow weather
-            else if (moveType == TYPE_ICE || move == MOVE_BLIZZARD)
-            {
-                SetCurrentAndNextWeather(WEATHER_SNOW);
-                return TRUE;
-            }
-            // Sandstorm weather
-            else if (moveType == TYPE_GROUND || moveType == TYPE_ROCK)
-            {
-                SetCurrentAndNextWeather(WEATHER_SANDSTORM);
-                return TRUE;
-            }
-        }
+        if (!(gBattleWeather & B_WEATHER_RAIN))
+            weatherToSet = B_WEATHER_RAIN;
     }
+    else if (move == MOVE_BLIZZARD)
+    {
+        if (!(gBattleWeather & (B_WEATHER_SNOW | B_WEATHER_HAIL)))
+            weatherToSet = B_WEATHER_SNOW;
+    }
+    // Type-based weather triggers
+    else if (moveType == TYPE_WATER)
+    {
+        if (!(gBattleWeather & B_WEATHER_RAIN))
+            weatherToSet = B_WEATHER_RAIN;
+    }
+    else if (moveType == TYPE_FIRE)
+    {
+        if (!(gBattleWeather & B_WEATHER_SUN))
+            weatherToSet = B_WEATHER_SUN;
+    }
+    else if (moveType == TYPE_ICE)
+    {
+        if (!(gBattleWeather & (B_WEATHER_SNOW | B_WEATHER_HAIL)))
+            weatherToSet = B_WEATHER_SNOW;
+    }
+    else if (moveType == TYPE_GROUND || moveType == TYPE_ROCK)
+    {
+        if (!(gBattleWeather & B_WEATHER_SANDSTORM))
+            weatherToSet = B_WEATHER_SANDSTORM;
+    }
+    
+    // Set the weather if determined
+    if (weatherToSet != B_WEATHER_NONE)
+    {
+        gBattleWeather = weatherToSet;
+        gWishFutureKnock.weatherDuration = 5;
+        FlagSet(FLAG_INBATTLE_WEATHER_CHANGED);
+        return TRUE;
+    }
+    
     return FALSE;
 }
 
 bool32 IsCastform(u32 battler)
 {
-    u32 species;
-    species = gBattleMons[battler].species;
+    u32 species = gBattleMons[battler].species;
 
-    if (species == SPECIES_CASTFORM || species == SPECIES_CASTFORM_SUNNY || species == SPECIES_CASTFORM_RAINY 
-        || species == SPECIES_CASTFORM_SNOWY || species == SPECIES_CASTFORM_SANDSTORM)
+    if (species == SPECIES_CASTFORM_NORMAL
+        || species == SPECIES_CASTFORM_SUNNY
+        || species == SPECIES_CASTFORM_RAINY
+        || species == SPECIES_CASTFORM_SNOWY
+        || species == SPECIES_CASTFORM_SANDSTORM)
     {
         return TRUE;
     }
@@ -6250,6 +6267,21 @@ static void Cmd_moveend(void)
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_SymbiosisActivates;
                     effect = TRUE;
+                }
+            }
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_CASTFORM_WEATHER:  // Castform weather transformation
+            if (FlagGet(FLAG_INBATTLE_WEATHER_CHANGED))
+            {
+                for (i = 0; i < gBattlersCount; i++)
+                {
+                    if (IsBattlerAlive(i) && GetBattlerAbility(i) == ABILITY_FORECAST)
+                    {
+                        gBattleScripting. battler = i;
+                        if (AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, i, ABILITY_FORECAST, 0, 0))
+                            effect = TRUE;
+                    }
                 }
             }
             gBattleScripting.moveendState++;
