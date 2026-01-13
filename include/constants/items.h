@@ -1040,10 +1040,16 @@
 #define ITEM_ADAPTIVE_LENS 868
 #define ITEM_BLADE_SHARPENER 869
 
-// HOPO BERRY
-// LEGEND PLATE
+#define ITEM_CUT_TOOL 870 // field items start
+#define ITEM_FLY_TOOL 871
+#define ITEM_SURF_TOOL 872
+#define ITEM_STRENGTH_TOOL 873
+#define ITEM_FLASH_TOOL 874
+#define ITEM_ROCK_SMASH_TOOL 875
+#define ITEM_WATERFALL_TOOL 876
+#define ITEM_DIVE_TOOL 877
 
-#define ITEMS_COUNT 870
+#define ITEMS_COUNT 878
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

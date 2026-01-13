@@ -1842,7 +1842,6 @@
 
 	.macro setmoveeffect effect:req
 	sethword sMOVE_EFFECT, \effect
-	sethword sSAVED_MOVE_EFFECT, \effect
 	.endm
 
 	.macro sethword dst:req, value:req
@@ -1926,8 +1925,8 @@
 	1:
 	.endm
 
-	.macro jumpifabilitycantbesuppressed battler:req, jumpInstr:req
-	callnative BS_JumpIfAbilityCantBeSuppressed
+	.macro jumpifabilitycantbereactivated battler:req, jumpInstr:req
+	callnative BS_JumpIfAbilityCantBeReactivated
 	.byte \battler
 	.4byte \jumpInstr
 	.endm
@@ -1969,12 +1968,6 @@
 	callnative BS_JumpIfNoAlly
 	.byte \battler
 	.4byte \jumpInstr
-	.endm
-
-	.macro infatuatewithbattler battler:req, infatuateWith:req
-	callnative BS_InfatuateWithBattler
-	.byte \battler
-	.byte \infatuateWith
 	.endm
 
 	.macro setlastuseditem battler:req
