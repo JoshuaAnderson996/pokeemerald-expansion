@@ -16342,6 +16342,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 2,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .alwaysCriticalHit = TRUE,
         .argument = { .moveProperty = MOVE_FIRST_IMPRESSION },
         .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,

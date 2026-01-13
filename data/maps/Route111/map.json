@@ -5,7 +5,7 @@
   "music": "MUS_ROUTE110",
   "region_map_section": "MAPSEC_ROUTE_111",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SANDSTORM",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -33,8 +33,8 @@
     {
       "local_id": "LOCALID_ROUTE111_VICTOR",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 13,
-      "y": 114,
+      "x": 11,
+      "y": 115,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -47,8 +47,8 @@
     {
       "local_id": "LOCALID_ROUTE111_VICTORIA",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 13,
-      "y": 113,
+      "x": 11,
+      "y": 115,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -61,8 +61,8 @@
     {
       "local_id": "LOCALID_ROUTE111_VIVI",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 13,
-      "y": 113,
+      "x": 11,
+      "y": 115,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -75,8 +75,8 @@
     {
       "local_id": "LOCALID_ROUTE111_VICKY",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 13,
-      "y": 113,
+      "x": 11,
+      "y": 115,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -367,8 +367,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 3,
-      "y": 114,
+      "x": 21,
+      "y": 106,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -484,8 +484,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 26,
-      "y": 132,
+      "x": 24,
+      "y": 131,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -498,7 +498,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 20,
-      "y": 132,
+      "y": 131,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -510,8 +510,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 19,
-      "y": 121,
+      "x": 24,
+      "y": 119,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -523,8 +523,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 16,
-      "y": 119,
+      "x": 22,
+      "y": 117,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -562,8 +562,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 37,
-      "y": 77,
+      "x": 33,
+      "y": 83,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -575,8 +575,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 19,
-      "y": 118,
+      "x": 46,
+      "y": 140,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -656,14 +656,14 @@
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 113,
+      "x": 11,
+      "y": 115,
       "elevation": 0,
       "dest_map": "MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 29,
+      "x": 40,
       "y": 87,
       "elevation": 0,
       "dest_map": "MAP_DESERT_RUINS",
@@ -727,15 +727,6 @@
       "var": "VAR_TEMP_3",
       "var_value": "0",
       "script": "Route111_EventScript_ViciousSandstormTriggerDown"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 63,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
     },
     {
       "type": "trigger",
@@ -835,69 +826,6 @@
       "var": "VAR_TEMP_3",
       "var_value": "0",
       "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 64,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 65,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 65,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 66,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 67,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 68,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 69,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
     },
     {
       "type": "trigger",
@@ -1002,8 +930,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 16,
-      "y": 114,
+      "x": 13,
+      "y": 116,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route111_EventScript_WinstrateHouseSign"
@@ -1092,8 +1020,8 @@
     },
     {
       "type": "sign",
-      "x": 7,
-      "y": 84,
+      "x": 2,
+      "y": 67,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route111_EventScript_TrainerTipsSpAtkSpDef"
@@ -1130,8 +1058,8 @@
     },
     {
       "type": "sign",
-      "x": 24,
-      "y": 116,
+      "x": 15,
+      "y": 103,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route111_EventScript_TrainerHillSign"
