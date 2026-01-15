@@ -71,6 +71,7 @@ Route111_EventScript_CheckSetSandstorm::
 	goto_if_lt VAR_TEMP_0, 8, Route111_EventScript_EndCheckSetSandstorm
 Route111_EventScript_SetSandstorm::
 	setweather WEATHER_SANDSTORM
+	doweather
 Route111_EventScript_EndCheckSetSandstorm::
 	return
 

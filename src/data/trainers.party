@@ -550,7 +550,7 @@ Skuntank
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Blastoise @ Blastoisinite X
+Blastoise @ Blastoisinite G
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -5766,7 +5766,7 @@ IVs: 0 Atk
 - Sludge Wave  
 - Toxic  
 
-Snorlax @ Snorlaxite
+Snorlax @ Snorlaxite G
 Ability: Immunity  
 Level: 10  
 EVs: 236 Atk / 36 Def / 236 SpD  
@@ -6369,7 +6369,7 @@ Charjabug @ Eviolite
 Ability: Electric Surge  
 Level: 10  
 
-Raichu @ Raichite
+Raichu @ Raichite Z
 Ability: Static  
 Level: 10
 - Volt Tackle  

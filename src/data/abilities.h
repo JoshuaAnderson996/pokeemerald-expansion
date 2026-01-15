@@ -883,8 +883,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HONEY_GATHER] =
     {
         .name = _("Honey Gather"),
-        .description = COMPOUND_STRING("May gather Honey."),
-        .aiRating = 0,
+        .description = COMPOUND_STRING("Eats all Bug and Grass moves."),
+        .aiRating = 7,
     },
 
     [ABILITY_FRISK] =
@@ -2536,7 +2536,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OVERCHARGED] =
     {
         .name = _("Overcharged"),
-        .description = COMPOUND_STRING("Physically stronger on electricity."),
+        .description = COMPOUND_STRING("Even stronger on electric terrain."),
         .aiRating = 4,
     },
     [ABILITY_WAVE_RIDER] =

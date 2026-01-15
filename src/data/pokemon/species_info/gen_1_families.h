@@ -300,7 +300,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sVenusaurFormChangeTable,
     },
 
-    [SPECIES_VENUSAUR_MEGA_X] =
+    [SPECIES_VENUSAUR_MEGA_G] =
     {
         .baseHP        = 80,
         .baseAttack    = 137,
@@ -713,9 +713,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_CHARIZARD_MEGA_Y] =
     {
         .baseHP        = 78,
-        .baseAttack    = 112,
+        .baseAttack    = 111,
         .baseDefense   = 78,
-        .baseSpeed     = 108,
+        .baseSpeed     = 109,
         .baseSpAttack  = 159,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_FIRE, TYPE_FLYING),
@@ -777,7 +777,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sCharizardFormSpeciesIdTable,
         .formChangeTable = sCharizardFormChangeTable,
     },
-    [SPECIES_CHARIZARD_MEGA_Z] =
+    [SPECIES_CHARIZARD_MEGA_G] =
     {
         .baseHP        = 78,
         .baseAttack    = 130,
@@ -1190,7 +1190,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sBlastoiseFormSpeciesIdTable,
         .formChangeTable = sBlastoiseFormChangeTable,
     },
-    [SPECIES_BLASTOISE_MEGA_X] =
+    [SPECIES_BLASTOISE_MEGA_G] =
     {
         .baseHP        = 79,
         .baseAttack    = 125,
@@ -1567,9 +1567,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_MEGA_EVOLUTIONS  
-[SPECIES_BUTTERFREE_MEGA] =
+[SPECIES_BUTTERFREE_MEGA_G] =
     {
-        .baseHP        = 60,
+        .baseHP        = 65,
         .baseAttack    = 45,
         .baseDefense   = 50,
         .baseSpeed     = 130,
@@ -4217,14 +4217,14 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
     #if P_MEGA_EVOLUTIONS
-    [SPECIES_RAICHU_MEGA] =
+    [SPECIES_RAICHU_MEGA_Z] =
     {
         .baseHP        = 60,
-        .baseAttack    = 135,
-        .baseDefense   = 75,
-        .baseSpeed     = 120,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 90,
+        .baseAttack    = 105,
+        .baseDefense   = 55,
+        .baseSpeed     = 151,
+        .baseSpAttack  = 134,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 75,
         .expYield = RAICHU_EXP_YIELD,
@@ -5188,7 +5188,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseAttack    = 125,
         .baseDefense   = 87,
         .baseSpeed     = 107,
-        .baseSpAttack  = 115,
+        .baseSpAttack  = 120,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_POISON, TYPE_GROUND),
         .catchRate = 45,
@@ -9335,7 +9335,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
     #if P_MEGA_EVOLUTIONS
-    [SPECIES_MACHAMP_MEGA] =
+    [SPECIES_MACHAMP_MEGA_G] =
     {
         .baseHP        = 90,
         .baseAttack    = 205,
@@ -12567,7 +12567,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sGengarFormChangeTable,
     },
 
-    [SPECIES_GENGAR_MEGA_X] =
+    [SPECIES_GENGAR_MEGA_G] =
     {
         .baseHP        = 60,
         .baseAttack    = 65,
@@ -16726,7 +16726,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_8_CROSS_EVOS
     [SPECIES_KLEAVOR] =
     {
-        .baseHP        = 75,
+        .baseHP        = 70,
         .baseAttack    = 135,
         .baseDefense   = 100,
         .baseSpeed     = 100,
@@ -18131,7 +18131,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
     
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_LAPRAS_MEGA] =
+    [SPECIES_LAPRAS_MEGA_G] =
     {
         .baseHP        = 150,
         .baseAttack    = 65,
@@ -19935,7 +19935,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_SNORLAX_MEGA] =
+    [SPECIES_SNORLAX_MEGA_G] =
     {
         .baseHP        = 160,
         .baseAttack    = 136,

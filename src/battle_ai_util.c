@@ -5847,3 +5847,20 @@ bool32 IsNaturalEnemy(u32 speciesAttacker, u32 speciesTarget)
     }
     return FALSE;
 }
+
+bool32 IsAdditionalEffectBlocked(u32 battlerAtk, u32 abilityAtk, u32 battlerDef, u32 abilityDef)
+{
+    // Sheer Force blocks the attacker's own additional effects
+    if (abilityAtk == ABILITY_SHEER_FORCE)
+        return TRUE;
+    
+    // Shield Dust blocks additional effects unless attacker has Mold Breaker
+    if (!IsMoldBreakerTypeAbility(battlerAtk, abilityAtk) && abilityDef == ABILITY_SHIELD_DUST)
+        return TRUE;
+    
+    // Covert Cloak blocks additional effects
+    if (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_COVERT_CLOAK)
+        return TRUE;
+    
+    return FALSE;
+}

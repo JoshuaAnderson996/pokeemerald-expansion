@@ -1637,15 +1637,15 @@
 #define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GMAX         SPECIES_URSHIFU_RAPID_STRIKE_GMAX
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
-#define SPECIES_VENUSAUR_MEGA_X                         1524 
-#define SPECIES_CHARIZARD_MEGA_Z                        1525
-#define SPECIES_BLASTOISE_MEGA_X                        1526           
-#define SPECIES_BUTTERFREE_MEGA                         1527
-#define SPECIES_MACHAMP_MEGA                            1528
-#define SPECIES_GENGAR_MEGA_X                           1529
+#define SPECIES_VENUSAUR_MEGA_G                         1524 
+#define SPECIES_CHARIZARD_MEGA_G                        1525
+#define SPECIES_BLASTOISE_MEGA_G                        1526           
+#define SPECIES_BUTTERFREE_MEGA_G                         1527
+#define SPECIES_MACHAMP_MEGA_G                            1528
+#define SPECIES_GENGAR_MEGA_G                           1529
 #define SPECIES_KINGLER_MEGA                            1530
-#define SPECIES_LAPRAS_MEGA                             1531
-#define SPECIES_SNORLAX_MEGA                            1532
+#define SPECIES_LAPRAS_MEGA_G                             1531
+#define SPECIES_SNORLAX_MEGA_G                            1532
 #define SPECIES_GARBODOR_MEGA                           1533
 #define SPECIES_MELMETAL_MEGA                           1534
 #define SPECIES_RILLABOOM_MEGA                          1535
@@ -1673,7 +1673,7 @@
 #define SPECIES_NIDOKING_MEGA                           1557
 #define SPECIES_NIDOQUEEN_MEGA                          1558   
 #define SPECIES_MILOTIC_MEGA                            1559
-#define SPECIES_RAICHU_MEGA                             1560
+#define SPECIES_RAICHU_MEGA_Z                            1560
 #define SPECIES_TROPIUS_MEGA                            1561
 
 #define SPECIES_EGG                                     1562

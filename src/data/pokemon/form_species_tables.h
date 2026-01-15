@@ -3,7 +3,7 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
     SPECIES_VENUSAUR,
 #if P_MEGA_EVOLUTIONS
     SPECIES_VENUSAUR_MEGA,
-    SPECIES_VENUSAUR_MEGA_X,
+    SPECIES_VENUSAUR_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_VENUSAUR_GMAX,
@@ -18,7 +18,7 @@ static const u16 sCharizardFormSpeciesIdTable[] = {
 #if P_MEGA_EVOLUTIONS
     SPECIES_CHARIZARD_MEGA_X,
     SPECIES_CHARIZARD_MEGA_Y,
-    SPECIES_CHARIZARD_MEGA_Z,
+    SPECIES_CHARIZARD_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_CHARIZARD_GMAX,
@@ -32,7 +32,7 @@ static const u16 sBlastoiseFormSpeciesIdTable[] = {
     SPECIES_BLASTOISE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_BLASTOISE_MEGA,
-    SPECIES_BLASTOISE_MEGA_X,
+    SPECIES_BLASTOISE_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_BLASTOISE_GMAX,
@@ -45,7 +45,7 @@ static const u16 sBlastoiseFormSpeciesIdTable[] = {
 static const u16 sButterfreeFormSpeciesIdTable[] = {
     SPECIES_BUTTERFREE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_BUTTERFREE_MEGA,    
+    SPECIES_BUTTERFREE_MEGA_G,    
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_BUTTERFREE_GMAX,
@@ -135,7 +135,7 @@ static const u16 sRaichuFormSpeciesIdTable[] = {
     SPECIES_RAICHU_ALOLA,
 #endif
 #if P_MEGA_EVOLUTIONS
-    SPECIES_RAICHU_MEGA,
+    SPECIES_RAICHU_MEGA_Z,
 #endif
     FORM_SPECIES_END,
 }; //P_FAMILY_PIKACHU
@@ -251,7 +251,7 @@ static const u16 sAlakazamFormSpeciesIdTable[] = {
 static const u16 sMachampFormSpeciesIdTable[] = {
     SPECIES_MACHAMP,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_MACHAMP_MEGA,
+    SPECIES_MACHAMP_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_MACHAMP_GMAX,
@@ -368,7 +368,7 @@ static const u16 sGengarFormSpeciesIdTable[] = {
     SPECIES_GENGAR,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GENGAR_MEGA,
-    SPECIES_GENGAR_MEGA_X,
+    SPECIES_GENGAR_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_GENGAR_GMAX,
@@ -519,7 +519,7 @@ static const u16 sGyaradosFormSpeciesIdTable[] = {
 static const u16 sLaprasFormSpeciesIdTable[] = {
     SPECIES_LAPRAS,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_LAPRAS_MEGA,
+    SPECIES_LAPRAS_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_LAPRAS_GMAX,
@@ -553,7 +553,7 @@ static const u16 sAerodactylFormSpeciesIdTable[] = {
 static const u16 sSnorlaxFormSpeciesIdTable[] = {
     SPECIES_SNORLAX,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SNORLAX_MEGA,
+    SPECIES_SNORLAX_MEGA_G,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_SNORLAX_GMAX,

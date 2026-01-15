@@ -5546,7 +5546,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Venusaurite,
     },
 
-    [ITEM_VENUSAURITE_X] =
+    [ITEM_VENUSAURITE_G] =
     {
         .name = ITEM_NAME("Venusaurite"),
         .price = 0,
@@ -5596,7 +5596,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_CharizarditeY,
     },
 
-    [ITEM_CHARIZARDITE_Z] =
+    [ITEM_CHARIZARDITE_G] =
     {
         .name = ITEM_NAME("Charizardite Z"),
         .pluralName = ITEM_PLURAL_NAME("Charizardites Z"),
@@ -5630,14 +5630,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Blastoisinite,
     },
 
-    [ITEM_BLASTOISINITE_X] =
+    [ITEM_BLASTOISINITE_G] =
     {
-        .name = ITEM_NAME("Blastoisinite X"),
+        .name = ITEM_NAME("Blastoisinite G"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "This stone enables\n"
-            "Mega Blastoise X to\n"
+            "Mega Blastoise G to\n"
             "Evolve in battle."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
@@ -5738,7 +5738,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Gengarite,
     },
 
-    [ITEM_GENGARITE_X] =
+    [ITEM_GENGARITE_G] =
     {
         .name = ITEM_NAME("Gengarite X"),
         .price = 0,
@@ -6436,7 +6436,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Diancite,
     },
 
-    [ITEM_BUTTERFITE] =
+    [ITEM_BUTTERFITE_G] =
     {
         .name = ITEM_NAME("Butterfite"),
         .price = 12000,
@@ -6453,7 +6453,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-    [ITEM_MACHAMPITE] =
+    [ITEM_MACHAMPITE_G] =
     {
         .name = ITEM_NAME("Machampite"),
         .price = 15600,
@@ -6487,7 +6487,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-    [ITEM_LAPRASITE] =
+    [ITEM_LAPRASITE_G] =
     {
         .name = ITEM_NAME("Laprasite"),
         .price = 15600,
@@ -6504,9 +6504,9 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Diancite,
         .iconPalette = gItemIconPalette_Diancite,
     },
-    [ITEM_SNORLAXITE] =
+    [ITEM_SNORLAXITE_G] =
     {
-        .name = ITEM_NAME("Snorlaxite"),
+        .name = ITEM_NAME("Snorlaxite G"),
         .price = 12000,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15215,9 +15215,9 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Alakazite,
     },
 
-    [ITEM_RAICHITE] =
+    [ITEM_RAICHITE_Z] =
     {
-        .name = ITEM_NAME("Raichite"),
+        .name = ITEM_NAME("Raichite Z"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
@@ -15282,6 +15282,7 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_RustedSword,
         .iconPalette = gItemIconPalette_RustedWeapons,
+    },
      [ITEM_CUT_TOOL] =
     {
         .name = ITEM_NAME("Cut Item"),
@@ -15394,21 +15395,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_QuestionMark,
     },
 
-    [ITEM_DIVE_TOOL] =
-    {
-        .name = ITEM_NAME("Dive Item"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "A diving apparatus\n"
-            "for exploring the\n"
-            "ocean floor."),
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_Dive,
-        .iconPic = gItemIcon_QuestionMark,
-        .iconPalette = gItemIconPalette_QuestionMark,
-    },
+[ITEM_DIVE_TOOL] =
+{
+    .name = ITEM_NAME("Dive Item"),
+    .price = 0,
+    .description = COMPOUND_STRING(
+        "A diving apparatus\n"
+        "for exploring the\n"
+        "ocean floor."),
+    .importance = 1,
+    .pocket = POCKET_KEY_ITEMS,
+    .type = ITEM_USE_FIELD,
+    .fieldUseFunc = ItemUseOutOfBattle_Dive,
+    .iconPic = gItemIcon_QuestionMark,
+    .iconPalette = gItemIconPalette_QuestionMark,
+},
 };
 
 #undef ITEM_NAME

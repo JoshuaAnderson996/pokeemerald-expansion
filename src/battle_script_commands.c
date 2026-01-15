@@ -2948,8 +2948,8 @@ static void CheckSetFortify(u8 battler)
 // battlerStealer steals the item of battlerItem
 void StealTargetItem(u8 battlerStealer, u8 battlerItem)
 {
-    gLastUsedItem = gBattleMons[itemBattler].item;
-    gBattleMons[itemBattler].item = ITEM_NONE;
+    gLastUsedItem = gBattleMons[battlerItem].item;
+    gBattleMons[battlerItem].item = ITEM_NONE;
 
     if (GetGenConfig(GEN_STEAL_WILD_ITEMS) >= GEN_9
      && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_PALACE))
@@ -2972,13 +2972,13 @@ void StealTargetItem(u8 battlerStealer, u8 battlerItem)
     CheckSetUnburden(battlerItem);
     CheckSetFortify(battlerItem);
 
-    BtlController_EmitSetMonData(itemBattler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[itemBattler].item), &gBattleMons[itemBattler].item);  // remove target item
-    MarkBattlerForControllerExec(itemBattler);
+    BtlController_EmitSetMonData(battlerItem, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[battlerItem].item), &gBattleMons[battlerItem].item);  // remove target item
+    MarkBattlerForControllerExec(battlerItem);
 
-    if (GetBattlerAbility(itemBattler) != ABILITY_GORILLA_TACTICS)
-        gBattleStruct->choicedMove[itemBattler] = MOVE_NONE;
+    if (GetBattlerAbility(battlerItem) != ABILITY_GORILLA_TACTICS)
+        gBattleStruct->choicedMove[battlerItem] = MOVE_NONE;
 
-    TrySaveExchangedItem(itemBattler, gLastUsedItem);
+    TrySaveExchangedItem(battlerItem, gLastUsedItem);
 }
 
 static inline bool32 TrySetReflect(u32 battler)

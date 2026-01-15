@@ -3194,6 +3194,10 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 abilityDef, u32 
             statId = STAT_SPEED;
         }
         break;
+    case ABILITY_HONEY_GATHER:
+        if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5 && (moveType == TYPE_BUG || moveType == TYPE_GRASS))
+            effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
+        break;
 
     case ABILITY_LIGHTNING_ROD:
         if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5 && moveType == TYPE_ELECTRIC && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
@@ -4859,6 +4863,7 @@ break;
         case ABILITY_EFFECT_SPORE:
         {
             u32 abilityAtk = GetBattlerAbility(gBattlerAttacker);
+            u32 holdEffectAtk = GetBattlerHoldEffect(gBattlerAttacker, TRUE);
             if ((GetGenConfig(GEN_CONFIG_POWDER_GRASS) < GEN_6 || !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS))
              && abilityAtk != ABILITY_OVERCOAT
              && abilityAtk != ABILITY_DAMP
@@ -9301,7 +9306,7 @@ else
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_OVERCHARGED:
-    if (IsBattleMovePhysical(move) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN))
+        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         {
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         }
@@ -12722,7 +12727,7 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_SOLROCK,
     SPECIES_BALTOY,
     SPECIES_CLAYDOL,
-    SPECIES_BUTTERFREE_MEGA,
+    SPECIES_BUTTERFREE_MEGA_G,
     SPECIES_DUSKULL,
     SPECIES_CHIMECHO,
     SPECIES_BELDUM,
@@ -13015,7 +13020,7 @@ static const u16 sThickfatSpeciesList[] =
     SPECIES_URSARING,
     SPECIES_URSALUNA,
     SPECIES_SNORLAX,
-    SPECIES_SNORLAX_MEGA,
+    SPECIES_SNORLAX_MEGA_G,
     SPECIES_SLAKOTH,
     SPECIES_VIGOROTH,
     SPECIES_SLAKING,

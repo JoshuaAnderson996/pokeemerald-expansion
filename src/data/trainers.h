@@ -1300,7 +1300,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_BLASTOISE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 553
-            .heldItem = ITEM_BLASTOISINITE_X,
+            .heldItem = ITEM_BLASTOISINITE_G,
 #line 555
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
 #line 554
@@ -15027,7 +15027,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SNORLAX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5769
-            .heldItem = ITEM_SNORLAXITE,
+            .heldItem = ITEM_SNORLAXITE_G,
 #line 5772
             .ev = TRAINER_PARTY_EVS(0, 236, 36, 0, 0, 236),
 #line 5774
@@ -16663,7 +16663,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_RAICHU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6372
-            .heldItem = ITEM_RAICHITE,
+            .heldItem = ITEM_RAICHITE_Z,
 #line 6375
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 6373
