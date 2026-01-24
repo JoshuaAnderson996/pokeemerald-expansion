@@ -2443,7 +2443,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     }, 
     [ABILITY_ARCANE_POWER] =
     {
-        .name = _("The Way Of Aura"),
+        .name = _("Arcane Power"),
         .description = COMPOUND_STRING("Boosts Magic moves."),
         .aiRating = 6,
     },
@@ -2455,7 +2455,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     },
     [ABILITY_DESERT_TYRANT] =
     {
-        .name = _("Sand Stream"),
+        .name = _("Desert Tyrant"),
         .description = COMPOUND_STRING("Summons a sandstorm."),
         .aiRating = 9,
     },

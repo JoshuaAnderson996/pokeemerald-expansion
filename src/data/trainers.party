@@ -599,7 +599,7 @@ Ability: Regenerator
 Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Kingler @ Kinglerite  
+Kingler @ Kinglerite G
 Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -636,7 +636,7 @@ Ability: Regenerator
 Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Kingler @ Kinglerite  
+Kingler @ Kinglerite G
 Level: 34  
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -5265,7 +5265,7 @@ Timid Nature
 - Dragon Pulse  
 - Energy Ball  
 
-Hatterene @ Hatterite  
+Hatterene @ Hatterite G
 Ability: Magic Bounce  
 Level: 60  
 EVs: 248 HP / 248 SpA / 12 SpD  
@@ -6369,10 +6369,9 @@ Charjabug @ Eviolite
 Ability: Electric Surge  
 Level: 10  
 
-Raichu @ Raichite Z
+Raichu 
 Ability: Static  
-Level: 10
-- Volt Tackle  
+Level: 10  
 - Knock Off  
 - Fake Out  
 - Iron Tail  
@@ -16563,7 +16562,7 @@ IVs: 0 Atk
 - Hurricane  
 - Draco Meteor  
 
-Corviknight @ Corviknite
+Corviknight @ Corviknite G
 Ability: Pressure  
 Level: 30   
 - Tailwind 
@@ -17501,7 +17500,7 @@ Jolly Nature
 - Rock Slide
 - Swords Dance
 
-Copperajah @ Copperite
+Copperajah @ Copperite G
 Ability: Heavy Metal
 EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
@@ -17569,7 +17568,7 @@ Jolly Nature
 - Superpower
 - Rock Slide
 
-Centiskorch-Mega @ Centite
+Centiskorch @ Centite G
 Ability: Flash Fire
 Level: 60
 EVs: 252 Atk / 252 Spe / 4 HP

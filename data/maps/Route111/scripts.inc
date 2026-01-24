@@ -575,7 +575,7 @@ Route111_EventScript_Ritcher::
 Route111_EventScript_RitcherBattle::
     trainerbattle_single TRAINER_RITCHER, Route111_Text_RitcherStartBattle, Route111_Text_RitcherDefeat
     msgbox Route111_Text_RitcherPostBattle, MSGBOX_DEFAULT
-    giveitem ITEM_COPPERITE, 1
+    giveitem ITEM_COPPERITE_G, 1
     waitfanfare
     msgbox Route111_Text_RitcherFarewell, MSGBOX_AUTOCLOSE
     release

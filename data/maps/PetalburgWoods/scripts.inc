@@ -484,7 +484,7 @@ PetalburgWoods_EventScript_Bram::
 PetalburgWoods_EventScript_BramBattle::
     trainerbattle_single TRAINER_BRAM, PetalburgWoods_Text_BramStartBattle, PetalburgWoods_Text_BramDefeat
     msgbox PetalburgWoods_Text_BramPostBattle, MSGBOX_DEFAULT
-    giveitem ITEM_CENTITE, 1
+    giveitem ITEM_CENTITE_G, 1
     waitfanfare
     msgbox PetalburgWoods_Text_BramFarewell, MSGBOX_AUTOCLOSE
     release
