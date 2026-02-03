@@ -2964,4 +2964,16 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .description = COMPOUND_STRING("Raises Speed in fog."),
             .aiRating = 6,
         },
+        [ABILITY_HIGH_SOCIETY] =
+        {
+            .name = _("High Society"),
+            .description = COMPOUND_STRING("Prevents stat drops."),
+            .aiRating = 7,
+        },
+        [ABILITY_HIGH_SORCERY] =
+        {
+            .name = _("High Sorcery"),
+            .description = COMPOUND_STRING("1.5X on Psychic/Ghost/Magic + Magic Bounce."),
+            .aiRating = 7,
+        },
     };

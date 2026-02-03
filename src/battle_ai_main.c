@@ -1210,6 +1210,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (MoveCanBeBouncedBack(move))
                 RETURN_SCORE_MINUS(20);
             break;
+        case ABILITY_HIGH_SORCERY:
+            if (MoveCanBeBouncedBack(move))
+                RETURN_SCORE_MINUS(20);
+            break;
         case ABILITY_CONTRARY:
             if (IsStatLoweringEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);

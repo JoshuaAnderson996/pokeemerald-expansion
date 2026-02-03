@@ -9013,6 +9013,12 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (MoveIsAffectedBySheerForce(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_HIGH_SORCERY:
+        if (IsMagicMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        if (TYPE_PSYCHIC == moveType || TYPE_GHOST == moveType)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_TIDAL_TERROR:
         if (TYPE_WATER == moveType || TYPE_DARK == moveType)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));

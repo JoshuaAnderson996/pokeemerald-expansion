@@ -5247,6 +5247,8 @@ bool32 AI_ShouldSetUpHazards(u32 battlerAtk, u32 battlerDef, u32 move, struct Ai
             return TRUE;
         if (aiData->abilities[battlerDef] == ABILITY_MAGIC_BOUNCE)
             return FALSE;
+        if (aiData->abilities[battlerDef] == ABILITY_HIGH_SORCERY) 
+            return FALSE;
     }
     else
     {
@@ -5716,6 +5718,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
     // Transferrable abilities that can be assumed to be always beneficial.
     case ABILITY_CLEAR_BODY:
     case ABILITY_GOOD_AS_GOLD:
+    case ABILITY_HIGH_SOCIETY:
     case ABILITY_MAGIC_GUARD:
     case ABILITY_MOODY:
     case ABILITY_PURIFYING_SALT:

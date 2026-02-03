@@ -1294,9 +1294,22 @@ static void Cmd_attackcanceler(void)
             battler = gBattlerTarget;
             gBattleStruct->bouncedMoveIsUsed = TRUE;
         }
+        else if (abilityDef == ABILITY_HIGH_SORCERY) 
+        {
+            gBattlerTarget =
+            battler = gBattlerTarget;
+            gBattleStruct->bouncedMoveIsUsed = TRUE;
+        }
         else if (IsDoubleBattle()
               && GetBattlerMoveTargetType(battler, gCurrentMove) == MOVE_TARGET_OPPONENTS_FIELD
               && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) == ABILITY_MAGIC_BOUNCE)
+        {
+            gBattlerTarget = battler = BATTLE_PARTNER(gBattlerTarget);
+            gBattleStruct->bouncedMoveIsUsed = TRUE;
+        }
+        else if (IsDoubleBattle() 
+            && GetBattlerMoveTargetType(battler, gCurrentMove) == MOVE_TARGET_OPPONENTS_FIELD
+            && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) == ABILITY_HIGH_SORCERY)
         {
             gBattlerTarget = battler = BATTLE_PARTNER(gBattlerTarget);
             gBattleStruct->bouncedMoveIsUsed = TRUE;
@@ -7239,6 +7252,52 @@ static void Cmd_moveend(void)
                     gBattleStruct->monToSwitchIntoId[gBattlerTarget] = gBattleStruct->pursuitStoredSwitch;
                     ClearPursuitValues();
                     effect = TRUE;
+                }
+            }
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_SINGER:
+            if (gCurrentMove == MOVE_NONE)
+                originallyUsedMove = gChosenMove;
+            else
+                originallyUsedMove = gCurrentMove;
+            
+            if (IsSoundMove(originallyUsedMove) && !gBattleStruct->snatchedMoveIsUsed)
+            {
+                u32 battler, nextSinger = 0;
+                bool32 hasSingerTriggered = FALSE;
+
+                for (battler = 0; battler < gBattlersCount; battler++)
+                {
+                    if (gSpecialStatuses[battler].singerUsedMove)
+                    {
+                        hasSingerTriggered = TRUE;
+                        break;
+                    }
+                }
+
+                if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & (MOVE_RESULT_FAILED | MOVE_RESULT_DOESNT_AFFECT_FOE)
+                || (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE && !hasSingerTriggered)
+                || (!gSpecialStatuses[gBattlerAttacker].singerUsedMove && gBattleStruct->bouncedMoveIsUsed)))
+                {
+                    if (!gSpecialStatuses[gBattlerAttacker].singerUsedMove)
+                    {
+                        gBattleScripting.savedBattler = gBattlerTarget | 0x4;
+                        gBattleScripting.savedBattler |= (gBattlerAttacker << 4);
+                        gSpecialStatuses[gBattlerAttacker].singerUsedMove = TRUE;
+                    }
+                    
+                    for (battler = 0; battler < gBattlersCount; battler++)
+                    {
+                        if (GetBattlerAbility(battler) == ABILITY_SINGER && !gSpecialStatuses[battler].singerUsedMove)
+                        {
+                            if (!nextSinger || (gBattleMons[battler].speed < gBattleMons[nextSinger & 0x3].speed))
+                                nextSinger = battler | 0x4;
+                        }
+                    }
+                    
+                    if (nextSinger && AbilityBattleEffects(ABILITYEFFECT_MOVE_END_OTHER, nextSinger & 0x3, 0, 0, originallyUsedMove))
+                        effect = TRUE;
                 }
             }
             gBattleScripting.moveendState++;
@@ -15085,6 +15144,7 @@ static bool32 CanAbilityPreventStatLoss(u32 abilityDef)
     switch (abilityDef)
     {
     case ABILITY_CLEAR_BODY:
+    case ABILITY_HIGH_SOCIETY:
     case ABILITY_FULL_METAL_BODY:
     case ABILITY_WHITE_SMOKE:
         return TRUE;

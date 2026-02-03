@@ -169,17 +169,28 @@ uq4_12_t GetTeraMultiplier(u32 battler, u32 type)
     else if ((type == teraType && !IS_BATTLER_OF_BASE_TYPE(battler, type))
              || (type != teraType && IS_BATTLER_OF_BASE_TYPE(battler, type)))
     {
-        if (hasAdaptability)
-            return UQ_4_12(2.0);
-        else
-            return UQ_4_12(1.5);
+   if (hasAdaptability)
+{
+    if (type == TYPE_NORMAL)
+        return UQ_4_12(2.3333333); // or 2.25 if using flat bonus
+    else
+        return UQ_4_12(2.0);
+}
+else
+{
+    if (type == TYPE_NORMAL)
+        return UQ_4_12(1.75);
+    else
+        return UQ_4_12(1.5);
+}
     }
-    // Neither base or Tera type.
+    // Neither base nor Tera type.
     else
     {
         return UQ_4_12(1.0);
     }
 }
+
 
 u16 GetTeraTypeRGB(u32 type)
 {
