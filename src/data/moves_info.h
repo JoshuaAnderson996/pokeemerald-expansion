@@ -238,7 +238,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Mega Punch"),
         .description = COMPOUND_STRING(
             "A strong punch thrown with\n"
-            "incredible power."),
+            "incredible power.\n"
+            "Ingores the foe's stat changes."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_HERO,
@@ -250,6 +251,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .punchingMove = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .ignoresTargetDefenseEvasionStages = TRUE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_MIND_READER},
@@ -6921,16 +6923,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Uproar"),
         .description = COMPOUND_STRING(
-        #if B_UPROAR_TURNS >= GEN_5
-            "Causes an uproar for 3\n"
-        #else
-            "Causes an uproar for 2 to 5\n"
-        #endif
-            "turns and prevents sleep."),
-        .effect = EFFECT_UPROAR,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 50,
+            "Causes an uproar for 2 or 3 turns."),
+        .effect = EFFECT_HIT,
+        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 140 : 90,
         .type = TYPE_NORMAL,
-        .accuracy = 100,
+        .accuracy = 90,
         .pp = 10,
         .target = MOVE_TARGET_RANDOM,
         .priority = 0,
@@ -6940,7 +6937,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_UPROAR,
+            .moveEffect = MOVE_EFFECT_THRASH,
             .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
@@ -10786,11 +10783,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws glitter bomb at foe\n"
             "may confuse."),
         .effect = EFFECT_HIT,
-        .power = 70,
+        .power = 60,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
@@ -22731,7 +22728,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "that may inflict status."),
         .effect = EFFECT_HIT,
         .power = 40,
-        .type = TYPE_BUG,
+        .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 30,
         .target = MOVE_TARGET_SELECTED,
@@ -22746,7 +22743,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_DOUBLE_TEAM},
-        .battleAnimScript = gBattleAnimMove_StringShot,
+        .battleAnimScript = gBattleAnimMove_PinMissile,
         .validApprenticeMove = TRUE,
     },
     [MOVE_VOLTAGE_BARRAGE] =
@@ -22799,7 +22796,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     },
     [MOVE_DEADLY_WOUND] =
     {
-        .name = COMPOUND_STRING("Dire Claw"),
+        .name = COMPOUND_STRING("Deadly Wound"),
         .description = COMPOUND_STRING(
             "Inflicts a deep wound\n"
             "prevent foe from healing."),
@@ -22812,6 +22809,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .slicingMove = TRUE,
+        .ninjaMove = TRUE,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_PSYCHIC_NOISE,
@@ -22821,13 +22819,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     },
     [MOVE_RUSTY_BLADE] =
     {
-        .name = COMPOUND_STRING("Cross Poison"),
+        .name = COMPOUND_STRING("Rusty Blade"),
         .description = COMPOUND_STRING(
             "A slash that may poison a\n"
             "foe and do critical damage."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_STEEL,
+        .criticalHitStage = 1,
         .accuracy = 95,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
@@ -22845,7 +22844,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_CrossPoison,
     },
-    [MOVE_FINSHING_SLAM] =
+    [MOVE_FINISHING_SLAM] =
     {
         .name = COMPOUND_STRING("Finishing Slam"),
         .description = COMPOUND_STRING(
@@ -22869,7 +22868,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     },
     [MOVE_DOMINATE] =
     {
-        .name = COMPOUND_STRING("Finishing Slam"),
+        .name = COMPOUND_STRING("Dominate"),
         .description = COMPOUND_STRING(
             "Does more damage if the\n"
             "foe has lowered stats."),
@@ -22933,8 +22932,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Magma Orb"),
         .description = COMPOUND_STRING(
-            "Shoots a magma ball\n"
-            "Rock type in rain."),
+            "This move's power increases\n"
+            "under rain and becomes rock type."),
         .effect = EFFECT_WEATHER_SHIFTING,
         .power = 70,
         .type = TYPE_FIRE,
@@ -22954,8 +22953,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Ice Orb"),
         .description = COMPOUND_STRING(
-            "Shoots a ice ball\n"
-            "Water type in sun."),
+            "This move's power increases\n"
+            "under sun and becomes water type."),
         .effect = EFFECT_WEATHER_SHIFTING,
         .power = 70,
         .type = TYPE_ICE,
@@ -22978,7 +22977,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Shoots an orb of\n"
             "cosmic energy intensifying gravity."),
         .effect = EFFECT_HIT,
-        .power = 85,
+        .power = 60,
         .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 10,
@@ -22996,8 +22995,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
     .name = COMPOUND_STRING("Gravity Fist"),
     .description = COMPOUND_STRING(
-        "A punch so heavy it warps gravity.\n"
-        "May increase Gravity."),
+        "A punch so heavy it warps gravity."),
     .effect = EFFECT_HIT,
     .power = 70,
     .type = TYPE_COSMIC,
@@ -23006,7 +23004,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     .target = MOVE_TARGET_SELECTED,
     .priority = 0,
     .category = DAMAGE_CATEGORY_PHYSICAL,
-    .battleAnimScript = gBattleAnimMove_GravApple, // or custom if you like
+    .battleAnimScript = gBattleAnimMove_ShadowPunch,
     .additionalEffects = ADDITIONAL_EFFECTS({
         .moveEffect = MOVE_EFFECT_GRAVITY,
         .chance = 100,
@@ -23102,6 +23100,49 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 20,
         }),
+    },
+    [MOVE_ENERGY_WAVE] =
+    {
+        .name = COMPOUND_STRING("Energy Wave"),
+        .description = COMPOUND_STRING(
+            "A Powerful wave of energy."),
+        .effect = EFFECT_HIT,
+        .power = 110,
+        .type = TYPE_NORMAL,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyperBeam,
+    },
+    [MOVE_OVERFLARE] =
+    {
+        .name = COMPOUND_STRING("Overflare"),
+        .description = COMPOUND_STRING(
+            "A powerful flare of fire\n"
+            "that may burn the foe."),
+        .effect = EFFECT_OVERFLARE,
+        .power = 110,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FlareBlitz,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

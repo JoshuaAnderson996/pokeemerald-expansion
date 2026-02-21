@@ -4015,7 +4015,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_ARCANE_POWER, ABILITY_HAZE_STEP, ABILITY_PIXILATE },
+        .abilities = { ABILITY_ARCANE_POWER, ABILITY_HAZE_STEP, ABILITY_HIGH_SOCIETY },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mismagius"),
         .cryId = CRY_MISMAGIUS,
@@ -5080,7 +5080,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseSpAttack  = 60,
         .baseSpDefense = 75,
     #if P_UPDATED_TYPES >= GEN_6
-        .types = MON_TYPES(TYPE_FAIRY, TYPE_FIGHTING),
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_GROUND),
     #else
         .types = MON_TYPES(TYPE_NORMAL),
     #endif

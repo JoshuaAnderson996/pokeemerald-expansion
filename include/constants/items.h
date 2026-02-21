@@ -1096,7 +1096,10 @@
 #define ITEM_GLIMMORANITE 921
 #define ITEM_TATSUGIRINITE 922
 #define ITEM_BAXCALIBRITE 923
-#define ITEMS_COUNT 924
+
+// Quest Times
+#define ITEM_LOST_LETTER 924
+#define ITEMS_COUNT 925
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow

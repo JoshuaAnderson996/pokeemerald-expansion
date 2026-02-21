@@ -824,7 +824,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
         maximum *= strikeCount;
     }
 
-    if ((ctx->abilityAtk == ABILITY_PARENTAL_BOND || ctx->abilityAtk == ABILITY_MOTHERS_BOND || ctx->abilityAtk == ABILITY_TIDAL_TERROR)
+    if ((ctx->abilityAtk == ABILITY_PARENTAL_BOND || ctx->abilityAtk == ABILITY_MOTHERS_BOND || ctx->abilityAtk == ABILITY_TIDAL_TERROR || ctx->abilityAtk == ABILITY_BRAWLER || ctx->abilityAtk == ABILITY_BLADE_DANCER)
         && !strikeCount
         && effect != EFFECT_TRIPLE_KICK
         && effect != EFFECT_MULTI_HIT
@@ -2137,6 +2137,8 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
         case ABILITY_CLEAR_BODY:
         case ABILITY_WHITE_SMOKE:
         case ABILITY_FULL_METAL_BODY:
+        case ABILITY_HIGH_SOCIETY:
+        case ABILITY_QUEENS_SUPREMACY:
             return FALSE;
         default:
             break;

@@ -424,7 +424,7 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro unused_0x48
+	.macro tryburnattacker_ignorefire
 	.byte 0x48
 	.endm
 

@@ -82,7 +82,9 @@ RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp:
 	.string "Hello and welcome to the DEVON\n"
 	.string "CORPORATION.\p"
 	.string "We're proud producers of items and\n"
-	.string "medicine that enhance your life.$"
+	.string "medicine that enhance your life.\p"
+	.string "We also conduct research into rare\n"
+	.string "phenomena from beyond our world…$"
 
 RustboroCity_DevonCorp_1F_Text_StaffGotRobbed:
 	.string "One of our research staff stupidly\n"
@@ -92,7 +94,10 @@ RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct:
 	.string "Hey, those RUNNING SHOES!\n"
 	.string "They're one of our products!\p"
 	.string "It makes me happy when I see someone\n"
-	.string "using something we made.$"
+	.string "using something we made.\p"
+	.string "Though lately, management's been\n"
+	.string "focused on some top-secret project…\l"
+	.string "Something about meteors, I heard.$"
 
 RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright:
 	.string "That stolen parcel…\p"

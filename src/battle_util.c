@@ -8814,7 +8814,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_RIVALRY:
-    case ABILITY_QUEENS_SUPREMACY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
@@ -9314,7 +9313,7 @@ else
     case ABILITY_OVERCHARGED:
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.25));
         }
         break;
     case ABILITY_ILLUSION:
@@ -9332,10 +9331,6 @@ else
     case ABILITY_MEGA_MIND:
         if (IsBattleMoveSpecial(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
-        break;    
-    case ABILITY_SLOW_START:
-        if (gDisableStructs[battlerAtk].slowStartTimer > gBattleTurnCounter)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
         break;
     case ABILITY_SOLAR_POWER:
         if (IsBattleMoveSpecial(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN))
@@ -9938,14 +9933,18 @@ static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)
     return UQ_4_12(1.0);
 }
 
-static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk)
+static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk, u32 move)
 {
     if (gSpecialStatuses[battlerAtk].parentalBondState != PARENTAL_BOND_2ND_HIT)
         return UQ_4_12(1.0);
     if (GetBattlerAbility(battlerAtk) == ABILITY_MOTHERS_BOND)
         return UQ_4_12(0.5);
     if (GetBattlerAbility(battlerAtk) == ABILITY_TIDAL_TERROR)
-        return UQ_4_12(0.25);
+        return UQ_4_12(0.3);
+    if (GetBattlerAbility(battlerAtk) == ABILITY_BRAWLER && IsPunchingMove(move))
+        return UQ_4_12(0.3);
+    if (GetBattlerAbility(battlerAtk) == ABILITY_BLADE_DANCER && IsSlicingMove(move))
+        return UQ_4_12(0.3);
     return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
 }
 
@@ -9975,13 +9974,28 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
 {
     if (ctx->weather == B_WEATHER_NONE)
         return UQ_4_12(1.0);
+
+    // Specific Move Effects (Hydro Steam, Ice Orb, Magma Orb)
     if (GetMoveEffect(ctx->move) == EFFECT_HYDRO_STEAM && (ctx->weather & B_WEATHER_SUN) && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.5);
+
+    if (ctx->move == MOVE_ICE_ORB)
+    {
+        if ((ctx->weather & B_WEATHER_SUN) && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
+            return UQ_4_12(1.5);
+    }
+
+    if (ctx->move == MOVE_MAGMA_ORB)
+    {
+        if ((ctx->weather & B_WEATHER_RAIN) && ctx->holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
+            return UQ_4_12(1.5);
+    }
     
-    // ONLY attacker's Umbrella blocks weather damage modifiers
+    // ONLY attacker's Umbrella blocks standard weather damage modifiers
     if (ctx->holdEffectAtk == HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.0);
 
+    // Standard Weather Calculations
     if (ctx->weather & B_WEATHER_RAIN)
     {
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
@@ -10387,7 +10401,7 @@ static inline s32 DoMoveDamageCalcVars(struct DamageContext *ctx)
 
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, gBattleMons[ctx->battlerAtk].level, targetFinalDefense);
     DAMAGE_APPLY_MODIFIER(GetTargetDamageModifier(ctx));
-    DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(ctx->battlerAtk));
+    DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(ctx->battlerAtk, ctx->move));
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(ctx));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(ctx->isCrit));
     DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(ctx->battlerDef));
@@ -12788,7 +12802,6 @@ static const u16 sFloatingSpeciesList[] =
     SPECIES_CASTFORM_RAINY,
     SPECIES_CASTFORM_SNOWY,
     SPECIES_CASTFORM_SANDSTORM,
-    SPECIES_ETERNATUS,
     SPECIES_DRAGAPULT,
     SPECIES_DREEPY,
     SPECIES_FROSMOTH,
@@ -13429,4 +13442,48 @@ bool32 IsAffectedByPowderMove(u32 battler, u32 ability, enum ItemHoldEffect hold
         || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
     return TRUE;
+}
+
+bool32 CanBeBurnedIgnoreFireType(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
+{
+
+    if (CanSetNonVolatileStatusIgnoreFireType(
+            battlerAtk,
+            battlerDef,
+            ABILITY_NONE,
+            abilityDef,
+            MOVE_EFFECT_BURN,
+            CHECK_TRIGGER))
+        return TRUE;
+
+    return FALSE;
+}
+
+bool32 CanSetNonVolatileStatusIgnoreFireType(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 abilityDef, enum MoveEffect effect, enum FunctionCallOption option)
+{
+    const u8 *battleScript = NULL;
+
+    switch (effect)
+    {
+    case MOVE_EFFECT_BURN:
+        if (gBattleMons[battlerDef].status1 & STATUS1_BURN)
+        {
+            battleScript = BattleScript_AlreadyBurned;
+        }
+        else if (abilityDef == ABILITY_WATER_VEIL || abilityDef == ABILITY_WATER_BUBBLE)
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABILITY_PREVENTS_MOVE_BURN;
+            battleScript = BattleScript_ImmunityProtected;
+        }
+        else if (abilityDef == ABILITY_THERMAL_EXCHANGE)
+        {
+            battleScript = BattleScript_AbilityProtectsDoesntAffect;
+        }
+        break;
+
+    default:
+        return CanSetNonVolatileStatus(battlerAtk, battlerDef, abilityAtk, abilityDef, effect, option);
+    }
+
+    return (battleScript == NULL);
 }

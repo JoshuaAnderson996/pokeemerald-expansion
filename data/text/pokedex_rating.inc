@@ -113,3 +113,48 @@ gBirchDexRatingText_OnANationwideBasis::
 	.string "On a nationwide basis…\p"
 	.string "You've seen {STR_VAR_1} POKéMON,\n"
 	.string "and you've caught {STR_VAR_2} POKéMON…$"
+
+ProfBirch_Text_Reward100Pokemon::
+	.string "PROF. BIRCH: Incredible!\n"
+	.string "You've caught over 100 POKéMON!\p"
+	.string "Your dedication is remarkable.\n"
+	.string "Please, take these MASTER BALLs\l"
+	.string "as a token of my appreciation!$"
+
+ProfBirch_Text_Reward200Pokemon::
+	.string "PROF. BIRCH: Amazing work!\n"
+	.string "Over 200 POKéMON caught!\p"
+	.string "You're making tremendous progress\n"
+	.string "in documenting POKéMON species.\p"
+	.string "Here, have some MASTER BALLs\n"
+	.string "and RARE CANDIES!$"
+
+ProfBirch_Text_Reward300Pokemon::
+	.string "PROF. BIRCH: Outstanding!\n"
+	.string "300 POKéMON caught!\p"
+	.string "You're well on your way to becoming\n"
+	.string "a true POKéMON PROFESSOR!\p"
+	.string "These RARE CANDIES and ABILITY\n"
+	.string "CAPSULES should help you out!$"
+
+ProfBirch_Text_Reward400Pokemon::
+	.string "PROF. BIRCH: Extraordinary!\n"
+	.string "You've caught over 400 POKéMON!\p"
+	.string "I've been studying POKéMON for\n"
+	.string "decades, and I'm impressed!\p"
+	.string "I think you deserve something\n"
+	.string "truly special…\p"
+	.string "This rare POKéMON was given to me\n"
+	.string "by a colleague years ago.\p"
+	.string "I want you to have it!$"
+
+ProfBirch_Text_Reward500Pokemon::
+	.string "PROF. BIRCH: Unbelievable!\n"
+	.string "500 POKéMON caught!\p"
+	.string "You've achieved something that\n"
+	.string "few TRAINERS ever accomplish!\p"
+	.string "I have a very special gift for you…\p"
+	.string "This SHINY CHARM will increase\n"
+	.string "your chances of encountering\l"
+	.string "rare, differently colored POKéMON!\p"
+	.string "Congratulations, {PLAYER}{KUN}!$"

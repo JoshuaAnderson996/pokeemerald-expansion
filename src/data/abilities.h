@@ -2841,7 +2841,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_QUEENS_SUPREMACY] =
     {
         .name = _("Queens Supremacy"),
-        .description = COMPOUND_STRING("Rivalry + Queens Majesty."),
+        .description = COMPOUND_STRING("High Society + Queens Majesty."),
         .aiRating = 7,
     },
     [ABILITY_KINGS_MIGHT] =
@@ -2895,7 +2895,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TIDAL_TERROR] =
     {
         .name = _("Tidal Terror"),
-        .description = COMPOUND_STRING("Dark/Water are x1.3 and bites hit twice."),
+        .description = COMPOUND_STRING("Dark/Water are x1.25 and moves hit twice."),
         .aiRating = 8,
     },
     [ABILITY_AURORA_GUARDIAN] =
@@ -2975,5 +2975,17 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .name = _("High Sorcery"),
             .description = COMPOUND_STRING("1.5X on Psychic/Ghost/Magic + Magic Bounce."),
             .aiRating = 7,
+        },
+        [ABILITY_BRAWLER] =
+        {
+        .name = _("Brawler"),
+        .description = COMPOUND_STRING("Punching moves hit twice."),
+        .aiRating = 8,
+        },
+        [ABILITY_BLADE_DANCER] =
+        {
+        .name = _("Blade Dancer"),
+        .description = COMPOUND_STRING("Slicing moves hit twice."),
+        .aiRating = 8,
         },
     };

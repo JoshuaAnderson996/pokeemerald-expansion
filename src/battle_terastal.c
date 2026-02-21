@@ -172,7 +172,7 @@ uq4_12_t GetTeraMultiplier(u32 battler, u32 type)
    if (hasAdaptability)
 {
     if (type == TYPE_NORMAL)
-        return UQ_4_12(2.3333333); // or 2.25 if using flat bonus
+        return UQ_4_12(2.3333333); 
     else
         return UQ_4_12(2.0);
 }

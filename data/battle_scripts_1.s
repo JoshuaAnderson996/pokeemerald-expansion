@@ -9872,11 +9872,9 @@ BattleScript_InnateQuarkDriveActivates::
     pause B_WAIT_TIME_SHORT               
     printstring STRINGID_WEATHERDISAPPEARS 
     waitmessage B_WAIT_TIME_MED             
-    end3                      
+    end3                   
 
-
-
-BattleScript_QuestionForfeitBattle::
+	BattleScript_QuestionForfeitBattle::
 	printselectionstring STRINGID_QUESTIONFORFEITBATTLE
 	forfeityesnobox
 	endselectionscript
@@ -9889,4 +9887,25 @@ BattleScript_ForfeitBattleGaveMoney::
 	printstring STRINGID_PLAYERWHITEOUT3
 .endif
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	end2   
+
+BattleScript_EffectOverflare::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_Overflare_Missed, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	call BattleScript_Hit_RetFromAtkAnimation
+	goto BattleScript_Overflare_ApplySelfBurn
+
+BattleScript_Overflare_Missed:
+	call BattleScript_PrintMoveMissed
+
+BattleScript_Overflare_ApplySelfBurn:
+	tryburnattacker_ignorefire
+	statusanimation BS_ATTACKER
+	updatestatusicon BS_ATTACKER
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd

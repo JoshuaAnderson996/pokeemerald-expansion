@@ -13524,6 +13524,22 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LavaCookieAndLetter,
     },
 
+    [ITEM_LOST_LETTER] =
+    {
+        .name = ITEM_NAME("Lost Letter"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A special letter that\n"
+            "was lost in the\n"
+            "is very important to someone."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Letter,
+        .iconPalette = gItemIconPalette_LavaCookieAndLetter,
+    },
+
     [ITEM_DEVON_PARTS] =
     {
         .name = ITEM_NAME("Devon Parts"),

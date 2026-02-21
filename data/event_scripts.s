@@ -1178,3 +1178,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/OldaleTown_PokemonCenter_1F_2_2_2/scripts.inc"
 
 	.include "data/maps/OldaleTown_PokemonCenter_1F_2_2_2_2/scripts.inc"
+
+	.include "data/maps/QuestHouse/scripts.inc"

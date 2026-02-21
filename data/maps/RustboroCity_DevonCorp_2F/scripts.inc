@@ -292,7 +292,10 @@ RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls:
 RustboroCity_DevonCorp_2F_Text_IMadePokenav:
 	.string "I made the POKéNAV!\p"
 	.string "As an engineer, I feel blessed to have\n"
-	.string "made something so great!$"
+	.string "made something so great!\p"
+	.string "Next, we're working on equipment to\n"
+	.string "detect unusual energy signatures…\l"
+	.string "The kind only found in meteorites.$"
 
 RustboroCity_DevonCorp_2F_Text_WowThatsAPokenav:
 	.string "Oh, wow!\n"
@@ -309,12 +312,18 @@ RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams:
 	.string "I'm trying to develop a device that\n"
 	.string "visually reproduces the dreams of\l"
 	.string "POKéMON…\p"
-	.string "But it's not going well.$"
+	.string "But it's not going well.\p"
+	.string "Strange though… Some POKéMON dream\n"
+	.string "of the stars, as if they came from\l"
+	.string "outer space. Fascinating!$"
 
 RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils:
 	.string "I've been trying to develop a device\n"
 	.string "that resurrects POKéMON from fossils…\p"
-	.string "And, it's working!$"
+	.string "And, it's working!\p"
+	.string "We've even received samples from\n"
+	.string "meteor craters. Who knows what\l"
+	.string "extraterrestrial DNA they might hold?$"
 
 RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife:
 	.string "Wait! That thing you have there…\n"

@@ -1222,72 +1222,104 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
-#define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
-#define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
-#define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
-#define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
+#define FLAG_RECEIVED_BIRCH_REWARD_100                                           0x493 // Pokedex Reward for 100 Pokemon
+#define FLAG_RECEIVED_BIRCH_REWARD_200                                           0x494 // Pokedex Reward for 200 Pokemon
+#define FLAG_RECEIVED_BIRCH_REWARD_300                                           0x495 // Pokedex Reward for 300 Pokemon
+#define FLAG_RECEIVED_BIRCH_REWARD_400                                           0x496 //   Pokedex Reward for 400 Pokemon
+#define FLAG_RECEIVED_BIRCH_REWARD_500                                           0x497 // Pokedex Reward for 500 Pokemon
+#define FLAG_RECEIVED_BIRCH_REWARD_600                                           0x498 // Unused Flag
+#define FLAG_RECEIVED_BIRCH_REWARD_700                                           0x499 // Unused Flag
+#define FLAG_RECEIVED_BIRCH_REWARD_800                                           0x49A // Unused Flag
+#define FLAG_RECEIVED_BIRCH_REWARD_900                                           0x49B // Unused Flag
+#define FLAG_RECEIVED_BIRCH_REWARD_1000                                           0x49C // Unused Flag
+#define FLAG_MET_REWARD_NPC                                           0x49D 
+#define FLAG_MET_SPECIAL_QUEST_NPC                                           0x49E // Unused Flag
+#define FLAG_QUEST_REWARD_5_CLAIMED                                            0x49F // Unused Flag
+#define FLAG_QUEST_REWARD_10_CLAIMED                                           0x4A0 // Unused Flag
+#define FLAG_QUEST_REWARD_25_CLAIMED                                           0x4A1 // Unused Flag
+#define FLAG_QUEST_REWARD_50_CLAIMED                                           0x4A2 // Unused Flag
+#define FLAG_QUEST_REWARD_100_CLAIMED                                           0x4A3 // Unused Flag
+// Littleroot Town Quests
+#define FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_STARTED                                           0x4A4 // Unused Flag
+#define FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_COMPLETED                                           0x4A5 // Unused Flag
+#define FLAG_QUEST_LITTLEROOT_LOST_ITEM_STARTED                                                  0x4A6 // Unused Flag
+#define FLAG_QUEST_LITTLEROOT_LOST_ITEM_COMPLETED           0x4A7
+
+// Oldale Town Quests
+#define FLAG_QUEST_OLDALE_PACKAGE_DELIVERY_STARTED          0x4A8
+#define FLAG_QUEST_OLDALE_PACKAGE_DELIVERY_COMPLETED        0x4A9
+#define FLAG_QUEST_OLDALE_POTION_SHORTAGE_STARTED           0x4AA
+#define FLAG_QUEST_OLDALE_POTION_SHORTAGE_COMPLETED         0x4AB
+
+// Petalburg City Quests
+#define FLAG_QUEST_PETALBURG_FIND_PET_STARTED               0x4AC
+#define FLAG_QUEST_PETALBURG_FIND_PET_COMPLETED             0x4AD
+#define FLAG_QUEST_PETALBURG_RARE_CANDY_STARTED             0x4AE
+#define FLAG_QUEST_PETALBURG_RARE_CANDY_COMPLETED           0x4AF
+
+// Rustboro City Quests
+#define FLAG_QUEST_RUSTBORO_FOSSIL_HUNT_STARTED             0x4B0
+#define FLAG_QUEST_RUSTBORO_FOSSIL_HUNT_COMPLETED           0x4B1
+#define FLAG_QUEST_RUSTBORO_STONE_DELIVERY_STARTED          0x4B2
+#define FLAG_QUEST_RUSTBORO_STONE_DELIVERY_COMPLETED        0x4B3
+
+// Dewford Town Quests
+#define FLAG_QUEST_DEWFORD_CATCH_POKEMON_STARTED            0x4B4
+#define FLAG_QUEST_DEWFORD_CATCH_POKEMON_COMPLETED          0x4B5
+#define FLAG_QUEST_DEWFORD_TREND_SETTER_STARTED             0x4B6
+#define FLAG_QUEST_DEWFORD_TREND_SETTER_COMPLETED           0x4B7
+
+// Slateport City Quests
+#define FLAG_QUEST_SLATEPORT_BEACH_CLEANUP_STARTED          0x4B8
+#define FLAG_QUEST_SLATEPORT_BEACH_CLEANUP_COMPLETED        0x4B9
+#define FLAG_QUEST_SLATEPORT_MARKET_ERRAND_STARTED          0x4BA
+#define FLAG_QUEST_SLATEPORT_MARKET_ERRAND_COMPLETED        0x4BB
+
+// Mauville City Quests
+#define FLAG_QUEST_MAUVILLE_POWER_PROBLEM_STARTED           0x4BC
+#define FLAG_QUEST_MAUVILLE_POWER_PROBLEM_COMPLETED         0x4BD
+#define FLAG_QUEST_MAUVILLE_BIKE_RACE_STARTED               0x4BE
+#define FLAG_QUEST_MAUVILLE_BIKE_RACE_COMPLETED             0x4BF
+
+// Verdanturf Town Quests
+#define FLAG_QUEST_VERDANTURF_FLOWER_POWER_STARTED          0x4C0
+#define FLAG_QUEST_VERDANTURF_FLOWER_POWER_COMPLETED        0x4C1
+
+// Fallarbor Town Quests
+#define FLAG_QUEST_FALLARBOR_ASH_COLLECTION_STARTED         0x4C2
+#define FLAG_QUEST_FALLARBOR_ASH_COLLECTION_COMPLETED       0x4C3
+
+// Lavaridge Town Quests
+#define FLAG_QUEST_LAVARIDGE_HOT_SPRINGS_STARTED            0x4C4
+#define FLAG_QUEST_LAVARIDGE_HOT_SPRINGS_COMPLETED          0x4C5
+
+// Fortree City Quests
+#define FLAG_QUEST_FORTREE_FEATHER_COLLECTION_STARTED       0x4C6
+#define FLAG_QUEST_FORTREE_FEATHER_COLLECTION_COMPLETED     0x4C7
+
+// Lilycove City Quests
+#define FLAG_QUEST_LILYCOVE_SHOPPING_SPREE_STARTED          0x4C8
+#define FLAG_QUEST_LILYCOVE_SHOPPING_SPREE_COMPLETED        0x4C9
+#define FLAG_QUEST_LILYCOVE_CONTEST_HELP_STARTED            0x4CA
+#define FLAG_QUEST_LILYCOVE_CONTEST_HELP_COMPLETED          0x4CB
+
+// Mossdeep City Quests
+#define FLAG_QUEST_MOSSDEEP_SPACE_RESEARCH_STARTED          0x4CC
+#define FLAG_QUEST_MOSSDEEP_SPACE_RESEARCH_COMPLETED        0x4CD
+
+// Sootopolis City Quests
+#define FLAG_QUEST_SOOTOPOLIS_DIVING_TREASURE_STARTED       0x4CE
+#define FLAG_QUEST_SOOTOPOLIS_DIVING_TREASURE_COMPLETED     0x4CF
+
+// Pacifidlog Town Quests
+#define FLAG_QUEST_PACIFIDLOG_FLOATING_LOGS_STARTED         0x4D0
+#define FLAG_QUEST_PACIFIDLOG_FLOATING_LOGS_COMPLETED       0x4D1
+
+// Ever Grande City Quests
+#define FLAG_QUEST_EVERGRANDE_VICTORY_ROAD_STARTED          0x4D2
+#define FLAG_QUEST_EVERGRANDE_VICTORY_ROAD_COMPLETED        0x4D3
+
+#define FLAG_HIDE_ROUTE_104_LOST_LETTER                              0x4D4 // Unused Flag
 #define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
 #define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
 #define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag

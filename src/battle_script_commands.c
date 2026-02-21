@@ -411,7 +411,7 @@ static void Cmd_endselectionscript(void);
 static void Cmd_playanimation(void);
 static void Cmd_playanimation_var(void);
 static void Cmd_jumpfifsemiinvulnerable(void);
-static void Cmd_unused_0x48(void);
+static void Cmd_tryburnattacker_ignorefire(void);
 static void Cmd_moveend(void);
 static void Cmd_sethealblock(void);
 static void Cmd_returnatktoball(void);
@@ -670,7 +670,7 @@ void (*const gBattleScriptingCommandsTable[])(void) =
     Cmd_playanimation,                           //0x45
     Cmd_playanimation_var,                       //0x46
     Cmd_jumpfifsemiinvulnerable,                 //0x47
-    Cmd_unused_0x48,                             //0x48
+    Cmd_tryburnattacker_ignorefire,              //0x48
     Cmd_moveend,                                 //0x49
     Cmd_sethealblock,                            //0x4A
     Cmd_returnatktoball,                         //0x4B
@@ -1178,7 +1178,7 @@ static void Cmd_attackcanceler(void)
         return;
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
-     && (GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_TIDAL_TERROR)
+     && (GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gBattlerAttacker) == ABILITY_TIDAL_TERROR || GetBattlerAbility(gBattlerAttacker) == ABILITY_BRAWLER) 
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)
@@ -3487,7 +3487,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
         gBattleStruct->moveDamage[gEffectBattler] = (gBattleMons[gEffectBattler].maxHP) / 4;
         if (gBattleStruct->moveDamage[gEffectBattler] == 0)
             gBattleStruct->moveDamage[gEffectBattler] = 1;
-        if (GetBattlerAbility(gEffectBattler) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_TIDAL_TERROR)
+        if (GetBattlerAbility(gEffectBattler) == ABILITY_PARENTAL_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_MOTHERS_BOND || GetBattlerAbility(gEffectBattler) == ABILITY_TIDAL_TERROR || GetBattlerAbility(gEffectBattler) == ABILITY_BRAWLER || GetBattlerAbility(gEffectBattler) == ABILITY_BLADE_DANCER)
             gBattleStruct->moveDamage[gEffectBattler] *= 2;
 
         BattleScriptPush(gBattlescriptCurrInstr + 1);
@@ -5651,10 +5651,6 @@ static void Cmd_jumpfifsemiinvulnerable(void)
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
-}
-
-static void Cmd_unused_0x48(void)
-{
 }
 
 static inline bool32 TryTriggerSymbiosis(u32 battler, u32 ally)
@@ -18715,4 +18711,27 @@ void BS_JumpIfGenConfigLowerThan(void)
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+static void Cmd_tryburnattacker_ignorefire(void)
+{
+    CMD_ARGS();
+    bool32 canInflictStatus = TRUE;
+
+    // Self burn: attacker burns attacker
+    if (!CanSetNonVolatileStatusIgnoreFireType(
+            gBattlerAttacker,
+            gBattlerAttacker,
+            GetBattlerAbility(gBattlerAttacker),
+            GetBattlerAbility(gBattlerAttacker),
+            MOVE_EFFECT_BURN,
+            RUN_SCRIPT))
+        canInflictStatus = FALSE;
+
+    if (canInflictStatus)
+    {
+        gBattleMons[gBattlerAttacker].status1 |= STATUS1_BURN;
+    }
+
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }

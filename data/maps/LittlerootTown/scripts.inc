@@ -1014,3 +1014,200 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_EventScript_BerryCollector::
+    lock
+    faceplayer
+    goto_if_set FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_COMPLETED, BerryCollector_Done
+    goto_if_set FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_STARTED, BerryCollector_Check
+    msgbox BerryCollector_Text_Intro, MSGBOX_YESNO
+    compare VAR_RESULT, YES
+    goto_if_eq BerryCollector_Accept
+    msgbox BerryCollector_Text_Declined, MSGBOX_DEFAULT
+    release
+    end
+
+BerryCollector_Accept::
+    msgbox BerryCollector_Text_Accepted, MSGBOX_DEFAULT
+    setflag FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_STARTED
+    release
+    end
+
+BerryCollector_Check::
+    checkitem ITEM_ORAN_BERRY, 5
+    compare VAR_RESULT, FALSE
+    goto_if_eq BerryCollector_NotDone
+    checkitem ITEM_PECHA_BERRY, 3
+    compare VAR_RESULT, FALSE
+    goto_if_eq BerryCollector_NotDone
+    checkitem ITEM_CHERI_BERRY, 3
+    compare VAR_RESULT, FALSE
+    goto_if_eq BerryCollector_NotDone
+    goto BerryCollector_Complete
+
+BerryCollector_NotDone::
+    msgbox BerryCollector_Text_StillWorking, MSGBOX_DEFAULT
+    release
+    end
+
+BerryCollector_Complete::
+    msgbox BerryCollector_Text_Complete, MSGBOX_DEFAULT
+    removeitem ITEM_ORAN_BERRY, 5
+    removeitem ITEM_PECHA_BERRY, 3
+    removeitem ITEM_CHERI_BERRY, 3
+    giveitem ITEM_MIRACLE_SEED, 1
+    giveitem ITEM_RARE_CANDY, 2
+    setflag FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_COMPLETED
+    clearflag FLAG_QUEST_LITTLEROOT_BERRY_COLLECTOR_STARTED
+    release
+    end
+
+BerryCollector_Done::
+    msgbox BerryCollector_Text_Thanks, MSGBOX_DEFAULT
+    release
+    end
+
+BerryCollector_Text_Intro:
+    .string "Oh, hello there!\p"
+    .string "I'm studying BERRIES and I need some\n"
+    .string "for my research.\p"
+    .string "Could you bring me:\n"
+    .string "5 ORAN BERRIES\l"
+    .string "3 PECHA BERRIES\l"
+    .string "3 CHERI BERRIES\p"
+    .string "Will you help me?$"
+
+BerryCollector_Text_Accepted:
+    .string "Wonderful! I'll be waiting right here!\n"
+    .string "Come back when you have them all!$"
+
+BerryCollector_Text_Declined:
+    .string "Oh, that's okay. Come talk to me if\n"
+    .string "you change your mind!$"
+
+BerryCollector_Text_StillWorking:
+    .string "Let me check… Not quite there yet!\p"
+    .string "I still need:\n"
+    .string "5 ORAN BERRIES\l"
+    .string "3 PECHA BERRIES\l"
+    .string "3 CHERI BERRIES$"
+
+BerryCollector_Text_Complete:
+    .string "Perfect! These are exactly what I need!\p"
+    .string "Thank you so much! Please take these\n"
+    .string "as a reward!$"
+
+BerryCollector_Text_Thanks:
+    .string "PROF. BIRCH's dedication is so\n"
+	.string "inspiring! Watching him work tirelessly\l"
+	.string "in his LAB and out in the field…\p"
+	.string "He's motivated me to start studying\n"
+	.string "BERRIES and their properties myself!$"
+
+	LittlerootTown_EventScript_LostItemNPC::
+    lock
+    faceplayer
+    goto_if_set FLAG_QUEST_LITTLEROOT_LOST_ITEM_COMPLETED, LostItem_Done
+    goto_if_set FLAG_QUEST_LITTLEROOT_LOST_ITEM_STARTED, LostItem_Check
+    msgbox LostItem_Text_Intro, MSGBOX_YESNO
+    compare VAR_RESULT, YES
+    goto_if_eq LostItem_Accept
+    msgbox LostItem_Text_Declined, MSGBOX_DEFAULT
+    release
+    end
+
+LostItem_Accept::
+    msgbox LostItem_Text_Accepted, MSGBOX_DEFAULT
+    setflag FLAG_QUEST_LITTLEROOT_LOST_ITEM_STARTED
+    clearflag FLAG_HIDE_ROUTE_104_LOST_LETTER
+    release
+    end
+
+LostItem_Check::
+    checkitem ITEM_LOST_LETTER, 1
+    compare VAR_RESULT, FALSE
+    goto_if_eq LostItem_NotDone
+    goto LostItem_Complete
+
+LostItem_NotDone::
+    msgbox LostItem_Text_StillLooking, MSGBOX_DEFAULT
+    release
+    end
+
+LostItem_Complete::
+    msgbox LostItem_Text_Complete, MSGBOX_DEFAULT
+    removeitem ITEM_LOST_LETTER, 1
+    giveitem ITEM_RARE_CANDY, 3
+    setflag FLAG_QUEST_LITTLEROOT_LOST_ITEM_COMPLETED
+    clearflag FLAG_QUEST_LITTLEROOT_LOST_ITEM_STARTED
+    release
+    end
+
+LostItem_Done::
+    msgbox LostItem_Text_Thanks, MSGBOX_DEFAULT
+    release
+    end
+
+@ Route 104 - Overworld item pickup
+Route104_EventScript_LostLetterPickup::
+    lock
+    faceplayer
+    msgbox LostItem_Text_FoundOnGround, MSGBOX_DEFAULT
+    giveitem ITEM_LOST_LETTER, 1
+    compare VAR_RESULT, FALSE
+    goto_if_eq LostItem_NoBagRoom
+    setflag FLAG_HIDE_ROUTE_104_LOST_LETTER
+    release
+    end
+
+LostItem_NoBagRoom::
+    msgbox LostItem_Text_NoBagRoom, MSGBOX_DEFAULT
+    release
+    end
+
+LostItem_Text_Intro:
+    .string "Oh, hello there!\p"
+    .string "I'm in a bit of trouble…\n"
+    .string "I dropped a very important LETTER\l"
+    .string "somewhere.\p"
+	.string "I like I dropped it on my way\n"
+	.string "To Rustboro City.\p"
+    .string "It's from a dear friend in\n"
+    .string "PETALBURG CITY, and I treasure\l"
+    .string "it more than anything.\p"
+    .string "Could you look for it?$"
+
+LostItem_Text_Accepted:
+    .string "Oh, thank you so much!\p"
+    .string "Please bring it back if you\n"
+    .string "find it!$"
+
+LostItem_Text_Declined:
+    .string "Oh, that's okay. Come talk to me if\n"
+    .string "you change your mind!$"
+
+LostItem_Text_StillLooking:
+    .string "Have you found my LETTER yet?\p"
+    .string "Please keep looking!$"
+
+LostItem_Text_Complete:
+    .string "That's my LETTER! You found it!\p"
+    .string "Oh, I'm so relieved!\n"
+    .string "Thank you so much!\p"
+    .string "Here, please take this as\n"
+    .string "a thank-you!$"
+
+LostItem_Text_Thanks:
+    .string "Thanks to you, I have my precious\n"
+    .string "LETTER back safe and sound!\p"
+    .string "I read it every day. It always\n"
+    .string "puts a smile on my face.$"
+
+LostItem_Text_FoundOnGround:
+    .string "Hm? There's something tucked\n"
+    .string "in the tall grass here…\p"
+    .string "It looks like a LETTER.\n"
+    .string "Someone must have dropped it.$"
+
+LostItem_Text_NoBagRoom:
+    .string "Your BAG is too full to carry\n"
+    .string "the LETTER right now.$"

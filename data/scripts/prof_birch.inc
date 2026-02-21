@@ -76,3 +76,117 @@ ProfBirch_EventScript_RatePokedex::
 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num National caught
 	msgbox gBirchDexRatingText_OnANationwideBasis, MSGBOX_DEFAULT
 	return
+
+	ProfBirch_EventScript_CheckMilestoneRewards::
+	@ VAR_0x8009 contains National Dex caught count
+	copyvar VAR_TEMP_0, VAR_0x8009
+
+	@ Check 1000 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_1000, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+
+	@ Check 900 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_900, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+
+	@ Check 800 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_800, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+
+	@ Check 700 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_700, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+
+	@ Check 600 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_600, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+	
+	@ Check 500 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_500, ProfBirch_CheckReward400
+	goto_if_ge VAR_TEMP_0, 500, ProfBirch_GiveReward500
+	
+ProfBirch_CheckReward400:
+	@ Check 400 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_400, ProfBirch_CheckReward300
+	goto_if_ge VAR_TEMP_0, 400, ProfBirch_GiveReward400
+	
+ProfBirch_CheckReward300:
+	@ Check 300 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_300, ProfBirch_CheckReward200
+	goto_if_ge VAR_TEMP_0, 300, ProfBirch_GiveReward300
+	
+ProfBirch_CheckReward200:
+	@ Check 200 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_200, ProfBirch_CheckReward100
+	goto_if_ge VAR_TEMP_0, 200, ProfBirch_GiveReward200
+	
+ProfBirch_CheckReward100:
+	@ Check 100 Pokémon milestone
+	goto_if_set FLAG_RECEIVED_BIRCH_REWARD_100, ProfBirch_NoMoreRewards
+	goto_if_ge VAR_TEMP_0, 100, ProfBirch_GiveReward100
+	
+ProfBirch_NoMoreRewards:
+	return
+
+@ Reward Scripts
+ProfBirch_GiveReward100::
+	msgbox ProfBirch_Text_Reward100Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_MASTER_BALL, 2
+	setflag FLAG_RECEIVED_BIRCH_REWARD_100
+	return
+
+ProfBirch_GiveReward200::
+	msgbox ProfBirch_Text_Reward200Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_MASTER_BALL, 5
+	giveitem ITEM_RARE_CANDY, 10
+	setflag FLAG_RECEIVED_BIRCH_REWARD_200
+	return
+
+ProfBirch_GiveReward300::
+	msgbox ProfBirch_Text_Reward300Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_RARE_CANDY, 25
+	giveitem ITEM_ABILITY_CAPSULE, 5
+	setflag FLAG_RECEIVED_BIRCH_REWARD_300
+	return
+
+ProfBirch_GiveReward400::
+	msgbox ProfBirch_Text_Reward400Pokemon, MSGBOX_DEFAULT
+	givemon SPECIES_CELEBI, 30
+	setflag FLAG_RECEIVED_BIRCH_REWARD_400
+	return
+
+ProfBirch_GiveReward500::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_500
+	return
+
+	ProfBirch_GiveReward600::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_600
+	return
+
+ProfBirch_GiveReward700::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_700
+	return
+
+	ProfBirch_GiveReward800::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_800
+	return
+
+ProfBirch_GiveReward900::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_900
+	return
+
+	ProfBirch_GiveReward1000::
+	msgbox ProfBirch_Text_Reward500Pokemon, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM, 1
+	setflag FLAG_RECEIVED_BIRCH_REWARD_1000
+	return
