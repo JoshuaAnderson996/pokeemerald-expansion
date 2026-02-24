@@ -158,3 +158,39 @@ ProfBirch_Text_Reward500Pokemon::
 	.string "your chances of encountering\l"
 	.string "rare, differently colored POKéMON!\p"
 	.string "Congratulations, {PLAYER}{KUN}!$"
+
+	ProfBirch_Text_Reward600Pokemon:
+	.string "Ah, {PLAYER}{KUN}!\p"
+	.string "600 POKéMON recorded!\n"
+	.string "Your POKéDEX data is extraordinary!\p"
+	.string "I want you to have this,\n"
+	.string "as a token of my gratitude.$"
+
+ProfBirch_Text_Reward700Pokemon:
+	.string "{PLAYER}{KUN}!\p"
+	.string "700 POKéMON…!\n"
+	.string "Your research is making history!\p"
+	.string "I can’t thank you enough.\n"
+	.string "Please accept this reward.$"
+
+ProfBirch_Text_Reward800Pokemon:
+	.string "{PLAYER}{KUN}!\p"
+	.string "800 POKéMON recorded!\n"
+	.string "This level of completion is astounding!\p"
+	.string "Here this should help you\n"
+	.string "on the final stretch.$"
+
+ProfBirch_Text_Reward900Pokemon:
+	.string "{PLAYER}{KUN}!\p"
+	.string "900 POKéMON recorded…\n"
+	.string "You’re so close to the summit!\p"
+	.string "I’m proud of your progress.\n"
+	.string "Take this with my compliments.$"
+
+ProfBirch_Text_Reward1000Pokemon:
+	.string "{PLAYER}{KUN}!\p"
+	.string "1,000 POKéMON recorded!\n"
+	.string "A complete POKéDEX…!\p"
+	.string "This is a monumental achievement!\n"
+	.string "Thank you for everything.\p"
+	.string "Please accept this final reward.$"

@@ -12200,7 +12200,7 @@ F_TRAINER_FEMALE |
 #line 4640
                 MOVE_EARTH_POWER,
                 MOVE_TORCH_SONG,
-                MOVE_BITTER_MALICE,
+                MOVE_TORTURE_SCREECH,
                 MOVE_THUNDERBOLT,
             },
             },
@@ -12215,7 +12215,7 @@ F_TRAINER_FEMALE |
 #line 4650
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 4646
-            .ability = ABILITY_STANCE_CHANGE,
+            .ability = ABILITY_CURSED_METAL,
 #line 4647
             .lvl = 100,
 #line 4649
