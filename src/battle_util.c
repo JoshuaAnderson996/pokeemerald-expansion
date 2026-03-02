@@ -8886,6 +8886,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_COSMIC && gBattleStruct->battlerState[battlerAtk].ateBoost)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;    
+    case ABILITY_PSYLATE:
+        if (moveType == TYPE_PSYCHIC && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -10642,6 +10646,15 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
     else if ((ctx->moveType == TYPE_FIGHTING || ctx->moveType == TYPE_NORMAL) && defType == TYPE_GHOST
         && (ctx->abilityAtk == ABILITY_SCRAPPY || ctx->abilityAtk == ABILITY_MINDS_EYE)
         && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (ctx->updateFlags)
+            RecordAbilityBattle(ctx->battlerAtk, ctx->abilityAtk);
+    }
+    // NEW: Corrosion lets Poison hit Steel instead of being immune
+    else if (ctx->moveType == TYPE_POISON && defType == TYPE_STEEL
+          && ctx->abilityAtk == ABILITY_CORROSION
+          && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
         if (ctx->updateFlags)

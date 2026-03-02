@@ -78,6 +78,9 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "pokemon.h"       
+#include "constants/abilities.h"
+#include "constants/species.h"
 
 enum {
     MENU_SUMMARY,
@@ -108,6 +111,7 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_EDIT_ABILITY,
     MENU_FIELD_MOVES
 };
 
@@ -129,6 +133,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_EDIT_ABILITY,
 };
 
 enum {
@@ -486,6 +491,7 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
+static void CursorCb_EditAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
@@ -2857,6 +2863,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+    if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD)
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EDIT_ABILITY);
+    }
 
     u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES);
     if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG))
@@ -6876,6 +6886,24 @@ static void CursorCb_ChangeAbility(u8 taskId)
 {
     gSpecialVar_Result = 1;
     TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_EditAbility(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
+
+    // Cycle 0 → 1 → 2 → 0, skip missing slots
+    u8 nextAbility = (abilityNum + 1) % 3;
+    if (nextAbility == 1 && GetSpeciesAbility(species, 1) == ABILITY_NONE)
+        nextAbility = 0;
+    if (nextAbility == 2 && GetSpeciesAbility(species, 2) == ABILITY_NONE)
+        nextAbility = 0;
+
+    SetMonData(mon, MON_DATA_ABILITY_NUM, &nextAbility);
+
+    gTasks[taskId].func = Task_HandleChooseMonInput;
 }
 
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId)

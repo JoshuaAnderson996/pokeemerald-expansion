@@ -698,6 +698,7 @@ struct
 } static const sCursorOptions[MENU_FIELD_MOVES] =
 {
     [MENU_SUMMARY]         = {COMPOUND_STRING("SUMMARY"),         CursorCb_Summary},
+    [MENU_EDIT_ABILITY]    = {COMPOUND_STRING("Switch Ability"),  CursorCb_EditAbility},
     [MENU_SWITCH]          = {COMPOUND_STRING("SWITCH"),          CursorCb_Switch},
     [MENU_CANCEL1]         = {gText_Cancel2,                      CursorCb_Cancel1},
     [MENU_ITEM]            = {COMPOUND_STRING("ITEM"),            CursorCb_Item},
@@ -742,7 +743,7 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
-
+static const u8 sPartyMenuAction_EditAbility[] = { MENU_EDIT_ABILITY, MENU_CANCEL1 };
 
 
 static const u8 *const sPartyMenuActions[] =
@@ -763,6 +764,7 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_TAKEITEM_TOSS] = sPartyMenuAction_TakeItemTossCancel,
     [ACTIONS_ROTOM_CATALOG] = sPartyMenuAction_RotomCatalog,
     [ACTIONS_ZYGARDE_CUBE]  = sPartyMenuAction_ZygardeCube,
+    [ACTIONS_EDIT_ABILITY]   = sPartyMenuAction_EditAbility,
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -783,6 +785,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
+    [ACTIONS_EDIT_ABILITY]   = ARRAY_COUNT(sPartyMenuAction_EditAbility),
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =

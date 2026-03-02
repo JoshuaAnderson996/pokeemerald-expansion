@@ -72,6 +72,9 @@
 #define P_FLAG_FORCE_SHINY               0  // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
+#define DISABLE_EV_SYSTEM TRUE  // If TRUE, Pokémon will not gain EVs from battle. This also disables EV-reducing berries and the EV-enhancing Power items. However, the effort values of Pokémon obtained from trades, events or the Daycare will still be intact, and the EVs of wild Pokémon will still be determined by their species.
+#define DISABLE_IV_SYSTEM TRUE  // If TRUE, Pokémon will not have IVs. Instead, their stats will be determined by their base stats, nature and level only. This also disables Hyper Training and the concept of perfect IVs for legendaries and mythicals. However, the IVs of Pokémon obtained from trades, events or the Daycare will still be intact, and the IVs of wild Pokémon will still be determined by their species and the PID generation method.
+
 // Go here if you want to disable specific families of Pokémon.
 #include "config/species_enabled.h"
 

@@ -1132,6 +1132,17 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u32 teraType = (boxMon->personality & 0x1) == 0 ? GetSpeciesType(species, 0) : GetSpeciesType(species, 1);
     SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &teraType);
 
+    #if DISABLE_IV_SYSTEM
+    // Force all Pokémon to have perfect IVs in every stat
+    u32 iv = 31;
+    SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
+    SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
+    SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
+    SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
+    SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
+    SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
+#else
+
     if (fixedIV < USE_RANDOM_IVS)
     {
         SetBoxMonData(boxMon, MON_DATA_HP_IV, &fixedIV);
@@ -1205,6 +1216,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
             }
         }
     }
+    #endif
 
     if (GetSpeciesAbility(species, 1))
     {
@@ -5332,6 +5344,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
 
 void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 {
+    #if !DISABLE_EV_SYSTEM
     u8 evs[NUM_STATS];
     u16 evIncrease = 0;
     u16 totalEVs = 0;
@@ -5435,6 +5448,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         totalEVs += evIncrease;
         SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
     }
+    #endif
 }
 
 u16 GetMonEVCount(struct Pokemon *mon)

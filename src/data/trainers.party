@@ -387,8 +387,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Frogadier @ Life Orb  
 Ability: Protean  
-Level: 20  
-EVs: 252 Atk / 12 SpA / 240 Spe  
+Level: 20   
 Hasty Nature  
 - Water Shuriken  
 - U-turn  
@@ -405,8 +404,7 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Qwilfish-Hisui @ Lum Berry  
 Ability: Intimidate  
-Level: 20  
-EVs: 236 Atk / 36 SpD / 236 Spe  
+Level: 20    
 Jolly Nature  
 - Barb Barrage  
 - Aqua Jet  
@@ -650,8 +648,7 @@ Items: Super Potion / Super Potion
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
 Palafin @ Choice Scarf  
-Ability: Zero to Hero  
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Ability: Zero to Hero    
 Jolly Nature  
 - Flip Turn  
 - Close Combat  
@@ -659,8 +656,7 @@ Jolly Nature
 - Drain Punch  
 
 Greninja @ Life Orb  
-Ability: Battle Bond   
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Ability: Protean  
 Timid Nature  
 - Ice Beam  
 - Water Shuriken  
@@ -668,8 +664,7 @@ Timid Nature
 - Dark Pulse  
 
 Rotom-Wash @ Damp Rock  
-Ability: Drizzle  
-EVs: 248 HP / 252 SpA / 8 SpD  
+Ability: Drizzle   
 Modest Nature  
 IVs: 0 Atk  
 - Hydro Pump  
@@ -678,8 +673,7 @@ IVs: 0 Atk
 - Pain Split  
 
 Empoleon @ Assault Vest  
-Ability: Big Pecks   
-EVs: 252 HP / 252 SpA / 4 SpD  
+Ability: Big Pecks    
 Modest Nature  
 - Scald  
 - Steel Beam  
@@ -687,8 +681,7 @@ Modest Nature
 - Flip Turn  
 
 Toxapex @ Black Sludge  
-Ability: Regenerator   
-EVs: 252 HP / 4 Atk / 252 Def  
+Ability: Regenerator    
 Impish Nature  
 - Toxic Spikes  
 - Baneful Bunker  
@@ -696,8 +689,7 @@ Impish Nature
 - Scald  
 
 Sharpedo @ Sharpedonite  
-Ability: Rough Skin   
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Ability: Rough Skin     
 Jolly Nature  
 - Fishious Rend  
 - Aqua Jet  
@@ -2658,7 +2650,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Camerupt @ Assault Vest  
 Ability: Anger Point  
 Level: 30   
-EVs: 252 HP / 252 Atk  
 Impish Nature  
 - Earthquake  
 - Flame Charge  
@@ -2667,8 +2658,7 @@ Impish Nature
 
 Armarouge  
 Ability: Weak Armor  
-Level: 20  
-EVs: 236 HP / 236 SpA / 36 SpD  
+Level: 20    
 Modest Nature  
 IVs: 0 Atk  
 - Armor Cannon  
@@ -2678,8 +2668,7 @@ IVs: 0 Atk
 
 Marowak @ Choice Scarf  
 Ability: Heroics  
-Level: 30  
-EVs: 252 Atk / 252 Spe  
+Level: 30   
 Jolly Nature  
 - Double-Edge  
 - Bonemerang  
@@ -3422,8 +3411,7 @@ IVs: 0 Atk
 
 Toxtricity  
 Ability: Punk Rock  
-Level: 30   
-EVs: 252 HP / 244 SpA / 12 SpD  
+Level: 30     
 Modest Nature  
 IVs: 0 Atk  
 - Boomburst  
@@ -3439,8 +3427,7 @@ IVs: 0 Atk
 
 Bastiodon  
 Ability: Soundproof  
-Level: 30  
-EVs: 236 HP / 248 Atk / 12 SpD / 12 Spe  
+Level: 30   
 Adamant Nature  
 - Rock Slide  
 - Body Press  
@@ -3449,8 +3436,7 @@ Adamant Nature
 
 Wigglytuff @ Assault Vest  
 Ability: Cute Charm  
-Level: 30  
-EVs: 236 HP / 252 SpA / 12 SpD  
+Level: 30    
 Modest Nature  
 IVs: 0 Atk  
 - Alluring Voice  
@@ -4530,7 +4516,6 @@ Mugshot: Purple
 Mightyena @ Choice Scarf  
 Ability: Moxie   
 Level: 100
-EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Crunch  
 - Poison Fang  
@@ -4539,8 +4524,7 @@ Jolly Nature
 
 Spiritomb @ Leftovers  
 Ability: Regenerator   
-Level: 100
-EVs: 252 HP / 4 Def / 252 SpD  
+Level: 100 
 Calm Nature  
 IVs: 0 Atk  
 - Parting Shot  
@@ -4550,8 +4534,7 @@ IVs: 0 Atk
 
 Shiftry @ Focus Sash  
 Ability: Wind Power
-Level: 100   
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 100     
 Jolly Nature  
 - Tailwind  
 - Knock Off  
@@ -4560,8 +4543,7 @@ Jolly Nature
 
 Crawdaunt @ Focus Sash  
 Ability: Adaptability
-Level: 100    
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 100      
 Adamant Nature  
 - Crabhammer  
 - Dragon Dance  
@@ -4570,8 +4552,7 @@ Adamant Nature
 
 Kingambit @ Darkinium Z  
 Ability: Supreme Overlord
-Level: 100   
-EVs: 252 HP / 252 Atk / 4 SpD  
+Level: 100    
 Adamant Nature  
 - Sucker Punch  
 - Kowtow Cleave  
@@ -4581,8 +4562,7 @@ Adamant Nature
 Absol (M) @ Absolite  
 Ability: Justified
 Level: 100  
-Shiny: Yes  
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Shiny: Yes    
 Jolly Nature  
 - Close Combat  
 - Play Rough  
@@ -4601,8 +4581,7 @@ Mugshot: Green
 
 Sableye @ Leftovers  
 Ability: Prankster
-Level: 100   
-EVs: 248 HP / 8 Def / 252 SpD  
+Level: 100     
 Calm Nature  
 IVs: 0 Atk  
 - Taunt  
@@ -4612,8 +4591,7 @@ IVs: 0 Atk
 
 Dusknoir @ Ghostium Z  
 Ability: Regenerator
-Level: 100    
-EVs: 252 HP / 252 Atk / 4 SpD  
+Level: 100     
 Adamant Nature  
 - Curse  
 - Poltergeist  
@@ -4623,7 +4601,6 @@ Adamant Nature
 Gholdengo @ Choice Specs  
 Ability: Good as Gold
 Level: 100   
-EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
 - Trick  
@@ -4633,8 +4610,7 @@ IVs: 0 Atk
 
 Skeledirge @ Assault Vest  
 Ability: Unaware
-Level: 100   
-EVs: 248 HP / 252 SpA / 8 SpD  
+Level: 100     
 Modest Nature  
 IVs: 0 Atk  
 - Earth Power  
@@ -4644,8 +4620,7 @@ IVs: 0 Atk
 
 Aegislash @ Weakness Policy  
 Ability: Cursed Metal
-Level: 100   
-EVs: 252 HP / 4 Atk / 252 SpD  
+Level: 100    
 Sassy Nature  
 - Close Combat  
 - Flash Cannon
@@ -4655,8 +4630,7 @@ Sassy Nature
 Banette @ Banettite
 Level: 100  
 Ability: Cursed Body  
-Shiny: Yes   
-EVs: 252 HP / 252 Atk / 4 SpD  
+Shiny: Yes    
 Adamant Nature  
 - Shadow Sneak  
 - Destiny Bond  
@@ -4675,8 +4649,7 @@ Mugshot: Pink
 
 Ninetales-Alola @ Light Clay  
 Ability: Snow Warning 
-Level: 100   
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 100     
 Timid Nature  
 IVs: 0 Atk  
 - Aurora Veil  
@@ -4686,8 +4659,7 @@ IVs: 0 Atk
 
 Walrein @ Chesto Berry  
 Ability: Unaware
-Level: 100    
-EVs: 248 HP / 8 SpA / 252 SpD  
+Level: 100      
 Calm Nature  
 IVs: 0 Atk  
 - Toxic  
@@ -4697,8 +4669,7 @@ IVs: 0 Atk
 
 Cloyster @ Focus Sash  
 Ability: Anger Shell
-Level: 100    
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 100     
 Adamant Nature  
 - Shell Smash  
 - Liquidation  
@@ -4707,8 +4678,7 @@ Adamant Nature
 
 Froslass (F) @ Life Orb  
 Ability: Snow Warning
-Level: 100    
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 100     
 Timid Nature  
 IVs: 0 Atk  
 - Blizzard  
@@ -4718,8 +4688,7 @@ IVs: 0 Atk
 
 Glaceon @ Icium Z  
 Ability: Ice Scales
-Level: 100    
-EVs: 252 HP / 252 Def / 4 SpA  
+Level: 100     
 Bold Nature  
 IVs: 0 Atk  
 - Glitzy Glow  
@@ -4729,8 +4698,7 @@ IVs: 0 Atk
 
 Glalie @ Glalitite  
 Ability: Moody
-Level: 100    
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 100      
 Jolly Nature  
 - Stone Edge  
 - Ice Shard  
@@ -4749,8 +4717,7 @@ Mugshot: Blue
 
 Archaludon @ Assault Vest
 Ability: Drizzle
-Level: 100
-EVs: 160 HP / 252 SpA / 96 SpD  
+Level: 100 
 Sassy Nature  
 IVs: 0 Atk  
 - Electro Shot  
@@ -4760,8 +4727,7 @@ IVs: 0 Atk
 
 Kingdra @ Choice Specs  
 Ability: Swift Swim
-Level: 100    
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 100      
 Modest Nature  
 - Hurricane  
 - Scald  
@@ -4770,8 +4736,7 @@ Modest Nature
 
 Altaria @ Dragonium Z  
 Ability: Fluffy
-Level: 100    
-EVs: 252 HP / 252 SpD  
+Level: 100     
 Modest Nature  
 IVs: 0 Atk  
 - Fire Spin  
@@ -4782,7 +4747,6 @@ IVs: 0 Atk
 Flygon @ Throat Spray  
 Ability: Dragonizer
 Level: 100   
-EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Boomburst  
 - Bug Buzz  
@@ -4791,8 +4755,7 @@ Timid Nature
 
 Dragonite @ Weakness Policy  
 Ability: Multiscale
-Level: 100   
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 100     
 Adamant Nature  
 - Dragon Dance  
 - Extreme Speed  
@@ -4802,8 +4765,7 @@ Adamant Nature
 Salamence @ Salamencite  
 Ability: Intimidate
 Level: 100  
-Shiny: Yes   
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Shiny: Yes     
 Adamant Nature  
 - Dragon Claw  
 - Double-Edge  
@@ -13102,8 +13064,7 @@ Jolly Nature
 
 Rotom-Wash @ Waterium Z
 Ability: Drizzle  
-Level: 60   
-EVs: 252 SpA / 8 SpD / 248 Spe  
+Level: 60    
 Timid Nature  
 IVs: 0 Atk  
 - Trick  
@@ -13113,8 +13074,7 @@ IVs: 0 Atk
 
 Greedent @ Loaded Dice  
 Ability: Weather Warrior  
-Level: 1    
-EVs: 76 SpD / 116 Spe  
+Level: 1     
 Adamant Nature  
 - Tail Slap  
 - Bullet Seed  
@@ -13123,8 +13083,7 @@ Adamant Nature
 
 Swampert @ Swampertite  
 Ability: Torrent  
-Level: 60  
-EVs: 252 HP / 252 Atk / 4 SpD  
+Level: 60   
 Adamant Nature  
 - Earthquake  
 - Waterfall  
@@ -14223,8 +14182,7 @@ Music: Magma
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
 Typhlosion @ Choice Scarf  
-Ability: Evaporate  
-EVs: 4 Atk / 252 SpA / 252 Spe  
+Ability: Evaporate
 Timid Nature  
 - Eruption  
 - Lava Plume  
@@ -14232,8 +14190,7 @@ Timid Nature
 - Wild Charge  
 
 Arcanine @ Heat Rock  
-Ability: Drought   
-EVs: 252 HP / 4 Def / 252 Spe  
+Ability: Drought     
 Jolly Nature  
 - Flare Blitz  
 - Wild Charge  
@@ -14241,8 +14198,7 @@ Jolly Nature
 - Will-O-Wisp  
 
 Volcarona @ Life Orb  
-Ability: Protosynthesis 
-EVs: 172 HP / 80 SpA / 4 SpD / 252 Spe  
+Ability: Protosynthesis   
 Timid Nature  
 IVs: 0 Atk  
 - Quiver Dance  
@@ -14251,8 +14207,7 @@ IVs: 0 Atk
 - Psychic  
 
 Magmortar @ Assault Vest  
-Ability: Mega Launcher  
-EVs: 252 HP / 252 SpA / 4 SpD  
+Ability: Mega Launcher    
 Modest Nature  
 IVs: 0 Atk  
 - Sludge Bomb  
@@ -14261,8 +14216,7 @@ IVs: 0 Atk
 - Thunderbolt  
 
 Incineroar @ Incinium Z  
-Ability: Intimidate  
-EVs: 252 HP / 252 Atk / 4 SpD  
+Ability: Intimidate   
 Adamant Nature  
 - Darkest Lariat  
 - Fake Out  
@@ -14270,8 +14224,7 @@ Adamant Nature
 - Parting Shot  
 
 Camerupt @ Cameruptite  
-Ability: Drought  
-EVs: 248 HP / 252 SpA / 8 SpD  
+Ability: Drought 
 Modest Nature  
 IVs: 0 Atk  
 - Lava Plume  
@@ -16579,8 +16532,7 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Skarmory @ Leftovers  
 Ability: Sturdy  
-Level: 100
-EVs: 252 HP / 232 Def / 24 Spe  
+Level: 100  
 Impish Nature  
 - Steelsurge  
 - Stealth Rock  
@@ -16589,8 +16541,7 @@ Impish Nature
 
 Armaldo (M) @ Steelium Z
 Ability: Anger Shell  
-Level: 100  
-EVs: 4 HP / 252 Atk / 4 SpD / 248 Spe  
+Level: 100    
 Jolly Nature  
 - First Impression  
 - Guillotine  
@@ -16599,8 +16550,7 @@ Jolly Nature
 
 Aggron (M) @ Rocky Helmet  
 Ability: Rocky Payload  
-Level: 100  
-EVs: 248 HP / 180 Atk / 72 Def / 8 SpD  
+Level: 100    
 Adamant Nature  
 - Rock Climb  
 - Earthquake  
@@ -16609,8 +16559,7 @@ Adamant Nature
 
 Cradily @ Power Herb  
 Ability: Regenerator  
-Level: 100   
-EVs: 248 HP / 8 Atk / 252 SpA  
+Level: 100     
 Quiet Nature  
 - Meteor Beam  
 - Giga Drain  
@@ -16618,8 +16567,7 @@ Quiet Nature
 - Astonish  
 
 Flygon @ Smooth Rock  
-Ability: Sand Stream
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Ability: Sand Stream  
 Adamant Nature  
 - Earthquake  
 - Dragon Dance  
@@ -16630,7 +16578,6 @@ Metagross @ Metagrossite
 Ability: Filter  
 Level: 100 
 Shiny: Yes   
-EVs: 252 Atk / 4 SpD / 252 Spe  
 Jolly Nature  
 - Double Iron Bash  
 - Psyshield Bash  
@@ -17462,7 +17409,6 @@ Mugshot: Blue
 
 Claydol @ Light Clay
 Ability: Well-Baked Body
-EVs: 252 HP / 4 Def / 252 SpD
 Calm Nature
 - Reflect
 - Light Screen
@@ -17471,7 +17417,6 @@ Calm Nature
 
 Aggron @ Leftovers
 Ability: Sturdy
-EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Iron Head
 - Earthquake
@@ -17479,21 +17424,18 @@ Adamant Nature
 
 Tyranitar @ Choice Band
 Ability: Sand Stream
-EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Stone Edge
 - Crunch
 
 Gigalith @ Smooth Rock
 Ability: Sand Stream
-EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Stone Edge
 - Explosion
 
 Excadrill @ Life Orb
 Ability: Sand Rush
-EVs: 252 Atk / 4 SpD / 252 Spe
 Jolly Nature
 - Iron Head
 - Earthquake
@@ -17501,8 +17443,6 @@ Jolly Nature
 - Swords Dance
 
 Copperajah @ Copperite G
-Ability: Heavy Metal
-EVs: 252 HP / 252 Atk / 4 SpD
 Adamant Nature
 - Heavy Slam
 - High Horsepower
@@ -17520,7 +17460,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Ribombee @ Focus Sash
 Ability: Shield Dust
 Level: 60
-EVs: 4 HP / 252 SpA / 252 Spe
 Timid Nature
 - Quiver Dance
 - Moonblast
@@ -17530,7 +17469,6 @@ Timid Nature
 Scizor @ Choice Band
 Ability: Technician
 Level: 60
-EVs: 252 Atk / 4 Def / 252 Spe
 Adamant Nature
 - Bullet Punch
 - U-turn
@@ -17540,7 +17478,6 @@ Adamant Nature
 Volcarona @ Booster Energy  
 Ability: Protosynthesis  
 Level: 60
-EVs: 176 HP / 76 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 IVs: 0 Atk  
 - Fiery Dance  
@@ -17551,7 +17488,6 @@ IVs: 0 Atk
 Heracross @ Choice Scarf
 Ability: Moxie
 Level: 60
-EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - Close Combat
 - Megahorn
@@ -17561,7 +17497,6 @@ Jolly Nature
 Durant @ Choice Scarf
 Ability: Hustle
 Level: 60
-EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
 - First Impression
 - Iron Head
@@ -17571,7 +17506,6 @@ Jolly Nature
 Centiskorch @ Centite G
 Ability: Flash Fire
 Level: 60
-EVs: 252 Atk / 252 Spe / 4 HP
 Adamant Nature
 - Fire Lash
 - Leech Life

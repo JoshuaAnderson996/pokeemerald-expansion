@@ -5979,7 +5979,10 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
         break; 
     case ABILITY_AERIAL_DOMINANCE:
         ateType = TYPE_FLYING;
-        break;          
+        break;   
+    case ABILITY_PSYLATE:
+        ateType = TYPE_PSYCHIC;
+        break;       
     default:
         ateType = TYPE_NONE;
     }
