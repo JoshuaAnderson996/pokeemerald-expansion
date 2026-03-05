@@ -2889,7 +2889,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_AERIAL_DOMINANCE] =
     {
         .name = _("Aerial Dominance"),
-        .description = COMPOUND_STRING("Aerilate + Air lock ."),
         .description = COMPOUND_STRING("Aerilate + Air Lock."),
         .aiRating = 8,  
     },
