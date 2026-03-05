@@ -112,7 +112,7 @@
             .species = SPECIES_MEWTWO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 44
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 43
             .lvl = 5,
             .nature = NATURE_HARDY,
@@ -145,7 +145,7 @@
             .species = SPECIES_MEWTWO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 56
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 55
             .lvl = 50,
             .nature = NATURE_HARDY,
@@ -178,7 +178,7 @@
             .species = SPECIES_METAPOD,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 68
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 67
             .lvl = 1,
             .nature = NATURE_HARDY,
@@ -211,7 +211,7 @@
             .species = SPECIES_ARCEUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 80
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 79
             .lvl = 99,
             .nature = NATURE_HARDY,
@@ -245,7 +245,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 91
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 91
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -256,7 +256,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 93
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 93
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -267,7 +267,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 95
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 95
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -278,7 +278,7 @@
             .species = SPECIES_MEW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 97
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 97
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -312,7 +312,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 108
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 108
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -323,7 +323,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 111
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 111
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -336,7 +336,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 114
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 114
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -349,7 +349,7 @@
             .species = SPECIES_MEW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 116
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 116
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -360,7 +360,7 @@
             .species = SPECIES_ODDISH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 119
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 119
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -373,7 +373,7 @@
             .species = SPECIES_ARON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 122
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 122
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -411,7 +411,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 135
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 135
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -424,7 +424,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 138
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 138
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -437,7 +437,7 @@
             .species = SPECIES_VULPIX,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 141
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 141
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -450,7 +450,7 @@
             .species = SPECIES_BULBASAUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 144
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 144
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -463,7 +463,7 @@
             .species = SPECIES_TORKOAL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 147
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 147
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -476,7 +476,7 @@
             .species = SPECIES_CHERRIM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 150
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 150
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -489,7 +489,7 @@
             .species = SPECIES_MEW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 153
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 153
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -502,7 +502,7 @@
             .species = SPECIES_ARON,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 156
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 156
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -515,7 +515,7 @@
             .species = SPECIES_ODDISH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 158
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 158
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -526,7 +526,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 160
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 160
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -562,7 +562,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 173
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 173
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -575,7 +575,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 176
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 176
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -588,7 +588,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 179
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 179
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -628,7 +628,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 192
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 192
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -639,7 +639,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 195
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 195
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -652,7 +652,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 197
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 197
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -690,7 +690,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 211
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 211
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -703,7 +703,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 213
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 213
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -714,7 +714,7 @@
             .species = SPECIES_EEVEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 216
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 216
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -750,7 +750,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 227
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 227
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -761,7 +761,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 229
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 229
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -795,7 +795,7 @@
             .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 240
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 240
             .lvl = 150,
             .nature = NATURE_HARDY,
@@ -806,7 +806,7 @@
             .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 242
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 242
             .lvl = 150,
             .nature = NATURE_HARDY,

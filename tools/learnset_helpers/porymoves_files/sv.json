@@ -98494,5 +98494,17 @@
       "MOVE_SWALLOW"
     ],
     "TutorMoves": []
+  },
+  "ZANGVIPER": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_SLUDGE_BOMB"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_BODY_SLAM"
+    ]
   }
 }

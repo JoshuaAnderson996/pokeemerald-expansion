@@ -4783,8 +4783,7 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Carbink @ Light Clay  
 Ability: Sturdy  
-Level: 16  
-EVs: 4 Def / 252 SpD  
+Level: 16    
 Calm Nature  
 - Light Screen  
 - Reflect  
@@ -4793,8 +4792,7 @@ Calm Nature
 
 Bombirdier @ Focus Sash  
 Ability: Rocky Payload  
-Level: 15  
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Level: 15   
 Jolly Nature  
 - Tailwind  
 - Rock Slide  
@@ -4803,8 +4801,7 @@ Jolly Nature
 
 Glimmet @ Power Herb  
 Ability: Toxic Debris  
-Level: 16 
-EVs: 16 Def / 236 SpA / 248 SpD  
+Level: 16  
 Modest Nature  
 - Dazzling Gleam  
 - Sludge Wave  
@@ -4813,8 +4810,7 @@ Modest Nature
 
 Aerodactyl @ Muscle Band  
 Ability: Rock Head  
-Level: 16  
-EVs: 12 HP / 236 Atk / 4 SpD / 236 Spe  
+Level: 16   
 Jolly Nature  
 - Brave Bird  
 - Wild Charge  
@@ -4823,8 +4819,7 @@ Jolly Nature
 
 Growlithe-Hisui @ Loaded Dice  
 Ability: Intimidate  
-Level: 16  
-EVs: 252 Atk / 4 SpD / 236 Spe  
+Level: 16    
 Jolly Nature  
 - Rock Blast  
 - Flame Charge  
@@ -4834,8 +4829,7 @@ Jolly Nature
 Nosepass @ Eviolite  
 Ability: Sturdy  
 Level: 16  
-Shiny: Yes  
-EVs: 12 HP / 248 Def / 232 SpD / 12 Spe  
+Shiny: Yes   
 Bold Nature  
 IVs: 0 Atk  
 - Body Press  
@@ -4854,8 +4848,7 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Hitmonchan @ Muscle Band  
 Ability: Iron Fist  
-Level: 22  
-EVs: 240 HP / 236 Atk / 16 SpD / 16 Spe  
+Level: 22   
 Adamant Nature  
 - Concussive Hit  
 - Drain Punch  
@@ -4864,8 +4857,7 @@ Adamant Nature
 
 Pawmot @ Leppa Berry  
 Ability: Fluffy  
-Level: 22 
-EVs: 248 Atk / 16 SpD / 236 Spe  
+Level: 22   
 Jolly Nature  
 - Revival Blessing  
 - Wild Charge  
@@ -4874,8 +4866,7 @@ Jolly Nature
 
 Lucario @ Choice Scarf  
 Ability: Mega Launcher  
-Level: 22  
-EVs: 248 SpA / 8 SpD / 248 Spe  
+Level: 22    
 Timid Nature  
 - Aura Sphere  
 - Dragon Pulse  
@@ -4884,8 +4875,7 @@ Timid Nature
 
 Lilligant-Hisui @ Focus Sash  
 Ability: Technician  
-Level: 22 
-EVs: 236 Atk / 24 SpD / 236 Spe  
+Level: 22   
 Jolly Nature  
 - Triple Axel  
 - Victory Dance  
@@ -4894,8 +4884,7 @@ Jolly Nature
 
 Primeape @ Eviolite  
 Ability: Anger Point  
-Level: 22 
-EVs: 236 Atk / 28 SpD / 244 Spe  
+Level: 22  
 Jolly Nature  
 - Bulk Up  
 - Temper Flare  
@@ -4905,8 +4894,7 @@ Jolly Nature
 Hariyama @ Assault Vest  
 Ability: Sheer Force  
 Level: 22  
-Shiny: Yes  
-EVs: 252 HP / 244 Atk / 4 Spe  
+Shiny: Yes   
 Adamant Nature  
 - Close Combat  
 - Heavy Slam  
@@ -4925,7 +4913,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Heliolisk @ Choice Specs  
 Ability: Earth Eater  
 Level: 26  
-EVs: 252 SpA / 4 SpD / 252 Spe  
 Timid Nature  
 - Volt Switch  
 - Scorching Sands  
@@ -4934,8 +4921,7 @@ Timid Nature
 
 Pincurchin @ Leftovers  
 Ability: Electric Surge  
-Level: 26  
-EVs: 248 HP / 240 Def / 12 SpA / 4 Spe  
+Level: 26   
 Bold Nature  
 IVs: 0 Atk  
 - Spikes  
@@ -4945,8 +4931,7 @@ IVs: 0 Atk
 
 Volbeat @ Focus Sash  
 Ability: Quick Tempered  
-Level: 26  
-EVs: 248 Atk / 12 SpD / 244 Spe  
+Level: 26   
 Jolly Nature  
 - Swords Dance  
 - X Scissor  
@@ -4955,8 +4940,7 @@ Jolly Nature
 
 Lanturn @ Magnet  
 Ability: Drizzle  
-Level: 26  
-EVs: 248 HP / 240 SpA / 8 SpD / 4 Spe  
+Level: 26   
 Modest Nature  
 - Electro Shot  
 - Thunder  
@@ -4965,8 +4949,7 @@ Modest Nature
 
 Plusle @ Light Ball  
 Ability: Lightning Rod  
-Level: 20  
-EVs: 236 SpA / 36 SpD / 236 Spe  
+Level: 20   
 Timid Nature  
 IVs: 0 Atk  
 - Revival Blessing  
@@ -4976,8 +4959,7 @@ IVs: 0 Atk
 
 Manectric @ Manectite  
 Level: 26  
-Shiny: Yes  
-EVs: 252 SpA / 252 Spe  
+Shiny: Yes 
 Timid Nature  
 - Volt Switch  
 - Thunderclap  
@@ -4996,7 +4978,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Torkoal @ Leftovers  
 Ability: Drought  
 Level: 38   
-EVs: 244 HP / 20 SpA / 244 SpD  
 Calm Nature  
 - Iron Defense  
 - Body Press  
@@ -5015,8 +4996,7 @@ Modest Nature
 
 Rotom-Heat @ Choice Scarf  
 Ability: Drought  
-Level: 38  
-EVs: 248 SpA / 252 Spe  
+Level: 38   
 Timid Nature  
 - Trick  
 - Overheat  
@@ -5025,8 +5005,7 @@ Timid Nature
 
 Delphox @ Power Herb    
 Ability: Arcane Power
-Level: 38
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 38 
 Timid Nature  
 IVs: 0 Atk  
 - Meteor Beam  
@@ -5036,8 +5015,7 @@ IVs: 0 Atk
 
 Typhlosion-Hisui @ Assault Vest  
 Ability: Exorcist  
-Level: 1  
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 1   
 Timid Nature  
 IVs: 0 Atk  
 - Shadow Ball  
@@ -5047,8 +5025,7 @@ IVs: 0 Atk
 
 Skeledirge @ Skeledite
 Ability: Unaware  
-Level: 36
-EVs: 244 HP / 252 SpA / 12 SpD  
+Level: 36  
 Modest Nature  
 IVs: 0 Atk  
 - Alluring Voice  
@@ -5067,8 +5044,7 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Zoroark-Hisui @ Choice Specs  
 Ability: Illusion  
-Level: 45   
-EVs: 248 SpA / 4 SpD / 252 Spe  
+Level: 45  
 Timid Nature  
 - Bitter Malice  
 - Blood Moon  
@@ -5077,8 +5053,7 @@ Timid Nature
 
 Ursaluna (F) @ Flame Orb  
 Ability: Guts  
-Level: 45    
-EVs: 252 HP / 252 Atk / 4 SpD  
+Level: 45  
 Adamant Nature  
 - Protect  
 - Facade  
@@ -5088,7 +5063,6 @@ Adamant Nature
 Lopunny (F) @ Assault Vest  
 Ability: Fur Coat  
 Level: 45  
-EVs: 252 Atk / 4 SpD / 248 Spe  
 Jolly Nature  
 - Fake Out  
 - Power-Up Punch  
@@ -5098,7 +5072,6 @@ Jolly Nature
 Kangaskhan @ Kangaskhanite  
 Ability: Early Bird  
 Level: 45   
-EVs: 12 HP / 244 Atk / 248 Spe  
 Jolly Nature  
 - Fake Out  
 - Power-Up Punch  
@@ -5107,8 +5080,7 @@ Jolly Nature
 
 Ursaluna-Bloodmoon @ Leftovers
 Ability: Minds Eye  
-Level: 45   
-EVs: 248 HP / 252 SpA / 4 SpD  
+Level: 45  
 Modest Nature  
 IVs: 0 Atk  
 - Blood Moon  
@@ -5119,8 +5091,7 @@ IVs: 0 Atk
 Slaking @ Nullifier
 Ability: Truant  
 Level: 45  
-Shiny: Yes   
-EVs: 244 HP / 252 Atk / 8 SpD / 4 Spe  
+Shiny: Yes 
 Adamant Nature  
 - Play Rough  
 - Return  
@@ -5139,7 +5110,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Corviknight @ Light Clay  
 Ability: Mirror Armor  
 Level: 55  
-EVs: 244 HP / 252 Def / 12 SpD  
 Bold Nature  
 - Reflect  
 - Light Screen  
@@ -5148,8 +5118,7 @@ Bold Nature
 
 Gliscor @ Toxic Orb  
 Ability: Poison Heal  
-Level: 55 
-EVs: 252 HP / 184 Def / 72 Spe  
+Level: 55  
 Impish Nature  
 - Protect  
 - Knock Off  
@@ -5159,7 +5128,6 @@ Impish Nature
 Talonflame @ Flying Gem  
 Ability: Gale Wings  
 Level: 55 
-EVs: 248 Atk / 8 SpD / 252 Spe  
 Jolly Nature  
 - Tailwind  
 - Acrobatics  
@@ -5169,7 +5137,6 @@ Jolly Nature
 Braviary-Hisui @ Choice Scarf  
 Ability: Tinted Lens  
 Level: 1  
-EVs: 12 Atk / 180 SpA / 156 Spe  
 Hasty Nature  
 - Esper Wing  
 - Dazzling Gleam  
@@ -5178,8 +5145,7 @@ Hasty Nature
 
 Dodrio @ Choice Band  
 Ability: Parental Bond  
-Level: 1 
-EVs: 196 Atk / 196 Spe  
+Level: 1  
 Jolly Nature  
 - Drill Run  
 - Drill Peck  
@@ -5190,7 +5156,6 @@ Altaria @ Altarianite
 Ability: Cloud Nine  
 Level: 55  
 Shiny: Yes  
-EVs: 252 HP / 248 SpA / 4 SpD  
 Modest Nature  
 - Boomburst  
 - Roost  
@@ -5219,8 +5184,7 @@ Modest Nature
 
 Armarouge @ Choice Scarf  
 Ability: Mega Launcher  
-Level: 60 
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 60   
 Timid Nature  
 - Expanding Force  
 - Armor Cannon  
@@ -5229,8 +5193,7 @@ Timid Nature
 
 Hatterene @ Hatterite G
 Ability: Magic Bounce  
-Level: 60  
-EVs: 248 HP / 248 SpA / 12 SpD  
+Level: 60   
 Modest Nature  
 - Expanding Force  
 - Mystical Fire  
@@ -5239,8 +5202,7 @@ Modest Nature
 
 Wyrdeer @ Salac Berry  
 Ability: Intimidate  
-Level: 1 
-EVs: 236 Atk / 76 SpD / 156 Spe  
+Level: 1   
 Jolly Nature  
 - Astonish  
 - Dominate  
@@ -5249,8 +5211,7 @@ Jolly Nature
 
 Mienshao @ Assault Vest  
 Ability: Regenerator  
-Level: 60 
-EVs: 252 Atk / 4 SpA / 252 Spe  
+Level: 60  
 Hasty Nature  
 - U-turn  
 - Lumina Crash  
@@ -5259,8 +5220,7 @@ Hasty Nature
 
 Gardevoir (F) @ Gardevoirite  
 Ability: Psychic Surge  
-Level: 60
-EVs: 252 SpA / 4 SpD / 252 Spe  
+Level: 60  
 Timid Nature  
 - Expanding Force  
 - Hyper Voice  
@@ -5279,7 +5239,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Pelipper @ Leftovers  
 Ability: Drizzle  
 Level: 75  
-EVs: 252 HP / 252 Def / 4 SpA  
 Bold Nature  
 - Hurricane  
 - Scald  
@@ -5289,7 +5248,6 @@ Bold Nature
 Masquerain @ Focus Sash  
 Ability: Water Bubble  
 Level: 75  
-EVs: 252 SpA / 4 SpD / 252 Spe  
 Modest Nature  
 IVs: 0 Atk  
 - Quiver Dance  
@@ -5300,7 +5258,6 @@ IVs: 0 Atk
 Politoed @ Leftovers  
 Ability: Drizzle  
 Level: 75   
-EVs: 252 HP / 252 SpA / 4 SpD  
 Modest Nature  
 IVs: 0 Atk  
 - Perish Song  
@@ -5311,23 +5268,20 @@ IVs: 0 Atk
 Swampert (F) @ Assault Vest  
 Ability: Stamina  
 Level: 75  
-EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
 - Earthquake  
 - Waterfall  
 - Power-Up Punch  
 - Poison Jab  
 
-Luvdisc @ Life Orb  
-Ability: Soul-Heart  
-Level: 30   
-EVs: 252 SpA / 248 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Draining Kiss  
-- Ice Beam  
-- Water Sport  
+Alomomola @ Leftovers  
+Ability: Regenerator  
+Level: 75 
+Bold Nature  
 - Scald  
+- Protect  
+- Wish  
+- Revival Blessing 
 
 Samurott-Hisui @ samurite  
 Ability: Sharpness  
@@ -5350,7 +5304,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Ralts
 Level: 9
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_TED ===
 Name: TED
@@ -5362,7 +5315,6 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Ralts
 Level: 17
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_PAUL ===
 Name: PAUL
@@ -5374,15 +5326,12 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Numel
 Level: 15
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Oddish
 Level: 15
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Wingull
 Level: 15
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_JERRY_2 ===
 Name: JERRY
@@ -5394,11 +5343,9 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Ralts
 Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 Meditite
 Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_JERRY_3 ===
 Name: JERRY
@@ -5410,11 +5357,9 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Kirlia
 Level: 29
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Meditite
 Level: 29
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_JERRY_4 ===
 Name: JERRY
@@ -9985,16 +9930,12 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 Torchic (F) 
 Ability: Speed Boost  
 Level: 5   
-EVs: 196 SpA / 36 SpD / 236 Spe  
-Modest Nature  
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+Modest Nature   
 
 Gible (M)
 Ability: Rough Skin
 Level: 5
-EVs: 212 HP / 196 Atk / 76 Def
 Adamant Nature
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
@@ -10133,27 +10074,21 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Whismur
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zigzagoon
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Aron
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Taillow
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Makuhita
 Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAVIS ===
 Name: DAVIS
@@ -10201,27 +10136,21 @@ AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move
 
 Loudred
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Linoone
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Aron
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Mightyena
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Swellow
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Makuhita
 Level: 22
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_ISAAC_3 ===
 Name: ISAAC

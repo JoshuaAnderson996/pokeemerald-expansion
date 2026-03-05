@@ -21106,9 +21106,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 1,
         .backAnimId = BACK_ANIM_V_SHAKE,
-        .palette = gMonPalette_Dragonite,
-        .shinyPalette = gMonShinyPalette_Dragonite,
-        .iconSprite = gMonIcon_Dragonite,
+        .palette = gMonPalette_DragoniteMega,
+        .shinyPalette = gMonShinyPalette_DragoniteMega,
+        .iconSprite = gMonIcon_DragoniteMega,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)

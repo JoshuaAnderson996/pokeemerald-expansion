@@ -6308,3 +6308,12 @@ static const u16 sFrigibaxEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FRIGIBAX
+
+#if P_FAMILY_ZANGVIPER
+static const u16 sZangviperEggMoveLearnset[] = {
+    MOVE_COIL,
+    MOVE_DRAGON_DANCE,
+    MOVE_POISON_TAIL,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_ZANGVIPER

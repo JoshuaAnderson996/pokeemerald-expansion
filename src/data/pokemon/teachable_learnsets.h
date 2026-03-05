@@ -35908,3 +35908,12 @@ static const u16 sPecharuntTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PECHARUNT
+
+#if P_FAMILY_ZANGVIPER
+static const u16 sZangviperTeachableLearnset[] = {
+    MOVE_BODY_SLAM,
+    MOVE_SLUDGE_BOMB,
+    MOVE_TOXIC,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_ZANGVIPER

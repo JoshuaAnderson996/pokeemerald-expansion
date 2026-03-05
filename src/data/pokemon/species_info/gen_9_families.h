@@ -8547,6 +8547,87 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     },
 #endif //P_FAMILY_PECHARUNT
 
+/// Custom Pokémon
+
+#if P_FAMILY_ZANGVIPER
+    [SPECIES_ZANGVIPER] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 135,
+        .baseDefense   = 90,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_POISON, TYPE_COSMIC),
+        .catchRate = 90,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 160 : 165,
+        .evYield_Attack = 2,
+        .itemRare = ITEM_QUICK_CLAW,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_POISON_HEAL, ABILITY_TOUGH_CLAWS, ABILITY_TOXIC_BOOST },
+        .bodyColor = BODY_COLOR_WHITE,
+        .noFlip = TRUE,
+        .speciesName = _("Zangviper"),
+        .cryId = CRY_ZANGOOSE,
+        .natDexNum = NATIONAL_DEX_ZANGVIPER,
+        .categoryName = _("Predetor"),
+        .height = 36,
+        .weight = 873,
+        .description = COMPOUND_STRING(
+    "Created through bizarre alien experiments,\n"
+    "this fusion stands upright, its bristling fur\n"
+    "and razor claws poised to strike.\n"
+    "A serpent's head at the end of its tail\n"
+    "lashes out with venom, making it even\n"
+    "more formidable and unpredictable."
+    ),
+        .pokemonScale = 256,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Zangviper,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 50),
+        ),
+        .frontAnimId = ANIM_GROW_VIBRATE,
+        .backPic = gMonBackPic_Zangviper,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 64) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 6,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_Zangviper,
+        .shinyPalette = gMonShinyPalette_Zangviper,
+        .iconSprite = gMonIcon_Zangviper,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 8, SHADOW_SIZE_M)
+        FOOTPRINT(Zangoose)
+        OVERWORLD(
+            sPicTable_Zangoose,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Zangoose,
+            gShinyOverworldPalette_Zangoose
+        )
+        .levelUpLearnset = sZangviperLevelUpLearnset,
+        .teachableLearnset = sZangviperTeachableLearnset,
+        .eggMoveLearnset = sZangviperEggMoveLearnset,
+    },
+#endif //P_FAMILY_ZANGVIPER
+
 #ifdef __INTELLISENSE__
 };
 #endif
