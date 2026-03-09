@@ -16188,6 +16188,24 @@ const struct Item gItemsInfo[] =
     .iconPic = gItemIcon_QuestionMark,
     .iconPalette = gItemIconPalette_QuestionMark,
 },
+[ITEM_RARER_CANDY] =
+{
+    .name = ITEM_NAME("Rarer Candy"),
+    .price = 0,           // 0 = can't be bought (key item)
+    .description = COMPOUND_STRING(
+        "Instantly levels a\n"
+        "POKéMON up to\n"
+         "the current level cap."),
+    .effect = gItemEffect_RareCandy,   // Reuse Rare Candy's effect table
+    .fieldUseFunc = ItemUseOutOfBattle_RarerCandy,
+    .importance = 1,      // Key item (set to 0 for normal item)
+    .notConsumed = 1,     // Set to 1 if it should NOT be consumed on use
+    .pocket = POCKET_KEY_ITEMS,  // or POCKET_MEDICINE for a normal item
+    .type = ITEM_USE_PARTY_MENU,
+    .battleUsage = 0,
+    .iconPic = gItemIcon_RareCandy,       // Reuse or add your own graphic
+    .iconPalette = gItemIconPalette_RareCandy,
+},
 };
 
 #undef ITEM_NAME

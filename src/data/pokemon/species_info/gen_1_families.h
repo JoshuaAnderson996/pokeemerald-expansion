@@ -16505,10 +16505,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .height = 11,
         .weight = 800,
         .description = COMPOUND_STRING(
-            "People in ancient times imagined that\n"
-            "Starmie were transformed from the\n"
-            "reflections of stars that twinkled on\n"
-            "gentle waves at night."),
+            "Mega Evolution warps Starmie's once\n"
+            "distant nature, driving it to crave\n"
+            "human admiration. It mimics beloved\n"
+            "heroes from myth and fantasy, dazzling\n"
+            "crowds with feats of light and power.\n"
+            "What it truly seeks behind that\n"
+            "brilliant display, none can say."),
         .pokemonScale = 301,
         .pokemonOffset = 3,
         .trainerScale = 256,

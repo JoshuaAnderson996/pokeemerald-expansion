@@ -1099,7 +1099,9 @@
 
 // Quest Times
 #define ITEM_LOST_LETTER 924
-#define ITEMS_COUNT 925
+// New key items
+#define ITEM_RARER_CANDY 925
+#define ITEMS_COUNT 926
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow

@@ -1818,4 +1818,10 @@ void ItemUseOutOfBattle_Dive(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_RarerCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_RarerCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 #undef tUsingRegisteredKeyItem
