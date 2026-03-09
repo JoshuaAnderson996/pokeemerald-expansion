@@ -1543,7 +1543,7 @@
 #define SPECIES_TERAPAGOS_TERASTAL                      1432
 #define SPECIES_TERAPAGOS_STELLAR                       1433
 #define SPECIES_PECHARUNT                               1434
-#define SPECIES_LUGIA_SHADOW                            1435
+#define SPECIES_LUGIA_SHADOW                            1435 // Add later
 #define SPECIES_MOTHIM_SANDY                            1436
 #define SPECIES_MOTHIM_TRASH                            1437
 #define SPECIES_SCATTERBUG_POLAR                        1438

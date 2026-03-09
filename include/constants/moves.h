@@ -989,9 +989,10 @@
 #define MOVE_PSYCHIC_LANCE 926 // to do
 #define MOVE_OVERFLARE 927
 #define MOVE_VOID_SLASH 928
+#define MOVE_WILDFIRE 929
 
 
-#define MOVES_COUNT_GEN9 929
+#define MOVES_COUNT_GEN9 930
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 
 // Z Moves

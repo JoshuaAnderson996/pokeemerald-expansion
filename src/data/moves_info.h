@@ -4627,7 +4627,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Kicks the foe 3 times in a\n"
             "row with rising intensity."),
         .effect = EFFECT_TRIPLE_KICK,
-        .power = 10,
+        .power = 20,
         .type = TYPE_FIGHTING,
         .accuracy = 90,
         .pp = 10,
@@ -8854,7 +8854,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An uppercut thrown as if\n"
             "leaping into the sky."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
         .power = 85,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -8862,6 +8862,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_FLYING },
         .makesContact = TRUE,
         .punchingMove = TRUE,
         .damagesAirborne = TRUE,
@@ -21891,7 +21892,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_TOXIC_SHOCK] =
     {
         .name = COMPOUND_STRING("Toxic Shock"),
-        .description = sNullDescription,
+        .description = COMPOUND_STRING(
+            "An electrified attack that\n"
+            "poisons and paralyzes."),
         .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 70,
         .type = TYPE_ELECTRIC,
@@ -21914,7 +21917,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Concussive Hit"),
         .description = COMPOUND_STRING(
             "Sneaky punch behind the head\n"
-            "may make foe drozy."),
+            "may make foe drowsy."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_DARK,
@@ -21936,7 +21939,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_JUNGLE_FURY] =
     {
         .name = COMPOUND_STRING("Jungle Fury"),
-        .description = sNullDescription,    
+        .description = COMPOUND_STRING(
+            "A powerful grass attack\n"
+            "that persists after the turn ends."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_GRASS,
@@ -21955,7 +21960,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_CANNONADE] =
     {
         .name = COMPOUND_STRING("Cannonade"),
-        .description = sNullDescription,    //ANIM TODO
+        .description = COMPOUND_STRING(
+            "A powerful water attack\n"
+            "that persists after the turn ends."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_WATER,
@@ -21972,10 +21979,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         }),
     },
 
-    [MOVE_HELLFIRE] =
+    [MOVE_WILDFIRE] =
     {
-        .name = COMPOUND_STRING("Hell Fire"),
-        .description = sNullDescription,
+        .name = COMPOUND_STRING("Wildfire"),
+        .description = COMPOUND_STRING(
+            "Fire attack that persists\n"
+            "after the turn ends."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_FIRE,
@@ -21984,12 +21993,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .magicMove = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxWildfire,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_WILDFIRE,
             .chance = 100,
         }),
+    },
+
+    [MOVE_HELLFIRE] =
+    {
+        .name = COMPOUND_STRING("Hell Fire"),
+        .description = COMPOUND_STRING(
+            "2x Fire\n"
+            "and Water types."),
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
+        .power = 80,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_WATER || TYPE_FIRE },
+        .magicMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_GMaxWildfire,
     },
     [MOVE_WINDRIDER_ASSAULT] =
     {
@@ -22123,7 +22150,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ATOMIZE] =
     {
         .name = COMPOUND_STRING("Atomize"),
-        .description = COMPOUND_STRING( "Super effective on Steel,"),
+        .description = COMPOUND_STRING( "Super effective on Rock,"),
         .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
         .power = 70,
         .type = TYPE_STEEL,
@@ -22132,7 +22159,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .type = TYPE_STEEL },
+        .argument = { .type = TYPE_ROCK },
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,

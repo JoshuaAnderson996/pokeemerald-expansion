@@ -5646,6 +5646,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sClefableLevelUpLearnset,
         .teachableLearnset = sClefableTeachableLearnset,
+        .formSpeciesIdTable = sClefableFormSpeciesIdTable,
+        .formChangeTable = sClefableFormChangeTable,
     },
     #if P_MEGA_EVOLUTIONS
     [SPECIES_CLEFABLE_MEGA] =
@@ -5702,7 +5704,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             ANIMCMD_FRAME(0, 5),
         ),
         .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW : ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Clefable,
+        .backPic = gMonBackPic_ClefableMega,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 48) : MON_COORDS_SIZE(64, 48),
         .backPicYOffset = 10,
         .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
@@ -5724,6 +5726,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sClefableLevelUpLearnset,
         .teachableLearnset = sClefableTeachableLearnset,
+        .formSpeciesIdTable = sClefableFormSpeciesIdTable,
+        .formChangeTable = sClefableFormChangeTable,
     },
 #endif 
 #endif //P_FAMILY_CLEFAIRY
@@ -9954,7 +9958,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .pokemonOffset = 1,
         .trainerScale = 312,
         .trainerOffset = 3,
-        .frontPic = gMonFrontPic_Victreebel,
+        .frontPic = gMonFrontPic_VictreebelMega,
         .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 56) : MON_COORDS_SIZE(64, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 5 : 6,
         .frontAnimFrames = ANIM_FRAMES(
@@ -9967,12 +9971,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             ANIMCMD_FRAME(0, 10),
         ),
         .frontAnimId = ANIM_H_JUMPS_V_STRETCH,
-        .backPic = gMonBackPic_Victreebel,
+        .backPic = gMonBackPic_VictreebelMega,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_V_STRETCH,
-        .palette = gMonPalette_Victreebel,
-        .shinyPalette = gMonShinyPalette_Victreebel,
+        .palette = gMonPalette_VictreebelMega,
+        .shinyPalette = gMonShinyPalette_VictreebelMega,
         .iconSprite = gMonIcon_Victreebel,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -12906,7 +12910,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .frontPicYOffset = 7,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_GengarMega,
+        .backPic = gMonBackPic_GengarMegaX,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
@@ -14522,8 +14526,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTyrogueTeachableLearnset,
         .eggMoveLearnset = sTyrogueEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_HITMONCHAN, CONDITIONS({IF_ATK_LT_DEF})},
-                                {EVO_LEVEL, 20, SPECIES_HITMONLEE, CONDITIONS({IF_ATK_GT_DEF})},
-                                {EVO_LEVEL, 20, SPECIES_HITMONTOP, CONDITIONS({IF_ATK_EQ_DEF})}),
+                        {EVO_LEVEL, 0,  SPECIES_HITMONCHAN, CONDITIONS({IF_KNOWS_MOVE, MOVE_MACH_PUNCH})},
+                        {EVO_LEVEL, 20, SPECIES_HITMONLEE,  CONDITIONS({IF_ATK_GT_DEF})},
+                        {EVO_LEVEL, 0,  SPECIES_HITMONLEE,  CONDITIONS({IF_KNOWS_MOVE, MOVE_DOUBLE_KICK})},
+                        {EVO_LEVEL, 20, SPECIES_HITMONTOP,  CONDITIONS({IF_ATK_EQ_DEF})},
+                        {EVO_LEVEL, 0,  SPECIES_HITMONTOP,  CONDITIONS({IF_KNOWS_MOVE, MOVE_RAPID_SPIN})}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -21092,7 +21099,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .pokemonOffset = 0,
         .trainerScale = 309,
         .trainerOffset = 4,
-        .frontPic = gMonFrontPic_Dragonite,
+        .frontPic = gMonFrontPic_DragoniteMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = ANIM_FRAMES(
@@ -21102,7 +21109,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ),
         .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_SLIDE_SLOW : ANIM_V_SHAKE,
         .enemyMonElevation = P_GBA_STYLE_SPECIES_GFX ? 6 : 0,
-        .backPic = gMonBackPic_Dragonite,
+        .backPic = gMonBackPic_DragoniteMega,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 1,
         .backAnimId = BACK_ANIM_V_SHAKE,

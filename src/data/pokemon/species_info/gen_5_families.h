@@ -5964,9 +5964,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .backPicSize = MON_COORDS_SIZE(48, 64),
         .backPicYOffset = 5,
         .backAnimId = BACK_ANIM_GROW,
-        .palette = gMonPalette_Scrafty,
-        .shinyPalette = gMonShinyPalette_Scrafty,
-        .iconSprite = gMonIcon_Scrafty,
+        .palette = gMonPalette_ScraftyMega,
+        .shinyPalette = gMonShinyPalette_ScraftyMega,
+        .iconSprite = gMonIcon_ScraftyMega,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 9, SHADOW_SIZE_M)
