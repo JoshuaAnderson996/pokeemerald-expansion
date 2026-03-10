@@ -572,34 +572,61 @@ Gender: Female
 Music: Aqua
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Jellicent 
-Ability: Regenerator
+Araquanid @ Ability Shield  
+Ability: Water Bubble  
 Level: 34  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Tera Type: Water  
+EVs: 252 HP / 248 Atk  
+Adamant Nature  
+- Sticky Web  
+- Liquidation  
+- Leech Life  
+- Mirror Coat  
 
-Dragalge  
-Ability: Adaptability
+Dragalge @ Assault Vest  
+Ability: Adaptability  
 Level: 34  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Quiet Nature  
+- Hydro Pump  
+- Sludge Wave  
+- Draco Meteor  
+- Dragon Tail  
 
-Lanturn  
-Ability: Drizzle
+Lanturn @ Damp Rock  
+Ability: Drizzle  
 Level: 35  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Electro Shot  
+- Hydro Pump  
+- Stockpile  
+- Swallow  
 
-Araquanid  
-Ability: Water Bubble
+Vaporeon @ Leftovers  
+Ability: Regenerator  
 Level: 34  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Bold Nature  
+IVs: 0 Atk  
+- Wish  
+- Baddy Bad  
+- Scald  
+- Protect  
 
-Vaporeon  
-Ability: Regenerator
+Inteleon (F) @ Intelite G 
+Ability: Sniper  
 Level: 34  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Modest Nature  
+- Kill Shot  
+- Snipe Shot  
+- Shadow Ball  
+- Air Slash  
 
-Kingler @ Kinglerite G
-Level: 34  
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Castform @ Power Herb  
+Ability: Forecast 
+Modest Nature  
+IVs: 0 Atk  
+- Hurricane  
+- Meteor Beam  
+- Tailwind  
+- Scald  
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
 Name: SHELLY

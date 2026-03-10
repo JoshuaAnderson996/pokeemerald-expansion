@@ -235,6 +235,9 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 static const u16 sNewGamePCItems[][2] =
 {
     { ITEM_QUICK_BALL, 10 },
+    { ITEM_POKE_BALL, 10 },
+    { ITEM_GREAT_BALL, 10 },
+    { ITEM_ULTRA_BALL, 10 },
     { ITEM_LONELY_MINT, 999 },
     { ITEM_ADAMANT_MINT, 999 },
     { ITEM_NAUGHTY_MINT, 999 },
@@ -256,7 +259,6 @@ static const u16 sNewGamePCItems[][2] =
     { ITEM_HASTY_MINT, 999 },
     { ITEM_JOLLY_MINT, 999 },
     { ITEM_NAIVE_MINT, 999 },
-    { ITEM_RARE_CANDY, 999 },
     { ITEM_NONE, 0 }
 };
 

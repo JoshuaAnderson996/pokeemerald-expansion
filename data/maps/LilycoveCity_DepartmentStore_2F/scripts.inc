@@ -50,17 +50,8 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_MAX_POTION 
 	.2byte ITEM_FULL_RESTORE 
 	.2byte ITEM_REVIVE 
-	.2byte ITEM_MAX_REVIVE 
-	.2byte ITEM_HP_UP 
-	.2byte ITEM_PROTEIN 
-	.2byte ITEM_IRON 
-	.2byte ITEM_CALCIUM 
-	.2byte ITEM_ZINC 
-	.2byte ITEM_CARBOS 
+	.2byte ITEM_MAX_REVIVE
 	.2byte ITEM_PP_UP 
-	.2byte ITEM_PP_MAX 
-	.2byte ITEM_ABILITY_CAPSULE 
-	.2byte ITEM_ABILITY_PATCH 
 	.2byte ITEM_LONELY_MINT 
 	.2byte ITEM_ADAMANT_MINT 
 	.2byte ITEM_NAUGHTY_MINT 
@@ -94,8 +85,7 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_GUARD_SPEC 
 	.2byte ITEM_FIRE_STONE 
 	.2byte ITEM_WATER_STONE 
-	.2byte ITEM_THUNDER_STONE 
-	.2byte ITEM_THUNDERSTONE
+	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_LEAF_STONE 
 	.2byte ITEM_ICE_STONE 
 	.2byte ITEM_SUN_STONE 
@@ -153,16 +143,13 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_MAGNET 
 	.2byte ITEM_MIRACLE_SEED 
 	.2byte ITEM_NEVER_MELT_ICE 
-	.2byte ITEM_NEVERMELTICE 
-	.2byte ITEM_BLACK_BELT 
-	.2byte ITEM_BLACKBELT 
+	.2byte ITEM_BLACK_BELT
 	.2byte ITEM_POISON_BARB 
 	.2byte ITEM_SOFT_SAND 
 	.2byte ITEM_SHARP_BEAK 
 	.2byte ITEM_TWISTED_SPOON 
 	.2byte ITEM_TWISTEDSPOON 
-	.2byte ITEM_SILVER_POWDER 
-	.2byte ITEM_SILVERPOWDER 
+	.2byte ITEM_SILVER_POWDER  
 	.2byte ITEM_HARD_STONE 
 	.2byte ITEM_SPELL_TAG 
 	.2byte ITEM_DRAGON_FANG 
@@ -193,7 +180,6 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_SOOTHE_BELL 
 	.2byte ITEM_MENTAL_HERB 
 	.2byte ITEM_KINGS_ROCK 
-	.2byte ITEM_AMULET_COIN 
 	.2byte ITEM_CLEANSE_TAG 
 	.2byte ITEM_SMOKE_BALL 
 	.2byte ITEM_FOCUS_BAND 
@@ -241,6 +227,7 @@ LilycoveCity_DepartmentStore_2F_Pokemart1:
 	.2byte ITEM_BLUNDER_POLICY 
 	.2byte ITEM_ROOM_SERVICE 
 	.2byte ITEM_UTILITY_UMBRELLA
+	.2byte ITEM_NULLIFIER
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_2F_EventScript_ClerkRight::

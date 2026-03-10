@@ -6947,7 +6947,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler)
             case HOLD_EFFECT_DOUBLE_PRIZE:
                 if (IsOnPlayerSide(battler) && !gBattleStruct->moneyMultiplierItem)
                 {
-                    gBattleStruct->moneyMultiplier *= 2;
+                    gBattleStruct->moneyMultiplier *= 5;
                     gBattleStruct->moneyMultiplierItem = 1;
                 }
                 break;
@@ -9020,7 +9020,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (IsMagicMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         if (TYPE_PSYCHIC == moveType || TYPE_GHOST == moveType)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TIDAL_TERROR:
         if (TYPE_WATER == moveType || TYPE_DARK == moveType)
@@ -9169,6 +9169,22 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case HOLD_EFFECT_OGERPON_MASK:
         if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_OGERPON)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
+    case HOLD_EFFECT_DAMP_ROCK:
+        if (gBattleWeather & B_WEATHER_RAIN)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case HOLD_EFFECT_HEAT_ROCK:
+        if (gBattleWeather & B_WEATHER_SUN)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case HOLD_EFFECT_SMOOTH_ROCK:
+        if (gBattleWeather & B_WEATHER_SANDSTORM)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case HOLD_EFFECT_ICY_ROCK:
+        if (gBattleWeather & B_WEATHER_ICY_ANY)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     default:
         break;
