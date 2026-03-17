@@ -1147,10 +1147,9 @@
 	.4byte \failInstr
 	.endm
 
-	.macro trywish turnNumber:req, failInstr:req, blockedInstr:req
-	.byte 0xd4
-	.4byte \failInstr
-	.4byte \blockedInstr
+	.macro trywish failInstr:req
+    .byte 0xd4
+    .4byte \failInstr
 	.endm
 
 	.macro settoxicspikes failInstr:req

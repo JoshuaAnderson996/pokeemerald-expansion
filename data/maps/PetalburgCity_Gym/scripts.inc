@@ -154,6 +154,9 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressPlayerNorth
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressPlayerWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressPlayerEast
+	msgbox PetalburgCity_Gym_Text_DadAskPlayerToHelpWally, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_Gym_EventScript_PlayerRefusesToHelpWally
+	@ --- YES path ---
 	msgbox PetalburgCity_Gym_Text_DadPlayerGoWithWally, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressWallySouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressWallyNorth
@@ -179,6 +182,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_ExitGymWithWallyWest
 	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_ExitGymWithWallyEast
 	removeobject LOCALID_PETALBURG_GYM_WALLY
+	call PetalburgCity_Gym_EventScript_NormanGiveMegaStone
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
 	setvar VAR_PETALBURG_GYM_STATE, 1
 	setvar VAR_PETALBURG_CITY_STATE, 2
@@ -190,6 +194,54 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	waitstate
 	release
 	end
+
+@ --- NO path: skips the tutorial but advances all the same state ---
+PetalburgCity_Gym_EventScript_PlayerRefusesToHelpWally::
+	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_NormanAddressWallySouth
+	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_NormanAddressWallyNorth
+	call_if_eq VAR_0x8008, 2, PetalburgCity_Gym_EventScript_NormanAddressWallyWest
+	call_if_eq VAR_0x8008, 3, PetalburgCity_Gym_EventScript_NormanAddressWallyEast
+	msgbox PetalburgCity_Gym_Text_DadDisappointedNoHelp, MSGBOX_DEFAULT
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyExitGym
+	waitmovement 0
+	removeobject LOCALID_PETALBURG_GYM_WALLY
+	call PetalburgCity_Gym_EventScript_NormanGiveMegaStone
+	@ Mirror every flag/var the YES path sets so story advances identically
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+	setvar VAR_PETALBURG_GYM_STATE, 2
+	setvar VAR_PETALBURG_CITY_STATE, 3
+	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
+	setflag FLAG_HIDE_PETALBURG_GYM_WALLY
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	special InitBirchState
+	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_NormanGiveMegaStone::
+	msgbox PetalburgCity_Gym_Text_DadBeforeYouGo, MSGBOX_DEFAULT
+	goto_if_eq VAR_STARTER_MON, 0, PetalburgCity_Gym_EventScript_GiveSceptilite
+	goto_if_eq VAR_STARTER_MON, 1, PetalburgCity_Gym_EventScript_GiveBlazikenite
+	goto_if_eq VAR_STARTER_MON, 2, PetalburgCity_Gym_EventScript_GiveSwampertite
+	return
+
+PetalburgCity_Gym_EventScript_GiveSceptilite::
+	giveitem ITEM_SCEPTILITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox PetalburgCity_Gym_Text_DadExplainMegaStone, MSGBOX_DEFAULT
+	return
+
+PetalburgCity_Gym_EventScript_GiveBlazikenite::
+	giveitem ITEM_BLAZIKENITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox PetalburgCity_Gym_Text_DadExplainMegaStone, MSGBOX_DEFAULT
+	return
+
+PetalburgCity_Gym_EventScript_GiveSwampertite::
+	giveitem ITEM_SWAMPERTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox PetalburgCity_Gym_Text_DadExplainMegaStone, MSGBOX_DEFAULT
+	return
 
 PetalburgCity_Gym_EventScript_WallyArriveSouth::
 	applymovement LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown
@@ -1138,6 +1190,28 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+	PetalburgCity_Gym_Text_DadAskPlayerToHelpWally:
+	.string "DAD: {PLAYER}, you heard that,\n"
+	.string "right?\p"
+	.string "This boy WALLY has never caught\n"
+	.string "a POKéMON before.\p"
+	.string "Would you go with him and\n"
+	.string "show him how it's done?$"
+
+PetalburgCity_Gym_Text_DadDisappointedNoHelp:
+	.string "DAD: I see… That's a shame.\p"
+	.string "WALLY, I'm sorry. Come back\n"
+	.string "another time, okay?$"
+
+
+PetalburgCity_Gym_Text_DadExplainMegaStone:
+	.string "DAD: Hold onto that MEGA STONE.\p"
+	.string "When you find a KEY STONE, your\n"
+	.string "POKéMON will be able to go beyond\l"
+	.string "its limits in battle.\p"
+	.string "Now go. Keep getting stronger,\n"
+	.string "{PLAYER}!$"
+
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "DAD: Hm?\p"
 	.string "Well, if it isn't {PLAYER}!\n"
@@ -1585,4 +1659,12 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
+
+	PetalburgCity_Gym_Text_DadBeforeYouGo:
+	.string "DAD: Before you go, {PLAYER}…\p"
+	.string "I want to give you something\n"
+	.string "special.\p"
+	.string "This MEGA STONE is tied to your\n"
+	.string "starter POKéMON.\p"
+	.string "Take good care of it.$"
 

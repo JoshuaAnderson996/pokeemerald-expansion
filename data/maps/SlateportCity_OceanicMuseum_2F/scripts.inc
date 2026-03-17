@@ -54,6 +54,9 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
 	closemessage
+	trainerbattle_no_intro TRAINER_ARCHIE_MUSEUM, SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat
+	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchiePostDefeat, MSGBOX_DEFAULT
+	closemessage
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
@@ -66,6 +69,8 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
+	giveitem ITEM_MYSTIC_WATER
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SternMysticWaterGift, MSGBOX_DEFAULT
 	setvar VAR_0x8004, ITEM_DEVON_PARTS
 	call Common_EventScript_PlayerHandedOverTheItem
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
@@ -337,11 +342,20 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "Ah, fine…\n"
 	.string "You're still too young to understand\l"
 	.string "our noble objective.\p"
-	.string "But, I warn you, don't even consider\n"
+	.string "Here are\n"
+	.string "The consequences for\n"
 	.string "interfering with our plans again.\p"
-	.string "The consequences will cost you\n"
-	.string "dearly!\p"
-	.string "And don't you forget it!$"
+	.string "…Let's see if you defeat me!$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat:
+	.string "Defeated by a child…\n"
+	.string "Unbelievable!$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchiePostDefeat:
+	.string "ARCHIE: …You're stronger than\n"
+	.string "I expected.\p"
+	.string "This isn't over, child.\n"
+	.string "TEAM AQUA will rise again!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 	.string "CAPT. STERN: You're…\n"
@@ -350,6 +364,15 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 	.string "Thank you for saving us!\p"
 	.string "Oh, yes, I almost forgot that you\n"
 	.string "even brought the parts from DEVON!$"
+
+SlateportCity_OceanicMuseum_2F_Text_SternMysticWaterGift:
+	.string "CAPT. STERN: Please, take this\n"
+	.string "MYSTIC WATER as a token of my\l"
+	.string "gratitude.\p"
+	.string "It's a memento from one of our\n"
+	.string "ocean expeditions.\p"
+	.string "I hope it serves you well on\n"	
+	.string "your own journey!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
 	.string "CAPT. STERN: Whoops!\n"
@@ -375,13 +398,13 @@ SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine:
 	.string "I want to go for a ride!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
-	.string "“WATER QUALITY SAMPLE 1,” the\n"
+	.string "3WATER QUALITY SAMPLE 1, the\n"
 	.string "label says.\p"
 	.string "The sea is all connected, but the\n"
 	.string "water seems to differ by region.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
-	.string "“WATER QUALITY SAMPLE 2,” the\n"
+	.string "WATER QUALITY SAMPLE 2, the\n"
 	.string "label says.\p"
 	.string "Does the saltiness of seawater differ\n"
 	.string "by region, too?$"
@@ -389,47 +412,48 @@ SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
 SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 	.string "A rubber ball is expanding and\n"
 	.string "shrinking.\p"
-	.string "“In the sea, the weight of water itself\n"
+	.string "In the sea, the weight of water itself\n"
 	.string "exerts pressure.\p"
-	.string "“In shallow water, the pressure is not\n"
+	.string "In shallow water, the pressure is not\n"
 	.string "very heavy.\p"
-	.string "“However, in extremely deep water,\n"
+	.string "However, in extremely deep water,\n"
 	.string "the pressure can reach even tens of\l"
-	.string "thousands of tons on a small area.”$"
+	.string "thousands of tons on a small area.$"
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel:
-	.string "“MODEL OF HOENN REGION”\p"
+	.string "3MODEL OF HOENN REGIONp"
 	.string "It's a miniature diorama of the\n"
 	.string "HOENN region.\p"
 	.string "Where is LITTLEROOT TOWN on this?$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
 	.string "It's a display on the flow of seawater.\p"
-	.string "“Near the bottom of the sea, water\n"
+	.string "Near the bottom of the sea, water\n"
 	.string "flows due to differences in such\l"
-	.string "factors as temperature and salinity.”$"
+	.string "factors as temperature and salinity.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay:
 	.string "It's a display on the flow of seawater.\p"
-	.string "“Toward the surface, seawater flows\n"
-	.string "as currents driven by the winds.”$"
+	.string "Toward the surface, seawater flows\n"
+	.string "as currents driven by the winds.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica:
-	.string "“THE FERRY S.S. TIDAL\p"
-	.string "“A scale replica of the ship under\n"
-	.string "construction at STERN'S SHIPYARD.”$"
+	.string "THE FERRY S.S. TIDAL\p"
+	.string "A scale replica of the ship under\n"
+	.string "construction at STERN'S SHIPYARD.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica:
-	.string "“SUBMARINE EXPLORER 1\p"
-	.string "“A replica of the high-performance\n"
-	.string "ocean floor exploration submarine.”$"
+	.string "3SUBMARINE EXPLORER 1\p"
+	.string "A replica of the high-performance\n"
+	.string "ocean floor exploration submarine."
 
 SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica:
-	.string "“SUBMERSIBLE POD\p"
-	.string "“A replica of a compact, unmanned\n"
-	.string "pod for seafloor exploration.”$"
+	.string "SUBMERSIBLE POD\p"
+	.string "A replica of a compact, unmanned\n"
+	.string "pod for seafloor exploration.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica:
-	.string "“S.S. ANNE\p"
-	.string "“A replica of the luxury liner that\n"
-	.string "circles the globe.”$"
+	.string "S.S. ANNE\p"
+	.string "A replica of the luxury liner that\n"
+	.string "circles the globe.$"
+

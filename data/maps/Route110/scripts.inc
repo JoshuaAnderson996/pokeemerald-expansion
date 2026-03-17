@@ -624,6 +624,14 @@ Route110_EventScript_BirchScene::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
+	goto_if_set DN_FLAG_DEXNAV_GET, Route110_EventScript_BirchSceneSkipDexNav
+	msgbox Route110_Text_BirchGivesDexNav, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route110_Text_BirchDexNavObtained, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	setflag DN_FLAG_DEXNAV_GET
+Route110_EventScript_BirchSceneSkipDexNav::
 	msgbox Route110_Text_KeepAnEyeOutForRival, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_BirchExit1
@@ -986,4 +994,21 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "… … … … … …\p"
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"
+
+	Route110_Text_BirchGivesDexNav:
+	.string "PROF. BIRCH: Oh, right I almost\n"
+	.string "forgot!\p"
+	.string "You know, there's a new feature\n"
+	.string "available for your POKéDEX.\p"
+	.string "It's called the DEXNAV.\n"
+	.string "With it, you can search for specific\l"
+	.string "wild POKéMON in the area!\p"
+	.string "Some of them might even know special\n"
+	.string "moves… or have hidden talents.\p"
+	.string "I've gone ahead and activated it\n"
+	.string "on your POKéDEX. Use it well!$"
+
+Route110_Text_BirchDexNavObtained:
+	.string "The DEXNAV has been\n"
+	.string "unlocked!$"
 

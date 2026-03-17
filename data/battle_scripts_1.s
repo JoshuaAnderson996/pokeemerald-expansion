@@ -4727,7 +4727,7 @@ BattleScript_EffectWish::
 	attackcanceler
 	attackstring
 	ppreduce
-	trywish 0, BattleScript_ButItFailed, BattleScript_ButItFailed
+	trywish BattleScript_ButItFailed
 	attackanimation
 	waitanimation
 	goto BattleScript_MoveEnd
@@ -6307,7 +6307,7 @@ BattleScript_SelectingNotAllowedCurrentMoveInPalace::
 	goto BattleScript_SelectingUnusableMoveInPalace
 
 BattleScript_WishComesTrue::
-	trywish 1, BattleScript_WishButFullHp, BattleScript_WishButHealBlocked
+	trywish BattleScript_WishButHealBlocked
 	playanimation BS_TARGET, B_ANIM_WISH_HEAL
 	printstring STRINGID_PKMNWISHCAMETRUE
 	waitmessage B_WAIT_TIME_LONG

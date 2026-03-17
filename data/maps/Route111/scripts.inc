@@ -45,8 +45,45 @@ Route111_OnTransition:
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
 	call Route111_EventScript_CheckSetSandstorm
 	call GabbyAndTy_EventScript_UpdateLocation
+	call Route111_EventScript_UpdateMagmaGrunts
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
 	end
+
+@ New subroutine — hides all 13 grunts if Watson is beaten, shows them if not
+Route111_EventScript_UpdateMagmaGrunts::
+	goto_if_set FLAG_BADGE03_GET, Route111_EventScript_HideMagmaGrunts
+	@ Watson NOT beaten — make grunts visible
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_1
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_2
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_3
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_4
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_5
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_6
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_7
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_8
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_9
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_10
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_11
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_12
+	clearflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_13
+	return
+
+Route111_EventScript_HideMagmaGrunts::
+	@ Watson beaten — hide all grunts
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_1
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_2
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_3
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_4
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_5
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_6
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_7
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_8
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_9
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_10
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_11
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_12
+	setflag FLAG_HIDE_ROUTE_111_MAGMA_GRUNT_13
+	return
 
 Route111_EventScript_SetFallingPlayerGfx::
 	checkplayergender
@@ -580,6 +617,16 @@ Route111_EventScript_RitcherBattle::
     msgbox Route111_Text_RitcherFarewell, MSGBOX_AUTOCLOSE
     release
     end
+
+	Route111_EventScript_MagmaGrunt::
+	lock
+	faceplayer
+	msgbox Route111_Text_MagmaGruntBlocking, MSGBOX_DEFAULT
+	release
+	end
+
+	Route111_Text_MagmaGruntBlocking:
+	.string ".........$"
 
 Route111_Text_RitcherIntro:
     .string "I am one of the Mega Masters.\n"

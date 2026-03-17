@@ -21821,10 +21821,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Stone Surge"),
         .description = COMPOUND_STRING(
-            "This attack does Water\n"
-            "and rock damage\n"
-            ";places rocks."),
-        .effect = EFFECT_TWO_TYPED_MOVE,
+            "This attack does a powerful\n"
+            "water strike\n"
+            ";scatters rocks."),
+        .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_WATER,
         .accuracy = 95,
@@ -21832,7 +21832,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .type = TYPE_ROCK },
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_STEALTH_ROCK,
