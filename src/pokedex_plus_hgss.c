@@ -6659,6 +6659,12 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
                 case IF_ATK_LT_DEF:
                     StringAppend(gStringVar4, COMPOUND_STRING("Atk < Def"));
                     break;
+                case IF_SPATK_GT_ATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk > Atk"));
+                    break;
+                case IF_SPATK_LT_ATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk < Atk"));
+                    break;
                 case IF_TIME:
                     switch(evolutions[i].params[j].arg1)
                     {

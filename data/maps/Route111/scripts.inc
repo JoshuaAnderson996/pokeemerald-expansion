@@ -39,11 +39,8 @@ Route111_EventScript_ShowTemporaryMirageTower::
 
 Route111_OnTransition:
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
-	special SetMirageTowerVisibility
-	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
-	call Route111_EventScript_CheckSetSandstorm
 	call GabbyAndTy_EventScript_UpdateLocation
 	call Route111_EventScript_UpdateMagmaGrunts
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
@@ -101,14 +98,14 @@ Route111_EventScript_SetFallingPlayerGfxFemale::
 
 Route111_EventScript_CheckSetSandstorm::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	goto_if_lt VAR_TEMP_1, 34, Route111_EventScript_EndCheckSetSandstorm
-	goto_if_gt VAR_TEMP_1, 107, Route111_EventScript_EndCheckSetSandstorm
-	goto_if_gt VAR_TEMP_1, 72, Route111_EventScript_SetSandstorm
-	goto_if_gt VAR_TEMP_0, 2000, Route111_EventScript_EndCheckSetSandstorm
-	goto_if_lt VAR_TEMP_0, 8, Route111_EventScript_EndCheckSetSandstorm
+	goto Route111_EventScript_SetSandstorm
+
 Route111_EventScript_SetSandstorm::
 	setweather WEATHER_SANDSTORM
+	setvar VAR_TEMP_F, WEATHER_SANDSTORM
 	doweather
+	return
+
 Route111_EventScript_EndCheckSetSandstorm::
 	return
 
@@ -286,6 +283,7 @@ Route111_EventScript_SunTrigger::
 	fadenewbgm MUS_ROUTE110
 	doweather
 	setvar VAR_TEMP_3, 0
+	setvar VAR_TEMP_F, 0
 	end
 
 Route111_EventScript_SandstormTrigger::

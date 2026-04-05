@@ -1,6 +1,5 @@
 DesertRuins_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, DesertRuins_OnResume
-	map_script MAP_SCRIPT_ON_LOAD, DesertRuins_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, DesertRuins_OnTransition
 	.byte 0
 
@@ -13,10 +12,6 @@ DesertRuins_EventScript_TryRemoveRegirock::
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 	removeobject VAR_LAST_TALKED
 	return
-
-DesertRuins_OnLoad:
-	call_if_unset FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_HideRegiEntrance
-	end
 
 DesertRuins_EventScript_HideRegiEntrance::
 	setmetatile 7, 19, METATILE_Cave_EntranceCover, TRUE
@@ -78,6 +73,39 @@ DesertRuins_EventScript_CaveEntranceSide::
 DesertRuins_EventScript_Regirock::
 	lock
 	faceplayer
+	goto_if_set FLAG_REGIROCK_BOSS_DEFEATED, DesertRuins_EventScript_RegirockRematch
+	goto DesertRuins_EventScript_RegirockBoss
+	end
+
+DesertRuins_EventScript_RegirockBoss::
+	waitse
+	playmoncry SPECIES_REGIROCK_BOSS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setflag B_FLAG_NO_CATCHING
+	setflag B_SMART_WILD_AI_FLAG
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 0, 0, 1, 0, 0 @ +1 Atk, +1 Def, +1 SpDef
+	setwildbattle SPECIES_REGIROCK_BOSS, 50,      
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartRegiBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag B_FLAG_NO_CATCHING
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertRuins_EventScript_RegirockBossDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DesertRuins_EventScript_RanFromRegirock
+	release
+	end
+
+DesertRuins_EventScript_RegirockBossDefeated::
+	setflag FLAG_REGIROCK_BOSS_DEFEATED
+	setflag FLAG_HIDE_REGIROCK  @ hide it now; OnTransition will restore it on next entry
+	msgbox DesertRuins_Text_RegirockWithdrewItsEnergy, MSGBOX_DEFAULT
+	release
+	end
+
+DesertRuins_EventScript_RegirockRematch::
 	waitse
 	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
 	delay 40
@@ -91,6 +119,7 @@ DesertRuins_EventScript_Regirock::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertRuins_EventScript_DefeatedRegirock
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DesertRuins_EventScript_RanFromRegirock
+	@ Caught - OnResume handles sprite removal via FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_DEFEATED_REGIROCK
 	release
 	end
@@ -112,6 +141,7 @@ DesertRuins_EventScript_RanFromRegirock::
 DesertRuins_EventScript_MagmaAmbushTrigger::
 	goto_if_set FLAG_DESERT_RUINS_MAGMA_SCENE_DONE, DesertRuins_EventScript_AmbushDone
 	goto_if_unset FLAG_BADGE03_GET, DesertRuins_EventScript_AmbushDone
+	setflag FLAG_DESERT_RUINS_MAGMA_SCENE_STARTED
 	lockall
 	delay 30
 	applymovement LOCALID_DESERT_RUINS_TABITHA, Common_Movement_FacePlayer
@@ -487,3 +517,9 @@ DesertRuins_Text_StevenFarewell:
 	.string "{PLAYER}.\p"
 	.string "HOENN is counting on trainers\n"
 	.string "like you.$"
+
+DesertRuins_Text_RegirockWithdrewItsEnergy:
+	.string "The ancient giant withdrew\n"
+	.string "its power into the ruins…\p"
+	.string "Its presence still lingers here.\n"
+	.string "Perhaps it will emerge again…$"

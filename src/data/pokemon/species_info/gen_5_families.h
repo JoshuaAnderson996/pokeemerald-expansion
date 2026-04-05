@@ -11902,7 +11902,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseAttack    = 83,
         .baseDefense   = 50,
         .baseSpeed     = 60,
-        .baseSpAttack  = 37,
+        .baseSpAttack  = 83,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 190,
@@ -11963,8 +11963,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sRuffletLevelUpLearnset,
         .teachableLearnset = sRuffletTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 54, SPECIES_BRAVIARY},
-                                {EVO_NONE, 0, SPECIES_BRAVIARY_HISUI}),
+        .evolutions = EVOLUTION(
+        {EVO_LEVEL, 30, SPECIES_BRAVIARY_HISUI, CONDITIONS({IF_SPATK_GT_ATK})},
+        {EVO_LEVEL, 30, SPECIES_BRAVIARY, CONDITIONS({IF_SPATK_LT_ATK})}
+    ),
     },
 
     [SPECIES_BRAVIARY] =

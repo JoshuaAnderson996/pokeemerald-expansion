@@ -14525,11 +14525,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sTyrogueLevelUpLearnset,
         .teachableLearnset = sTyrogueTeachableLearnset,
         .eggMoveLearnset = sTyrogueEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_HITMONCHAN, CONDITIONS({IF_ATK_LT_DEF})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_HITMONCHAN, CONDITIONS({IF_ATK_LT_DEF})},  //Atk < Def
                         {EVO_LEVEL, 0,  SPECIES_HITMONCHAN, CONDITIONS({IF_KNOWS_MOVE, MOVE_MACH_PUNCH})},
-                        {EVO_LEVEL, 20, SPECIES_HITMONLEE,  CONDITIONS({IF_ATK_GT_DEF})},
+                        {EVO_LEVEL, 20, SPECIES_HITMONLEE,  CONDITIONS({IF_ATK_GT_DEF})},          //Atk > Def
                         {EVO_LEVEL, 0,  SPECIES_HITMONLEE,  CONDITIONS({IF_KNOWS_MOVE, MOVE_DOUBLE_KICK})},
-                        {EVO_LEVEL, 20, SPECIES_HITMONTOP,  CONDITIONS({IF_ATK_EQ_DEF})},
+                        {EVO_LEVEL, 20, SPECIES_HITMONTOP,  CONDITIONS({IF_ATK_EQ_DEF})},         //Atk = Def
                         {EVO_LEVEL, 0,  SPECIES_HITMONTOP,  CONDITIONS({IF_KNOWS_MOVE, MOVE_RAPID_SPIN})}),
     },
 #endif //P_GEN_2_CROSS_EVOS

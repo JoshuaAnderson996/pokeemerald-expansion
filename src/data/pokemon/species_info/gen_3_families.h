@@ -12432,6 +12432,86 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     },
 #endif //P_FAMILY_REGIROCK
 
+#if P_FAMILY_REGIROCK_BOSS
+    [SPECIES_REGIROCK_BOSS] =
+    {
+        .baseHP        = 180,
+        .baseAttack    = 110,
+        .baseDefense   = 220,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_ROCK),
+        .catchRate = 3,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 290,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 261,
+    #else
+        .expYield = 217,
+    #endif
+        .evYield_Defense = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 80,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_TECTONIC_HEART, ABILITY_TECTONIC_HEART, ABILITY_TECTONIC_HEART },
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = TRUE,
+        .speciesName = _("Regirock"),
+        .cryId = CRY_REGIROCK,
+        .natDexNum = NATIONAL_DEX_REGIROCK,
+        .categoryName = _("Rock Peak"),
+        .height = 17,
+        .weight = 2300,
+        .description = COMPOUND_STRING(
+            "A Pokémon that is made entirely of rocks\n"
+            "and boulders. If parts of its body chip off\n"
+            "in battle, Regirock repairs itself by\n"
+            "adding new rocks."),
+        .pokemonScale = 256,
+        .pokemonOffset = 2,
+        .trainerScale = 309,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Regirock,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 64) : MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
+        .backPic = gMonBackPic_Regirock,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        .palette = gMonPalette_Regirock,
+        .shinyPalette = gMonShinyPalette_Regirock,
+        .iconSprite = gMonIcon_Regirock,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Regirock)
+        OVERWORLD(
+            sPicTable_Regirock,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Regirock,
+            gShinyOverworldPalette_Regirock
+        )
+        .isLegendary = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sRegirockBossLevelUpLearnset,
+        .teachableLearnset = sRegirockTeachableLearnset,
+    },
+#endif //P_FAMILY_REGIROCK
+
 #if P_FAMILY_REGICE
     [SPECIES_REGICE] =
     {

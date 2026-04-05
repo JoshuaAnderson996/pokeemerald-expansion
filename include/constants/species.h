@@ -1723,8 +1723,9 @@
 #define SPECIES_DARKRAI_MEGA                                   1607
 #define SPECIES_GOLURK_MEGA                                    1608
 #define SPECIES_ZANGVIPER                                      1609
+#define SPECIES_REGIROCK_BOSS                                   1610
 
-#define SPECIES_EGG                                     1610
+#define SPECIES_EGG                                     1611
 
 #define NUM_SPECIES SPECIES_EGG
 

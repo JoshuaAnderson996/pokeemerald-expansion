@@ -45,6 +45,27 @@ def convert_methods(data):
             match = re.search(pattern, line)
             members = match.group(1).split(",")
             new_data = new_data + re.sub(pattern, "{EVO_LEVEL, " + f'{members[CONDTION].strip()}, {members[SPECIES].strip()}' + ", CONDITIONS({IF_ATK_LT_DEF})}", line)
+        elif "EVO_LEVEL_SPATK_GT_ATK," in line:
+    match = re.search(pattern, line)
+    members = match.group(1).split(",")
+    new_data += re.sub(
+        pattern,
+        "{EVO_LEVEL, "
+        + f"{members[CONDITION].strip()}, {members[SPECIES].strip()}"
+        + ", CONDITIONS({IF_SPATK_GT_ATK})}",
+        line
+    )
+
+        elif "EVO_LEVEL_SPATK_LT_ATK," in line:
+    match = re.search(pattern, line)
+    members = match.group(1).split(",")
+    new_data += re.sub(
+        pattern,
+        "{EVO_LEVEL, "
+        + f"{members[CONDITION].strip()}, {members[SPECIES].strip()}"
+        + ", CONDITIONS({IF_SPATK_LT_ATK})}",
+        line
+    )
         elif "EVO_LEVEL_SILCOON," in line:
             match = re.search(pattern, line)
             members = match.group(1).split(",")

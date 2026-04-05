@@ -3981,8 +3981,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An attack using bubbles.\n"
             "May lower the foe's Speed."),
-        .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 40 : 20,
+        .effect = EFFECT_MULTI_HIT,
+        .power = 25,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 30,

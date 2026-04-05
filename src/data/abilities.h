@@ -2411,7 +2411,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DRAGONIZER] =
     {
-        .name = _("Dragonizer"),
+        .name = _("Dragonize"),
         .description = COMPOUND_STRING("Normal moves become Dragon."),
         .aiRating = 8,
     },
@@ -2993,5 +2993,13 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Psylate"),
         .description = COMPOUND_STRING("Normal moves become Psychic."),
         .aiRating = 8,
+        },
+        [ABILITY_TECTONIC_HEART] =
+        {
+        .name = _("Tectonic Heart"),
+        .description = COMPOUND_STRING("Normal moves become Psychic."),
+        .aiRating = 8,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
         },
     };
