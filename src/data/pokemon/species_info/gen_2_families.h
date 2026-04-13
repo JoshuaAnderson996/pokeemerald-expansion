@@ -7054,6 +7054,127 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     },
 #endif //P_FAMILY_DELIBIRD
 
+#if P_FAMILY_DELIBIRD_NORMIE
+    [SPECIES_DELIBIRD_NORMIE] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 55,
+        .baseDefense   = 66,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 66,
+        .types = MON_TYPES(TYPE_ICE, TYPE_FLYING),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 116 : 183,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ZERO_TO_HERO, ABILITY_ZERO_TO_HERO, ABILITY_ZERO_TO_HERO},
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Delibird"),
+        .cryId = CRY_DELIBIRD,
+        .natDexNum = NATIONAL_DEX_DELIBIRD,
+        .categoryName = _("Delivery"),
+        .height = 9,
+        .weight = 160,
+        .description = COMPOUND_STRING(
+            "A special Delibird whose heroic\n"
+            "spirit awakens when it leaves\n"
+            "battle to support its allies.\n"
+            "Its true power is yet to be seen."),
+        .pokemonScale = 293,
+        .pokemonOffset = 11,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_DelibirdNormie,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 48) : MON_COORDS_SIZE(48, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 7,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = P_GBA_STYLE_SPECIES_GFX ? ANIM_V_JUMPS_SMALL : ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_DelibirdNormie,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 56) : MON_COORDS_SIZE(56, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_DelibirdNormie,
+        .shinyPalette = gMonShinyPalette_DelibirdNormie,
+        .iconSprite = gMonIcon_DelibirdNormie,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 7, SHADOW_SIZE_M)
+        FOOTPRINT(Delibird)
+        OVERWORLD(
+            sPicTable_Delibird,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Delibird,
+            gShinyOverworldPalette_Delibird
+        )
+        .levelUpLearnset = sDelibirdLevelUpLearnset,
+        .teachableLearnset = sDelibirdTeachableLearnset,
+        .eggMoveLearnset = sDelibirdEggMoveLearnset,
+        .formSpeciesIdTable = sDelibirdNormieFormSpeciesIdTable,
+        .formChangeTable = sDelibirdNormieFormChangeTable,
+    },
+
+    [SPECIES_DELIBIRD_HERO] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 65,
+        .baseDefense   = 81,
+        .baseSpeed     = 135,
+        .baseSpAttack  = 158,
+        .baseSpDefense = 111,
+        .types = MON_TYPES(TYPE_ICE, TYPE_HERO),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ZERO_TO_HERO, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Delibird"),
+        .cryId = CRY_DELIBIRD,
+        .natDexNum = NATIONAL_DEX_DELIBIRD,
+        .categoryName = _("Hero"),
+        .height = 12,
+        .weight = 250,
+        .description = COMPOUND_STRING(
+            "After hearing its ally's call for\n"
+            "help, this Delibird's heroic spirit\n"
+            "has fully awakened. Its presents\n"
+            "now hit with devastating force."),
+        .frontPic = gMonFrontPic_DelibirdHero,
+        .frontPicSize = MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_DelibirdHero,
+        .backPicSize = MON_COORDS_SIZE(56, 56),
+        .backPicYOffset = 6,
+        .palette = gMonPalette_DelibirdHero,
+        .shinyPalette = gMonShinyPalette_DelibirdHero,
+        .iconSprite = gMonIcon_DelibirdHero,
+        .iconPalIndex = 0,
+        SHADOW(0, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Delibird)
+        .levelUpLearnset = sDelibirdLevelUpLearnset,
+        .teachableLearnset = sDelibirdTeachableLearnset,
+        .formSpeciesIdTable = sDelibirdNormieFormSpeciesIdTable,
+        .formChangeTable = sDelibirdNormieFormChangeTable,
+        .eggMoveLearnset = sDelibirdEggMoveLearnset,
+    },
+#endif //P_FAMILY_DELIBIRD_ALIAS
+
 #if P_FAMILY_MANTINE
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_MANTYKE] =

@@ -3107,7 +3107,10 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 a
         if (battleScriptBlocksMove == NULL
          && IsBattleMoveStatus(move)
          && BlocksPrankster(move, battlerAtk, battlerDef, TRUE)
-         && !(IsBattleMoveStatus(move) && (abilityDef == ABILITY_MAGIC_BOUNCE || gProtectStructs[battlerDef].bounceMove)))
+         && !(IsBattleMoveStatus(move) && (abilityDef == ABILITY_MAGIC_BOUNCE 
+            || abilityDef == ABILITY_HIGH_SORCERY
+            || abilityDef == ABILITY_MAGICAL_SHIELD
+            || gProtectStructs[battlerDef].bounceMove)))
         {
             if (option == RUN_SCRIPT && !IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, move)))
                 CancelMultiTurnMoves(battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK); // Don't cancel moves that can hit two targets bc one target might not be protected
@@ -3731,6 +3734,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_MOLD_BREAKER:
+        case ABILITY_PIERCING_DRILL:
         case ABILITY_PRIMORDIAL_RESURGE:
         case ABILITY_HITMAN:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
@@ -4251,6 +4255,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_ZERO_TO_HERO:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES) == SPECIES_PALAFIN_HERO
+             && GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES) == SPECIES_DELIBIRD_HERO
              && !GetBattlerPartyState(battler)->transformZeroToHero)
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -5731,6 +5736,7 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
         return FALSE;
 
     if (ability == ABILITY_MOLD_BREAKER
+     || ability == ABILITY_PIERCING_DRILL
      || ability == ABILITY_TERAVOLT
      || ability == ABILITY_TURBOBLAZE
      || ability == ABILITY_TECTONIC_BLOOM
@@ -8015,6 +8021,9 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
         if (GetBattlerAbility(battlerAtk) == ABILITY_UNSEEN_FIST
          && IsMoveMakingContact(battlerAtk, battlerDef, ABILITY_UNSEEN_FIST, GetBattlerHoldEffect(battlerAtk, TRUE), move))
             return FALSE;
+        if (GetBattlerAbility(battlerAtk) == ABILITY_PIERCING_DRILL
+        && IsMoveMakingContact(battlerAtk, battlerDef, ABILITY_PIERCING_DRILL, GetBattlerHoldEffect(battlerAtk, TRUE), move))
+        return FALSE;
             if (GetBattlerAbility(battlerAtk) == ABILITY_ULTRA_LAUNCHER
          && IsPulseMove(move))
         return FALSE;
@@ -8462,6 +8471,8 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         break;
     case EFFECT_WEATHER_BALL:
         if (ctx->weather & B_WEATHER_ANY)
+            basePower *= 2;
+            else if (GetBattlerAbility(ctx->battlerAtk) == ABILITY_MEGA_SOL) 
             basePower *= 2;
         break;
     case EFFECT_PURSUIT:
@@ -12725,9 +12736,6 @@ static const u16 sDesertSpeciesList[] =
     SPECIES_DRAPION,
     SPECIES_HIPPOPOTAS,
     SPECIES_HIPPOWDON,
-    SPECIES_BELDUM,
-    SPECIES_METANG,
-    SPECIES_METAGROSS,
     SPECIES_DARUMAKA,
     SPECIES_DARMANITAN,
     SPECIES_MARACTUS,

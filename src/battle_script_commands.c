@@ -1286,44 +1286,40 @@ static void Cmd_attackcanceler(void)
         return;
     }
     else if (isBounceable && !gBattleStruct->bouncedMoveIsUsed)
+{
+    u32 battler = gBattlerTarget;
+
+    if (abilityDef == ABILITY_MAGIC_BOUNCE
+     || abilityDef == ABILITY_HIGH_SORCERY
+     || abilityDef == ABILITY_MAGICAL_SHIELD)
     {
-        u32 battler = gBattlerTarget;
+        battler = gBattlerTarget;
+        gBattleStruct->bouncedMoveIsUsed = TRUE;
+    }
+    else if (IsDoubleBattle()
+          && GetBattlerMoveTargetType(battler, gCurrentMove) == MOVE_TARGET_OPPONENTS_FIELD)
+    {
+        u32 partner = BATTLE_PARTNER(gBattlerTarget);
+        u32 partnerAbility = GetBattlerAbility(partner);
 
-        if (abilityDef == ABILITY_MAGIC_BOUNCE)
+        if (partnerAbility == ABILITY_MAGIC_BOUNCE
+         || partnerAbility == ABILITY_HIGH_SORCERY
+         || partnerAbility == ABILITY_MAGICAL_SHIELD)
         {
-            battler = gBattlerTarget;
+            gBattlerTarget = battler = partner;
             gBattleStruct->bouncedMoveIsUsed = TRUE;
-        }
-        else if (abilityDef == ABILITY_HIGH_SORCERY) 
-        {
-            gBattlerTarget =
-            battler = gBattlerTarget;
-            gBattleStruct->bouncedMoveIsUsed = TRUE;
-        }
-        else if (IsDoubleBattle()
-              && GetBattlerMoveTargetType(battler, gCurrentMove) == MOVE_TARGET_OPPONENTS_FIELD
-              && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) == ABILITY_MAGIC_BOUNCE)
-        {
-            gBattlerTarget = battler = BATTLE_PARTNER(gBattlerTarget);
-            gBattleStruct->bouncedMoveIsUsed = TRUE;
-        }
-        else if (IsDoubleBattle() 
-            && GetBattlerMoveTargetType(battler, gCurrentMove) == MOVE_TARGET_OPPONENTS_FIELD
-            && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) == ABILITY_HIGH_SORCERY)
-        {
-            gBattlerTarget = battler = BATTLE_PARTNER(gBattlerTarget);
-            gBattleStruct->bouncedMoveIsUsed = TRUE;
-        }
-
-        if (gBattleStruct->bouncedMoveIsUsed)
-        {
-            ClearDamageCalcResults();
-            SetAtkCancelerForCalledMove(); // Edge case for bouncing a powder move against a grass type pokemon.
-            BattleScriptCall(BattleScript_MagicBounce);
-            gBattlerAbility = battler;
-            return;
         }
     }
+
+    if (gBattleStruct->bouncedMoveIsUsed)
+    {
+        ClearDamageCalcResults();
+        SetAtkCancelerForCalledMove();
+        BattleScriptCall(BattleScript_MagicBounce);
+        gBattlerAbility = battler;
+        return;
+    }
+}
 
     // Z-moves and Max Moves bypass protection, but deal reduced damage (factored in AccumulateOtherModifiers)
     if ((IsZMove(gCurrentMove) || IsMaxMove(gCurrentMove))
@@ -12679,9 +12675,11 @@ static void Cmd_recoverbasedonsunlight(void)
         }
         else if (GetGenConfig(GEN_CONFIG_TIME_OF_DAY_HEALING_MOVES) != GEN_2)
         {
-            if (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA)
+            bool32 megaSolActive = (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_SOL);  // ADD
+
+            if (!megaSolActive && (!(gBattleWeather & B_WEATHER_ANY) || !HasWeatherEffect() || GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA))  // EDIT
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
-            else if (gBattleWeather & B_WEATHER_SUN)
+            else if (megaSolActive || (gBattleWeather & B_WEATHER_SUN))  // EDIT
                 gBattleStruct->moveDamage[gBattlerAttacker] = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
             else // not sunny weather
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
@@ -12698,7 +12696,7 @@ static void Cmd_recoverbasedonsunlight(void)
                     healingModifier = 2;
                 break;
             case EFFECT_MORNING_SUN:
-                if ((OW_TIMES_OF_DAY == GEN_3 && time == TIME_DAY) // Gen 3 doesn't have morning
+                if ((OW_TIMES_OF_DAY == GEN_3 && time == TIME_DAY)
                   || (OW_TIMES_OF_DAY != GEN_3 && time == TIME_MORNING))
                     healingModifier = 2;
                 break;
@@ -12717,7 +12715,6 @@ static void Cmd_recoverbasedonsunlight(void)
                 gBattleStruct->moveDamage[gBattlerAttacker] = healingModifier * GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else // not sunny weather
                 gBattleStruct->moveDamage[gBattlerAttacker] = healingModifier * GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
-
         }
 
         if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -12866,7 +12863,10 @@ static bool32 CheckIfCanFireTwoTurnMoveNow(u8 battler, bool8 checkChargeTurnEffe
     if (checkChargeTurnEffects && MoveHasChargeTurnAdditionalEffect(gCurrentMove))
         return FALSE;
 
-    // Insert custom conditions here
+    // Mega Sol: skip the charge turn for sun-powered two-turn moves (Solar Beam, Solar Blade)
+    if (GetBattlerAbility(battler) == ABILITY_MEGA_SOL
+     && GetMoveTwoTurnAttackWeather(gCurrentMove) == B_WEATHER_SUN)
+        return TRUE;
 
     // Certain two-turn moves may fire on the first turn in the right weather (Solar Beam, Electro Shot)
     // By default, all two-turn moves have the option of adding weather to their argument

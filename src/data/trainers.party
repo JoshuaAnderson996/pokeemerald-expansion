@@ -3227,9 +3227,43 @@ Gender: Female
 Music: Girl
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Shroomish
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Breloom
+Level: 39
+
+Roselia
+Level: 38
+
+Azumarill
+Level: 40
+
+Ninetales
+Level: 40
+
+Altaria
+Level: 41
+
+=== TRAINER_JULIO ===
+Name: Julio
+Class: Triathlete
+Pic: Cycling Triathlete M
+Gender: Male
+Music: Male
+AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
+
+Swellow
+Level: 39
+
+Manectric
+Level: 40
+
+Pelipper
+Level: 40
+
+Sandslash
+Level: 41
+
+Hariyama
+Level: 42
 
 === TRAINER_TRAVIS ===
 Name: TRAVIS
@@ -8862,13 +8896,16 @@ Gender: Male
 Music: Magma
 AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability
 
-Poochyena
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Vibrava 
+Level: 1  
 
-Numel
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Cinderace  
+Ability: Libero 
+Level: 1   
+
+Flareon  
+Ability: Flash Fire  
+Level: 1  
 
 === TRAINER_MARC ===
 Name: MARC
@@ -13469,6 +13506,64 @@ Jolly Nature
 - Psyshield Bash  
 - Concussive Hit  
 - Agility    
+
+=== TRAINER_STEVEN_118 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+AI: Smart Trainer / Smart Mon Choices / Omniscient / Prediction / Check Bad Move / Check Viability  
+
+Flygon @ Smooth Rock  
+Ability: Sand Stream  
+Level: 1  
+Adamant Nature  
+- Earthquake  
+- Dragon Dance  
+- Dragon Claw  
+- First Impression  
+
+Armaldo (M) @ Steelium Z  
+Ability: Anger Shell  
+Level: 1  
+Jolly Nature  
+- First Impression  
+- Guillotine  
+- Stone Axe  
+- X-Scissor  
+
+Minior-core-red @ Focus Sash  
+Ability: Shields Down  
+Level: 1   
+- Power Gem  
+- Shell Smash  
+- Meteor Mash  
+
+Excadrill @ Excadrite  
+Ability: Sand Rush  
+Level: 1   
+- Iron Head  
+- Drill Run  
+
+Tyranitar @ Assault Vest  
+Ability: Sand Stream  
+Level: 1  
+- Stone Axe  
+- High Horsepower  
+- Knock Off
+- Volcalith
+
+Metagross @ Weakness Policy  
+Ability: Filter  
+Level: 1  
+Shiny: Yes    
+Jolly Nature  
+- Double Iron Bash  
+- Psyshield Bash  
+- Concussive Hit  
+- Agility  
 
 === TRAINER_ANDRES_3 ===
 Name: ANDRES

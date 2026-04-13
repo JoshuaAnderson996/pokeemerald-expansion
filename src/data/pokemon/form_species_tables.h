@@ -2141,6 +2141,10 @@ static const u16 sCopperajahFormSpeciesIdTable[] = {
 #if P_FAMILY_DURALUDON
 static const u16 sDuraludonFormSpeciesIdTable[] = {
     SPECIES_DURALUDON,
+    SPECIES_ARCHALUDON,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_ARCHALUDON_MEGA,
+#endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_DURALUDON_GMAX,
 #endif
@@ -2582,6 +2586,14 @@ static const u16 sArctibaxFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_FRIGIBAX
+
+#if P_FAMILY_DELIBIRD_NORMIE
+static const u16 sDelibirdNormieFormSpeciesIdTable[] = {
+    SPECIES_DELIBIRD_NORMIE,
+    SPECIES_DELIBIRD_HERO,
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_DELIBIRD_NORMIE
 
 
 

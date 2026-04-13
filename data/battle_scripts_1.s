@@ -7580,7 +7580,7 @@ BattleScript_QuarkDriveActivates::
 	end3
 
 BattleScript_RainWardenActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_RAINWARDENACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7588,7 +7588,7 @@ BattleScript_RainWardenActivates::
 	end3
 
 BattleScript_VerdantGuardianActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_VERDANTGUARDIANACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7596,7 +7596,7 @@ BattleScript_VerdantGuardianActivates::
 	end3
 
 BattleScript_SandScourgeActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_SANDSCOURGEACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7604,7 +7604,7 @@ BattleScript_SandScourgeActivates::
 	end3
 
 BattleScript_SnowProtocolActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_SNOWPROTOCOLACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7612,7 +7612,7 @@ BattleScript_SnowProtocolActivates::
 	end3
 
 	BattleScript_PhantomAuraActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_PHANTOMAURAACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7620,7 +7620,7 @@ BattleScript_SnowProtocolActivates::
 	end3
 
 BattleScript_PsychoMatrixActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_PSYCHOMATRIXACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
@@ -7628,7 +7628,7 @@ BattleScript_PsychoMatrixActivates::
 	end3
 
 BattleScript_EtherealDreamActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_ETHEREALDREAMACTIVATES
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED

@@ -2981,7 +2981,9 @@ bool32 IsTwoTurnNotSemiInvulnerableMove(u32 battlerAtk, u32 move)
     case EFFECT_SOLAR_BEAM:
     case EFFECT_TWO_TURNS_ATTACK:
         return !(gAiLogicData->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB
-              || (AI_GetWeather() & GetMoveTwoTurnAttackWeather(move)));
+              || (AI_GetWeather() & GetMoveTwoTurnAttackWeather(move))
+              || (GetMoveTwoTurnAttackWeather(move) == B_WEATHER_SUN  // only for sun-skipping moves
+                  && gAiLogicData->abilities[battlerAtk] == ABILITY_MEGA_SOL));
     default:
         return FALSE;
     }
@@ -3240,6 +3242,11 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 mov
 
     // Palafin always wants to activate Zero to Hero
     if (gBattleMons[battlerAtk].species == SPECIES_PALAFIN_ZERO
+        && gBattleMons[battlerAtk].ability == ABILITY_ZERO_TO_HERO
+        && CountUsablePartyMons(battlerAtk) != 0)
+        return SHOULD_PIVOT;
+
+    if (gBattleMons[battlerAtk].species == SPECIES_DELIBIRD_NORMIE
         && gBattleMons[battlerAtk].ability == ABILITY_ZERO_TO_HERO
         && CountUsablePartyMons(battlerAtk) != 0)
         return SHOULD_PIVOT;

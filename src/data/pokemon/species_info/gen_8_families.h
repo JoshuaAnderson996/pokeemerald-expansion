@@ -7587,8 +7587,67 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sArchaludonLevelUpLearnset,
         .teachableLearnset = sArchaludonTeachableLearnset,
     },
-#endif //P_GEN_9_CROSS_EVOS
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_ARCHALUDON_MEGA] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 105,
+        .baseDefense   = 160,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 165,
+        .baseSpDefense = 125,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_DRAGON),
+        .catchRate = 45,
+        .expYield = 187,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 30,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL, EGG_GROUP_DRAGON),
+        .abilities = { ABILITY_DRIZZLE, ABILITY_DRIZZLE, ABILITY_DRIZZLE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Archaludon"),
+        .cryId = CRY_ARCHALUDON,
+        .natDexNum = NATIONAL_DEX_ARCHALUDON,
+        .categoryName = _("Alloy"),
+        .height = 18,
+        .weight = 400,
+        .description = COMPOUND_STRING(
+            "It gathers static electricity\n"
+            "from its surroundings. The beams\n"
+            "it launches when down on all fours\n"
+            "are tremendously powerful."),
+        .pokemonScale = 267,
+        .pokemonOffset = 2,
+        .trainerScale = 286,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_ArchaludonMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_ArchaludonMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ArchaludonMega,
+        .shinyPalette = gMonShinyPalette_ArchaludonMega,
+        .iconSprite = gMonIcon_ArchaludonMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 12, SHADOW_SIZE_L)
+        FOOTPRINT(Archaludon)
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sArchaludonLevelUpLearnset,
+        .teachableLearnset = sArchaludonTeachableLearnset,
+        .formSpeciesIdTable = sDuraludonFormSpeciesIdTable,
+        .formChangeTable = sDuraludonFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_DURALUDON
+#endif
 
 #if P_FAMILY_DREEPY
     [SPECIES_DREEPY] =

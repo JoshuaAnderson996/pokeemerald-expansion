@@ -77,8 +77,6 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "cable_club.h"
-#include "field_weather.h" //added wiz1989
-#include "constants/weather.h" //added wiz1989
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -473,28 +471,7 @@ static void CB2_InitBattleInternal(void)
 {
     s32 i;
     u16 targetSpecies;
-    u32 weather; //added var wiz1989
-
-
-    //set temporary battle weather wiz1989
-    weather = VarGet(VAR_TEMP_F);
-
-    if (weather == WEATHER_RAIN) {
-        SetCurrentAndNextWeather(WEATHER_RAIN);
-    }
-    else if (weather == WEATHER_SUNNY) {
-        SetCurrentAndNextWeather(WEATHER_DROUGHT);
-    }
-    else if (weather == WEATHER_SANDSTORM) {
-        SetCurrentAndNextWeather(WEATHER_SANDSTORM);
-    }
-    else if (weather == WEATHER_SNOW) {
-        SetCurrentAndNextWeather(WEATHER_SNOW);
-    }
-    else {
-        SetCurrentAndNextWeather(B_WEATHER_NONE);
-    }
-    //end
+    u8 overworldWeather;
 
     SetHBlankCallback(NULL);
     SetVBlankCallback(NULL);
@@ -3124,7 +3101,33 @@ static void BattleStartClearSetData(void)
     gBattlerTarget = 0;
     gEffectBattler = 0;
     gBattlerAbility = 0;
-    gBattleWeather = 0;
+    {
+        u8 overworldWeather = GetSavedWeather();
+        switch (overworldWeather)
+        {
+        case WEATHER_RAIN:
+        case WEATHER_RAIN_THUNDERSTORM:
+        case WEATHER_DOWNPOUR:
+            gBattleWeather = B_WEATHER_RAIN_NORMAL;
+            break;
+        case WEATHER_SANDSTORM:
+            gBattleWeather = B_WEATHER_SANDSTORM;
+            break;
+        case WEATHER_SNOW:
+            gBattleWeather = B_WEATHER_SNOW;
+            break;
+        case WEATHER_DROUGHT:
+            gBattleWeather = B_WEATHER_SUN_NORMAL;
+            break;
+        case WEATHER_FOG_HORIZONTAL:
+        case WEATHER_FOG_DIAGONAL:
+            gBattleWeather = B_WEATHER_FOG;
+            break;
+        default:
+            gBattleWeather = 0;
+            break;
+        }
+    }
     gHitMarker = 0;
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
@@ -4826,6 +4829,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
             speed *= 2;
         else if (ability == ABILITY_SAND_RUSH   && gBattleWeather & B_WEATHER_SANDSTORM)
             speed *= 2;
+        else if (ability == ABILITY_PIERCING_DRILL   && gBattleWeather & B_WEATHER_SANDSTORM)
+            speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
         else if (ability == ABILITY_HAZE_STEP && gBattleWeather & B_WEATHER_FOG)
@@ -4946,13 +4951,6 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
         priority += 8;
     }
 
-    if (GetBattlerAbility(battler) == ABILITY_TOXIC_BLOOM
-    && GetMoveType(move) == TYPE_GRASS
-    && (gBattleWeather & B_WEATHER_SUN)
-    && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_UTILITY_UMBRELLA)
-    {
-        priority++;
-    }
     else if (IsBattleMoveStatus(move) && IsAbilityAndRecord(battler, ability, ABILITY_PRANKSTER))
     {
         gProtectStructs[battler].pranksterElevated = 1;
@@ -6043,6 +6041,8 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
                 else
                     return moveType;
             }
+            else if (GetBattlerAbility(battler) == ABILITY_MEGA_SOL)
+            return TYPE_FIRE;
         }
         else
         {

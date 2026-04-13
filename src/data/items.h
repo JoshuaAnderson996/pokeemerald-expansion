@@ -15543,9 +15543,9 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Venusaurite,
     },
 
-[ITEM_EXCADRILLITE] =
+[ITEM_EXCADRITE] =
     {
-        .name = ITEM_NAME("Excadrillite"),
+        .name = ITEM_NAME("Excadrite"),
         .price = 15600,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING("This stone enables\n"
@@ -16206,6 +16206,22 @@ const struct Item gItemsInfo[] =
     .iconPic = gItemIcon_RareCandy,       // Reuse or add your own graphic
     .iconPalette = gItemIconPalette_RareCandy,
 },
+[ITEM_ARCHALUDONITE] =
+    {
+        .name = ITEM_NAME("Archaludonite"),
+        .price = 15600,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This stone enables\n"
+            "Archaludon to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Venusaurite,
+        .iconPalette = gItemIconPalette_Venusaurite,
+        },
 };
 
 #undef ITEM_NAME

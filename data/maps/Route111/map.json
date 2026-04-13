@@ -873,7 +873,332 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 63,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 64,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 8,
+      "y": 65,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 8,
+      "y": 66,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 68,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 67,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 70,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 69,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 17,
+      "y": 38,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 71,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 10,
+      "y": 39,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 11,
+      "y": 39,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 12,
+      "y": 39,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 13,
+      "y": 38,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 16,
+      "y": 38,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 9,
+      "y": 39,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 10,
+      "y": 32,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 9,
+      "y": 33,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 8,
+      "y": 34,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 7,
+      "y": 35,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 65,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 67,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 66,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 68,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 69,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 70,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 4,
+      "y": 71,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 137,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "weather",
+      "x": 31,
+      "y": 135,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 26,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 27,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 28,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 29,
+      "y": 137,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 30,
+      "y": 136,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 19,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 20,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 21,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 22,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 23,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 24,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 25,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 17,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 18,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 15,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 16,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    },
+    {
+      "type": "weather",
+      "x": 14,
+      "y": 138,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SANDSTORM"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -9152,6 +9152,37 @@ const u16 gShinyOverworldPalette_BlastoiseMegaX[] = INCBIN_U16("graphics/pokemon
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_DELIBIRD
 
+#if P_FAMILY_DELIBIRD_NORMIE
+    const u32 gMonFrontPic_DelibirdNormie[] = INCBIN_U32("graphics/pokemon/delibird_normie/anim_front.4bpp.smol");
+    const u16 gMonPalette_DelibirdNormie[] = INCBIN_U16("graphics/pokemon/delibird_normie/normal.gbapal");
+    const u32 gMonBackPic_DelibirdNormie[] = INCBIN_U32("graphics/pokemon/delibird_normie/back.4bpp.smol");
+    const u16 gMonShinyPalette_DelibirdNormie[] = INCBIN_U16("graphics/pokemon/delibird_normie/shiny.gbapal");
+    const u8 gMonIcon_DelibirdNormie[] = INCBIN_U8("graphics/pokemon/delibird_normie/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_DelibirdNormie[] = INCBIN_U8("graphics/pokemon/delibird_normie/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_DelibirdNormie[] = INCBIN_COMP("graphics/pokemon/delibird_normie/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_DelibirdNormie[] = INCBIN_U16("graphics/pokemon/delibird_normie/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_DelibirdNormie[] = INCBIN_U16("graphics/pokemon/delibird_normie/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_DelibirdHero[] = INCBIN_U32("graphics/pokemon/delibird_normie/hero/front.4bpp.smol");
+    const u16 gMonPalette_DelibirdHero[] = INCBIN_U16("graphics/pokemon/delibird_normie/hero/normal.gbapal");
+    const u32 gMonBackPic_DelibirdHero[] = INCBIN_U32("graphics/pokemon/delibird_normie/hero/back.4bpp.smol");
+    const u16 gMonShinyPalette_DelibirdHero[] = INCBIN_U16("graphics/pokemon/delibird_normie/hero/shiny.gbapal");
+    const u8 gMonIcon_DelibirdHero[] = INCBIN_U8("graphics/pokemon/delibird_normie/hero/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_DelibirdHero[] = INCBIN_COMP("graphics/pokemon/delibird/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_DelibirdHero[] = INCBIN_U16("graphics/pokemon/delibird/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_DelibirdHero[] = INCBIN_U16("graphics/pokemon/delibird/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_DELIBIRD_NORMIE
+
 #if P_FAMILY_MANTINE
 #if P_GEN_4_CROSS_EVOS
     const u32 gMonFrontPic_Mantyke[] = INCBIN_U32("graphics/pokemon/mantyke/anim_front.4bpp.smol");
@@ -24879,10 +24910,18 @@ const u16 gShinyOverworldPalette_BlastoiseMegaX[] = INCBIN_U16("graphics/pokemon
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Archaludon[] = INCBIN_U16("graphics/pokemon/archaludon/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Archaludon[] = INCBIN_U16("graphics/pokemon/archaludon/overworld_shiny.gbapal");
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ArchaludonMega[] = INCBIN_U32("graphics/pokemon/archaludon/mega/front.4bpp.smol");
+    const u32 gMonBackPic_ArchaludonMega[] = INCBIN_U32("graphics/pokemon/archaludon/mega/back.4bpp.smol");
+    const u16 gMonPalette_ArchaludonMega[] = INCBIN_U16("graphics/pokemon/archaludon/mega/normal.gbapal");
+    const u16 gMonShinyPalette_ArchaludonMega[] = INCBIN_U16("graphics/pokemon/archaludon/mega/shiny.gbapal");
+    const u8 gMonIcon_ArchaludonMega[] = INCBIN_U8("graphics/pokemon/archaludon/mega/icon.4bpp");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_DURALUDON
+#endif
 
 #if P_FAMILY_DREEPY
     const u32 gMonFrontPic_Dreepy[] = INCBIN_U32("graphics/pokemon/dreepy/front.4bpp.smol");

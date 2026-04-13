@@ -4165,7 +4165,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 90,
         .type = TYPE_WATER,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85,
+        .accuracy = 90,
         .criticalHitStage = 1,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -11803,7 +11803,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 30,
+            .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -13326,7 +13326,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Shoots boiling water at the\n"
             "foe. May inflict a burn."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
         .power = 80,
         .type = TYPE_WATER,
         .accuracy = 100,
@@ -13336,6 +13336,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .cookingMove = TRUE,
         .thawsUser = TRUE,
+        .argument = { .type = TYPE_WATER },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 30,
@@ -15392,7 +15393,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-            .chance = 30,
+            .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
@@ -16333,7 +16334,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Hits hard and first.\n"
             "Only works first turn."),
         .effect = EFFECT_FIRST_TURN_ONLY,
-        .power = 90,
+        .power = 100,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 10,
@@ -17033,7 +17034,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An intense kick from the\n"
             "tropics. Lowers Attack."),
         .effect = EFFECT_HIT,
-        .power = 70,
+        .power = 85,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 15,
@@ -18084,7 +18085,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Uses power jaws\n"
             "to crush foes."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 70,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 10,
@@ -18704,7 +18705,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Drops an apple from above.\n"
             "Lowers the foe's Defense."),
         .effect = EFFECT_GRAV_APPLE,
-        .power = 80,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 10,
@@ -19716,7 +19717,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_DIRE_CLAW,
-            .chance = 50,
+            .chance = 30,
         }),
         .battleAnimScript = gBattleAnimMove_DireClaw,
     },
@@ -20409,7 +20410,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         "Furiously stomps the ground,\n"
         "clearing hazards but harshly\n"
         "lowering the user's Speed."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_RAPID_SPIN,
         .power = 100,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -21040,6 +21041,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .pulseMove = TRUE,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
@@ -21726,7 +21728,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A Magical dust power\n"
             "that can cause a series\n"
             "of effects"),
-        .effect = EFFECT_TWO_TYPED_MOVE,
+       .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -21734,7 +21736,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .type = TYPE_FAIRY },
         .battleAnimScript = gBattleAnimMove_GMaxBefuddle,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_EFFECT_SPORE_SIDE,
@@ -22466,25 +22467,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_FireLash,
     },
-    [MOVE_BOIL_OVER] =
-    {
-        .name = COMPOUND_STRING("Boil Over"),
-        .description = COMPOUND_STRING("Heats up water."),
-        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
-        .power = 70,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .type = TYPE_WATER },
-        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Scald,
-    },
     [MOVE_PLATE_THROW] =
     {
         .name = COMPOUND_STRING("Plate Throw"),
@@ -23145,8 +23127,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Overflare"),
         .description = COMPOUND_STRING(
-            "A powerful flare of fire\n"
-            "that may burn the foe."),
+            "A powerful fire\n"
+            "that burns the user."),
         .effect = EFFECT_OVERFLARE,
         .power = 110,
         .type = TYPE_FIRE,

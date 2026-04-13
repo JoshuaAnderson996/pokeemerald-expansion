@@ -232,22 +232,340 @@ LavaridgeTown_EventScript_ExpertF::
 LavaridgeTown_EventScript_EggWoman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_LAVARIDGE_EGG, LavaridgeTown_EventScript_ReceivedEgg
-	msgbox LavaridgeTown_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LavaridgeTown_EventScript_DeclineEgg
 	getpartysize
 	goto_if_eq VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg
-	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_LAVARIDGE_EGG
+	msgbox LavaridgeTown_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LavaridgeTown_EventScript_DeclineEgg
+	random 36
+	switch VAR_RESULT
+	@ --- Baby Pokémon ---
+	case 0,  LavaridgeTown_EventScript_GiveEgg_Wynaut
+	case 1,  LavaridgeTown_EventScript_GiveEgg_Azurill
+	case 2,  LavaridgeTown_EventScript_GiveEgg_Pichu
+	case 3,  LavaridgeTown_EventScript_GiveEgg_Cleffa
+	case 4,  LavaridgeTown_EventScript_GiveEgg_Igglybuff
+	case 5,  LavaridgeTown_EventScript_GiveEgg_Togepi
+	case 6,  LavaridgeTown_EventScript_GiveEgg_Tyrogue
+	case 7,  LavaridgeTown_EventScript_GiveEgg_Smoochum
+	case 8,  LavaridgeTown_EventScript_GiveEgg_Elekid
+	case 9,  LavaridgeTown_EventScript_GiveEgg_Magby
+	case 10, LavaridgeTown_EventScript_GiveEgg_Munchlax
+	case 11, LavaridgeTown_EventScript_GiveEgg_Bonsly
+	case 12, LavaridgeTown_EventScript_GiveEgg_MimeJr
+	case 13, LavaridgeTown_EventScript_GiveEgg_Happiny
+	case 14, LavaridgeTown_EventScript_GiveEgg_Budew
+	case 15, LavaridgeTown_EventScript_GiveEgg_Chingling
+	case 16, LavaridgeTown_EventScript_GiveEgg_Mantyke
+	case 17, LavaridgeTown_EventScript_GiveEgg_Riolu
+	@ --- Starters ---
+	case 18, LavaridgeTown_EventScript_GiveEgg_Bulbasaur
+	case 19, LavaridgeTown_EventScript_GiveEgg_Charmander
+	case 20, LavaridgeTown_EventScript_GiveEgg_Squirtle
+	case 21, LavaridgeTown_EventScript_GiveEgg_Chikorita
+	case 22, LavaridgeTown_EventScript_GiveEgg_Cyndaquil
+	case 23, LavaridgeTown_EventScript_GiveEgg_Totodile
+	case 24, LavaridgeTown_EventScript_GiveEgg_Treecko
+	case 25, LavaridgeTown_EventScript_GiveEgg_Torchic
+	case 26, LavaridgeTown_EventScript_GiveEgg_Mudkip
+	case 27, LavaridgeTown_EventScript_GiveEgg_Turtwig
+	case 28, LavaridgeTown_EventScript_GiveEgg_Chimchar
+	case 29, LavaridgeTown_EventScript_GiveEgg_Piplup
+	@ --- Rare / Interesting ---
+	case 30, LavaridgeTown_EventScript_GiveEgg_Eevee
+	case 31, LavaridgeTown_EventScript_GiveEgg_Dratini
+	case 32, LavaridgeTown_EventScript_GiveEgg_Larvitar
+	case 33, LavaridgeTown_EventScript_GiveEgg_Bagon
+	case 34, LavaridgeTown_EventScript_GiveEgg_Gible
+	case 35, LavaridgeTown_EventScript_GiveEgg_Phione
+
+@ --- Baby Pokémon ---
+LavaridgeTown_EventScript_GiveEgg_Wynaut::
 	playfanfare MUS_OBTAIN_ITEM
-	message LavaridgeTown_Text_ReceivedTheEgg
+	message LavaridgeTown_Text_EggGift_Baby
 	waitfanfare
 	giveegg SPECIES_WYNAUT
 	release
 	end
 
-LavaridgeTown_EventScript_ReceivedEgg::
-	msgbox LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
+LavaridgeTown_EventScript_GiveEgg_Azurill::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_AZURILL
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Pichu::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_PICHU
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Cleffa::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_CLEFFA
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Igglybuff::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_IGGLYBUFF
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Togepi::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Togepi
+	waitfanfare
+	giveegg SPECIES_TOGEPI
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Tyrogue::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Tyrogue
+	waitfanfare
+	giveegg SPECIES_TYROGUE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Smoochum::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_SMOOCHUM
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Elekid::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Elekid
+	waitfanfare
+	giveegg SPECIES_ELEKID
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Magby::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Magby
+	waitfanfare
+	giveegg SPECIES_MAGBY
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Munchlax::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Munchlax
+	waitfanfare
+	giveegg SPECIES_MUNCHLAX
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Bonsly::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_BONSLY
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_MimeJr::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_MIME_JR
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Happiny::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_HAPPINY
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Budew::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_BUDEW
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Chingling::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_CHINGLING
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Mantyke::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Baby
+	waitfanfare
+	giveegg SPECIES_MANTYKE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Riolu::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Riolu
+	waitfanfare
+	giveegg SPECIES_RIOLU
+	release
+	end
+
+@ --- Starters ---
+LavaridgeTown_EventScript_GiveEgg_Bulbasaur::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_BULBASAUR
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Charmander::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_CHARMANDER
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Squirtle::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_SQUIRTLE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Chikorita::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_CHIKORITA
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Cyndaquil::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_CYNDAQUIL
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Totodile::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_TOTODILE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Treecko::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_TREECKO
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Torchic::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_StarterFire
+	waitfanfare
+	giveegg SPECIES_TORCHIC
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Mudkip::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_MUDKIP
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Turtwig::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_TURTWIG
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Chimchar::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_CHIMCHAR
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Piplup::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Starter
+	waitfanfare
+	giveegg SPECIES_PIPLUP
+	release
+	end
+
+@ --- Rare / Interesting ---
+LavaridgeTown_EventScript_GiveEgg_Eevee::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Eevee
+	waitfanfare
+	giveegg SPECIES_EEVEE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Dratini::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Dratini
+	waitfanfare
+	giveegg SPECIES_DRATINI
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Larvitar::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Larvitar
+	waitfanfare
+	giveegg SPECIES_LARVITAR
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Bagon::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Bagon
+	waitfanfare
+	giveegg SPECIES_BAGON
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Gible::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Gible
+	waitfanfare
+	giveegg SPECIES_GIBLE
+	release
+	end
+
+LavaridgeTown_EventScript_GiveEgg_Phione::
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_EggGift_Phione
+	waitfanfare
+	giveegg SPECIES_PHIONE
 	release
 	end
 
@@ -318,24 +636,11 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an EGG.\p"
-	.string "I'd hoped to hatch it by covering it in\n"
-	.string "hot sand by the hot springs.\l"
-	.string "But that doesn't seem to be enough…\p"
-	.string "I've heard it would be best if it were\n"
-	.string "kept together with POKéMON and\l"
-	.string "carried about.\p"
-	.string "You are a TRAINER, yes?\n"
-	.string "And your POKéMON radiate vitality.\p"
-	.string "So, what say you?\n"
-	.string "Will you take this EGG to hatch?$"
-
-LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg:
-	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here EGG!$"
-
-LavaridgeTown_Text_ReceivedTheEgg:
-	.string "{PLAYER} received the EGG.$"
+	.string "Oh, hello there!\p"
+	.string "I keep finding strange EGGs\n"
+	.string "washed up near our hot springs…\p"
+	.string "I can't keep them all myself.\n"
+	.string "Would you take one off my hands?$"
 
 LavaridgeTown_Text_NoRoomForThisEgg:
 	.string "Oh? You've too many POKéMON.\n"
@@ -403,4 +708,103 @@ LavaridgeTown_Text_GymSign:
 LavaridgeTown_Text_HerbShopSign:
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
+
+LavaridgeTown_Text_EggGift_Baby:
+    .string "{PLAYER} received the EGG.\p"
+    .string "What a cute little EGG!\n"
+    .string "I wonder what tiny POKéMON\l"
+    .string "is sleeping inside…$"
+
+LavaridgeTown_Text_EggGift_Togepi:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG has a very peculiar\n"
+    .string "pattern on it… I have a feeling\l"
+    .string "something special is inside!$"
+
+LavaridgeTown_Text_EggGift_Tyrogue:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG feels restless…\n"
+    .string "Whatever is inside seems eager\l"
+    .string "to fight already!$"
+
+LavaridgeTown_Text_EggGift_Elekid:
+    .string "{PLAYER} received the EGG.\p"
+    .string "Careful with that one!\n"
+    .string "It gives off little sparks\l"
+    .string "every now and then…$"
+
+LavaridgeTown_Text_EggGift_Magby:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG is unusually warm!\n"
+    .string "It must love the heat of\l"
+    .string "the hot springs here.$"
+
+LavaridgeTown_Text_EggGift_Munchlax:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG wobbles a lot…\n"
+    .string "I think whatever is inside\l"
+    .string "might already be hungry!$"
+
+LavaridgeTown_Text_EggGift_Riolu:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG has a strong aura\n"
+    .string "around it… Raise it with\l"
+    .string "plenty of love and care!$"
+
+LavaridgeTown_Text_EggGift_Starter:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG… I am not sure where\n"
+    .string "it came from, but it feels\l"
+    .string "like it holds great potential!\p"
+    .string "Treasure it well, TRAINER!$"
+
+LavaridgeTown_Text_EggGift_StarterFire:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG feels warm to the\n"
+    .string "touch… just like our hot\l"
+    .string "springs! It must feel right\l"
+    .string "at home here in LAVARIDGE!$"
+
+LavaridgeTown_Text_EggGift_Eevee:
+    .string "{PLAYER} received the EGG.\p"
+    .string "Oh my… that is a very rare\n"
+    .string "EGG indeed! The POKéMON\l"
+    .string "inside could grow into\l"
+    .string "all sorts of things…$"
+
+LavaridgeTown_Text_EggGift_Dratini:
+    .string "{PLAYER} received the EGG.\p"
+    .string "I found that EGG near the\n"
+    .string "water. Something powerful\l"
+    .string "is coiled up inside…\p"
+    .string "Handle it gently!$"
+
+LavaridgeTown_Text_EggGift_Larvitar:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG is surprisingly\n"
+    .string "heavy… Whatever is inside\l"
+    .string "must be incredibly tough!$"
+
+LavaridgeTown_Text_EggGift_Bagon:
+    .string "{PLAYER} received the EGG.\p"
+    .string "That EGG keeps rolling\n"
+    .string "around on its own…\l"
+    .string "Something very determined\l"
+    .string "is waiting inside!$"
+
+LavaridgeTown_Text_EggGift_Gible:
+    .string "{PLAYER} received the EGG.\p"
+    .string "I am not sure how I ended\n"
+    .string "up with that EGG, but it\l"
+    .string "feels ferocious!\p"
+    .string "Be careful raising it…$"
+
+LavaridgeTown_Text_EggGift_Phione:
+    .string "{PLAYER} received the EGG.\p"
+    .string "This EGG is… strange.\n"
+    .string "It appeared floating in the\l"
+    .string "hot springs one morning…\p"
+    .string "I have never seen anything\n"
+    .string "quite like it. Something\l"
+    .string "mysterious is inside…$"
 

@@ -62,6 +62,7 @@ MtChimney_EventScript_Maxie::
 	waitmovement 0
 	msgbox MtChimney_Text_ArchieThankYou, MSGBOX_DEFAULT
 	closemessage
+	giveitem ITEM_WATERIUM_Z
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieExitEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieExitNorth
 	removeobject LOCALID_MT_CHIMNEY_ARCHIE
@@ -683,16 +684,18 @@ MtChimney_Text_ArchieIHaveMyHandsFull:
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou:
-	.string "ARCHIE: {PLAYER}!\n"
-	.string "Thank you!\p"
-	.string "With your help, we thwarted TEAM\n"
-	.string "MAGMA's destructive plan!\p"
-	.string "But… You…\n"
-	.string "Whose side are you on?\p"
-	.string "Ah, it doesn't matter.\p"
-	.string "We will remain vigilant and keep up\n"
-	.string "our pursuit of TEAM MAGMA.\p"
-	.string "{PLAYER}, we shall meet again!$"
+	.string "MAXIE: {PLAYER}…\n"
+	.string "An impressive display.\p"
+	.string "Even I must acknowledge the strength\n"
+	.string "you have shown here today.\p"
+	.string "It would be regrettable for one of\n"
+	.string "your ability to oppose us.\p"
+	.string "Take this WATERIUM Z as a token of my\n"
+	.string "good will.\p"
+	.string "Reflect on what you have seen, and ask\n"
+	.string "yourself where true progress lies.\p"
+	.string "Should you reach the proper conclusion,\n"
+	.string "I would welcome your support.$"
 
 MtChimney_Text_MagmaOutnumbersUs:
 	.string "Darn… TEAM MAGMA outnumbers us!\n"

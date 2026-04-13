@@ -19,10 +19,12 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
+	@ Grunt 1 turns down and gloats about the meteorite
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_WithThisMeteorite, MSGBOX_DEFAULT
 	closemessage
+	@ Both grunts notice the player
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -33,14 +35,17 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma, MSGBOX_DEFAULT
 	closemessage
+	@ Grunt 1 approaches player with the meteorite
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer
 	waitmovement 0
+	@ Archie's team interrupts
 	msgbox MeteorFalls_1F_1R_Text_HoldItRightThereMagma, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	@ Aqua arrives
 	addobject LOCALID_METEOR_FALLS_ARCHIE
 	addobject LOCALID_METEOR_FALLS_AQUA_GRUNT_1
 	addobject LOCALID_METEOR_FALLS_AQUA_GRUNT_2
@@ -52,14 +57,29 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	@ Lead Magma grunt laughs off Aqua and announces the retreat
 	msgbox MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua, MSGBOX_DEFAULT
 	closemessage
+	@ Grunt 1 shoves past the player and bolts with the meteorite
 	applymovement LOCALID_PLAYER, MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
-	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1EscapeWithMeteorite
 	waitmovement 0
 	removeobject LOCALID_METEOR_FALLS_MAGMA_GRUNT_1
+	@ Grunt 2 turns to face the player — staying behind to buy time
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox MeteorFalls_1F_1R_Text_MagmaRearguardTaunt, MSGBOX_DEFAULT
+	@ Battle the rearguard grunt
+	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_METEOR_FALLS, MeteorFalls_1F_1R_Text_MagmaRearguardDefeat
+	@ After losing, Grunt 2 panics and runs
+	msgbox MeteorFalls_1F_1R_Text_MagmaRearguardFlee, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_METEOR_FALLS_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
+	waitmovement 0
 	removeobject LOCALID_METEOR_FALLS_MAGMA_GRUNT_2
+	@ Resume: Archie approaches and the rest of the scene plays normally
+	fadedefaultbgm
 	applymovement LOCALID_METEOR_FALLS_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
@@ -231,6 +251,19 @@ MeteorFalls_1F_1R_EventScript_MetCozmo::
 	release
 	end
 
+	@ Grunt 1 sprints right off-screen with the meteorite — fast and urgent
+MeteorFalls_1F_1R_Movement_MagmaGrunt1EscapeWithMeteorite:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
 MeteorFalls_1F_1R_Text_WithThisMeteorite:
 	.string "Hehehe!\p"
 	.string "With this METEORITE, that thing in\n"
@@ -307,3 +340,19 @@ MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
 	.string "PROF. COZMO: But that TEAM MAGMA…\p"
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CHIMNEY?$"
+
+	MeteorFalls_1F_1R_Text_MagmaRearguardTaunt:
+	.string "Heh!\p"
+	.string "You're not chasing after our boss\n"
+	.string "while I'm still standing!\p"
+	.string "I'll buy him all the time he needs!\n"
+	.string "Come on, then!$"
+
+MeteorFalls_1F_1R_Text_MagmaRearguardDefeat:
+	.string "Ugh… I can't believe it…$"
+
+MeteorFalls_1F_1R_Text_MagmaRearguardFlee:
+	.string "Grr… You may have beaten me…\p"
+	.string "But it's too late!\n"
+	.string "The METEORITE is already gone!\p"
+	.string "TEAM MAGMA will not be stopped!$"

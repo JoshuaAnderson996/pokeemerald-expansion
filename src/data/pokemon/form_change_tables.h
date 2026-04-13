@@ -1316,6 +1316,13 @@ static const struct FormChange sDuraludonFormChangeTable[] = {
 #endif
     {FORM_CHANGE_TERMINATOR},
 };
+
+static const struct FormChange sArchaludonFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ARCHALUDON_MEGA, ITEM_ARCHALUDONITE},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
 #endif //P_FAMILY_DURALUDON
 
 #if P_FAMILY_ZACIAN
@@ -1379,6 +1386,14 @@ static const struct FormChange sPalafinZeroFormChangeTable[] =
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_FINIZEN
+
+#if P_FAMILY_DELIBIRD_NORMIE
+static const struct FormChange sDelibirdNormieFormChangeTable[] =
+{
+    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_DELIBIRD_HERO},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_DELIBIRD_NORMIE
 
 #if P_FAMILY_OGERPON
 static const struct FormChange sOgerponFormChangeTable[] = {
@@ -1584,7 +1599,7 @@ static const struct FormChange sDarkraiFormChangeTable[] = {
 #if P_FAMILY_DRILBUR
 static const struct FormChange sExcadrillFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EXCADRILL_MEGA, ITEM_EXCADRILLITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_EXCADRILL_MEGA, ITEM_EXCADRITE},
 #endif
     {FORM_CHANGE_TERMINATOR},   
 };

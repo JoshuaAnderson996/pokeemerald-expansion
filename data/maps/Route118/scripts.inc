@@ -95,6 +95,10 @@ Route118_EventScript_StevenTrigger::
 	delay 30
 	msgbox Route118_Text_StevenQuestions, MSGBOX_DEFAULT
 	closemessage
+	msgbox Route118_Text_StevenBattleChallenge, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_STEVEN_118, Route118_Text_StevenDefeat
+	msgbox Route118_Text_StevenPostBattle, MSGBOX_DEFAULT
+	closemessage
 	call_if_eq VAR_0x8008, 0, Route118_EventScript_StevenExit0
 	call_if_eq VAR_0x8008, 1, Route118_EventScript_StevenExit1
 	call_if_eq VAR_0x8008, 2, Route118_EventScript_StevenExit2
@@ -244,22 +248,34 @@ Route118_EventScript_Deandre::
 	end
 
 Route118_Text_StevenQuestions:
-	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
-	.string "It's me, STEVEN!\n"
-	.string "We met in the cave near DEWFORD.\p"
-	.string "Have you met many kinds of POKéMON\n"
-	.string "since I last saw you?\p"
-	.string "There are many, many kinds of POKéMON\n"
-	.string "in this wide world of ours.\p"
-	.string "If you wanted to raise only your\n"
-	.string "favorites, that's fine.\p"
-	.string "Perhaps you find it more fun to raise\n"
-	.string "all sorts of POKéMON.\p"
-	.string "As a TRAINER of POKéMON,\n"
-	.string "what do you think?\p"
-	.string "Of course, it's not any of my business.\p"
-	.string "It would be nice if we were to meet\n"
-	.string "again somewhere.$"
+	.string "STEVEN: Ah, hello again, {PLAYER}{KUN}!\p"
+	.string "It is good to see you.\p"
+	.string "Since we last met, have you come to know\n"
+	.string "many different kinds of POKéMON?\p"
+	.string "Of course, if you prefer to raise your\n"
+	.string "particular favorites, that is perfectly fine.\p"
+	.string "Then again, perhaps you find it enjoyable to.$"
+
+Route118_Text_StevenBattleChallenge:
+	.string "STEVEN: As a matter of fact, {PLAYER}{KUN}…\p"
+	.string "I have heard quite a bit about your progress\n"
+	.string "during my travels.\p"
+	.string "By all accounts\p"
+	.string "you are an exceptional TRAINER.\p"
+	.string "If you would indulge me, I should very much like\n"
+	.string "to witness your skill in battle firsthand.\p"
+	.string "Now then, {PLAYER}{KUN} do show me what you can do!$"
+
+Route118_Text_StevenDefeat:
+	.string "STEVEN: …Splendid.\n"
+	.string "You have surpassed even my expectations.$"
+
+Route118_Text_StevenPostBattle:
+	.string "STEVEN: Heh heh…\p"
+	.string "You truly are extraordinary, {PLAYER}{KUN}.\p"
+	.string "I shall be eager to see where\n"
+	.string "your journey leads you next.\p"
+	.string "Until we meet again!$"
 
 Route118_Text_YouAgreeGoodRodIsGood:
 	.string "Hmm!\n"

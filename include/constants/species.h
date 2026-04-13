@@ -1724,8 +1724,11 @@
 #define SPECIES_GOLURK_MEGA                                    1608
 #define SPECIES_ZANGVIPER                                      1609
 #define SPECIES_REGIROCK_BOSS                                   1610
+#define SPECIES_DELIBIRD_NORMIE                         1611
+#define SPECIES_DELIBIRD_HERO                           1612
+#define SPECIES_ARCHALUDON_MEGA                                1613
 
-#define SPECIES_EGG                                     1611
+#define SPECIES_EGG                                     1614
 
 #define NUM_SPECIES SPECIES_EGG
 

@@ -2523,7 +2523,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EXORCIST] =
     {
         .name = _("Exorcist"),
-        .description = COMPOUND_STRING("Powers up if hit by fire."),
+        .description = COMPOUND_STRING("Powers up if hit by ghost."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -2549,7 +2549,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TECTONIC_BLOOM] =
     {
         .name = _("Tectonic Bloom"),
-        .description = COMPOUND_STRING("Moves hit through abilities."),
+        .description = COMPOUND_STRING("Ignores abilities n/"
+            "grass/ground moves are stronger."),
         .aiRating = 7,
     },
     [ABILITY_BLAZING_SUPREMACY] =
@@ -2672,6 +2673,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Cleric"),
     .description = COMPOUND_STRING("Better healing and only damaged by attacks."),
     .aiRating = 6,
+    .breakable = TRUE,
     },
     [ABILITY_LIGHT_BEARER] =
     {
@@ -2755,7 +2757,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TOXIC_BLOOM] =
     {
         .name = _("Toxic Bloom"),
-        .description = COMPOUND_STRING("Grass poisons foes, boosts damage to ill foes and priority in sun."),
+        .description = COMPOUND_STRING("Grass poisons foes, boosts damage to ill."),
         .aiRating = 6,
     },
     [ABILITY_COSMIC_ALLOY] =
@@ -2782,6 +2784,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Music Maestro"),
     .description = COMPOUND_STRING("Immune to foe sound moves but boosts own."),
     .aiRating = 7,
+    .breakable = TRUE,
 },
 [ABILITY_HITMAN] =
     {
@@ -2794,6 +2797,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     .name = _("Refractory Metal"),
     .description = COMPOUND_STRING("Boosts steel and reduces fire damage, can't be burnt."),
     .aiRating = 7,
+    .breakable = TRUE,
     },
  
     [ABILITY_CALAMITY_EDGE] =
@@ -2843,6 +2847,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Queens Supremacy"),
         .description = COMPOUND_STRING("High Society + Queens Majesty."),
         .aiRating = 7,
+        .breakable = TRUE,
     },
     [ABILITY_KINGS_MIGHT] =
     {
@@ -2903,6 +2908,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Aurora Guardian"),
         .description = COMPOUND_STRING("Snow Warning + Spd Boost in hail/snow."),
         .aiRating = 8,
+        .breakable = TRUE,
     },
     [ABILITY_PRIMORDIAL_RESURGE] =
     {
@@ -2969,12 +2975,14 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
             .name = _("High Society"),
             .description = COMPOUND_STRING("Prevents stat drops."),
             .aiRating = 7,
+            .breakable = TRUE,
         },
         [ABILITY_HIGH_SORCERY] =
         {
             .name = _("High Sorcery"),
             .description = COMPOUND_STRING("1.5X on Psychic/Ghost/Magic + Magic Bounce."),
             .aiRating = 7,
+            .breakable = TRUE,
         },
         [ABILITY_BRAWLER] =
         {
@@ -3001,5 +3009,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
+        .breakable = TRUE,
         },
+    [ABILITY_PIERCING_DRILL] =
+    {
+        .name = _("Piercing Drill"),
+        .description = COMPOUND_STRING("Ignores protection moves and abilities."),
+        .aiRating = 6,
+    },
+    [ABILITY_MAGICAL_SHIELD] =
+    {
+        .name = _("Magical Shield"),
+        .description = COMPOUND_STRING("Magic bounce and Magic Guard combined."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+    [ABILITY_MEGA_SOL] =
+    {
+        .name = _("Mega Sol"),
+        .description = COMPOUND_STRING("Moves are used as if the weather is harsh sunlight."),
+        .aiRating = 8,
+    },
     };
